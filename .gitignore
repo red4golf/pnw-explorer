@@ -7,10 +7,20 @@ dist/
 *.log
 
 # --- Media -------------------------------------------------------------------
-# Audio narrations live in R2, not git. 59 MB of MP3s that change rarely have no
-# business in every clone and every CI checkout. `npm run media:push` uploads
-# them; PUBLIC_MEDIA_BASE points the site at the bucket.
-# Hero images ARE tracked: they are needed for every page render and for social
-# cards, they are small enough to be worth the convenience, and a missing hero
-# is a visible defect rather than a degraded extra.
-public/media/audio/
+# Everything under public/media IS tracked, audio included.
+#
+# The original plan put the 58 MB of narration in R2 and kept it out of every
+# clone and CI checkout. That is still the better end state, and the code is
+# built for it — content stores origin-agnostic paths and src/lib/url.ts
+# resolves them against PUBLIC_MEDIA_BASE, so the move is one environment
+# variable and no content edits.
+#
+# It is not the state today: R2 is not enabled on the Cloudflare account
+# (API error 10042), enabling it needs a payment method, and the wrangler token
+# carries no r2 scope. Rather than ship a repo whose every build fails a smoke
+# test and whose narration 404s in production, the audio lives here. ~114 MB is
+# well inside GitHub's limits and Cloudflare Pages' 25 MB-per-file cap.
+#
+# To move it to R2 later: enable R2, re-run `wrangler login`, `npm run
+# media:push`, set PUBLIC_MEDIA_BASE, then re-add the ignore line below.
+# public/media/audio/

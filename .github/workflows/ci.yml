@@ -12,8 +12,8 @@ on:
   workflow_dispatch:
 
 env:
-  # Media is not in the repo (see .gitignore). Point the build at the bucket so
-  # audio URLs resolve; set this as a repository variable.
+  # Media is currently served from the repo itself. Setting this repository
+  # variable switches the build to an R2/CDN origin without a content change.
   PUBLIC_MEDIA_BASE: ${{ vars.PUBLIC_MEDIA_BASE }}
   PUBLIC_AMAZON_TAG: ${{ vars.PUBLIC_AMAZON_TAG }}
   PUBLIC_GOATCOUNTER_CODE: ${{ vars.PUBLIC_GOATCOUNTER_CODE }}
@@ -25,8 +25,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'schedule'
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
@@ -43,8 +43,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'schedule'
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm
@@ -71,8 +71,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: npm

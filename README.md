@@ -37,7 +37,7 @@ scripts/
   media-push.mjs       upload public/media to R2
   optimize-images.mjs  regenerate webp variants
   smoke.mjs            post-build assertions
-public/media/          images (tracked) and audio (gitignored — lives in R2)
+public/media/          hero images and audio narration (both tracked; see Media below)
 docs/STYLE-STANDARD.md the writing standard scripts/check.mjs enforces
 ```
 
@@ -124,15 +124,23 @@ resolves them:
 | unset | `/media/images/locations/x-hero.jpg` (same origin) |
 | `https://media.example.com` | `https://media.example.com/images/locations/x-hero.jpg` |
 
-Hero images are tracked in git — they are needed for every page render and every social card, and a
-missing one is a visible defect. **Audio is not**: 58 MB of narration that changes almost never has
-no business in every clone and every CI checkout.
+**Today both hero images and audio are tracked in git** (~114 MB), and the site serves them from its
+own origin. That is not the intended end state — 58 MB of narration that changes almost never has no
+business in every clone and every CI checkout — but R2 is not enabled on the Cloudflare account
+(API error 10042; enabling it requires a payment method, and the wrangler token carries no `r2`
+scope). Shipping a repo whose every build fails and whose narration 404s in production is the worse
+trade.
+
+The indirection is already in place, so moving media out later costs no content edits:
 
 ```bash
-npx wrangler login
+# 1. Enable R2 in the Cloudflare dashboard, then:
+npx wrangler login                                   # re-auth to pick up the r2 scope
 npx wrangler r2 bucket create pnw-explorer-media
-npm run media:push        # --dry-run first
-# attach a custom domain to the bucket, then set PUBLIC_MEDIA_BASE
+npm run media:push --dry-run                         # then for real
+# 2. Attach a custom domain to the bucket
+# 3. Set PUBLIC_MEDIA_BASE in the Pages project and as a repo variable
+# 4. Re-add `public/media/audio/` to .gitignore and `git rm -r --cached` it
 ```
 
 ---

@@ -86,10 +86,18 @@ The old repo was 114 MB, essentially all of it media history — every clone and
 it. Content now stores origin-agnostic paths and `src/lib/url.ts` resolves them against
 `PUBLIC_MEDIA_BASE`.
 
-The split is deliberate rather than uniform: **hero images stay in git** because they are needed for
-every page render and every social card and a missing one is immediately visible; **audio does not**,
-because 58 MB of narration that changes almost never is pure weight in every checkout. Flipping
-either is one environment variable.
+The intended split was hero images in git and audio in R2 — the images are needed for every page
+render and a missing one is immediately visible, while 58 MB of narration that changes almost never
+is pure weight in every checkout.
+
+**That is not what shipped.** R2 turned out not to be enabled on the Cloudflare account (API error
+10042), enabling it requires a payment method, and the wrangler token carries no `r2` scope. So both
+are tracked for now, and the repo is ~114 MB rather than ~56 MB.
+
+The decision worth recording is *why the indirection was built anyway*. Because content stores
+origin-agnostic paths and resolution happens in one function, the eventual move is an environment
+variable and a `.gitignore` line — not a rewrite of 95 markdown files. Designing the seam before it
+was needed cost nothing and is what keeps the wrong-for-now choice cheap to reverse.
 
 ## 7. The service worker is generated
 
