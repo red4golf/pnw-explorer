@@ -77,6 +77,31 @@ badCanonical.length
   ? fail(`${badCanonical.length} canonical(s) point at a .html URL that redirects: ${badCanonical.slice(0, 2).join(', ')}`)
   : pass('every canonical names the URL actually served');
 
+// --- Third-party asset dependencies -----------------------------------------
+// A stylesheet or script loaded from a CDN is a silent offline failure: the
+// service worker only caches this origin, so the asset is simply missing in the
+// field. It also broke the map once — Leaflet derives its marker imagePath from
+// wherever leaflet.css was served, so a CDN stylesheet rewrote every pin URL to
+// point at unpkg and all 95 pins 404'd. Bundle it, or it is not really shipped.
+// GoatCounter is allowed: analytics is a progressive enhancement that is
+// supposed to be absent offline.
+const ASSET_HOST_ALLOWLIST = ['gc.zgo.at'];
+const cdnAssets = new Set();
+for (const file of htmlFiles) {
+  const html = readFileSync(file, 'utf8');
+  const refs = [
+    ...html.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="(https?:\/\/[^"]+)"/g),
+    ...html.matchAll(/<script[^>]+src="(https?:\/\/[^"]+)"/g),
+  ];
+  for (const m of refs) {
+    const host = new URL(m[1]).hostname;
+    if (!ASSET_HOST_ALLOWLIST.includes(host)) cdnAssets.add(`${host} (${path.relative(DIST, file)})`);
+  }
+}
+cdnAssets.size
+  ? fail(`${cdnAssets.size} third-party asset dependency(ies): ${[...cdnAssets].slice(0, 3).join(', ')}`)
+  : pass('no third-party stylesheets or scripts — everything works offline');
+
 // --- Service worker ---------------------------------------------------------
 const swPath = path.join(DIST, 'sw.js');
 if (!existsSync(swPath)) {

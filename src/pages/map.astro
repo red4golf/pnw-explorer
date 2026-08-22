@@ -13,8 +13,6 @@ const counts = Object.fromEntries(
   title="Map — PNW Historical Explorer"
   description={`Find all ${locations.length} historic places on an interactive map, filter by interest, locate what is near you, or plan stops along a drive.`}
 >
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" slot="head" />
-
   <section class="section">
     <div class="container">
       <p class="eyebrow">Explore</p>
@@ -88,15 +86,36 @@ const counts = Object.fromEntries(
   <script>
     import L from 'leaflet';
     import 'leaflet.markercluster';
+    // Bundled, not loaded from a CDN. Two reasons: this is an offline-capable
+    // guide and the service worker only caches this origin, so a CDN stylesheet
+    // means an unstyled map in the field; and Leaflet derives its icon
+    // imagePath from wherever leaflet.css came from, which silently rewrote
+    // every marker URL to point at unpkg (see the icon note below).
+    import 'leaflet/dist/leaflet.css';
+    import 'leaflet.markercluster/dist/MarkerCluster.css';
+    import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
     import markerIcon from 'leaflet/dist/images/marker-icon.png';
     import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
     import markerShadow from 'leaflet/dist/images/marker-shadow.png';
     import { nearest, formatDistance, distanceToPath, distanceMiles } from '../lib/geo';
 
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: markerIcon2x.src,
+    /**
+     * An explicit icon, NOT L.Icon.Default.mergeOptions.
+     *
+     * Icon.Default always prepends its detected `imagePath` to whatever iconUrl
+     * it is given, so passing bundled asset paths through mergeOptions produced
+     * "https://unpkg.com/leaflet@1.9.4/dist/images//_astro/marker-icon-2x.png"
+     * and every pin 404'd. Defining the icon outright sidesteps imagePath
+     * entirely and cannot be broken by where the stylesheet happens to live.
+     */
+    const pinIcon = L.icon({
       iconUrl: markerIcon.src,
+      iconRetinaUrl: markerIcon2x.src,
       shadowUrl: markerShadow.src,
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
     });
 
     interface Loc {
@@ -141,7 +160,7 @@ const counts = Object.fromEntries(
       cluster.clearLayers();
       markers = {};
       for (const l of subset) {
-        const m = L.marker([l.lat, l.lng]).bindPopup(popupHtml(l), { maxWidth: 280 });
+        const m = L.marker([l.lat, l.lng], { icon: pinIcon }).bindPopup(popupHtml(l), { maxWidth: 280 });
         markers[l.slug] = m;
         cluster.addLayer(m);
       }
