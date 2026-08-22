@@ -22,7 +22,21 @@ const {
 } = Astro.props;
 
 const analyticsEnabled = import.meta.env.PROD && Boolean(GOATCOUNTER_CODE);
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+/**
+ * Canonical URL.
+ *
+ * build.format is 'file', so at build time Astro.url.pathname carries the
+ * on-disk name — "/map.html", "/locations/x.html" — while the URL Cloudflare
+ * actually serves has no extension and 308-redirects the .html form to it.
+ * Using the raw pathname therefore pointed every canonical except the homepage
+ * at a redirect, and contradicted the sitemap, which is already extension-free.
+ *
+ * Invisible in `astro dev`, because nothing is written to disk there. Caught
+ * only against the deployed site; scripts/smoke.mjs now asserts it.
+ */
+const canonicalPath =
+  Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/';
+const canonical = new URL(canonicalPath, Astro.site).href;
 const ogImageUrl = new URL(ogImage ? media(ogImage) : '/icons/og-default.png', Astro.site).href;
 
 const path = Astro.url.pathname;

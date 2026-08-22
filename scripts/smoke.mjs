@@ -46,6 +46,7 @@ console.log(`\nSmoke test over ${htmlFiles.length} pages\n`);
 const noTitle = [];
 const badH1 = [];
 const noCanonical = [];
+const badCanonical = [];
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
@@ -57,7 +58,13 @@ for (const file of htmlFiles) {
   // The 404 page is allowed a single H1 like any other; zero is the bug.
   if (h1s !== 1) badH1.push(`${rel} (${h1s})`);
 
-  if (!/<link rel="canonical"/.test(html)) noCanonical.push(rel);
+  const canonical = /<link rel="canonical" href="([^"]*)"/.exec(html)?.[1];
+  if (!canonical) noCanonical.push(rel);
+  // A canonical must name the URL that is actually served. build.format 'file'
+  // writes "/map.html" into Astro.url.pathname, but Cloudflare serves "/map"
+  // and 308s the .html form — so a canonical carrying the extension points at
+  // a redirect and disagrees with the sitemap.
+  else if (/\.html(?:$|[?#])/.test(canonical)) badCanonical.push(`${rel} -> ${canonical}`);
 }
 
 noTitle.length ? fail(`${noTitle.length} page(s) without a title: ${noTitle.slice(0, 3).join(', ')}`)
@@ -66,6 +73,9 @@ badH1.length ? fail(`${badH1.length} page(s) without exactly one H1: ${badH1.sli
   : pass('every page has exactly one H1');
 noCanonical.length ? fail(`${noCanonical.length} page(s) without a canonical link`)
   : pass('every page has a canonical link');
+badCanonical.length
+  ? fail(`${badCanonical.length} canonical(s) point at a .html URL that redirects: ${badCanonical.slice(0, 2).join(', ')}`)
+  : pass('every canonical names the URL actually served');
 
 // --- Service worker ---------------------------------------------------------
 const swPath = path.join(DIST, 'sw.js');
