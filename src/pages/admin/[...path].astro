@@ -1,0 +1,398 @@
+---
+/**
+ * Operator dashboard.
+ *
+ * A rest-parameter route whose getStaticPaths returns NOTHING unless
+ * INCLUDE_ADMIN=1. That is the whole point: the previous build shipped its
+ * admin pages on every deploy and relied on them being unlisted, which meant
+ * "private" was a promise about nobody guessing a URL. Here the pages do not
+ * exist in the output at all unless they were asked for, and the deploy that
+ * asks for them is the one sitting behind Cloudflare Access.
+ *
+ * Everything below is computed at build time from content on disk. There is no
+ * API, no database, and no secret in the page — only counts, and links.
+ */
+import Base from '../../layouts/Base.astro';
+import { allLocations } from '../../lib/publish';
+import { CATEGORIES } from '../../lib/categories';
+import { deriveQuality, entryContentHash } from '../../lib/quality';
+import { auditSite, isPlaceholderAlt, mediaIsLocal } from '../../lib/audit';
+import { analyse, corpusChecks } from '../../lib/style.mjs';
+import { GITHUB_REPO, GOATCOUNTER_CODE, AMAZON_TAG } from '../../config';
+
+export function getStaticPaths() {
+  // process.env, not import.meta.env: getStaticPaths runs in Node at build
+  // time, and import.meta.env is populated from .env files rather than from
+  // the shell — so the CI/Pages environment variable would never be seen.
+  // Anything other than an explicit "1" produces no pages at all.
+  if (process.env.INCLUDE_ADMIN !== '1') return [];
+  return [{ params: { path: undefined } }];
+}
+
+const locations = await allLocations();
+const total = locations.length;
+
+// --- Quality ---------------------------------------------------------------
+const quality = locations
+  .map((l) => ({ entry: l, q: deriveQuality(l.data.factcheck, entryContentHash(l)) }))
+  .sort(
+    (a, b) => b.q.attentionRank - a.q.attentionRank || a.entry.data.title.localeCompare(b.entry.data.title)
+  );
+
+const statusCounts = quality.reduce<Record<string, number>>((acc, x) => {
+  acc[x.q.status] = (acc[x.q.status] ?? 0) + 1;
+  return acc;
+}, {});
+
+// --- Style -----------------------------------------------------------------
+const style = locations
+  .map((l) => ({
+    slug: l.data.slug,
+    title: l.data.title,
+    ...analyse(l.body ?? '', { hasFactcheck: Boolean(l.data.factcheck) }),
+  }))
+  .sort((a, b) => a.score - b.score);
+
+const meanStyle = Math.round(style.reduce((s, r) => s + r.score, 0) / (style.length || 1));
+const meetingStandard = style.filter((r) => r.errors === 0).length;
+
+const violationCounts = style
+  .flatMap((r) => r.violations.filter((v: any) => v.level === 'error'))
+  .reduce<Record<string, number>>((acc, v: any) => {
+    acc[v.code] = (acc[v.code] ?? 0) + 1;
+    return acc;
+  }, {});
+const topViolations = Object.entries(violationCounts).sort((a, b) => b[1] - a[1]);
+
+const corpus = corpusChecks(locations.map((l) => ({ slug: l.data.slug, body: l.body ?? '' })));
+
+// --- Integrity -------------------------------------------------------------
+const audit = auditSite(locations);
+
+// --- Worklist --------------------------------------------------------------
+// One ranked list answering "what should I do next", rather than four separate
+// dashboards that each show a slice and leave the prioritising to the operator.
+const worklist = locations
+  .map((l) => {
+    const q = quality.find((x) => x.entry.data.slug === l.data.slug)!.q;
+    const s = style.find((x) => x.slug === l.data.slug)!;
+    const a = audit.entries.find((x) => x.slug === l.data.slug)!;
+    const needs: string[] = [];
+    if (!l.data.hero) needs.push('hero image');
+    else if (isPlaceholderAlt(l.data.hero.alt, l.data.title)) needs.push('real alt text');
+    if (!l.data.audio) needs.push('audio');
+    if (!l.data.notice) needs.push('what-to-notice');
+    if (!s.metrics.hasSources) needs.push('sources block');
+    if (q.status === 'unverified') needs.push('factcheck');
+    if (q.status === 'stale') needs.push('re-review');
+    if (l.data.summary.endsWith('…')) needs.push('hand-written summary');
+    return {
+      slug: l.data.slug,
+      title: l.data.title,
+      category: l.data.category,
+      needs,
+      styleScore: s.score,
+      styleGrade: s.grade,
+      status: q.status,
+      color: q.color,
+      errors: a.issues.filter((i) => i.level === 'error').length,
+      draft: l.data.draft,
+    };
+  })
+  .sort((a, b) => b.needs.length - a.needs.length || a.styleScore - b.styleScore);
+
+const categoryRows = CATEGORIES.map((c) => {
+  const inCat = locations.filter((l) => l.data.category === c.name);
+  return {
+    ...c,
+    total: inCat.length,
+    hero: inCat.filter((l) => l.data.hero).length,
+    audio: inCat.filter((l) => l.data.audio).length,
+  };
+});
+
+const pct = (n: number, d: number) => (d ? Math.round((n / d) * 100) : 0);
+---
+
+<Base title="Operator dashboard — PNW Historical Explorer" noindex>
+  <style is:global>
+    .admin { --ok: #1a7f5a; --warn: #a1671f; --bad: #b0392f; }
+    .admin table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .admin th, .admin td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .admin th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+    .admin tbody tr:hover { background: var(--surface-2); }
+    .admin .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .stat-row { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); margin: 1.25rem 0 2rem; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; }
+    .stat b { display: block; font-size: 1.7rem; font-family: var(--font-serif); color: var(--heading); line-height: 1.1; }
+    .stat span { font-size: 0.78rem; color: var(--ink-soft); }
+    .bar { height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; margin-top: 0.4rem; }
+    .bar > i { display: block; height: 100%; background: var(--moss); }
+    .tag { display: inline-block; font-size: 0.7rem; padding: 0.1rem 0.45rem; border-radius: 999px; background: var(--surface-2); margin: 0 0.2rem 0.2rem 0; white-space: nowrap; }
+    .badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.5rem; border-radius: 999px; color: #fff; }
+    .admin-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .admin-nav a { font-size: 0.85rem; padding: 0.35rem 0.75rem; border: 1px solid var(--border); border-radius: 999px; text-decoration: none; background: var(--surface); }
+    .scroll { overflow-x: auto; }
+  </style>
+
+  <section class="section admin">
+    <div class="container">
+      <p class="eyebrow">Operator</p>
+      <h1>Content dashboard</h1>
+      <p class="muted" style="max-width:62ch">
+        Built {new Date().toISOString().slice(0, 10)} from {total} entries on disk. Every number
+        here is computed at build time — there is no server, and nothing on this page is a secret.
+        Protect the route with Cloudflare Access rather than with obscurity.
+      </p>
+
+      <nav class="admin-nav">
+        <a href="#worklist">Worklist</a>
+        <a href="#style">Prose style</a>
+        <a href="#verification">Verification</a>
+        <a href="#integrity">Integrity</a>
+        <a href="#coverage">Coverage</a>
+        <a href={`https://github.com/${GITHUB_REPO}`}>Repo ↗</a>
+        <a href="https://app.pagescms.org">CMS ↗</a>
+        {GOATCOUNTER_CODE && <a href={`https://${GOATCOUNTER_CODE}.goatcounter.com`}>Analytics ↗</a>}
+      </nav>
+
+      <div class="stat-row">
+        <div class="stat">
+          <b>{total}</b><span>entries ({locations.filter((l) => l.data.draft).length} draft)</span>
+        </div>
+        <div class="stat">
+          <b>{meanStyle}</b><span>mean style score</span>
+          <div class="bar"><i style={`width:${meanStyle}%`}></i></div>
+        </div>
+        <div class="stat">
+          <b>{meetingStandard}</b><span>meet the full style standard</span>
+          <div class="bar"><i style={`width:${pct(meetingStandard, total)}%`}></i></div>
+        </div>
+        <div class="stat">
+          <b>{quality.filter((x) => x.q.verifiedPublic).length}</b><span>publicly verified</span>
+          <div class="bar"><i style={`width:${pct(quality.filter((x) => x.q.verifiedPublic).length, total)}%`}></i></div>
+        </div>
+        <div class="stat">
+          <b>{audit.coverage.hero}</b><span>with a hero image</span>
+          <div class="bar"><i style={`width:${pct(audit.coverage.hero, total)}%`}></i></div>
+        </div>
+        <div class="stat">
+          <b>{audit.totals.errors}</b><span>integrity errors</span>
+        </div>
+      </div>
+
+      {!AMAZON_TAG && (
+        <p style="background:var(--surface-2);border-left:4px solid var(--warn);padding:0.75rem 1rem;border-radius:var(--radius-sm)">
+          <strong>No Amazon Associates tag configured.</strong> {' '}
+          Every book link across the corpus is currently untagged and earning nothing. Set
+          <code>PUBLIC_AMAZON_TAG</code> in the Pages project.
+        </p>
+      )}
+
+      <!-- ---------------------------------------------------------------- -->
+      <h2 id="worklist" style="margin-top:2.5rem">Worklist</h2>
+      <p class="muted">
+        Ranked by how much each entry still needs, then by style score. This is the list to work
+        down; everything else on this page explains a column in it.
+      </p>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Entry</th><th>Needs</th><th class="num">Style</th><th>Verification</th><th class="num">Errors</th>
+            </tr>
+          </thead>
+          <tbody>
+            {worklist.slice(0, 30).map((w) => (
+              <tr>
+                <td>
+                  <a href={`/locations/${w.slug}`}>{w.title}</a>
+                  {w.draft && <span class="tag">draft</span>}
+                  <br /><span class="muted" style="font-size:0.72rem">{w.category}</span>
+                </td>
+                <td>{w.needs.length ? w.needs.map((n) => <span class="tag">{n}</span>) : <span class="muted">—</span>}</td>
+                <td class="num">{w.styleGrade} <span class="muted">{w.styleScore}</span></td>
+                <td><span class="badge" style={`background:${w.color}`}>{w.status}</span></td>
+                <td class="num">{w.errors || ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {worklist.length > 30 && <p class="muted">Showing the 30 that need most work, of {worklist.length}.</p>}
+
+      <!-- ---------------------------------------------------------------- -->
+      <h2 id="style" style="margin-top:2.5rem">Prose style</h2>
+      <p class="muted" style="max-width:62ch">
+        Measured against STYLE-STANDARD by <code>src/lib/style.mjs</code> — the same module CI runs,
+        so this page and the build gate can never disagree. {meetingStandard} of {total} entries
+        currently carry no errors.
+      </p>
+
+      <h3 style="margin-top:1.5rem">Most common failures</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Rule</th><th class="num">Entries affected</th><th class="num">Share</th></tr></thead>
+          <tbody>
+            {topViolations.map(([code, count]) => (
+              <tr>
+                <td><code>{code}</code></td>
+                <td class="num">{count}</td>
+                <td class="num">{pct(count, total)}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {corpus.duplicatePassages.length > 0 && (
+        <>
+          <h3 style="margin-top:1.5rem">Shared passages</h3>
+          <p class="muted">
+            {corpus.duplicatePassages.length} twelve-word runs appear in more than one entry — the
+            fingerprint of a template rather than research.
+          </p>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Passage</th><th>Entries</th></tr></thead>
+              <tbody>
+                {corpus.duplicatePassages.slice(0, 12).map((d: any) => (
+                  <tr>
+                    <td style="max-width:32rem"><em>“{d.text}”</em></td>
+                    <td>{d.slugs.map((s: string) => <a class="tag" href={`/locations/${s}`}>{s}</a>)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+
+      <h3 style="margin-top:1.5rem">Lowest scoring</h3>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th>Entry</th><th class="num">Score</th><th class="num">Flesch</th><th class="num">Words</th><th class="num">Rhythm</th><th class="num">Short</th><th class="num">Abstract</th></tr>
+          </thead>
+          <tbody>
+            {style.slice(0, 15).map((r) => (
+              <tr>
+                <td><a href={`/locations/${r.slug}`}>{r.title}</a></td>
+                <td class="num">{r.grade} {r.score}</td>
+                <td class="num">{r.metrics.flesch}</td>
+                <td class="num">{r.metrics.wordCount}</td>
+                <td class="num">{r.metrics.stdDev}</td>
+                <td class="num">{Math.round(r.metrics.shortSentenceRatio * 100)}%</td>
+                <td class="num">{r.metrics.abstractNounsPer100}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="font-size:0.8rem">
+        Targets: Flesch ≥ 50 · 650–900 words · rhythm (sentence-length σ) ≥ 9 · ≥ 30% short
+        sentences · ≤ 4 abstract nouns per 100 words.
+      </p>
+
+      <!-- ---------------------------------------------------------------- -->
+      <h2 id="verification" style="margin-top:2.5rem">Verification</h2>
+      <div class="stat-row">
+        {Object.entries(statusCounts).map(([status, count]) => (
+          <div class="stat"><b>{count}</b><span>{status}</span></div>
+        ))}
+      </div>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Entry</th><th>Status</th><th class="num">Grade</th><th class="num">Cited</th><th>Tier</th><th>Last checked</th><th>Notes</th></tr></thead>
+          <tbody>
+            {quality.filter((x) => x.q.status !== 'unverified').map(({ entry, q }) => (
+              <tr>
+                <td><a href={`/locations/${entry.data.slug}`}>{entry.data.title}</a></td>
+                <td><span class="badge" style={`background:${q.color}`}>{q.label}</span></td>
+                <td class="num">{q.grade}</td>
+                <td class="num">{entry.data.factcheck?.claimsCited ?? 0}/{entry.data.factcheck?.claimsTotal ?? 0}</td>
+                <td>{entry.data.factcheck?.sourceTier ?? '—'}</td>
+                <td>{entry.data.factcheck?.lastChecked ?? '—'}</td>
+                <td class="muted" style="font-size:0.75rem">{q.reasons.join(' ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="font-size:0.8rem">
+        {statusCounts.unverified ?? 0} entries have never been through a sourcing pass and are
+        omitted from this table. A “stale” row means the text was edited after it was verified —
+        the badge drops off the public page automatically until it is re-reviewed.
+      </p>
+
+      <!-- ---------------------------------------------------------------- -->
+      <h2 id="integrity" style="margin-top:2.5rem">Integrity</h2>
+      {!mediaIsLocal && (
+        <p class="muted">
+          <strong>Media is served from a remote origin</strong> (PUBLIC_MEDIA_BASE is set), so
+          file-existence checks are skipped in this build. Run the audit locally with media present
+          to verify every referenced file resolves.
+        </p>
+      )}
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Issue</th><th>Level</th><th class="num">Count</th><th>What it means</th></tr></thead>
+          <tbody>
+            {audit.byCode.map((i) => (
+              <tr>
+                <td><code>{i.code}</code></td>
+                <td>
+                  <span class="badge" style={`background:${i.level === 'error' ? 'var(--bad)' : i.level === 'warn' ? 'var(--warn)' : 'var(--ink-soft)'}`}>{i.level}</span>
+                </td>
+                <td class="num">{i.count}</td>
+                <td class="muted" style="font-size:0.75rem;max-width:34rem">{i.msg}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {audit.totals.errors > 0 && (
+        <>
+          <h3 style="margin-top:1.5rem">Entries with errors</h3>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Entry</th><th>Problems</th></tr></thead>
+              <tbody>
+                {audit.entries.filter((e) => e.worst === 'error').map((e) => (
+                  <tr>
+                    <td><a href={`/locations/${e.slug}`}>{e.title}</a></td>
+                    <td>
+                      {e.issues.filter((i) => i.level === 'error').map((i) => (
+                        <div style="font-size:0.78rem">{i.msg}</div>
+                      ))}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+
+      <!-- ---------------------------------------------------------------- -->
+      <h2 id="coverage" style="margin-top:2.5rem">Coverage by category</h2>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Category</th><th class="num">Entries</th><th class="num">Hero</th><th class="num">Audio</th><th>Hero coverage</th></tr></thead>
+          <tbody>
+            {categoryRows.map((c) => (
+              <tr>
+                <td>{c.icon} <a href={`/categories/${c.slug}`}>{c.name}</a></td>
+                <td class="num">{c.total}</td>
+                <td class="num">{c.hero}</td>
+                <td class="num">{c.audio}</td>
+                <td style="min-width:8rem"><div class="bar"><i style={`width:${pct(c.hero, c.total)}%`}></i></div></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</Base>

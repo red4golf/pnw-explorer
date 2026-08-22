@@ -1,0 +1,35 @@
+{
+  "name": "pnw-explorer",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/build-sw.mjs && pagefind --site dist",
+    "preview": "astro preview",
+    "check": "node scripts/check.mjs",
+    "check:style": "node scripts/check.mjs --only=style",
+    "check:coords": "node scripts/check.mjs --only=coords",
+    "check:schema": "node scripts/check.mjs --only=schema",
+    "check:links": "node scripts/check-links.mjs",
+    "import:legacy": "node scripts/import-legacy.mjs",
+    "media:push": "node scripts/media-push.mjs",
+    "images": "node scripts/optimize-images.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.7.0",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.12",
+    "pagefind": "^1.5.2",
+    "sharp": "^0.33.5",
+    "yaml": "^2.5.0"
+  }
+}

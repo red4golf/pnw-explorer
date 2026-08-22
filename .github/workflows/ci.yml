@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Weekly link sweep. Kept off the merge path deliberately — it makes real
+  # network requests, so it fails for reasons unrelated to the change under
+  # review, and a gate that cries wolf is a gate people learn to ignore.
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+env:
+  # Media is not in the repo (see .gitignore). Point the build at the bucket so
+  # audio URLs resolve; set this as a repository variable.
+  PUBLIC_MEDIA_BASE: ${{ vars.PUBLIC_MEDIA_BASE }}
+  PUBLIC_AMAZON_TAG: ${{ vars.PUBLIC_AMAZON_TAG }}
+  PUBLIC_GOATCOUNTER_CODE: ${{ vars.PUBLIC_GOATCOUNTER_CODE }}
+  SITE_URL: ${{ vars.SITE_URL }}
+
+jobs:
+  content:
+    name: Content gate
+    runs-on: ubuntu-latest
+    if: github.event_name != 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      # Frontmatter shape, coordinate sanity, and the prose-style ratchet.
+      # The ratchet fails on a REGRESSION or on a new entry carrying errors —
+      # inherited debt is frozen, not forgiven. See scripts/check.mjs.
+      - name: Check content
+        run: npm run check
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    if: github.event_name != 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # Catches what a green build will not: a missing service worker, a
+      # precache list naming a route that was never built, admin leaking into a
+      # public deploy, a hero image referenced but not shipped.
+      - name: Smoke test
+        run: npm run smoke
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+  links:
+    name: Link sweep
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Check outbound links
+        run: npm run check:links

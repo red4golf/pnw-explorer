@@ -1,0 +1,22 @@
+{
+  "name": "PNW Historical Explorer",
+  "short_name": "PNW Explorer",
+  "description": "A field guide to historic places across the Pacific Northwest, with audio narration and offline support.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5efe2",
+  "theme_color": "#1f3d2b",
+  "categories": ["travel", "education", "navigation"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "Map", "url": "/map", "description": "Find places near you" },
+    { "name": "Search", "url": "/search", "description": "Search every guide" }
+  ]
+}

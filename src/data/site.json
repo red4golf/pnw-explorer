@@ -1,0 +1,12 @@
+{
+  "siteName": "PNW Historical Explorer",
+  "tagline": "Find a place worth stopping for, hear its story, and go.",
+  "amazonAssociatesTag": "",
+  "concierge": {
+    "enabled": true,
+    "name": "Bainbridge Concierge",
+    "phone": "(253) 466-7401",
+    "blurb": "Call for personalized Bainbridge Island suggestions. The concierge can text destination photos, location pages, directions, and business information.",
+    "note": "Published business hours are reviewed monthly. Confirm time-sensitive details directly before making a special trip."
+  }
+}

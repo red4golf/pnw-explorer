@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Offline — PNW Historical Explorer"
+  description="You are offline. Pages you have already opened are still available."
+>
+  <section class="section">
+    <div class="container" style="max-width:44rem">
+      <p class="eyebrow">No connection</p>
+      <h1>You are offline</h1>
+      <p>
+        This page could not be loaded because there is no connection right now. Anything you opened
+        while you had signal is still saved on this device.
+      </p>
+
+      <div id="saved" hidden>
+        <h2>Saved on this device</h2>
+        <ul class="nearby-list" id="saved-list"></ul>
+      </div>
+
+      <p style="margin-top:1.5rem">
+        <button class="btn" type="button" onclick="location.reload()">Try again</button>
+        <a class="btn secondary" href="/">Go to the home page</a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    /**
+     * List the location pages already in the cache. This is the one screen where
+     * a visitor is stuck with no signal, so telling them exactly what they can
+     * still read is more useful than an apology.
+     */
+    if ('caches' in window) {
+      (async () => {
+        const names = await caches.keys();
+        const seen = new Map<string, string>();
+
+        for (const name of names.filter((n) => n.startsWith('pnw-'))) {
+          const cache = await caches.open(name);
+          for (const req of await cache.keys()) {
+            const path = new URL(req.url).pathname;
+            const m = /^\/locations\/([^/]+)$/.exec(path);
+            if (m && !seen.has(m[1])) {
+              seen.set(m[1], m[1].replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()));
+            }
+          }
+        }
+
+        if (!seen.size) return;
+        const panel = document.getElementById('saved')!;
+        document.getElementById('saved-list')!.innerHTML = [...seen.entries()]
+          .sort((a, b) => a[1].localeCompare(b[1]))
+          .map(([slug, title]) => `<li><a href="/locations/${slug}">${title}</a></li>`)
+          .join('');
+        panel.hidden = false;
+      })();
+    }
+  </script>
+</Base>

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.local
+.DS_Store
+*.log
+
+# --- Media -------------------------------------------------------------------
+# Audio narrations live in R2, not git. 59 MB of MP3s that change rarely have no
+# business in every clone and every CI checkout. `npm run media:push` uploads
+# them; PUBLIC_MEDIA_BASE points the site at the bucket.
+# Hero images ARE tracked: they are needed for every page render and for social
+# cards, they are small enough to be worth the convenience, and a missing hero
+# is a visible defect rather than a degraded extra.
+public/media/audio/

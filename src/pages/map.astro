@@ -1,0 +1,350 @@
+---
+import Base from '../layouts/Base.astro';
+import { CATEGORIES } from '../lib/categories';
+import { publishedLocations } from '../lib/publish';
+
+const locations = await publishedLocations();
+const counts = Object.fromEntries(
+  CATEGORIES.map((c) => [c.slug, locations.filter((l) => l.data.category === c.name).length])
+);
+---
+
+<Base
+  title="Map — PNW Historical Explorer"
+  description={`Find all ${locations.length} historic places on an interactive map, filter by interest, locate what is near you, or plan stops along a drive.`}
+>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" slot="head" />
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Explore</p>
+      <h1>Where everything is</h1>
+
+      <div class="actions" style="margin-top:1rem">
+        <button class="btn" id="locate" type="button">📍 Find places near me</button>
+        <button class="btn secondary" id="route-toggle" type="button" aria-expanded="false">
+          🛣️ Plan stops along a drive
+        </button>
+      </div>
+      <p id="locate-status" class="status-line" role="status" aria-live="polite"></p>
+
+      <form id="route-form" hidden style="margin:1rem 0;padding:1rem;background:var(--surface-2);border-radius:var(--radius)">
+        <p class="eyebrow" style="margin-top:0">Along the way</p>
+        <div style="display:grid;gap:0.75rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));align-items:end">
+          <label>Starting from
+            <input id="route-from" name="from" required placeholder="Seattle, WA"
+                   autocomplete="off" style="width:100%;padding:0.55rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:inherit;font:inherit" />
+          </label>
+          <label>Going to
+            <input id="route-to" name="to" required placeholder="Portland, OR"
+                   autocomplete="off" style="width:100%;padding:0.55rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:inherit;font:inherit" />
+          </label>
+          <label>Max detour
+            <select id="route-detour" style="width:100%;padding:0.55rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:inherit;font:inherit">
+              <option value="10">10 miles</option>
+              <option value="25" selected>25 miles</option>
+              <option value="50">50 miles</option>
+            </select>
+          </label>
+          <button class="btn" type="submit">Find stops</button>
+        </div>
+        <p class="muted" style="font-size:0.8rem;margin:0.75rem 0 0">
+          Measured against a straight line between the two points, not a driving route — close
+          enough for a corridor like I-5 or the Columbia Gorge, rough for a drive that loops.
+          Place lookup by OpenStreetMap.
+        </p>
+        <p id="route-status" class="status-line" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="filters" id="filters" role="group" aria-label="Filter by category">
+        <button class="pill active" data-cat="all" data-label="All places" aria-pressed="true">
+          All {locations.length}
+        </button>
+        {CATEGORIES.map((c) => (
+          <button class="pill" data-cat={c.slug} data-label={c.name} aria-pressed="false">
+            {c.icon} {c.name} {counts[c.slug]}
+          </button>
+        ))}
+      </div>
+
+      <p class="visually-hidden" id="filter-current" role="status" aria-live="polite">All places</p>
+
+      <div id="map" data-locations-url="/locations.json"></div>
+
+      <div id="results" hidden style="margin-top:1.5rem">
+        <h2 id="results-title">Results</h2>
+        <ul class="nearby-list" id="results-list"></ul>
+      </div>
+
+      <noscript>
+        <p class="muted" style="margin-top:1rem">
+          The map needs JavaScript. <a href="/categories">Browse by category</a> instead — every
+          location page lists its coordinates and a directions link.
+        </p>
+      </noscript>
+    </div>
+  </section>
+
+  <script>
+    import L from 'leaflet';
+    import 'leaflet.markercluster';
+    import markerIcon from 'leaflet/dist/images/marker-icon.png';
+    import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+    import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+    import { nearest, formatDistance, distanceToPath, distanceMiles } from '../lib/geo';
+
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: markerIcon2x.src,
+      iconUrl: markerIcon.src,
+      shadowUrl: markerShadow.src,
+    });
+
+    interface Loc {
+      slug: string; title: string; category: string; categorySlug: string;
+      categoryIcon: string; period: string | null; lat: number; lng: number;
+      summary: string; hero: string | null; card: string | null; hasAudio: boolean;
+    }
+
+    const el = document.getElementById('map')!;
+    const map = L.map(el, { scrollWheelZoom: true }).setView([46.8, -121.5], 6);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    const cluster = (L as any).markerClusterGroup({
+      showCoverageOnHover: false,
+      maxClusterRadius: 46,
+    });
+    map.addLayer(cluster);
+
+    let all: Loc[] = [];
+    let markers: Record<string, L.Marker> = {};
+    let activeCategory = 'all';
+
+    function popupHtml(l: Loc) {
+      const img = l.card
+        ? `<img src="${l.card}" alt="" style="width:100%;height:110px;object-fit:cover;border-radius:6px;margin-bottom:6px"${
+            l.hero ? ` onerror="this.onerror=null;this.src='${l.hero}'"` : ''
+          }>`
+        : '';
+      const meta = [l.category, l.period, l.hasAudio ? '🎧' : null].filter(Boolean).join(' · ');
+      return `${img}<strong style="font-size:1rem">${l.title}</strong><br>
+        <span style="color:#5a5246;font-size:0.8rem">${meta}</span>
+        <p style="margin:6px 0;font-size:0.85rem">${l.summary}</p>
+        <a href="/locations/${l.slug}" style="font-weight:600">Read the full story →</a>`;
+    }
+
+    function render(subset: Loc[], fit = true) {
+      cluster.clearLayers();
+      markers = {};
+      for (const l of subset) {
+        const m = L.marker([l.lat, l.lng]).bindPopup(popupHtml(l), { maxWidth: 280 });
+        markers[l.slug] = m;
+        cluster.addLayer(m);
+      }
+      if (fit && subset.length) map.fitBounds(cluster.getBounds().pad(0.15));
+    }
+
+    const byCategory = (cat: string) =>
+      cat === 'all' ? all : all.filter((l) => l.categorySlug === cat);
+
+    fetch(el.dataset.locationsUrl!)
+      .then((r) => r.json())
+      .then((data: Loc[]) => {
+        all = data;
+        render(all);
+
+        // Deep link: /map#slug opens that marker.
+        const target = location.hash.slice(1);
+        if (target && markers[target]) {
+          map.setView(markers[target].getLatLng(), 13);
+          setTimeout(() => markers[target].openPopup(), 400);
+        }
+        if (new URLSearchParams(location.search).get('mode') === 'route') {
+          openRoute();
+        }
+      })
+      .catch(() => {
+        el.innerHTML =
+          '<p style="padding:2rem;text-align:center">The map data could not load. <a href="/categories">Browse by category</a> instead.</p>';
+      });
+
+    // --- category filter ---------------------------------------------------
+    document.getElementById('filters')!.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('button.pill') as HTMLButtonElement | null;
+      if (!btn) return;
+      document.querySelectorAll('#filters .pill').forEach((p) => {
+        p.classList.toggle('active', p === btn);
+        p.setAttribute('aria-pressed', String(p === btn));
+      });
+      activeCategory = btn.dataset.cat!;
+      document.getElementById('filter-current')!.textContent = btn.dataset.label!;
+      render(byCategory(activeCategory));
+    });
+
+    // --- results panel -----------------------------------------------------
+    const results = document.getElementById('results')!;
+    const resultsList = document.getElementById('results-list')!;
+    const resultsTitle = document.getElementById('results-title')!;
+
+    function showResults(title: string, items: Array<{ l: Loc; note: string }>) {
+      resultsTitle.textContent = title;
+      resultsList.innerHTML = items
+        .map(
+          ({ l, note }) => `<li>
+            <span><a href="/locations/${l.slug}">${l.title}</a>
+              <span class="muted" style="font-size:0.85rem"> · ${l.category}${l.hasAudio ? ' · 🎧' : ''}</span>
+            </span>
+            <span class="dist">${note}</span>
+          </li>`
+        )
+        .join('');
+      results.hidden = false;
+    }
+
+    // --- locate me ---------------------------------------------------------
+    const locateBtn = document.getElementById('locate') as HTMLButtonElement;
+    const locateStatus = document.getElementById('locate-status')!;
+    let userLayer: L.LayerGroup | null = null;
+
+    locateBtn.addEventListener('click', () => {
+      if (!('geolocation' in navigator)) {
+        locateStatus.textContent = 'This device cannot report a location.';
+        return;
+      }
+      locateBtn.disabled = true;
+      locateStatus.textContent = 'Locating…';
+      window.pnwTrack?.('find-near-me');
+
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          locateBtn.disabled = false;
+          const { latitude: lat, longitude: lng, accuracy } = pos.coords;
+
+          if (userLayer) map.removeLayer(userLayer);
+          userLayer = L.layerGroup([
+            L.circle([lat, lng], {
+              radius: accuracy,
+              color: '#2b6cff', weight: 1, fillColor: '#2b6cff', fillOpacity: 0.12,
+            }),
+            L.circleMarker([lat, lng], {
+              radius: 7, color: '#fff', weight: 2, fillColor: '#2b6cff', fillOpacity: 1,
+            }).bindPopup('You are here'),
+          ]).addTo(map);
+
+          const close = nearest({ lat, lng }, byCategory(activeCategory), 8);
+          if (!close.length) {
+            locateStatus.textContent = 'Nothing in this category nearby.';
+            return;
+          }
+          map.setView([lat, lng], 9);
+          locateStatus.textContent = `Nearest is ${formatDistance(close[0].miles)} away.`;
+          showResults(
+            'Closest to you',
+            close.map((l) => ({ l: l as unknown as Loc, note: `${formatDistance(l.miles)} away` }))
+          );
+        },
+        (err) => {
+          locateBtn.disabled = false;
+          locateStatus.textContent =
+            err.code === 1
+              ? 'Location permission was declined. Pan the map instead.'
+              : 'Could not get a location fix. Pan the map instead.';
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 }
+      );
+    });
+
+    // --- route corridor ----------------------------------------------------
+    const routeToggle = document.getElementById('route-toggle') as HTMLButtonElement;
+    const routeForm = document.getElementById('route-form') as HTMLFormElement;
+    const routeStatus = document.getElementById('route-status')!;
+    let routeLine: L.Polyline | null = null;
+
+    function openRoute() {
+      routeForm.hidden = false;
+      routeToggle.setAttribute('aria-expanded', 'true');
+      (document.getElementById('route-from') as HTMLInputElement).focus();
+    }
+
+    routeToggle.addEventListener('click', () => {
+      const open = routeForm.hidden;
+      if (open) openRoute();
+      else {
+        routeForm.hidden = true;
+        routeToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    /** Nominatim, one request at a time, per their usage policy. */
+    async function geocode(q: string): Promise<{ lat: number; lng: number } | null> {
+      const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(q)}`;
+      const res = await fetch(url, { headers: { Accept: 'application/json' } });
+      if (!res.ok) return null;
+      const json = await res.json();
+      if (!json.length) return null;
+      return { lat: parseFloat(json[0].lat), lng: parseFloat(json[0].lon) };
+    }
+
+    routeForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fromQ = (document.getElementById('route-from') as HTMLInputElement).value.trim();
+      const toQ = (document.getElementById('route-to') as HTMLInputElement).value.trim();
+      const detour = Number((document.getElementById('route-detour') as HTMLSelectElement).value);
+      if (!fromQ || !toQ) return;
+
+      routeStatus.textContent = 'Looking up both places…';
+      window.pnwTrack?.('route-plan');
+
+      try {
+        const from = await geocode(fromQ);
+        // Sequential, not Promise.all: Nominatim asks for at most one request
+        // per second and this is a courtesy we can afford to pay.
+        const to = from ? await geocode(toQ) : null;
+
+        if (!from || !to) {
+          routeStatus.textContent = 'Could not find one of those places. Try adding a state.';
+          return;
+        }
+
+        const path = [from, to];
+        if (routeLine) map.removeLayer(routeLine);
+        routeLine = L.polyline(
+          path.map((p) => [p.lat, p.lng] as [number, number]),
+          { color: '#a14e2c', weight: 4, opacity: 0.75, dashArray: '8 6' }
+        ).addTo(map);
+
+        const along = byCategory(activeCategory)
+          .map((l) => ({ l, off: distanceToPath(l, path) }))
+          .filter((x) => x.off <= detour)
+          // Order by progress along the drive, so the list reads in the order
+          // they will actually be passed rather than by distance from the line.
+          .sort((a, b) => distanceMiles(from, a.l) - distanceMiles(from, b.l));
+
+        if (!along.length) {
+          routeStatus.textContent = `Nothing within ${detour} miles of that line. Try a wider detour.`;
+          return;
+        }
+
+        render(along.map((x) => x.l), false);
+        map.fitBounds(routeLine.getBounds().pad(0.2));
+        routeStatus.textContent = `${along.length} place${along.length === 1 ? '' : 's'} within ${detour} miles of the route.`;
+        showResults(
+          `Along the way: ${fromQ} → ${toQ}`,
+          along.map(({ l, off }) => ({
+            // Anything within half a mile of the line is not a detour worth
+            // quantifying — "0.2 mi off route" invites a decision the reader
+            // does not need to make.
+            l,
+            note: off < 0.5 ? 'on the way' : `${formatDistance(off)} off route`,
+          }))
+        );
+      } catch {
+        routeStatus.textContent = 'Place lookup is unavailable right now. Try again shortly.';
+      }
+    });
+  </script>
+</Base>

@@ -1,0 +1,222 @@
+# Pages CMS configuration — https://pagescms.org
+#
+# Browser-based editing that commits straight to GitHub, which triggers a
+# Cloudflare Pages build. No server, no install, and the markdown in the repo
+# stays the single source of truth.
+#
+# This file must stay in step with src/content.config.ts. Where the two disagree
+# the schema wins: the CMS will happily save a field the build then rejects.
+
+media:
+  - name: images
+    label: Hero images
+    input: public/media/images/locations
+    output: /images/locations
+    categories: [image]
+  - name: audio
+    label: Narration
+    input: public/media/audio
+    output: /audio
+    extensions: [mp3]
+
+content:
+  - name: locations
+    label: Locations
+    type: collection
+    path: content/locations
+    filename: '{fields.slug}.md'
+    view:
+      fields: [title, category, draft, period]
+      sort: [title, category]
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: Max 70 characters — longer titles get truncated in search results.
+
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+          message: Lowercase letters, digits, and single hyphens only.
+        description: The URL. Changing it breaks existing links — add a redirect in public/_redirects if you must.
+
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+            - Aviation and Transportation
+            - Culture and Community
+            - Indigenous Heritage
+            - Industry and Agriculture
+            - Landmarks and Memorials
+            - Maritime
+            - Military and Conflict
+            - Natural Wonders
+            - Towns and Settlements
+
+      - name: period
+        label: Historic period
+        type: string
+        description: 'Free text, e.g. "1854-1893" or "Formed ~7,700 years ago".'
+
+      - name: address
+        label: Address
+        type: string
+
+      - name: coordinates
+        label: Coordinates
+        type: object
+        required: true
+        fields:
+          - { name: lat, label: Latitude, type: number, required: true }
+          - { name: lng, label: Longitude, type: number, required: true }
+        description: Western longitudes are NEGATIVE. The build rejects anything outside the region.
+
+      - name: summary
+        label: Summary
+        type: text
+        required: true
+        description: >
+          70-160 characters. This is the meta description, the card blurb, and the
+          social preview — it must stand alone and it must fit. Not the opening
+          paragraph; that is "Lead".
+
+      - name: lead
+        label: Lead paragraph
+        type: text
+        description: The longer "why stop here" paragraph shown above the fold. Optional.
+
+      - name: notice
+        label: What to notice
+        type: string
+        list: true
+        description: >
+          2-5 prompts pointing at things a visitor can actually see AT THIS PLACE.
+          There is no generic fallback — leave it empty and the section simply does
+          not render, which is better than boilerplate that fits any fort anywhere.
+
+      - name: hero
+        label: Hero image
+        type: object
+        fields:
+          - { name: src, label: Image, type: image, required: true }
+          - name: alt
+            label: Alt text
+            type: string
+            required: true
+            description: Describe what is visible, in at least 12 characters. Not the title again.
+          - { name: credit, label: Credit line, type: string }
+          - { name: source, label: Source URL, type: string }
+          - name: license
+            label: Licence
+            type: select
+            options:
+              values: [own-work, public-domain, cc0, cc-by, cc-by-sa, cc-by-nc, permission, unknown]
+              default: unknown
+            description: CC-BY variants legally require a credit line. The build enforces it.
+
+      - name: audio
+        label: Narration
+        type: file
+        options:
+          media: audio
+
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+        description: Drafts are excluded from the public build but still visible in /admin.
+
+      - name: publishDate
+        label: Go-live date
+        type: date
+        description: >
+          A label only. This is a static site, so it does NOT auto-publish — the
+          entry goes live on the next deploy after draft is unticked.
+
+      - name: books
+        label: Further reading
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: author, label: Author, type: string }
+          - { name: url, label: Link, type: string }
+          - { name: isbn, label: ISBN, type: string }
+
+      - name: factcheck
+        label: Verification record
+        type: object
+        fields:
+          - name: status
+            label: Status
+            type: select
+            options:
+              values: [unverified, in-review, verified, corrected, flagged]
+              default: unverified
+          - { name: lastChecked, label: Last checked, type: date }
+          - { name: reviewer, label: Reviewer, type: string }
+          - name: sourceTier
+            label: Best source tier
+            type: select
+            options:
+              values: [primary, peer-reviewed, secondary, tribal, none]
+              default: none
+          - { name: claimsTotal, label: Claims total, type: number }
+          - { name: claimsCited, label: Claims cited, type: number }
+          - { name: openFlags, label: Open flags, type: number }
+          - name: neutrality
+            label: Neutrality
+            type: select
+            options:
+              values: [pass, fail, 'n/a']
+              default: 'n/a'
+          - name: checkedHash
+            label: Checked hash
+            type: string
+            description: >
+              Set by the verification pass. Editing the article changes the live
+              hash, which drops the public badge until someone re-reviews. Do not
+              edit by hand.
+          - { name: notes, label: Notes, type: text }
+
+      - name: sourceId
+        label: Legacy source ID
+        type: number
+        description: Provenance from the original dataset. Traceability only.
+
+      - name: body
+        label: Article
+        type: rich-text
+        description: >
+          Must end with a "## Sources" block listing each source and its tier.
+          CI measures this text against STYLE-STANDARD.
+
+settings:
+  - name: site
+    label: Site settings
+    type: file
+    path: src/data/site.json
+    fields:
+      - { name: siteName, label: Site name, type: string }
+      - { name: tagline, label: Tagline, type: string }
+      - name: amazonAssociatesTag
+        label: Amazon Associates tag
+        type: string
+        description: Prefer the PUBLIC_AMAZON_TAG environment variable, which overrides this.
+      - name: concierge
+        label: Bainbridge Concierge
+        type: object
+        fields:
+          - { name: enabled, label: Enabled, type: boolean }
+          - { name: name, label: Name, type: string }
+          - { name: phone, label: Phone, type: string }
+          - { name: blurb, label: Description, type: text }
+          - { name: note, label: Caveat, type: text }

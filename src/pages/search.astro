@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import { publishedLocations } from '../lib/publish';
+
+const total = (await publishedLocations()).length;
+---
+
+<Base
+  title="Search — PNW Historical Explorer"
+  description="Search every location guide by name, place, period, or subject."
+>
+  <section class="section">
+    <div class="container search-shell">
+      <p class="eyebrow">Search</p>
+      <h1>Find a place</h1>
+      <p class="muted">
+        Searches the full text of all {total} guides — names, towns, periods, people, and the
+        stories themselves.
+      </p>
+
+      <div id="search" style="margin-top:1.5rem"></div>
+
+      <noscript>
+        <p class="muted">
+          Search needs JavaScript. <a href="/categories">Browse by category</a> or
+          <a href="/map">open the map</a> instead.
+        </p>
+      </noscript>
+    </div>
+  </section>
+
+  {/* Pagefind's index is produced after the Astro build (see package.json), so
+      these assets do not exist during `astro dev` — the UI simply reports no
+      results locally, which is expected and not a broken build. */}
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" slot="head" />
+
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (typeof PagefindUI === 'undefined') {
+        document.getElementById('search').innerHTML =
+          '<p class="muted">The search index is only built for the deployed site. ' +
+          'Try <a href="/categories">browsing by category</a>.</p>';
+        return;
+      }
+      new PagefindUI({
+        element: '#search',
+        showSubResults: true,
+        showImages: false,
+        excerptLength: 24,
+        resetStyles: false,
+      });
+
+      var params = new URLSearchParams(location.search);
+      var q = params.get('q');
+      if (q) {
+        var input = document.querySelector('#search input[type="text"]');
+        if (input) {
+          input.value = q;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }
+
+      var last = null;
+      document.getElementById('search').addEventListener('input', function (e) {
+        var v = e.target && e.target.value;
+        if (!v || v.length < 3 || v === last) return;
+        last = v;
+        window.pnwTrack && window.pnwTrack('search');
+      });
+    });
+  </script>
+</Base>

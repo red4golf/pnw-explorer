@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import { CATEGORIES } from '../../lib/categories';
+import { publishedLocations } from '../../lib/publish';
+
+const locations = await publishedLocations();
+const counts = Object.fromEntries(
+  CATEGORIES.map((c) => [c.slug, locations.filter((l) => l.data.category === c.name).length])
+);
+---
+
+<Base
+  title="Browse by Category — PNW Historical Explorer"
+  description="Nine ways into Pacific Northwest history: natural wonders, indigenous heritage, maritime, military, aviation, industry, towns, landmarks, and culture."
+>
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Browse</p>
+      <h1>Nine ways in</h1>
+      <p class="muted" style="max-width:60ch">
+        Every place in the guide sits in exactly one category. Pick the kind of history you are in
+        the mood for, or <a href="/map">open the map</a> if you would rather start from geography.
+      </p>
+
+      <div class="cat-grid" style="margin-top:2rem">
+        {CATEGORIES.map((c) => (
+          <a class="cat-card" href={`/categories/${c.slug}`}>
+            <span class="icon" aria-hidden="true">{c.icon}</span>
+            <h2>{c.name}</h2>
+            <p>{c.blurb}</p>
+            <span class="count">{counts[c.slug]} places</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

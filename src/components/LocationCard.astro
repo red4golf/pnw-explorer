@@ -1,0 +1,47 @@
+---
+import { categoryByName } from '../lib/categories';
+import { media, mediaVariant } from '../lib/url';
+import type { Loc } from '../lib/publish';
+
+interface Props {
+  entry: Loc;
+  /** Optional distance label, supplied by "near me" and route results. */
+  distance?: string | null;
+  /** First few cards on a page should load eagerly; the rest lazily. */
+  eager?: boolean;
+}
+
+const { entry, distance = null, eager = false } = Astro.props;
+const d = entry.data;
+const cat = categoryByName(d.category);
+---
+
+<article class="loc-card">
+  {d.hero ? (
+    <a href={`/locations/${d.slug}`} tabindex="-1" aria-hidden="true">
+      <img
+        class="thumb"
+        src={mediaVariant(d.hero.src, 'card')}
+        alt=""
+        width="480"
+        height="300"
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        onerror={`this.onerror=null;this.src='${media(d.hero.src)}'`}
+      />
+    </a>
+  ) : (
+    <div class="thumb placeholder" aria-hidden="true">{cat?.icon ?? '📍'}</div>
+  )}
+
+  <div class="body">
+    <h3><a href={`/locations/${d.slug}`}>{d.title}</a></h3>
+    <p>{d.summary}</p>
+    <div class="card-meta">
+      <span class="chip">{cat?.icon} {d.category}</span>
+      {d.period && <span>{d.period}</span>}
+      {d.audio && <span title="Audio narration available">🎧 Audio</span>}
+      {distance && <span class="dist">{distance}</span>}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,213 @@
+---
+import Base from '../layouts/Base.astro';
+import LocationCard from '../components/LocationCard.astro';
+import { CATEGORIES } from '../lib/categories';
+import { publishedLocations, byTitle } from '../lib/publish';
+import { site } from '../config';
+
+const locations = (await publishedLocations()).sort(byTitle);
+const total = locations.length;
+const audioCount = locations.filter((l) => l.data.audio).length;
+
+const counts = Object.fromEntries(
+  CATEGORIES.map((c) => [c.slug, locations.filter((l) => l.data.category === c.name).length])
+);
+
+// Featured: entries that have both a hero image and narration lead, because
+// those are the pages that actually show well. Alphabetical after that, so the
+// selection is stable between builds rather than shuffling on every deploy.
+const featured = locations
+  .filter((l) => l.data.hero)
+  .sort(
+    (a, b) =>
+      Number(Boolean(b.data.audio)) - Number(Boolean(a.data.audio)) ||
+      a.data.title.localeCompare(b.data.title)
+  )
+  .slice(0, 6);
+
+const quickStarts = [
+  {
+    icon: '📍',
+    title: 'Stop on the way',
+    text: 'Find places within a short detour of the road you are already driving.',
+    url: '/map?mode=route',
+  },
+  {
+    icon: '🎧',
+    title: 'Listen on the drive',
+    text: `${audioCount} narrated stories, saveable for where there is no signal.`,
+    url: '/search?q=audio',
+  },
+  {
+    icon: '🏛️',
+    title: 'Browse by interest',
+    text: 'Towns, military sites, aviation, maritime history, and more.',
+    url: '/categories',
+  },
+];
+---
+
+<Base
+  title="PNW Historical Explorer — Find a Place Worth Stopping For"
+  description={`Discover ${total} historic places, natural landmarks, old towns, military sites, and cultural landscapes across the Pacific Northwest.`}
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow light">A field guide for curious travelers</p>
+        <h1>Find a place worth stopping for.</h1>
+        <p>{site.tagline}</p>
+
+        <div class="actions">
+          <button class="btn on-dark" id="locate" type="button">📍 Find places near me</button>
+          <a class="btn secondary" href="/map" style="color:#e6dcc8">Explore the map</a>
+        </div>
+        <p class="privacy-note">
+          Your location is used on this device to sort the list. It is never sent anywhere.
+        </p>
+        <p id="locate-status" class="status-line" role="status" aria-live="polite"></p>
+
+        <div class="trust-line">
+          <span><strong>{total}</strong> places</span>
+          <span><strong>{audioCount}</strong> audio stories</span>
+          <span>Sources on every guide</span>
+          <span>Works offline</span>
+        </div>
+      </div>
+
+      <aside class="guide-card">
+        <p class="eyebrow light">Choose your next stop</p>
+        <h2>What would you like to do?</h2>
+        {quickStarts.map((item) => (
+          <a href={item.url}>
+            <span class="guide-icon" aria-hidden="true">{item.icon}</span>
+            <span><strong>{item.title}</strong><small>{item.text}</small></span>
+          </a>
+        ))}
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="nearby" hidden>
+    <div class="container">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Nearby</p>
+          <h2>Closest places worth exploring</h2>
+        </div>
+        <a href="/map?mode=nearby">Open the full map →</a>
+      </div>
+      <div id="nearby-grid" class="card-grid"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Start here</p>
+          <h2>Places with the full treatment</h2>
+        </div>
+        <a href="/categories">Browse everything →</a>
+      </div>
+      <div class="card-grid">
+        {featured.map((entry, i) => <LocationCard entry={entry} eager={i < 3} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface-2)">
+    <div class="container">
+      <p class="eyebrow">By interest</p>
+      <h2>Nine ways into the region’s history</h2>
+      <div class="cat-grid">
+        {CATEGORIES.map((c) => (
+          <a class="cat-card" href={`/categories/${c.slug}`}>
+            <span class="icon" aria-hidden="true">{c.icon}</span>
+            <h2>{c.name}</h2>
+            <p>{c.blurb}</p>
+            <span class="count">{counts[c.slug]} places</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { nearest, formatDistance } from '../lib/geo';
+
+    const btn = document.getElementById('locate') as HTMLButtonElement | null;
+    const status = document.getElementById('locate-status');
+    const panel = document.getElementById('nearby');
+    const grid = document.getElementById('nearby-grid');
+
+    interface Item {
+      slug: string;
+      title: string;
+      category: string;
+      categoryIcon: string;
+      lat: number;
+      lng: number;
+      summary: string;
+      card: string | null;
+      hero: string | null;
+      hasAudio: boolean;
+    }
+
+    btn?.addEventListener('click', async () => {
+      if (!('geolocation' in navigator)) {
+        if (status) status.textContent = 'This device cannot report a location. Use the map instead.';
+        return;
+      }
+      btn.disabled = true;
+      if (status) status.textContent = 'Locating…';
+      window.pnwTrack?.('find-near-me');
+
+      try {
+        const pos = await new Promise<GeolocationPosition>((resolve, reject) =>
+          navigator.geolocation.getCurrentPosition(resolve, reject, {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 30000,
+          })
+        );
+
+        const all: Item[] = await fetch('/locations.json').then((r) => r.json());
+        const here = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        const close = nearest(here, all, 6);
+
+        if (!grid || !panel) return;
+        grid.innerHTML = close
+          .map((l) => {
+            const img = l.card
+              ? `<img class="thumb" src="${l.card}" alt="" width="480" height="300" loading="lazy" ${
+                  l.hero ? `onerror="this.onerror=null;this.src='${l.hero}'"` : ''
+                }>`
+              : `<div class="thumb placeholder" aria-hidden="true">${l.categoryIcon}</div>`;
+            return `<article class="loc-card">${img}<div class="body">
+              <h3><a href="/locations/${l.slug}">${l.title}</a></h3>
+              <p>${l.summary}</p>
+              <div class="card-meta">
+                <span class="chip">${l.categoryIcon} ${l.category}</span>
+                ${l.hasAudio ? '<span>🎧 Audio</span>' : ''}
+                <span class="dist">${formatDistance(l.miles)} away</span>
+              </div></div></article>`;
+          })
+          .join('');
+
+        panel.hidden = false;
+        if (status) status.textContent = `Showing the ${close.length} closest places.`;
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (err) {
+        const denied = (err as GeolocationPositionError)?.code === 1;
+        if (status) {
+          status.textContent = denied
+            ? 'Location permission was declined. The map works without it.'
+            : 'Could not get a location fix. The map works without it.';
+        }
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  </script>
+</Base>

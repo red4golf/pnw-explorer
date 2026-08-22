@@ -1,0 +1,262 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import AudioPlayer from '../../components/AudioPlayer.astro';
+import LocationCard from '../../components/LocationCard.astro';
+import { categoryByName, slugForCategory } from '../../lib/categories';
+import { media, mediaVariant } from '../../lib/url';
+import { withAffiliateTag, affiliateRel } from '../../lib/amazon';
+import { deriveQuality, entryContentHash, statusSentence } from '../../lib/quality';
+import { publishedLocations } from '../../lib/publish';
+import { isBainbridge, telHref } from '../../lib/concierge';
+import { nearest, formatDistance, compassLabel } from '../../lib/geo';
+import { site } from '../../config';
+
+export async function getStaticPaths() {
+  const locations = await publishedLocations();
+  return locations.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry, all: locations },
+  }));
+}
+
+const { entry, all } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+const quality = deriveQuality(d.factcheck, entryContentHash(entry));
+const statusText = statusSentence(quality, d.factcheck?.lastChecked ?? null);
+const cat = categoryByName(d.category);
+
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${d.coordinates.lat},${d.coordinates.lng}`;
+
+/**
+ * Three nearest other places, computed at build time.
+ *
+ * A road-trip guide's most useful question is "what else is close enough to be
+ * worth it", and on a static site that answer costs nothing to precompute. The
+ * previous build only offered "view on the map", which makes the reader do the
+ * work of spotting neighbours themselves.
+ */
+const nearby = nearest(
+  d.coordinates,
+  all.filter((l) => l.data.slug !== d.slug).map((l) => ({ ...l.data.coordinates, entry: l })),
+  3,
+  60
+);
+
+const showConcierge = site.concierge.enabled && isBainbridge(d);
+const conciergeTel = telHref(site.concierge.phone);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: d.title,
+  description: d.summary,
+  ...(d.address ? { address: d.address } : {}),
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: d.coordinates.lat,
+    longitude: d.coordinates.lng,
+  },
+  ...(d.hero ? { image: new URL(media(d.hero.src), Astro.site).href } : {}),
+  isAccessibleForFree: true,
+};
+---
+
+<Base
+  title={`${d.title} — PNW Historical Explorer`}
+  description={d.summary}
+  ogImage={d.hero?.src ?? null}
+  ogType="article"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+
+  {/* One H1 per page. The body markdown's own leading H1 is stripped at import
+      so the title is not announced twice to a screen reader. */}
+  <div class={`detail-hero${d.hero ? '' : ' no-image'}`}>
+    {d.hero && (
+      <img
+        src={mediaVariant(d.hero.src, 'hero')}
+        alt={d.hero.alt}
+        width="1600"
+        height="900"
+        fetchpriority="high"
+        decoding="async"
+        onerror={`this.onerror=null;this.src='${media(d.hero.src)}'`}
+      />
+    )}
+    <div class="overlay">
+      <div class="container">
+        <p class="eyebrow light">{cat?.icon} {d.category}</p>
+        <h1>{d.title}</h1>
+        <div class="meta">
+          {d.period && <span>📅 {d.period}</span>}
+          {d.address && <span>📍 {d.address}</span>}
+          {d.audio && <span>🎧 Narrated</span>}
+        </div>
+      </div>
+    </div>
+    {d.hero?.credit && (
+      <p class="hero-credit">
+        {d.hero.source ? <a href={d.hero.source} rel="noopener">{d.hero.credit}</a> : d.hero.credit}
+      </p>
+    )}
+  </div>
+
+  <section class="visit-decision">
+    <div class="container visit-decision-grid">
+      <div>
+        <p class="eyebrow">Why stop here</p>
+        <p class="visit-lead">{d.lead ?? d.summary}</p>
+        <div class="actions">
+          <a class="btn" href={directionsUrl} rel="noopener" target="_blank">🧭 Get directions</a>
+          {d.audio && <a class="btn secondary" href="#listen">🎧 Play the story</a>}
+        </div>
+      </div>
+      <aside class="fact-status" style={`--status-color:${quality.color}`}>
+        <strong>{quality.verifiedPublic ? '✓ Researched and sourced' : 'About this history'}</strong>
+        <p>{statusText}</p>
+        <a href="#full-story">Read the full story and sources</a>
+      </aside>
+    </div>
+  </section>
+
+  {/* "What to notice" renders only when someone wrote prompts for THIS place.
+      There is deliberately no per-category fallback — see content.config.ts. */}
+  <section class="section">
+    <div class="container experience-grid">
+      {d.notice && (
+        <article class="experience-card">
+          <p class="eyebrow">When you arrive</p>
+          <h2>What to notice</h2>
+          <ol class="look-list">{d.notice.map((prompt) => <li>{prompt}</li>)}</ol>
+        </article>
+      )}
+      <article class="experience-card">
+        <p class="eyebrow">Before you go</p>
+        <h2>Confirm the changing details</h2>
+        <p>
+          Hours, fees, access, closures, parking, and trail conditions change. Use the directions
+          link to identify the managing agency and confirm anything time-sensitive before making a
+          special trip.
+        </p>
+        <dl>
+          {d.address && <><dt>Listed address</dt><dd>{d.address}</dd></>}
+          <dt>Coordinates</dt>
+          <dd>{d.coordinates.lat.toFixed(4)}, {d.coordinates.lng.toFixed(4)}</dd>
+          <dt>Historic period</dt>
+          <dd>{d.period ?? 'Multiple periods'}</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  {d.audio && (
+    <section class="section listen-section" id="listen">
+      <div class="container listen-grid">
+        <div>
+          <p class="eyebrow light">The short tour</p>
+          <h2>Hear the story before you arrive</h2>
+          <p>
+            Listen in the car on the way, or on headphones once you are standing there. The longer
+            history and the sources are below.
+          </p>
+        </div>
+        <AudioPlayer src={media(d.audio)} title={d.title} />
+      </div>
+    </section>
+  )}
+
+  {showConcierge && conciergeTel && (
+    <section class="section" style="background:var(--surface-2)">
+      <div class="container">
+        <p class="eyebrow">Planning the rest of the day?</p>
+        <h2>Call the {site.concierge.name}</h2>
+        <p style="max-width:60ch">{site.concierge.blurb}</p>
+        <div class="actions">
+          <a class="btn" href={conciergeTel}>☎ {site.concierge.phone}</a>
+        </div>
+        <p class="muted" style="font-size:0.85rem;margin-top:0.75rem;max-width:60ch">
+          {site.concierge.note}
+        </p>
+      </div>
+    </section>
+  )}
+
+  <section class="section" id="full-story">
+    <div class="container detail-layout">
+      <article>
+        <p class="eyebrow">The long version</p>
+        <div class="prose"><Content /></div>
+      </article>
+
+      <aside>
+        <div class="sidebar-card">
+          <h3>Visit</h3>
+          <a class="btn full" href={directionsUrl} rel="noopener" target="_blank">🧭 Directions</a>
+          <a class="sidebar-link" href={`/map#${d.slug}`}>See it on the map →</a>
+          <a class="sidebar-link" href={`/categories/${slugForCategory(d.category)}`}>
+            More {d.category.toLowerCase()} →
+          </a>
+        </div>
+
+        <div class="sidebar-card" style={`border-left:4px solid ${quality.color}`}>
+          <h3>About this history</h3>
+          <p class="muted" style="font-size:0.88rem;margin:0">{statusText}</p>
+        </div>
+
+        {d.books.length > 0 && (
+          <div class="sidebar-card">
+            <h3>📚 Continue the story</h3>
+            <ul class="book-list">
+              {d.books.map((b) => (
+                <li>
+                  {b.url ? (
+                    <a
+                      href={withAffiliateTag(b.url)}
+                      rel={affiliateRel(b.url)}
+                      target="_blank"
+                      data-affiliate
+                    >{b.title}</a>
+                  ) : (
+                    b.title
+                  )}
+                  {b.author && <span class="author">{b.author}</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </aside>
+    </div>
+  </section>
+
+  {nearby.length > 0 && (
+    <section class="section" style="background:var(--surface-2)" data-pagefind-ignore>
+      <div class="container">
+        <p class="eyebrow">Close by</p>
+        <h2>Worth adding to the same trip</h2>
+        <div class="card-grid">
+          {nearby.map((n) => (
+            <LocationCard
+              entry={n.entry}
+              distance={`${formatDistance(n.miles)} ${compassLabel(n.bearing)}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <script>
+    document.addEventListener(
+      'click',
+      (e) => {
+        const link = (e.target as HTMLElement)?.closest?.('a[data-affiliate]');
+        if (link) window.pnwTrack?.('affiliate-click');
+      },
+      { passive: true }
+    );
+  </script>
+</Base>

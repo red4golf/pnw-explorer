@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import LocationCard from '../components/LocationCard.astro';
+import { publishedLocations, byTitle } from '../lib/publish';
+
+const suggestions = (await publishedLocations())
+  .filter((l) => l.data.hero && l.data.audio)
+  .sort(byTitle)
+  .slice(0, 3);
+---
+
+<Base title="Page not found — PNW Historical Explorer" description="That page does not exist." noindex>
+  <section class="section">
+    <div class="container" style="max-width:44rem">
+      <p class="eyebrow">404</p>
+      <h1>That page is not here</h1>
+      <p class="muted">
+        The link may be out of date, or the page may have moved. The map and the category list will
+        both get you where you were going.
+      </p>
+      <div class="actions">
+        <a class="btn" href="/map">Open the map</a>
+        <a class="btn secondary" href="/search">Search the guides</a>
+      </div>
+    </div>
+  </section>
+
+  {suggestions.length > 0 && (
+    <section class="section" style="background:var(--surface-2)">
+      <div class="container">
+        <p class="eyebrow">While you are here</p>
+        <h2>A few worth reading</h2>
+        <div class="card-grid">
+          {suggestions.map((entry) => <LocationCard entry={entry} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <script is:inline>
+    // Count what people were looking for, so dead inbound links can be fixed
+    // rather than guessed at.
+    window.pnwTrack && window.pnwTrack('404');
+  </script>
+</Base>

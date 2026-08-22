@@ -1,0 +1,91 @@
+---
+interface Props {
+  src: string;
+  title: string;
+}
+const { src, title } = Astro.props;
+---
+
+<div class="audio-box" data-audio-box data-src={src}>
+  <h3>🎧 Audio narration</h3>
+  <audio controls preload="none" src={src}>
+    Your browser does not support audio playback.
+    <a href={src}>Download the narration</a>.
+  </audio>
+  <p class="offline-note" data-note>Plays now. Save it to listen where there is no signal.</p>
+  <button class="btn secondary" type="button" data-save style="color:#e6dcc8">
+    ⬇ Save for offline
+  </button>
+</div>
+
+<script>
+  /**
+   * Audio is cached in its own bucket, separate from the page runtime cache, so
+   * trimming pages never evicts a narration somebody deliberately saved.
+   *
+   * Two paths fill it: playing the audio, and pressing Save. The explicit button
+   * matters more than it looks — this guide is used in places with no signal, and
+   * the moment a visitor wants the narration is exactly the moment they cannot
+   * download it. Saving has to be possible while they still have bars.
+   */
+  const CACHE = 'pnw-audio-v1';
+
+  document.querySelectorAll<HTMLElement>('[data-audio-box]').forEach((box) => {
+    const audio = box.querySelector('audio');
+    const note = box.querySelector<HTMLElement>('[data-note]');
+    const saveBtn = box.querySelector<HTMLButtonElement>('[data-save]');
+    const src = box.dataset.src;
+    if (!audio || !src) return;
+
+    if (!('caches' in window)) {
+      saveBtn?.remove();
+      if (note) note.textContent = 'Offline saving is not available in this browser.';
+      return;
+    }
+
+    const markSaved = () => {
+      if (note) note.textContent = '✓ Saved on this device for offline listening.';
+      saveBtn?.remove();
+    };
+
+    caches.open(CACHE).then(async (cache) => {
+      if (await cache.match(src)) markSaved();
+    });
+
+    async function save(): Promise<boolean> {
+      const cache = await caches.open(CACHE);
+      if (await cache.match(src!)) return true;
+      const res = await fetch(src!, { cache: 'no-cache' });
+      if (!res.ok) return false;
+      await cache.put(src!, res);
+      return true;
+    }
+
+    saveBtn?.addEventListener('click', async () => {
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving…';
+      try {
+        if (await save()) {
+          markSaved();
+        } else {
+          saveBtn.disabled = false;
+          saveBtn.textContent = '⬇ Save for offline';
+          if (note) note.textContent = 'Could not save right now. Try again with a better connection.';
+        }
+      } catch {
+        saveBtn.disabled = false;
+        saveBtn.textContent = '⬇ Save for offline';
+        if (note) note.textContent = 'Could not save right now. Try again with a better connection.';
+      }
+    });
+
+    audio.addEventListener(
+      'play',
+      () => {
+        window.pnwTrack?.('audio-play');
+        save().then((ok) => ok && markSaved()).catch(() => {});
+      },
+      { once: true }
+    );
+  });
+</script>

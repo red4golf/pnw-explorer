@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import LocationCard from '../../components/LocationCard.astro';
+import { CATEGORIES, categoryBySlug } from '../../lib/categories';
+import { publishedLocations, byTitle } from '../../lib/publish';
+
+export async function getStaticPaths() {
+  const locations = await publishedLocations();
+  return CATEGORIES.map((c) => ({
+    params: { slug: c.slug },
+    props: { entries: locations.filter((l) => l.data.category === c.name).sort(byTitle) },
+  }));
+}
+
+const { slug } = Astro.params;
+const { entries } = Astro.props;
+const cat = categoryBySlug(slug!)!;
+const withAudio = entries.filter((e) => e.data.audio).length;
+---
+
+<Base
+  title={`${cat.name} — PNW Historical Explorer`}
+  description={`${cat.blurb} ${entries.length} places across the Pacific Northwest, with directions, sources, and further reading.`}
+>
+  <section class="hero" style="padding-block:clamp(2rem,1rem+3vw,3.25rem)">
+    <div class="container">
+      <p class="eyebrow light">Category</p>
+      <h1>{cat.icon} {cat.name}</h1>
+      <p>{cat.blurb}</p>
+      <div class="trust-line">
+        <span><strong>{entries.length}</strong> places</span>
+        {withAudio > 0 && <span><strong>{withAudio}</strong> narrated</span>}
+        <span><a href="/map" style="color:#e6dcc8">See them on the map →</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {entries.length ? (
+        <div class="card-grid">
+          {entries.map((entry, i) => <LocationCard entry={entry} eager={i < 3} />)}
+        </div>
+      ) : (
+        <p class="muted">Nothing published in this category yet.</p>
+      )}
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface-2)">
+    <div class="container">
+      <p class="eyebrow">Keep looking</p>
+      <h2>Other categories</h2>
+      <div class="cat-grid">
+        {CATEGORIES.filter((c) => c.slug !== cat.slug).map((c) => (
+          <a class="cat-card" href={`/categories/${c.slug}`}>
+            <span class="icon" aria-hidden="true">{c.icon}</span>
+            <h2>{c.name}</h2>
+            <p>{c.blurb}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

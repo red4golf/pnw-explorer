@@ -1,0 +1,481 @@
+{
+  "generated": "2026-08-22",
+  "note": "Error counts frozen by scripts/check.mjs. An entry may improve, never regress. Regenerate after a rewrite.",
+  "entries": {
+    "astoria-column": {
+      "errors": 20,
+      "warnings": 6,
+      "score": 0
+    },
+    "bainbridge-island-historic-strawberry-fields": {
+      "errors": 12,
+      "warnings": 6,
+      "score": 16
+    },
+    "bannack-state-park": {
+      "errors": 13,
+      "warnings": 6,
+      "score": 10
+    },
+    "barkerville-historic-town": {
+      "errors": 3,
+      "warnings": 6,
+      "score": 70
+    },
+    "bellevue-airfield": {
+      "errors": 8,
+      "warnings": 1,
+      "score": 49
+    },
+    "bloedel-reserve": {
+      "errors": 6,
+      "warnings": 4,
+      "score": 55
+    },
+    "boeing-red-barn-historic-site-former-location": {
+      "errors": 18,
+      "warnings": 7,
+      "score": 0
+    },
+    "bonneville-dam": {
+      "errors": 12,
+      "warnings": 6,
+      "score": 16
+    },
+    "bowerman-airport-lanas-cafe": {
+      "errors": 5,
+      "warnings": 5,
+      "score": 60
+    },
+    "bruce-lee-brandon-lee-lake-view-cemetery": {
+      "errors": 7,
+      "warnings": 4,
+      "score": 50
+    },
+    "camp-yeomalt-cabin": {
+      "errors": 13,
+      "warnings": 7,
+      "score": 8
+    },
+    "carson-mansion": {
+      "errors": 19,
+      "warnings": 6,
+      "score": 0
+    },
+    "celilo-falls": {
+      "errors": 6,
+      "warnings": 5,
+      "score": 54
+    },
+    "chief-seattles-burial-site": {
+      "errors": 20,
+      "warnings": 5,
+      "score": 0
+    },
+    "clayton-beach": {
+      "errors": 10,
+      "warnings": 7,
+      "score": 26
+    },
+    "coeur-dalene-mission-of-the-sacred-heart": {
+      "errors": 19,
+      "warnings": 7,
+      "score": 0
+    },
+    "columbia-river-gorge": {
+      "errors": 18,
+      "warnings": 6,
+      "score": 0
+    },
+    "columbia-river-maritime-museum": {
+      "errors": 20,
+      "warnings": 7,
+      "score": 0
+    },
+    "crater-lake-national-park": {
+      "errors": 10,
+      "warnings": 6,
+      "score": 28
+    },
+    "craters-of-the-moon-national-monument": {
+      "errors": 12,
+      "warnings": 6,
+      "score": 16
+    },
+    "deception-pass-bridge": {
+      "errors": 18,
+      "warnings": 7,
+      "score": 0
+    },
+    "duwamish-longhouse": {
+      "errors": 17,
+      "warnings": 6,
+      "score": 0
+    },
+    "ebeys-landing-national-historical-reserve": {
+      "errors": 12,
+      "warnings": 7,
+      "score": 14
+    },
+    "fancher-field-first-trans-pacific-landing-site": {
+      "errors": 8,
+      "warnings": 5,
+      "score": 41
+    },
+    "fay-bainbridge-park": {
+      "errors": 10,
+      "warnings": 7,
+      "score": 26
+    },
+    "first-peoples-buffalo-jump-state-park": {
+      "errors": 20,
+      "warnings": 8,
+      "score": 0
+    },
+    "fort-casey": {
+      "errors": 2,
+      "warnings": 2,
+      "score": 84
+    },
+    "fort-clatsop-national-memorial": {
+      "errors": 11,
+      "warnings": 5,
+      "score": 24
+    },
+    "fort-flagler": {
+      "errors": 7,
+      "warnings": 5,
+      "score": 48
+    },
+    "fort-nisqually-living-history-museum": {
+      "errors": 10,
+      "warnings": 4,
+      "score": 32
+    },
+    "fort-steele-heritage-town": {
+      "errors": 19,
+      "warnings": 7,
+      "score": 0
+    },
+    "fort-ward": {
+      "errors": 15,
+      "warnings": 5,
+      "score": 0
+    },
+    "fort-worden-battery-kinzie": {
+      "errors": 24,
+      "warnings": 9,
+      "score": 0
+    },
+    "frog-rock": {
+      "errors": 11,
+      "warnings": 6,
+      "score": 22
+    },
+    "glacier-national-park": {
+      "errors": 10,
+      "warnings": 4,
+      "score": 32
+    },
+    "hanford-secret-city-that-changed-the-world": {
+      "errors": 12,
+      "warnings": 5,
+      "score": 18
+    },
+    "heceta-head-lighthouse": {
+      "errors": 10,
+      "warnings": 6,
+      "score": 28
+    },
+    "historic-port-townsend-victorian-seaport": {
+      "errors": 6,
+      "warnings": 5,
+      "score": 53
+    },
+    "historic-strawberry-fields": {
+      "errors": 13,
+      "warnings": 6,
+      "score": 10
+    },
+    "jacksonville-historic-district": {
+      "errors": 16,
+      "warnings": 5,
+      "score": 0
+    },
+    "japanese-american-exclusion-memorial": {
+      "errors": 12,
+      "warnings": 5,
+      "score": 18
+    },
+    "kennewick-man-discovery-site": {
+      "errors": 13,
+      "warnings": 5,
+      "score": 12
+    },
+    "lava-beds-national-monument": {
+      "errors": 21,
+      "warnings": 7,
+      "score": 0
+    },
+    "manzanar-national-historic-site": {
+      "errors": 16,
+      "warnings": 6,
+      "score": 0
+    },
+    "mashel-prairie": {
+      "errors": 10,
+      "warnings": 6,
+      "score": 28
+    },
+    "mount-rainier-national-park": {
+      "errors": 13,
+      "warnings": 7,
+      "score": 8
+    },
+    "mount-st-helens-national-volcanic-monument": {
+      "errors": 2,
+      "warnings": 4,
+      "score": 80
+    },
+    "mukilteo-lighthouse": {
+      "errors": 2,
+      "warnings": 4,
+      "score": 80
+    },
+    "multnomah-falls": {
+      "errors": 19,
+      "warnings": 6,
+      "score": 0
+    },
+    "museum-at-warm-springs": {
+      "errors": 22,
+      "warnings": 6,
+      "score": 0
+    },
+    "museum-of-flight": {
+      "errors": 0,
+      "warnings": 2,
+      "score": 96
+    },
+    "neah-bay-and-cape-flattery": {
+      "errors": 22,
+      "warnings": 6,
+      "score": 0
+    },
+    "nez-perce-national-historical-park": {
+      "errors": 16,
+      "warnings": 6,
+      "score": 0
+    },
+    "old-idaho-penitentiary-state-historic-site": {
+      "errors": 18,
+      "warnings": 5,
+      "score": 0
+    },
+    "olympic-hot-springs": {
+      "errors": 19,
+      "warnings": 7,
+      "score": 0
+    },
+    "oregon-caves-national-monument": {
+      "errors": 17,
+      "warnings": 6,
+      "score": 0
+    },
+    "oregon-state-capitol": {
+      "errors": 22,
+      "warnings": 7,
+      "score": 0
+    },
+    "oregon-trail-interpretive-center": {
+      "errors": 14,
+      "warnings": 7,
+      "score": 2
+    },
+    "oregon-vortex": {
+      "errors": 5,
+      "warnings": 4,
+      "score": 62
+    },
+    "pasayten-airstrip-washingtons-highest-runway": {
+      "errors": 11,
+      "warnings": 6,
+      "score": 22
+    },
+    "pia-the-peacekeeper": {
+      "errors": 8,
+      "warnings": 5,
+      "score": 42
+    },
+    "pike-place-market": {
+      "errors": 17,
+      "warnings": 7,
+      "score": 0
+    },
+    "pioneer-courthouse-portland": {
+      "errors": 11,
+      "warnings": 4,
+      "score": 26
+    },
+    "pioneer-square-klondike-gold-rush": {
+      "errors": 7,
+      "warnings": 5,
+      "score": 48
+    },
+    "point-no-point-lighthouse": {
+      "errors": 18,
+      "warnings": 7,
+      "score": 0
+    },
+    "port-blakely-mill-site": {
+      "errors": 19,
+      "warnings": 7,
+      "score": 0
+    },
+    "port-gamble-historic-town": {
+      "errors": 6,
+      "warnings": 4,
+      "score": 56
+    },
+    "port-madison": {
+      "errors": 3,
+      "warnings": 2,
+      "score": 78
+    },
+    "rajneeshpuram": {
+      "errors": 16,
+      "warnings": 7,
+      "score": 0
+    },
+    "redwood-national-and-state-parks": {
+      "errors": 19,
+      "warnings": 6,
+      "score": 0
+    },
+    "san-juan-island-the-pig-war": {
+      "errors": 3,
+      "warnings": 4,
+      "score": 74
+    },
+    "sand-point-naval-air-station": {
+      "errors": 8,
+      "warnings": 3,
+      "score": 46
+    },
+    "sawtooth-national-recreation-area": {
+      "errors": 0,
+      "warnings": 3,
+      "score": 94
+    },
+    "shanghai-tunnels-portland": {
+      "errors": 6,
+      "warnings": 6,
+      "score": 52
+    },
+    "shasta-dam": {
+      "errors": 19,
+      "warnings": 7,
+      "score": 0
+    },
+    "shasta-state-historic-park": {
+      "errors": 10,
+      "warnings": 7,
+      "score": 26
+    },
+    "skagit-valley-tulip-fields": {
+      "errors": 19,
+      "warnings": 8,
+      "score": 0
+    },
+    "snoqualmie-falls": {
+      "errors": 6,
+      "warnings": 4,
+      "score": 56
+    },
+    "sun-valley-resort": {
+      "errors": 21,
+      "warnings": 7,
+      "score": 0
+    },
+    "suquamish-tribal-grounds": {
+      "errors": 17,
+      "warnings": 7,
+      "score": 0
+    },
+    "tamstslikt-cultural-institute": {
+      "errors": 23,
+      "warnings": 8,
+      "score": 0
+    },
+    "the-goonies-house": {
+      "errors": 23,
+      "warnings": 8,
+      "score": 0
+    },
+    "tillamook-rock-lighthouse": {
+      "errors": 11,
+      "warnings": 5,
+      "score": 24
+    },
+    "treaty-rock": {
+      "errors": 13,
+      "warnings": 6,
+      "score": 10
+    },
+    "underground-seattle": {
+      "errors": 7,
+      "warnings": 3,
+      "score": 52
+    },
+    "vancouver-barracks": {
+      "errors": 8,
+      "warnings": 4,
+      "score": 44
+    },
+    "virginia-city-historic-district": {
+      "errors": 18,
+      "warnings": 5,
+      "score": 0
+    },
+    "vista-house-at-crown-point": {
+      "errors": 20,
+      "warnings": 6,
+      "score": 0
+    },
+    "walla-walla-valley-wine-country": {
+      "errors": 14,
+      "warnings": 6,
+      "score": 4
+    },
+    "whitman-mission-national-historic-site": {
+      "errors": 3,
+      "warnings": 4,
+      "score": 74
+    },
+    "winslow-ferry-terminal": {
+      "errors": 15,
+      "warnings": 8,
+      "score": 0
+    },
+    "yakama-nation-museum": {
+      "errors": 21,
+      "warnings": 8,
+      "score": 0
+    },
+    "yama-village-historic-site": {
+      "errors": 6,
+      "warnings": 4,
+      "score": 56
+    },
+    "yaquina-head-lighthouse": {
+      "errors": 24,
+      "warnings": 8,
+      "score": 0
+    },
+    "ye-olde-curiosity-shop": {
+      "errors": 7,
+      "warnings": 6,
+      "score": 46
+    }
+  }
+}

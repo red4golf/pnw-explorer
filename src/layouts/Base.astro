@@ -1,0 +1,163 @@
+---
+import '../styles/global.css';
+import { media } from '../lib/url';
+import { GOATCOUNTER_CODE, GOOGLE_SITE_VERIFICATION, site } from '../config';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Content media path for the social card, e.g. "/images/locations/x-hero.jpg". */
+  ogImage?: string | null;
+  ogType?: string;
+  /** Keep a page out of the index (admin views). */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'Find historic places worth visiting across the Pacific Northwest, hear their stories, and explore with practical visitor guidance.',
+  ogImage = null,
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+const analyticsEnabled = import.meta.env.PROD && Boolean(GOATCOUNTER_CODE);
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageUrl = new URL(ogImage ? media(ogImage) : '/icons/og-default.png', Astro.site).href;
+
+const path = Astro.url.pathname;
+const current = (h: string) =>
+  h === '/' ? (path === '/' ? 'page' : undefined) : path.startsWith(h) ? 'page' : undefined;
+
+const nav = [
+  { href: '/', label: 'Home', icon: '🏠' },
+  { href: '/map', label: 'Map', icon: '🗺️' },
+  { href: '/categories', label: 'Browse', icon: '🏛️' },
+  { href: '/search', label: 'Search', icon: '🔍' },
+  { href: '/about', label: 'About', icon: 'ℹ️' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    {/* Two theme-colors so the browser chrome matches the palette in use. */}
+    <meta name="theme-color" content="#1f3d2b" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#10201a" media="(prefers-color-scheme: dark)" />
+
+    {GOOGLE_SITE_VERIFICATION && (
+      <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
+    )}
+
+    <meta property="og:site_name" content={site.siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {/* Map tiles come from a third origin; warming the connection early saves a
+        round trip on the one page where the first paint is a network image. */}
+    <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin />
+
+    <slot name="head" />
+
+    {analyticsEnabled && (
+      <script
+        is:inline
+        async
+        data-goatcounter={`https://${GOATCOUNTER_CODE}.goatcounter.com/count`}
+        src="//gc.zgo.at/count.js"></script>
+    )}
+    <script is:inline>
+      // Engagement events. No-ops when analytics is disabled, so callers never
+      // need to check — every call site is `window.pnwTrack?.('name')`.
+      window.pnwTrack = function (name) {
+        try {
+          var gc = window.goatcounter;
+          if (gc && typeof gc.count === 'function') {
+            gc.count({ path: 'evt-' + name, title: 'event: ' + name, event: true });
+          }
+        } catch (e) {
+          /* analytics must never break the page */
+        }
+      };
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" data-pagefind-ignore>
+      <div class="container">
+        <a href="/" class="brand">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2 L4 20 H9 L12 13 L15 20 H20 Z" fill="#c9a227" />
+            <path d="M12 7 L7.5 20 H16.5 Z" fill="#ece1cb" opacity="0.9" />
+          </svg>
+          {site.siteName}
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={current(item.href)}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" data-pagefind-body><slot /></main>
+
+    <footer class="site-footer" data-pagefind-ignore>
+      <div class="container">
+        <div>
+          <strong>{site.siteName}</strong><br />
+          Visitor guides, audio stories, and sourced history for the Pacific Northwest.
+        </div>
+        <div>
+          <a href="/map">Map</a> · <a href="/categories">Categories</a> ·
+          <a href="/about">About</a> · <a href="/offline">Offline</a>
+        </div>
+      </div>
+    </footer>
+
+    <nav class="bottom-nav" aria-label="Primary, mobile" data-pagefind-ignore>
+      {nav.map((item) => (
+        <a href={item.href} aria-current={current(item.href)}>
+          <span class="ico" aria-hidden="true">{item.icon}</span>{item.label}
+        </a>
+      ))}
+    </nav>
+
+    {/* The service worker is generated at build (scripts/build-sw.mjs) so its
+        cache list and version can never drift from what was actually deployed.
+        That also means it does not exist during `astro dev`, so registration is
+        production-only — otherwise every dev page load logs a 404 for a file
+        that was never supposed to be there, and real errors get lost in it. */}
+    {import.meta.env.PROD && (
+      <script is:inline>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').catch(function (err) {
+              console.warn('SW registration failed', err);
+            });
+          });
+        }
+      </script>
+    )}
+  </body>
+</html>

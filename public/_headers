@@ -1,0 +1,38 @@
+# Cloudflare Pages headers.
+
+/*
+  # No third-party scripts run on this site except GoatCounter, and no page
+  # embeds this one. These are cheap to set and expensive to add after an
+  # incident.
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  # Geolocation is same-origin only: the "near me" feature runs on this page and
+  # the coordinates never leave the device.
+  Permissions-Policy: geolocation=(self), camera=(), microphone=(), payment=(), interest-cohort=()
+
+# Hashed build assets are immutable by construction.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Media filenames change when the image changes, so they cache hard too.
+/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The service worker must never be served stale, or a deploy cannot land.
+/sw.js
+  Cache-Control: no-cache
+  Service-Worker-Allowed: /
+
+/sw-killswitch.js
+  Cache-Control: no-cache
+
+# Map and search data: revalidate rather than serving a stale corpus.
+/locations.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Operator dashboard. This is a defence-in-depth header only — the real control
+# is Cloudflare Access in front of the route, plus INCLUDE_ADMIN gating whether
+# it is built at all.
+/admin
+  X-Robots-Tag: noindex, nofollow

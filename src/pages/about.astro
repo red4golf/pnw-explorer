@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import { publishedLocations } from '../lib/publish';
+import { deriveQuality, entryContentHash } from '../lib/quality';
+import { AMAZON_TAG, site } from '../config';
+
+const locations = await publishedLocations();
+const total = locations.length;
+const audioCount = locations.filter((l) => l.data.audio).length;
+const verified = locations.filter(
+  (l) => deriveQuality(l.data.factcheck, entryContentHash(l)).verifiedPublic
+).length;
+---
+
+<Base
+  title="About — PNW Historical Explorer"
+  description="How this guide is researched, how sources are graded, what the verification badge means, and how the site pays for itself."
+>
+  <section class="hero" style="padding-block:clamp(2rem,1rem+3vw,3.25rem)">
+    <div class="container">
+      <p class="eyebrow light">About</p>
+      <h1>How this guide works</h1>
+      <p>{site.tagline}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
+        <h2>What this is</h2>
+        <p>
+          A field guide to {total} places across the Pacific Northwest that are worth pulling off
+          the road for: mill towns that vanished, airfields that made a first, forts that never
+          fired a shot in anger, and landscapes that carry more history than a marker can hold.
+          {audioCount} of them have a narrated version you can save and listen to where there is no
+          signal.
+        </p>
+
+        <h2>How the history is sourced</h2>
+        <p>
+          Every factual claim is meant to trace to a graded source. Sources are ranked in four
+          tiers: primary and official records first (agency documents, National Register
+          nominations, Library of Congress, the Coast Guard, state archives), then peer-reviewed
+          scholarship, then editorially reviewed secondary sources such as HistoryLink and The
+          Oregon Encyclopedia, and tribal institutions for their own history.
+        </p>
+        <p>
+          Wikipedia is never treated as an authority here. It is a finding aid — useful for
+          locating a document, never cited as the document.
+        </p>
+        <p>
+          Where the record contradicts itself, the guide says so and names both sources. Where the
+          record is thin, it says that too. Uncertainty stated plainly is more useful than
+          confidence that turns out to be borrowed.
+        </p>
+
+        <h2>What the verification badge means</h2>
+        <p>
+          {verified} of {total} guides currently carry the “researched and sourced” badge. It means
+          a specific thing: someone worked through the entry claim by claim against graded sources,
+          recorded how many claims were cited, and found no open questions and no neutrality
+          problems. It does <strong>not</strong> mean every sentence is guaranteed true.
+        </p>
+        <p>
+          The badge also expires by itself. Each verified entry stores a fingerprint of the text it
+          was checked against; editing the text changes the fingerprint and the badge drops off
+          automatically until someone reviews it again. A verification claim that outlives the
+          words it verified is worse than no claim at all.
+        </p>
+
+        <h2>Working offline</h2>
+        <p>
+          Pages, images, and map tiles are stored on your device as you browse, so a guide you
+          looked at with signal is still there when you arrive without any. Audio narrations are
+          larger, so they are saved only when you play one or press “Save for offline” — worth
+          doing before you leave the last bar of coverage.
+        </p>
+
+        <h2>Privacy</h2>
+        <p>
+          There is no login, no account, and no advertising network. If you use “find places near
+          me”, the coordinates stay on your device and are used to sort a list; they are never
+          transmitted. Visitor numbers are counted with GoatCounter, which sets no cookies and
+          collects no personal data — which is why there is no cookie banner to dismiss.
+        </p>
+
+        {AMAZON_TAG && (
+          <>
+            <h2>Affiliate disclosure</h2>
+            <p>
+              Book recommendations link to Amazon with an Associates tag, and a qualifying purchase
+              earns a small commission at no extra cost to you. Books are chosen because they are
+              the best sources on the subject; the link is added afterwards, and it never decides
+              what gets recommended.
+            </p>
+          </>
+        )}
+
+        <h2>Corrections</h2>
+        <p>
+          If something here is wrong, it should be fixed. Local knowledge and family records catch
+          things that published sources miss, and a correction with a source behind it is always
+          welcome.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

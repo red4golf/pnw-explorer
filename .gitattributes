@@ -1,0 +1,11 @@
+# Normalise line endings. Content is edited on Windows locally and by Pages CMS
+# on Linux; without this every CMS save rewrites whole files as a diff of one
+# changed line, which destroys the usefulness of content history.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.mp3 binary
