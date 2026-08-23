@@ -79,7 +79,7 @@ export function nearest<T extends Point>(
  * equirectangular projection is accurate to well under a tenth of a mile, which
  * is far below the precision anyone acts on.
  */
-export function distanceToSegment(p: Point, a: Point, b: Point): number {
+export function projectOnSegment(p: Point, a: Point, b: Point): { distance: number; t: number } {
   const scale = Math.cos(toRad((a.lat + b.lat) / 2));
   const px = p.lng * scale;
   const py = p.lat;
@@ -96,8 +96,45 @@ export function distanceToSegment(p: Point, a: Point, b: Point): number {
   const projLat = ay + t * dy;
   const projLng = (ax + t * dx) / scale;
 
-  return distanceMiles(p, { lat: projLat, lng: projLng });
+  return { distance: distanceMiles(p, { lat: projLat, lng: projLng }), t };
 }
+
+export const distanceToSegment = (p: Point, a: Point, b: Point): number =>
+  projectOnSegment(p, a, b).distance;
+
+/**
+ * How far along a path the point's closest approach falls, in miles from the
+ * start.
+ *
+ * This is what orders "stops along the way" correctly. Sorting by straight-line
+ * distance from the origin looks right on a straight drive and goes wrong on
+ * every real one: on a route that rounds a body of water, a place late in the
+ * drive can sit closer to the start than one you passed an hour earlier, so the
+ * list hands you your stops out of order.
+ */
+export function progressAlongPath(p: Point, path: readonly Point[]): number {
+  if (path.length < 2) return 0;
+  let closest = Infinity;
+  let progressAtClosest = 0;
+  let travelled = 0;
+
+  for (let i = 1; i < path.length; i++) {
+    const a = path[i - 1];
+    const b = path[i];
+    const segment = distanceMiles(a, b);
+    const { distance, t } = projectOnSegment(p, a, b);
+    if (distance < closest) {
+      closest = distance;
+      progressAtClosest = travelled + t * segment;
+    }
+    travelled += segment;
+  }
+  return progressAtClosest;
+}
+
+/** Total length of a polyline in miles. */
+export const pathLength = (path: readonly Point[]): number =>
+  path.length < 2 ? 0 : path.slice(1).reduce((sum, pt, i) => sum + distanceMiles(path[i], pt), 0);
 
 /** Shortest distance from a point to any leg of a polyline. */
 export const distanceToPath = (p: Point, path: readonly Point[]): number =>

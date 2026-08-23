@@ -39,17 +39,22 @@ const counts = Object.fromEntries(
           </label>
           <label>Max detour
             <select id="route-detour" style="width:100%;padding:0.55rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:inherit;font:inherit">
-              <option value="10">10 miles</option>
-              <option value="25" selected>25 miles</option>
+              <option value="5">5 miles</option>
+              <option value="10" selected>10 miles</option>
+              <option value="15">15 miles</option>
+              <option value="25">25 miles</option>
               <option value="50">50 miles</option>
             </select>
           </label>
-          <button class="btn" type="submit">Find stops</button>
+          <div style="display:flex;gap:0.5rem">
+            <button class="btn" type="submit">Find stops</button>
+            <button class="btn secondary" type="button" id="route-clear" hidden>Clear results</button>
+          </div>
         </div>
         <p class="muted" style="font-size:0.8rem;margin:0.75rem 0 0">
-          Measured against a straight line between the two points, not a driving route — close
-          enough for a corridor like I-5 or the Columbia Gorge, rough for a drive that loops.
-          Place lookup by OpenStreetMap.
+          Follows the actual driving route, ferries included, so places across water are not
+          counted as nearby when the road goes the long way around. Routing and place lookup by
+          OpenStreetMap.
         </p>
         <p id="route-status" class="status-line" role="status" aria-live="polite"></p>
       </form>
@@ -97,7 +102,7 @@ const counts = Object.fromEntries(
     import markerIcon from 'leaflet/dist/images/marker-icon.png';
     import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
     import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-    import { nearest, formatDistance, distanceToPath, distanceMiles } from '../lib/geo';
+    import { nearest, formatDistance, distanceToPath, progressAlongPath } from '../lib/geo';
 
     /**
      * An explicit icon, NOT L.Icon.Default.mergeOptions.
@@ -201,7 +206,10 @@ const counts = Object.fromEntries(
       });
       activeCategory = btn.dataset.cat!;
       document.getElementById('filter-current')!.textContent = btn.dataset.label!;
-      render(byCategory(activeCategory));
+      // With a route on screen, filtering narrows the stops ALONG that route
+      // rather than silently dropping back to the whole corpus.
+      if (activeRoute) applyRoute();
+      else render(byCategory(activeCategory));
     });
 
     // --- results panel -----------------------------------------------------
@@ -281,7 +289,9 @@ const counts = Object.fromEntries(
     const routeToggle = document.getElementById('route-toggle') as HTMLButtonElement;
     const routeForm = document.getElementById('route-form') as HTMLFormElement;
     const routeStatus = document.getElementById('route-status')!;
+    const routeClear = document.getElementById('route-clear') as HTMLButtonElement;
     let routeLine: L.Polyline | null = null;
+    let routeEnds: L.LayerGroup | null = null;
 
     function openRoute() {
       routeForm.hidden = false;
@@ -308,6 +318,119 @@ const counts = Object.fromEntries(
       return { lat: parseFloat(json[0].lat), lng: parseFloat(json[0].lon) };
     }
 
+    interface DrivingRoute {
+      path: Array<{ lat: number; lng: number }>;
+      miles: number;
+      minutes: number;
+    }
+
+    /**
+     * Real driving geometry from OSRM, on the public instance FOSSGIS runs for
+     * openstreetmap.org.
+     *
+     * A straight line is not an approximation of a drive in this region, it is a
+     * different shape. Seattle to Port Townsend is about 40 miles across the
+     * water and roughly twice that by road, so a straight corridor invents stops
+     * on the far shore and hides the ones actually passed. OSRM's car profile
+     * routes over ferries, which is correct here — in Puget Sound the ferries
+     * ARE the road.
+     *
+     * Cached per session so re-running a search does not re-hit a service
+     * somebody else pays for.
+     */
+    const OSRM = 'https://routing.openstreetmap.de/routed-car/route/v1/driving';
+
+    async function fetchDrivingRoute(
+      from: { lat: number; lng: number },
+      to: { lat: number; lng: number }
+    ): Promise<DrivingRoute | null> {
+      const key = `pnw-route:${from.lat.toFixed(4)},${from.lng.toFixed(4)}>${to.lat.toFixed(4)},${to.lng.toFixed(4)}`;
+      try {
+        const hit = sessionStorage.getItem(key);
+        if (hit) return JSON.parse(hit) as DrivingRoute;
+      } catch {
+        /* private browsing — just fetch */
+      }
+
+      const url = `${OSRM}/${from.lng},${from.lat};${to.lng},${to.lat}?overview=simplified&geometries=geojson`;
+      const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+      if (!res.ok) return null;
+
+      const json = await res.json();
+      if (json.code !== 'Ok' || !json.routes?.length) return null;
+
+      const r = json.routes[0];
+      const route: DrivingRoute = {
+        path: (r.geometry.coordinates as Array<[number, number]>).map(([lng, lat]) => ({ lat, lng })),
+        miles: r.distance / 1609.344,
+        minutes: r.duration / 60,
+      };
+      try {
+        sessionStorage.setItem(key, JSON.stringify(route));
+      } catch {
+        /* quota or private mode — the cache is an optimisation, not a requirement */
+      }
+      return route;
+    }
+
+    /** The route currently drawn, so a category change can re-filter against it. */
+    let activeRoute:
+      | { path: Array<{ lat: number; lng: number }>; label: string; detour: number }
+      | null = null;
+
+    function applyRoute(): number {
+      if (!activeRoute) return 0;
+      const { path, label, detour } = activeRoute;
+
+      const along = byCategory(activeCategory)
+        .map((l) => ({ l, off: distanceToPath(l, path) }))
+        .filter((x) => x.off <= detour)
+        // Ordered by progress ALONG the drive, not by distance from the start —
+        // on a route that rounds water those give different, and wrong, orders.
+        .sort((a, b) => progressAlongPath(a.l, path) - progressAlongPath(b.l, path));
+
+      render(
+        along.map((x) => x.l),
+        false
+      );
+
+      if (!along.length) {
+        results.hidden = true;
+        routeStatus.textContent = `Nothing within ${detour} miles of that route. Try a wider detour.`;
+        return 0;
+      }
+
+      showResults(
+        `Along the way: ${label}`,
+        along.map(({ l, off }) => ({
+          // Anything within half a mile of the road is not a detour worth
+          // quantifying — "0.2 mi off route" invites a decision nobody needs.
+          l,
+          note: off < 0.5 ? 'on the way' : `${formatDistance(off)} off route`,
+        }))
+      );
+      return along.length;
+    }
+
+    function clearRoute() {
+      activeRoute = null;
+      if (routeLine) {
+        map.removeLayer(routeLine);
+        routeLine = null;
+      }
+      if (routeEnds) {
+        map.removeLayer(routeEnds);
+        routeEnds = null;
+      }
+      results.hidden = true;
+      resultsList.innerHTML = '';
+      routeStatus.textContent = '';
+      routeClear.hidden = true;
+      render(byCategory(activeCategory));
+    }
+
+    routeClear.addEventListener('click', clearRoute);
+
     routeForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const fromQ = (document.getElementById('route-from') as HTMLInputElement).value.trim();
@@ -329,41 +452,61 @@ const counts = Object.fromEntries(
           return;
         }
 
-        const path = [from, to];
-        if (routeLine) map.removeLayer(routeLine);
-        routeLine = L.polyline(
-          path.map((p) => [p.lat, p.lng] as [number, number]),
-          { color: '#a14e2c', weight: 4, opacity: 0.75, dashArray: '8 6' }
-        ).addTo(map);
+        routeStatus.textContent = 'Finding the driving route…';
 
-        const along = byCategory(activeCategory)
-          .map((l) => ({ l, off: distanceToPath(l, path) }))
-          .filter((x) => x.off <= detour)
-          // Order by progress along the drive, so the list reads in the order
-          // they will actually be passed rather than by distance from the line.
-          .sort((a, b) => distanceMiles(from, a.l) - distanceMiles(from, b.l));
-
-        if (!along.length) {
-          routeStatus.textContent = `Nothing within ${detour} miles of that line. Try a wider detour.`;
-          return;
+        let route: DrivingRoute | null = null;
+        try {
+          route = await fetchDrivingRoute(from, to);
+        } catch {
+          route = null;
         }
 
-        render(along.map((x) => x.l), false);
-        map.fitBounds(routeLine.getBounds().pad(0.2));
-        routeStatus.textContent = `${along.length} place${along.length === 1 ? '' : 's'} within ${detour} miles of the route.`;
-        showResults(
-          `Along the way: ${fromQ} → ${toQ}`,
-          along.map(({ l, off }) => ({
-            // Anything within half a mile of the line is not a detour worth
-            // quantifying — "0.2 mi off route" invites a decision the reader
-            // does not need to make.
-            l,
-            note: off < 0.5 ? 'on the way' : `${formatDistance(off)} off route`,
-          }))
-        );
+        // Falling back to a straight line beats failing outright, but it is a
+        // materially different answer, so the UI says so rather than quietly
+        // presenting a guess as a route.
+        const path = route ? route.path : [from, to];
+        const label = `${fromQ} → ${toQ}`;
+
+        if (routeLine) map.removeLayer(routeLine);
+        routeLine = L.polyline(
+          path.map((pt) => [pt.lat, pt.lng] as [number, number]),
+          route
+            ? { color: '#a14e2c', weight: 5, opacity: 0.8 }
+            : { color: '#a14e2c', weight: 4, opacity: 0.6, dashArray: '8 6' }
+        ).addTo(map);
+
+        if (routeEnds) map.removeLayer(routeEnds);
+        routeEnds = L.layerGroup(
+          [from, to].map((pt, i) =>
+            L.circleMarker([pt.lat, pt.lng], {
+              radius: 6,
+              color: '#fff',
+              weight: 2,
+              fillColor: '#1f3d2b',
+              fillOpacity: 1,
+            }).bindPopup(i === 0 ? `Start: ${fromQ}` : `End: ${toQ}`)
+          )
+        ).addTo(map);
+
+        activeRoute = { path, label, detour };
+        const found = applyRoute();
+        map.fitBounds(routeLine.getBounds().pad(0.15));
+        routeClear.hidden = false;
+
+        if (found) {
+          const drive = route
+            ? `${Math.round(route.miles)} mi drive, about ${
+                route.minutes >= 90
+                  ? `${Math.floor(route.minutes / 60)} h ${Math.round(route.minutes % 60)} min`
+                  : `${Math.round(route.minutes)} min`
+              }`
+            : 'straight-line estimate — the driving route was unavailable';
+          routeStatus.textContent = `${found} place${found === 1 ? '' : 's'} within ${detour} miles of the route (${drive}).`;
+        }
       } catch {
-        routeStatus.textContent = 'Place lookup is unavailable right now. Try again shortly.';
+        routeStatus.textContent = 'Routing is unavailable right now. Try again shortly.';
       }
     });
+
   </script>
 </Base>

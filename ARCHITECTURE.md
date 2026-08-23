@@ -150,10 +150,24 @@ content systems cannot do it at all.
 ## 11. What was added
 
 - **Route corridor planner.** "What is worth stopping for between Seattle and Portland" is the
-  actual question a road-trip guide exists to answer. `src/lib/geo.ts` computes perpendicular
-  distance to a path; the map geocodes two endpoints and lists everything within a chosen detour,
-  ordered by progress along the drive. It is a straight line, not a driving route, and the UI says
-  so — honest about its limits and genuinely useful for a corridor like I-5.
+  actual question a road-trip guide exists to answer. The map geocodes two endpoints via Nominatim,
+  fetches the real driving geometry from OSRM, and lists everything within a chosen detour of that
+  polyline, ordered by progress along the drive.
+
+  It shipped first as a straight line between the endpoints, which was wrong in a way worth
+  recording: in Puget Sound a straight line is not an approximation of a drive, it is a different
+  shape. Seattle to Port Townsend is about 40 miles across the water and 111 by road, because the
+  route runs south around the Sound through Tacoma and back north up the Kitsap Peninsula. The
+  straight corridor invented stops on the far shore and hid every one actually passed. OSRM's car
+  profile routes over ferries, which is right here — in this region the ferries *are* the road.
+
+  Ordering needs the same care: `progressAlongPath` sorts by distance travelled along the route,
+  not by distance from the origin. On any drive that rounds water the two disagree, and sorting by
+  the latter hands the reader their stops out of order.
+
+  If routing is unavailable the planner falls back to the straight line, draws it dashed rather
+  than solid, and says in words that it is an estimate — degraded, and visibly so, rather than a
+  guess wearing a route's clothes.
 - **Build-time "nearby"** on every location page: the three closest other places with distance and
   bearing. Free on a static site; the old build only offered "view on the map".
 - **Dark mode.** This is read in a parked car at dusk. A cream page at full brightness is
