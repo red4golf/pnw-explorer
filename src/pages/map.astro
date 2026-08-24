@@ -52,12 +52,17 @@ const counts = Object.fromEntries(
           </div>
         </div>
         <p class="muted" style="font-size:0.8rem;margin:0.75rem 0 0">
-          Detour is measured in driving time out and back, not map distance — across water those
-          are wildly different things, and only one of them tells you whether to stop. Ferries are
-          used where they are the only link and flagged when the route sails, but the router tends
-          to prefer driving around even when sailing is quicker, and schedules and terminal waits
-          are never counted. Check sailing times yourself. Routing and place lookup by
-          OpenStreetMap.
+          Detour is measured in driving time via each place, not map distance — across water those
+          are wildly different things, and only one of them tells you whether to stop.
+          <br /><br />
+          <strong>Ferries are a known gap.</strong> The router handles Mukilteo–Clinton,
+          Fauntleroy–Vashon, Coupeville–Port Townsend and the San Juans, and flags the route when it
+          sails. It does not know the <strong>Seattle–Bainbridge</strong>,
+          <strong>Edmonds–Kingston</strong> or <strong>Seattle–Bremerton</strong> crossings at all,
+          so for those it drives the long way round — 129 minutes for a 35-minute sailing — and
+          every detour on that side of the water is overstated as a result. Sailing times and
+          terminal waits are never counted either. Check the WSF schedule. Routing and place lookup
+          by OpenStreetMap.
         </p>
         <p id="route-status" class="status-line" role="status" aria-live="polite"></p>
       </form>
@@ -105,7 +110,7 @@ const counts = Object.fromEntries(
     import markerIcon from 'leaflet/dist/images/marker-icon.png';
     import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
     import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-    import { nearest, formatDistance, nearestOnPath } from '../lib/geo';
+    import { nearest, formatDistance, nearestOnPath, distanceMiles } from '../lib/geo';
 
     /**
      * An explicit icon, NOT L.Icon.Default.mergeOptions.
@@ -725,9 +730,19 @@ const counts = Object.fromEntries(
               }`
             : 'straight-line estimate — the driving route was unavailable';
 
+          // A route that runs far longer than the crow flies, without sailing, has
+          // almost certainly driven around water in a region where a ferry
+          // exists. 2.5x is well past anything a mountain detour produces here,
+          // and Seattle to Bainbridge scores about 11.
+          const crow = distanceMiles(from, to);
+          const drivesAround =
+            route && !route.usesFerry && crow > 3 && route.miles / crow >= 2.5;
+
           const ferryNote = route?.usesFerry
             ? ' ⛴ This route sails — the drive time excludes the crossing and any wait at the terminal.'
-            : '';
+            : drivesAround
+              ? ` ⚠ This route drives ${Math.round(route!.miles / crow)}× further than the direct line without using a ferry. A crossing is probably quicker — the router does not know Seattle–Bainbridge, Edmonds–Kingston or Seattle–Bremerton. Check the WSF schedule; detours here are overstated.`
+              : '';
           const budgetNote = timed
             ? `within ${budget} minutes of the route`
             : `near the route (detour times unavailable, so these are by map distance)`;
