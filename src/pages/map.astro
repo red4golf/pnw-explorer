@@ -441,15 +441,29 @@ const counts = Object.fromEntries(
      * Still one table request. The matrix is asked for with the start and every
      * candidate as sources, and every candidate plus the end as destinations, so
      * row 0 gives start->place and the last column gives place->end.
+     *
+     * Row 0 doubles as the ordering key. Sorting by geometric progress along the
+     * line puts a place where the road passes CLOSEST to it, which for anything
+     * across water is nowhere near where you actually reach it: on a Bainbridge
+     * to Moses Lake run the whole of downtown Seattle scored a progress of zero,
+     * because the nearest approach is back at the start across Elliott Bay, and
+     * the list claimed you would pass Pike Place before leaving the island.
      */
     const TABLE_LIMIT = 45; // public OSRM instances cap total coordinates
 
-    async function fetchDetourMinutes(
+    interface DetourTime {
+      /** Extra minutes the whole trip costs if you go via this place. */
+      detour: number;
+      /** Driving minutes from the start to this place — i.e. when you reach it. */
+      fromStart: number;
+    }
+
+    async function fetchDetourTimes(
       start: { lat: number; lng: number },
       targets: Array<{ lat: number; lng: number }>,
       end: { lat: number; lng: number },
       baselineMinutes: number
-    ): Promise<number[] | null> {
+    ): Promise<DetourTime[] | null> {
       const n = targets.length;
       if (!n || n > TABLE_LIMIT) return null;
 
@@ -470,10 +484,15 @@ const counts = Object.fromEntries(
       return targets.map((_, i) => {
         const out = startToPlace[i];
         const back = json.durations[i + 1]?.[n];
-        if (typeof out !== 'number' || typeof back !== 'number') return NaN;
-        // Never negative: a place genuinely on the route can measure a few
-        // seconds "faster" than the baseline through routing noise.
-        return Math.max(0, (out + back) / 60 - baselineMinutes);
+        if (typeof out !== 'number' || typeof back !== 'number') {
+          return { detour: NaN, fromStart: NaN };
+        }
+        return {
+          // Never negative: a place genuinely on the route can measure a few
+          // seconds "faster" than the baseline through routing noise.
+          detour: Math.max(0, (out + back) / 60 - baselineMinutes),
+          fromStart: out / 60,
+        };
       });
     }
 
@@ -529,15 +548,21 @@ const counts = Object.fromEntries(
 
       const title = `Along the way: ${label}`;
 
-      const finish = (rows: Array<{ l: Loc; near: any; minutes: number }>, timed: boolean) => {
-        // Ordered by progress ALONG the drive. Ties are real and common: every
-        // place whose closest approach is the route's first point scores zero,
-        // so without a tiebreak the list silently falls back to alphabetical.
-        rows.sort(
-          (a, b) =>
-            a.near.progress - b.near.progress ||
-            (Number.isFinite(a.minutes) ? a.minutes : a.near.distance) -
-              (Number.isFinite(b.minutes) ? b.minutes : b.near.distance)
+      const finish = (
+        rows: Array<{ l: Loc; near: any; minutes: number; fromStart: number }>,
+        timed: boolean
+      ) => {
+        // Ordered by when you actually REACH each place — driving minutes from
+        // the start. Geometric progress along the line is the wrong key: it
+        // places a stop where the road runs closest to it, which across water is
+        // nowhere near where you get to it, and it produces huge ties (every
+        // place nearest the route's first point scores exactly zero) that then
+        // fall back to alphabetical. Distance is only the fallback when no
+        // driving times are available.
+        rows.sort((a, b) =>
+          Number.isFinite(a.fromStart) && Number.isFinite(b.fromStart)
+            ? a.fromStart - b.fromStart
+            : a.near.progress - b.near.progress || a.near.distance - b.near.distance
         );
         render(
           rows.map((x) => x.l),
@@ -560,34 +585,34 @@ const counts = Object.fromEntries(
         return { count: 0, timed: true };
       }
 
-      let minutes: number[] | null = null;
+      let times: DetourTime[] | null = null;
       if (baselineMinutes !== null) {
         try {
-          minutes = await fetchDetourMinutes(
+          times = await fetchDetourTimes(
             start,
             shortlist.map((x) => x.l),
             end,
             baselineMinutes
           );
         } catch {
-          minutes = null;
+          times = null;
         }
       }
 
       if (!activeRoute) return { count: 0, timed: false };
 
-      if (!minutes) {
+      if (!times) {
         // No driving times available, so the time budget cannot be honoured.
         // Fall back to the geometric shortlist and say so rather than pretending
         // the numbers mean what they usually mean.
         return finish(
-          shortlist.map((x) => ({ ...x, minutes: NaN })),
+          shortlist.map((x) => ({ ...x, minutes: NaN, fromStart: NaN })),
           false
         );
       }
 
       const withinBudget = shortlist
-        .map((x, i) => ({ ...x, minutes: minutes![i] }))
+        .map((x, i) => ({ ...x, minutes: times![i].detour, fromStart: times![i].fromStart }))
         .filter((x) => Number.isFinite(x.minutes) && x.minutes <= budget);
 
       if (!withinBudget.length) {

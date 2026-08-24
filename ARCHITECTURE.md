@@ -190,11 +190,21 @@ content systems cannot do it at all.
   upper bound on how far out a place can be and still fit; it over-includes on purpose, and real
   driving times do the actual filtering.
 
-  Ordering needed a tiebreak for the same reason. Every place whose closest approach is the route's
-  first point scores a progress of exactly zero — twelve of twenty-one in that query — and a stable
-  sort with nothing to discriminate on falls back to input order, which is alphabetical. It sorted
-  Bruce Lee, Camp Yeomalt, Fort Ward, Japanese American Exclusion Memorial and looked deliberate.
-  Ties now break on detour time.
+  Ordering went the same way, and the first fix was a plaster. Sorting by geometric progress along
+  the line places a stop where the road runs *closest* to it, which for anything across water is
+  nowhere near where you actually reach it. Every place nearest the route's first point scores
+  exactly zero, so a stable sort with nothing left to compare fell back to input order — which is
+  alphabetical, and looked deliberate: Bruce Lee, Camp Yeomalt, Fort Ward, Japanese American
+  Exclusion Memorial. Breaking ties on detour time hid that without curing it: on a Bainbridge to
+  Moses Lake run the whole of downtown Seattle still scored zero progress, because the nearest
+  approach is back at the start across Elliott Bay, and the list claimed you would pass Pike Place
+  before leaving the island.
+
+  Stops are now ordered by **driving time from the start** — row 0 of the same table request, so it
+  costs nothing extra. That is when you actually reach a place, ties are vanishingly rare, and the
+  Moses Lake list now reads as the drive really goes: around Bainbridge, Port Gamble, south through
+  Tacoma, north through south Seattle, downtown, then east on I-90 to Bellevue and Snoqualmie.
+  Geometric progress survives only as the fallback for when no driving times are available.
 
   **What was measured about ferries**, rather than assumed. OSRM does route over them: Anacortes to
   Friday Harbor returns a `mode: "ferry"` step, because no bridge exists. But where a land route
