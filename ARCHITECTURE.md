@@ -158,12 +158,29 @@ content systems cannot do it at all.
   recording: in Puget Sound a straight line is not an approximation of a drive, it is a different
   shape. Seattle to Port Townsend is about 40 miles across the water and 111 by road, because the
   route runs south around the Sound through Tacoma and back north up the Kitsap Peninsula. The
-  straight corridor invented stops on the far shore and hid every one actually passed. OSRM's car
-  profile routes over ferries, which is right here — in this region the ferries *are* the road.
+  straight corridor invented stops on the far shore and hid every one actually passed.
 
-  Ordering needs the same care: `progressAlongPath` sorts by distance travelled along the route,
-  not by distance from the origin. On any drive that rounds water the two disagree, and sorting by
+  Ordering needs the same care: `nearestOnPath` returns distance, the point where you would leave
+  the road, and progress along the drive in one traversal, and stops are sorted by progress rather
+  than by distance from the origin. On any drive that rounds water the two disagree, and sorting by
   the latter hands the reader their stops out of order.
+
+  **Detour cost is time, not distance.** Two miles from the road across a river can be twenty
+  minutes each way. After the distance filter shortlists candidates, one call to OSRM's `table`
+  service returns driving time from each departure point to each place; doubling it gives the round
+  trip. The list renders on distance immediately and upgrades in place when the times land, so a
+  second network round trip never blocks the result. On an Anacortes–Friday Harbor route this is
+  the difference between "Clayton Beach, 12 miles off route" and "about 95 minutes out of your
+  way" — the same place, and only one of those descriptions is useful.
+
+  **What was measured about ferries**, rather than assumed. OSRM does route over them: Anacortes to
+  Friday Harbor returns a `mode: "ferry"` step, because no bridge exists. But where a land route
+  also exists it tends to prefer driving around — Seattle to Bainbridge comes back as 92 miles and
+  two hours rather than the ferry. And `exclude=ferry` is rejected outright by this instance
+  ("Exclude flag combination is not supported"), for motorways too. So there is no avoid-ferries
+  toggle: one was built, found to fail on every request, and removed rather than shipped as a
+  control that silently does nothing. What ships instead is detection — the route says when it
+  sails, and says that the crossing and terminal wait are not in the number.
 
   If routing is unavailable the planner falls back to the straight line, draws it dashed rather
   than solid, and says in words that it is an estimate — degraded, and visibly so, rather than a

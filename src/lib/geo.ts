@@ -102,20 +102,32 @@ export function projectOnSegment(p: Point, a: Point, b: Point): { distance: numb
 export const distanceToSegment = (p: Point, a: Point, b: Point): number =>
   projectOnSegment(p, a, b).distance;
 
+export interface NearestOnPath {
+  /** The point on the path closest to the query point. */
+  point: Point;
+  /** Straight-line miles from the query point to that point. */
+  distance: number;
+  /** Miles travelled along the path to reach it, from the start. */
+  progress: number;
+}
+
 /**
- * How far along a path the point's closest approach falls, in miles from the
- * start.
+ * Closest approach of a point to a polyline: where on the line it is, how far
+ * away, and how far along.
  *
- * This is what orders "stops along the way" correctly. Sorting by straight-line
- * distance from the origin looks right on a straight drive and goes wrong on
- * every real one: on a route that rounds a body of water, a place late in the
- * drive can sit closer to the start than one you passed an hour earlier, so the
- * list hands you your stops out of order.
+ * `point` is what makes a real detour cost computable — it is the place you
+ * would actually leave the road, so routing from there to the destination and
+ * back is the detour. `progress` is what orders stops correctly: sorting by
+ * straight-line distance from the origin looks right on a straight drive and
+ * goes wrong on every real one, because on a route that rounds water a place
+ * late in the drive can sit closer to the start than one passed an hour
+ * earlier.
  */
-export function progressAlongPath(p: Point, path: readonly Point[]): number {
-  if (path.length < 2) return 0;
-  let closest = Infinity;
-  let progressAtClosest = 0;
+export function nearestOnPath(p: Point, path: readonly Point[]): NearestOnPath {
+  if (!path.length) return { point: p, distance: Infinity, progress: 0 };
+  if (path.length === 1) return { point: path[0], distance: distanceMiles(p, path[0]), progress: 0 };
+
+  let best: NearestOnPath = { point: path[0], distance: Infinity, progress: 0 };
   let travelled = 0;
 
   for (let i = 1; i < path.length; i++) {
@@ -123,14 +135,21 @@ export function progressAlongPath(p: Point, path: readonly Point[]): number {
     const b = path[i];
     const segment = distanceMiles(a, b);
     const { distance, t } = projectOnSegment(p, a, b);
-    if (distance < closest) {
-      closest = distance;
-      progressAtClosest = travelled + t * segment;
+    if (distance < best.distance) {
+      best = {
+        point: { lat: a.lat + t * (b.lat - a.lat), lng: a.lng + t * (b.lng - a.lng) },
+        distance,
+        progress: travelled + t * segment,
+      };
     }
     travelled += segment;
   }
-  return progressAtClosest;
+  return best;
 }
+
+/** Miles along the path to the point's closest approach. */
+export const progressAlongPath = (p: Point, path: readonly Point[]): number =>
+  nearestOnPath(p, path).progress;
 
 /** Total length of a polyline in miles. */
 export const pathLength = (path: readonly Point[]): number =>
@@ -138,11 +157,7 @@ export const pathLength = (path: readonly Point[]): number =>
 
 /** Shortest distance from a point to any leg of a polyline. */
 export const distanceToPath = (p: Point, path: readonly Point[]): number =>
-  path.length < 2
-    ? path.length === 1
-      ? distanceMiles(p, path[0])
-      : Infinity
-    : Math.min(...path.slice(1).map((pt, i) => distanceToSegment(p, path[i], pt)));
+  nearestOnPath(p, path).distance;
 
 /** Bounding box of a set of points, padded by a margin in degrees. */
 export function boundsOf(points: readonly Point[], pad = 0.25) {

@@ -52,9 +52,11 @@ const counts = Object.fromEntries(
           </div>
         </div>
         <p class="muted" style="font-size:0.8rem;margin:0.75rem 0 0">
-          Follows the actual driving route, ferries included, so places across water are not
-          counted as nearby when the road goes the long way around. Routing and place lookup by
-          OpenStreetMap.
+          Follows the actual driving route, so places across water are not counted as nearby when
+          the road goes the long way around. Ferries are used where they are the only link, and
+          flagged when the route sails — but the router tends to prefer driving around even when
+          sailing would be quicker, and ferry schedules and terminal waits are never counted. Check
+          the sailing times yourself. Routing and place lookup by OpenStreetMap.
         </p>
         <p id="route-status" class="status-line" role="status" aria-live="polite"></p>
       </form>
@@ -102,7 +104,7 @@ const counts = Object.fromEntries(
     import markerIcon from 'leaflet/dist/images/marker-icon.png';
     import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
     import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-    import { nearest, formatDistance, distanceToPath, progressAlongPath } from '../lib/geo';
+    import { nearest, formatDistance, nearestOnPath } from '../lib/geo';
 
     /**
      * An explicit icon, NOT L.Icon.Default.mergeOptions.
@@ -148,6 +150,26 @@ const counts = Object.fromEntries(
     let markers: Record<string, L.Marker> = {};
     let activeCategory = 'all';
 
+    /** Hand off to the phone's map app for actual turn-by-turn navigation. */
+    const directionsUrl = (l: { lat: number; lng: number }) =>
+      `https://www.google.com/maps/dir/?api=1&destination=${l.lat},${l.lng}`;
+
+    // "Route here" inside a popup drops the place into the destination field and
+    // runs the search, which is the shortest path from "this looks interesting"
+    // to "show me what else is on the way".
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement)?.closest?.('[data-set-destination]') as HTMLElement | null;
+      if (!btn) return;
+      const hit = all.find((x) => x.slug === btn.dataset.setDestination);
+      if (!hit) return;
+      openRoute();
+      (document.getElementById('route-to') as HTMLInputElement).value = hit.title;
+      const fromField = document.getElementById('route-from') as HTMLInputElement;
+      if (fromField.value.trim()) routeForm.requestSubmit();
+      else fromField.focus();
+      map.closePopup();
+    });
+
     function popupHtml(l: Loc) {
       const img = l.card
         ? `<img src="${l.card}" alt="" style="width:100%;height:110px;object-fit:cover;border-radius:6px;margin-bottom:6px"${
@@ -158,7 +180,12 @@ const counts = Object.fromEntries(
       return `${img}<strong style="font-size:1rem">${l.title}</strong><br>
         <span style="color:#5a5246;font-size:0.8rem">${meta}</span>
         <p style="margin:6px 0;font-size:0.85rem">${l.summary}</p>
-        <a href="/locations/${l.slug}" style="font-weight:600">Read the full story →</a>`;
+        <a href="/locations/${l.slug}" style="font-weight:600">Read the full story →</a><br>
+        <a href="${directionsUrl(l)}" target="_blank" rel="noopener" style="font-size:0.85rem">🧭 Directions</a>
+        <button type="button" data-set-destination="${l.slug}"
+                style="margin-left:0.5rem;font:inherit;font-size:0.85rem;background:none;border:0;padding:0;color:inherit;text-decoration:underline;cursor:pointer">
+          Route here
+        </button>`;
     }
 
     function render(subset: Loc[], fit = true) {
@@ -208,7 +235,7 @@ const counts = Object.fromEntries(
       document.getElementById('filter-current')!.textContent = btn.dataset.label!;
       // With a route on screen, filtering narrows the stops ALONG that route
       // rather than silently dropping back to the whole corpus.
-      if (activeRoute) applyRoute();
+      if (activeRoute) void applyRoute();
       else render(byCategory(activeCategory));
     });
 
@@ -224,6 +251,8 @@ const counts = Object.fromEntries(
           ({ l, note }) => `<li>
             <span><a href="/locations/${l.slug}">${l.title}</a>
               <span class="muted" style="font-size:0.85rem"> · ${l.category}${l.hasAudio ? ' · 🎧' : ''}</span>
+              <a href="${directionsUrl(l)}" target="_blank" rel="noopener"
+                 style="font-size:0.85rem;margin-left:0.4rem">🧭 Directions</a>
             </span>
             <span class="dist">${note}</span>
           </li>`
@@ -322,6 +351,8 @@ const counts = Object.fromEntries(
       path: Array<{ lat: number; lng: number }>;
       miles: number;
       minutes: number;
+      /** Whether the chosen route crosses on a ferry. */
+      usesFerry: boolean;
     }
 
     /**
@@ -338,7 +369,7 @@ const counts = Object.fromEntries(
      * Cached per session so re-running a search does not re-hit a service
      * somebody else pays for.
      */
-    const OSRM = 'https://routing.openstreetmap.de/routed-car/route/v1/driving';
+    const OSRM = 'https://routing.openstreetmap.de/routed-car';
 
     async function fetchDrivingRoute(
       from: { lat: number; lng: number },
@@ -352,7 +383,21 @@ const counts = Object.fromEntries(
         /* private browsing — just fetch */
       }
 
-      const url = `${OSRM}/${from.lng},${from.lat};${to.lng},${to.lat}?overview=simplified&geometries=geojson`;
+      // steps=true so ferry legs can be detected: OSRM marks them mode:"ferry",
+      // and in Puget Sound whether the route sails matters more to a traveller
+      // than almost anything else about it.
+      //
+      // No `exclude=ferry` here: this instance rejects the exclude parameter
+      // outright ("Exclude flag combination is not supported"), for ferries and
+      // motorways alike. An avoid-ferries toggle would have failed every time,
+      // and silently — so it is not offered rather than offered and broken.
+      const params = new URLSearchParams({
+        overview: 'simplified',
+        geometries: 'geojson',
+        steps: 'true',
+      });
+
+      const url = `${OSRM}/route/v1/driving/${from.lng},${from.lat};${to.lng},${to.lat}?${params}`;
       const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
       if (!res.ok) return null;
 
@@ -360,10 +405,15 @@ const counts = Object.fromEntries(
       if (json.code !== 'Ok' || !json.routes?.length) return null;
 
       const r = json.routes[0];
+      const usesFerry = (r.legs ?? []).some((leg: any) =>
+        (leg.steps ?? []).some((step: any) => step.mode === 'ferry')
+      );
+
       const route: DrivingRoute = {
         path: (r.geometry.coordinates as Array<[number, number]>).map(([lng, lat]) => ({ lat, lng })),
         miles: r.distance / 1609.344,
         minutes: r.duration / 60,
+        usesFerry,
       };
       try {
         sessionStorage.setItem(key, JSON.stringify(route));
@@ -373,21 +423,77 @@ const counts = Object.fromEntries(
       return route;
     }
 
+    /**
+     * Real added driving time for each candidate detour, in minutes.
+     *
+     * Distance from the road is a poor proxy for what it costs to stop: two
+     * miles away across a river can be twenty minutes each way. This asks OSRM's
+     * table service for the driving time from the point where you would leave
+     * the route to the place itself, one request for the whole shortlist, and
+     * doubles it for the return.
+     *
+     * Doubling assumes the way back costs what the way out did. One-way systems
+     * and divided highways break that slightly; it is far closer than measuring
+     * a straight line, and the UI says "about".
+     */
+    const TABLE_LIMIT = 45; // public OSRM instances cap total coordinates
+
+    async function fetchDetourMinutes(
+      anchors: Array<{ lat: number; lng: number }>,
+      targets: Array<{ lat: number; lng: number }>
+    ): Promise<number[] | null> {
+      if (!anchors.length || anchors.length > TABLE_LIMIT) return null;
+      const n = anchors.length;
+      const coords = [...anchors, ...targets].map((p) => `${p.lng},${p.lat}`).join(';');
+      const sources = Array.from({ length: n }, (_, i) => i).join(';');
+      const destinations = Array.from({ length: n }, (_, i) => n + i).join(';');
+
+      const url = `${OSRM}/table/v1/driving/${coords}?sources=${sources}&destinations=${destinations}&annotations=duration`;
+      const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+      if (!res.ok) return null;
+
+      const json = await res.json();
+      if (json.code !== 'Ok' || !Array.isArray(json.durations)) return null;
+
+      // durations[i][i] is anchor i -> target i; the rest of the matrix is not
+      // needed, but one request beats one per candidate.
+      const ROUND_TRIP = 2;
+      return json.durations.map((row: Array<number | null>, i: number) =>
+        typeof row?.[i] === 'number' ? ((row[i] as number) / 60) * ROUND_TRIP : NaN
+      );
+    }
+
     /** The route currently drawn, so a category change can re-filter against it. */
     let activeRoute:
       | { path: Array<{ lat: number; lng: number }>; label: string; detour: number }
       | null = null;
 
-    function applyRoute(): number {
+    /**
+     * How far out of your way a stop is.
+     *
+     * Prefers real driving minutes when the table service answered. Distance
+     * from the road is the fallback, and a poor proxy: two miles away across a
+     * river can be twenty minutes each way.
+     */
+    function detourNote(miles: number, minutes: number): string {
+      if (Number.isFinite(minutes)) {
+        // Under a couple of minutes is not a detour anyone weighs up.
+        return minutes < 2 ? 'on the way' : `about ${Math.round(minutes)} min out of your way`;
+      }
+      return miles < 0.5 ? 'on the way' : `${formatDistance(miles)} off route`;
+    }
+
+    async function applyRoute(): Promise<number> {
       if (!activeRoute) return 0;
       const { path, label, detour } = activeRoute;
 
+      // One traversal yields distance, the point where you would leave the road,
+      // and progress along the drive. Ordered by progress, NOT by distance from
+      // the start — on a route that rounds water those disagree.
       const along = byCategory(activeCategory)
-        .map((l) => ({ l, off: distanceToPath(l, path) }))
-        .filter((x) => x.off <= detour)
-        // Ordered by progress ALONG the drive, not by distance from the start —
-        // on a route that rounds water those give different, and wrong, orders.
-        .sort((a, b) => progressAlongPath(a.l, path) - progressAlongPath(b.l, path));
+        .map((l) => ({ l, near: nearestOnPath(l, path) }))
+        .filter((x) => x.near.distance <= detour)
+        .sort((a, b) => a.near.progress - b.near.progress);
 
       render(
         along.map((x) => x.l),
@@ -400,15 +506,30 @@ const counts = Object.fromEntries(
         return 0;
       }
 
+      // Render immediately on distance, then upgrade in place once the real
+      // driving times land. Waiting on a second network round trip before
+      // showing anything would make the whole feature feel broken.
+      const title = `Along the way: ${label}`;
       showResults(
-        `Along the way: ${label}`,
-        along.map(({ l, off }) => ({
-          // Anything within half a mile of the road is not a detour worth
-          // quantifying — "0.2 mi off route" invites a decision nobody needs.
-          l,
-          note: off < 0.5 ? 'on the way' : `${formatDistance(off)} off route`,
-        }))
+        title,
+        along.map(({ l, near }) => ({ l, note: detourNote(near.distance, NaN) }))
       );
+
+      try {
+        const minutes = await fetchDetourMinutes(
+          along.map((x) => x.near.point),
+          along.map((x) => x.l)
+        );
+        if (minutes && activeRoute) {
+          showResults(
+            title,
+            along.map(({ l, near }, i) => ({ l, note: detourNote(near.distance, minutes[i]) }))
+          );
+        }
+      } catch {
+        /* keep the distance-based notes */
+      }
+
       return along.length;
     }
 
@@ -489,9 +610,9 @@ const counts = Object.fromEntries(
         ).addTo(map);
 
         activeRoute = { path, label, detour };
-        const found = applyRoute();
         map.fitBounds(routeLine.getBounds().pad(0.15));
         routeClear.hidden = false;
+        const found = await applyRoute();
 
         if (found) {
           const drive = route
@@ -501,7 +622,13 @@ const counts = Object.fromEntries(
                   : `${Math.round(route.minutes)} min`
               }`
             : 'straight-line estimate — the driving route was unavailable';
-          routeStatus.textContent = `${found} place${found === 1 ? '' : 's'} within ${detour} miles of the route (${drive}).`;
+
+          const ferryNote = route?.usesFerry
+            ? ' ⛴ This route sails — the drive time excludes the crossing and any wait at the terminal.'
+            : '';
+          routeStatus.textContent =
+            `${found} place${found === 1 ? '' : 's'} within ${detour} miles of the route (${drive}).` +
+            ferryNote;
         }
       } catch {
         routeStatus.textContent = 'Routing is unavailable right now. Try again shortly.';
