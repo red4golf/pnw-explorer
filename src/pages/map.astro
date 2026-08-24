@@ -425,29 +425,39 @@ const counts = Object.fromEntries(
     }
 
     /**
-     * Real added driving time for each candidate detour, in minutes.
+     * How much longer the whole trip takes if you go via each place, in minutes.
      *
-     * Distance from the road is a poor proxy for what it costs to stop: two
-     * miles away across a river can be twenty minutes each way. This asks OSRM's
-     * table service for the driving time from the point where you would leave
-     * the route to the place itself, one request for the whole shortlist, and
-     * doubles it for the return.
+     *     detour = time(start -> place -> end) - time(start -> end)
      *
-     * Doubling assumes the way back costs what the way out did. One-way systems
-     * and divided highways break that slightly; it is far closer than measuring
-     * a straight line, and the UI says "about".
+     * This is the question a traveller is actually asking, and it is not the
+     * same as the round trip from the nearest point on the road. An earlier
+     * version measured "leave the route here, drive there, drive back to the
+     * same spot", which invents a return leg that does not exist when the place
+     * sits at your destination: Fort Nisqually, inside the destination city on a
+     * Bainbridge-to-Tacoma run, was reported as 39 minutes out of the way when
+     * going via it costs 25. Across water the overstatement was far worse —
+     * Pike Place came out at 248 minutes against a true 87.
+     *
+     * Still one table request. The matrix is asked for with the start and every
+     * candidate as sources, and every candidate plus the end as destinations, so
+     * row 0 gives start->place and the last column gives place->end.
      */
     const TABLE_LIMIT = 45; // public OSRM instances cap total coordinates
 
     async function fetchDetourMinutes(
-      anchors: Array<{ lat: number; lng: number }>,
-      targets: Array<{ lat: number; lng: number }>
+      start: { lat: number; lng: number },
+      targets: Array<{ lat: number; lng: number }>,
+      end: { lat: number; lng: number },
+      baselineMinutes: number
     ): Promise<number[] | null> {
-      if (!anchors.length || anchors.length > TABLE_LIMIT) return null;
-      const n = anchors.length;
-      const coords = [...anchors, ...targets].map((p) => `${p.lng},${p.lat}`).join(';');
-      const sources = Array.from({ length: n }, (_, i) => i).join(';');
-      const destinations = Array.from({ length: n }, (_, i) => n + i).join(';');
+      const n = targets.length;
+      if (!n || n > TABLE_LIMIT) return null;
+
+      const coords = [start, ...targets, end].map((p) => `${p.lng},${p.lat}`).join(';');
+      // sources: the start (0) and every candidate (1..n)
+      const sources = [0, ...Array.from({ length: n }, (_, i) => i + 1)].join(';');
+      // destinations: every candidate (1..n) then the end (n+1)
+      const destinations = [...Array.from({ length: n }, (_, i) => i + 1), n + 1].join(';');
 
       const url = `${OSRM}/table/v1/driving/${coords}?sources=${sources}&destinations=${destinations}&annotations=duration`;
       const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
@@ -456,17 +466,28 @@ const counts = Object.fromEntries(
       const json = await res.json();
       if (json.code !== 'Ok' || !Array.isArray(json.durations)) return null;
 
-      // durations[i][i] is anchor i -> target i; the rest of the matrix is not
-      // needed, but one request beats one per candidate.
-      const ROUND_TRIP = 2;
-      return json.durations.map((row: Array<number | null>, i: number) =>
-        typeof row?.[i] === 'number' ? ((row[i] as number) / 60) * ROUND_TRIP : NaN
-      );
+      const startToPlace: Array<number | null> = json.durations[0] ?? [];
+      return targets.map((_, i) => {
+        const out = startToPlace[i];
+        const back = json.durations[i + 1]?.[n];
+        if (typeof out !== 'number' || typeof back !== 'number') return NaN;
+        // Never negative: a place genuinely on the route can measure a few
+        // seconds "faster" than the baseline through routing noise.
+        return Math.max(0, (out + back) / 60 - baselineMinutes);
+      });
     }
 
     /** The route currently drawn, so a category change can re-filter against it. */
     let activeRoute:
-      | { path: Array<{ lat: number; lng: number }>; label: string; budget: number }
+      | {
+          path: Array<{ lat: number; lng: number }>;
+          label: string;
+          budget: number;
+          start: { lat: number; lng: number };
+          end: { lat: number; lng: number };
+          /** Trip time without any stop; null when routing fell back to a straight line. */
+          baselineMinutes: number | null;
+        }
       | null = null;
 
     /**
@@ -495,7 +516,7 @@ const counts = Object.fromEntries(
 
     async function applyRoute(): Promise<{ count: number; timed: boolean }> {
       if (!activeRoute) return { count: 0, timed: false };
-      const { path, label, budget } = activeRoute;
+      const { path, label, budget, start, end, baselineMinutes } = activeRoute;
 
       // One traversal yields distance, the point where you would leave the road,
       // and progress along the drive.
@@ -540,13 +561,17 @@ const counts = Object.fromEntries(
       }
 
       let minutes: number[] | null = null;
-      try {
-        minutes = await fetchDetourMinutes(
-          shortlist.map((x) => x.near.point),
-          shortlist.map((x) => x.l)
-        );
-      } catch {
-        minutes = null;
+      if (baselineMinutes !== null) {
+        try {
+          minutes = await fetchDetourMinutes(
+            start,
+            shortlist.map((x) => x.l),
+            end,
+            baselineMinutes
+          );
+        } catch {
+          minutes = null;
+        }
       }
 
       if (!activeRoute) return { count: 0, timed: false };
@@ -651,7 +676,16 @@ const counts = Object.fromEntries(
           )
         ).addTo(map);
 
-        activeRoute = { path, label, budget };
+        activeRoute = {
+          path,
+          label,
+          budget,
+          start: from,
+          end: to,
+          // Without a real route there is no trip time to subtract, so detour
+          // minutes are not computable and the list falls back to distance.
+          baselineMinutes: route ? route.minutes : null,
+        };
         map.fitBounds(routeLine.getBounds().pad(0.15));
         routeClear.hidden = false;
         routeStatus.textContent = 'Measuring detour times…';

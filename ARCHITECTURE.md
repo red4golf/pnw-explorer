@@ -165,13 +165,25 @@ content systems cannot do it at all.
   than by distance from the origin. On any drive that rounds water the two disagree, and sorting by
   the latter hands the reader their stops out of order.
 
-  **The detour budget is time, not distance**, and that took two goes. Measuring the detour in
-  minutes came first: one call to OSRM's `table` service returns driving time from the point where
-  you would leave the road to each place, doubled for the return. But the *filter* was still miles,
-  and the first real-world query exposed how badly those diverge. Bainbridge Island to Tacoma
-  returned Pike Place Market at 9.0 miles from the route and **248 minutes** out of the way — it is
+  **The detour budget is time, not distance**, and getting there took three passes, each one
+  caught by a real query rather than by reasoning.
+
+  First the *filter* was still miles while the answer was minutes. Bainbridge Island to Tacoma
+  returned Pike Place Market at 9.0 miles from the route and 248 minutes out of the way — it is
   across Puget Sound, so reaching it means driving the whole way around. Every Seattle entry in
-  that result was the same lie.
+  that result was the same mismatch.
+
+  Then the definition itself was wrong. The measure was a round trip from the nearest point on the
+  road — leave here, drive there, drive back to the same spot — which invents a return leg that
+  does not exist when the place sits at your destination. Fort Nisqually, *inside* the destination
+  city, was reported as 39 minutes out of the way. What a traveller actually wants is
+
+      detour = time(start → place → end) − time(start → end)
+
+  which puts it at 25. The overstatement was far worse across water: Pike Place measured 248 against
+  a true 87. Same single `table` request either way — the matrix is asked for with the start and
+  every candidate as sources, and every candidate plus the end as destinations, so row 0 gives
+  start→place and the last column gives place→end.
 
   So distance is now only a pre-filter, used to build the shortlist the table service needs. A
   detour cannot beat the crow flies, so at a generous 60 mph each way `budget / 2` miles is a hard
