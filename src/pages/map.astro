@@ -39,11 +39,11 @@ const counts = Object.fromEntries(
           </label>
           <label>Max detour
             <select id="route-detour" style="width:100%;padding:0.55rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:inherit;font:inherit">
-              <option value="5">5 miles</option>
-              <option value="10" selected>10 miles</option>
-              <option value="15">15 miles</option>
-              <option value="25">25 miles</option>
-              <option value="50">50 miles</option>
+              <option value="10">10 minutes</option>
+              <option value="20">20 minutes</option>
+              <option value="30" selected>30 minutes</option>
+              <option value="45">45 minutes</option>
+              <option value="60">1 hour</option>
             </select>
           </label>
           <div style="display:flex;gap:0.5rem">
@@ -52,11 +52,12 @@ const counts = Object.fromEntries(
           </div>
         </div>
         <p class="muted" style="font-size:0.8rem;margin:0.75rem 0 0">
-          Follows the actual driving route, so places across water are not counted as nearby when
-          the road goes the long way around. Ferries are used where they are the only link, and
-          flagged when the route sails — but the router tends to prefer driving around even when
-          sailing would be quicker, and ferry schedules and terminal waits are never counted. Check
-          the sailing times yourself. Routing and place lookup by OpenStreetMap.
+          Detour is measured in driving time out and back, not map distance — across water those
+          are wildly different things, and only one of them tells you whether to stop. Ferries are
+          used where they are the only link and flagged when the route sails, but the router tends
+          to prefer driving around even when sailing is quicker, and schedules and terminal waits
+          are never counted. Check sailing times yourself. Routing and place lookup by
+          OpenStreetMap.
         </p>
         <p id="route-status" class="status-line" role="status" aria-live="polite"></p>
       </form>
@@ -465,7 +466,7 @@ const counts = Object.fromEntries(
 
     /** The route currently drawn, so a category change can re-filter against it. */
     let activeRoute:
-      | { path: Array<{ lat: number; lng: number }>; label: string; detour: number }
+      | { path: Array<{ lat: number; lng: number }>; label: string; budget: number }
       | null = null;
 
     /**
@@ -483,54 +484,95 @@ const counts = Object.fromEntries(
       return miles < 0.5 ? 'on the way' : `${formatDistance(miles)} off route`;
     }
 
-    async function applyRoute(): Promise<number> {
-      if (!activeRoute) return 0;
-      const { path, label, detour } = activeRoute;
+    /**
+     * Straight-line miles a place can sit from the road and still fit a time
+     * budget. A detour cannot beat the crow flies, so at a generous 60 mph each
+     * way `budget / 2` miles is a hard upper bound. Deliberately over-includes:
+     * this only builds the shortlist that real driving times are then measured
+     * against.
+     */
+    const MAX_PREFILTER_MILES = 40;
+
+    async function applyRoute(): Promise<{ count: number; timed: boolean }> {
+      if (!activeRoute) return { count: 0, timed: false };
+      const { path, label, budget } = activeRoute;
 
       // One traversal yields distance, the point where you would leave the road,
-      // and progress along the drive. Ordered by progress, NOT by distance from
-      // the start — on a route that rounds water those disagree.
-      const along = byCategory(activeCategory)
+      // and progress along the drive.
+      const reach = Math.min(budget / 2, MAX_PREFILTER_MILES);
+      const shortlist = byCategory(activeCategory)
         .map((l) => ({ l, near: nearestOnPath(l, path) }))
-        .filter((x) => x.near.distance <= detour)
-        .sort((a, b) => a.near.progress - b.near.progress);
+        .filter((x) => x.near.distance <= reach)
+        .sort((a, b) => a.near.distance - b.near.distance)
+        .slice(0, TABLE_LIMIT);
 
-      render(
-        along.map((x) => x.l),
-        false
-      );
-
-      if (!along.length) {
-        results.hidden = true;
-        routeStatus.textContent = `Nothing within ${detour} miles of that route. Try a wider detour.`;
-        return 0;
-      }
-
-      // Render immediately on distance, then upgrade in place once the real
-      // driving times land. Waiting on a second network round trip before
-      // showing anything would make the whole feature feel broken.
       const title = `Along the way: ${label}`;
-      showResults(
-        title,
-        along.map(({ l, near }) => ({ l, note: detourNote(near.distance, NaN) }))
-      );
 
-      try {
-        const minutes = await fetchDetourMinutes(
-          along.map((x) => x.near.point),
-          along.map((x) => x.l)
+      const finish = (rows: Array<{ l: Loc; near: any; minutes: number }>, timed: boolean) => {
+        // Ordered by progress ALONG the drive. Ties are real and common: every
+        // place whose closest approach is the route's first point scores zero,
+        // so without a tiebreak the list silently falls back to alphabetical.
+        rows.sort(
+          (a, b) =>
+            a.near.progress - b.near.progress ||
+            (Number.isFinite(a.minutes) ? a.minutes : a.near.distance) -
+              (Number.isFinite(b.minutes) ? b.minutes : b.near.distance)
         );
-        if (minutes && activeRoute) {
-          showResults(
-            title,
-            along.map(({ l, near }, i) => ({ l, note: detourNote(near.distance, minutes[i]) }))
-          );
+        render(
+          rows.map((x) => x.l),
+          false
+        );
+        if (!rows.length) {
+          results.hidden = true;
+          return { count: 0, timed };
         }
-      } catch {
-        /* keep the distance-based notes */
+        showResults(
+          title,
+          rows.map(({ l, near, minutes }) => ({ l, note: detourNote(near.distance, minutes) }))
+        );
+        return { count: rows.length, timed };
+      };
+
+      if (!shortlist.length) {
+        results.hidden = true;
+        routeStatus.textContent = `Nothing within ${budget} minutes of that route. Try a longer detour.`;
+        return { count: 0, timed: true };
       }
 
-      return along.length;
+      let minutes: number[] | null = null;
+      try {
+        minutes = await fetchDetourMinutes(
+          shortlist.map((x) => x.near.point),
+          shortlist.map((x) => x.l)
+        );
+      } catch {
+        minutes = null;
+      }
+
+      if (!activeRoute) return { count: 0, timed: false };
+
+      if (!minutes) {
+        // No driving times available, so the time budget cannot be honoured.
+        // Fall back to the geometric shortlist and say so rather than pretending
+        // the numbers mean what they usually mean.
+        return finish(
+          shortlist.map((x) => ({ ...x, minutes: NaN })),
+          false
+        );
+      }
+
+      const withinBudget = shortlist
+        .map((x, i) => ({ ...x, minutes: minutes![i] }))
+        .filter((x) => Number.isFinite(x.minutes) && x.minutes <= budget);
+
+      if (!withinBudget.length) {
+        render([], false);
+        results.hidden = true;
+        routeStatus.textContent = `Nothing within ${budget} minutes of that route. Try a longer detour.`;
+        return { count: 0, timed: true };
+      }
+
+      return finish(withinBudget, true);
     }
 
     function clearRoute() {
@@ -556,7 +598,7 @@ const counts = Object.fromEntries(
       e.preventDefault();
       const fromQ = (document.getElementById('route-from') as HTMLInputElement).value.trim();
       const toQ = (document.getElementById('route-to') as HTMLInputElement).value.trim();
-      const detour = Number((document.getElementById('route-detour') as HTMLSelectElement).value);
+      const budget = Number((document.getElementById('route-detour') as HTMLSelectElement).value);
       if (!fromQ || !toQ) return;
 
       routeStatus.textContent = 'Looking up both places…';
@@ -609,10 +651,11 @@ const counts = Object.fromEntries(
           )
         ).addTo(map);
 
-        activeRoute = { path, label, detour };
+        activeRoute = { path, label, budget };
         map.fitBounds(routeLine.getBounds().pad(0.15));
         routeClear.hidden = false;
-        const found = await applyRoute();
+        routeStatus.textContent = 'Measuring detour times…';
+        const { count: found, timed } = await applyRoute();
 
         if (found) {
           const drive = route
@@ -626,9 +669,11 @@ const counts = Object.fromEntries(
           const ferryNote = route?.usesFerry
             ? ' ⛴ This route sails — the drive time excludes the crossing and any wait at the terminal.'
             : '';
+          const budgetNote = timed
+            ? `within ${budget} minutes of the route`
+            : `near the route (detour times unavailable, so these are by map distance)`;
           routeStatus.textContent =
-            `${found} place${found === 1 ? '' : 's'} within ${detour} miles of the route (${drive}).` +
-            ferryNote;
+            `${found} place${found === 1 ? '' : 's'} ${budgetNote} (${drive}).` + ferryNote;
         }
       } catch {
         routeStatus.textContent = 'Routing is unavailable right now. Try again shortly.';

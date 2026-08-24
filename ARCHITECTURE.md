@@ -165,13 +165,24 @@ content systems cannot do it at all.
   than by distance from the origin. On any drive that rounds water the two disagree, and sorting by
   the latter hands the reader their stops out of order.
 
-  **Detour cost is time, not distance.** Two miles from the road across a river can be twenty
-  minutes each way. After the distance filter shortlists candidates, one call to OSRM's `table`
-  service returns driving time from each departure point to each place; doubling it gives the round
-  trip. The list renders on distance immediately and upgrades in place when the times land, so a
-  second network round trip never blocks the result. On an Anacortes–Friday Harbor route this is
-  the difference between "Clayton Beach, 12 miles off route" and "about 95 minutes out of your
-  way" — the same place, and only one of those descriptions is useful.
+  **The detour budget is time, not distance**, and that took two goes. Measuring the detour in
+  minutes came first: one call to OSRM's `table` service returns driving time from the point where
+  you would leave the road to each place, doubled for the return. But the *filter* was still miles,
+  and the first real-world query exposed how badly those diverge. Bainbridge Island to Tacoma
+  returned Pike Place Market at 9.0 miles from the route and **248 minutes** out of the way — it is
+  across Puget Sound, so reaching it means driving the whole way around. Every Seattle entry in
+  that result was the same lie.
+
+  So distance is now only a pre-filter, used to build the shortlist the table service needs. A
+  detour cannot beat the crow flies, so at a generous 60 mph each way `budget / 2` miles is a hard
+  upper bound on how far out a place can be and still fit; it over-includes on purpose, and real
+  driving times do the actual filtering.
+
+  Ordering needed a tiebreak for the same reason. Every place whose closest approach is the route's
+  first point scores a progress of exactly zero — twelve of twenty-one in that query — and a stable
+  sort with nothing to discriminate on falls back to input order, which is alphabetical. It sorted
+  Bruce Lee, Camp Yeomalt, Fort Ward, Japanese American Exclusion Memorial and looked deliberate.
+  Ties now break on detour time.
 
   **What was measured about ferries**, rather than assumed. OSRM does route over them: Anacortes to
   Friday Harbor returns a `mode: "ferry"` step, because no bridge exists. But where a land route
