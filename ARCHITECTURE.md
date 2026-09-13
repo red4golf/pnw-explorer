@@ -223,12 +223,20 @@ content systems cannot do it at all.
   | **Seattle–Bremerton** | **drives around, 90 min** | **60 min** |
   | **Fauntleroy–Southworth** | **drives around, 90 min** | **35 min** |
 
-  Where the ferry is in the graph the timing is good. Where it is not, forcing waypoints at both
-  terminals does not help — Winslow to Colman Dock still routes 93 miles overland — and
-  `exclude=ferry` is rejected outright by this instance, so nothing can be coaxed out of the router.
-  The four missing crossings matter more here than anywhere else they could: the corpus is densest
-  on Bainbridge and Kitsap, so the routes most likely to be asked for were exactly the ones coming
-  back wrong.
+  This is not missing data. All four crossings are in OpenStreetMap, connected to primary roads at
+  both docks, tagged for cars with a `duration`. The router refuses them for two verifiable reasons.
+  First, OSRM weighs a ferry by its length at the profile's nominal 5 km/h while reporting the
+  time from the `duration` tag: Fauntleroy–Southworth is 7.7 km, so its 30-minute sailing carries
+  a weight of 92 against a 91-minute road route weighing 91, and the road wins by one point (the
+  reverse direction, seconds longer by road, sails). Seattle–Bainbridge is 13.4 km (161 vs 127),
+  Seattle–Bremerton 25 km (301 vs 90). Every crossing the router does sail is an island run with no
+  road alternative, or one whose road alternative is longer than that inflated weight. Second,
+  Edmonds–Kingston would win on weight (108 vs 144) but the Edmonds dock road is tagged
+  `oneway=reversible`, which the car profile's `avoid` set treats as impassable. Neither is
+  fixable by editing OpenStreetMap; `exclude=ferry` is rejected by this instance, and
+  `alternatives=3` surfaces the ferry only sometimes. The four matter more here than anywhere else
+  they could: the corpus is densest on Bainbridge and Kitsap, so the routes most likely to be asked
+  for were exactly the ones coming back wrong.
 
   `src/lib/ferries.ts` is a table of those four: two terminals, the scheduled crossing time, and the
   WSDOT route id as a hook for live sailings if a Traveler API key is ever wired in (the API is

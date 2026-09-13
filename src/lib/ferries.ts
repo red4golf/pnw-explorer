@@ -1,22 +1,38 @@
 /**
- * Car-ferry crossings the routing service does not know about.
+ * Car-ferry crossings the routing service will not take.
  *
- * Measured against the public OSRM instance on 12 September 2026 by asking
- * for a terminal-to-terminal route and checking for a `mode: "ferry"` step
- * (scripts are not kept; the numbers are in ARCHITECTURE.md). Of nineteen
- * crossings in the region it sails fifteen — Mukilteo–Clinton, the three
- * Vashon runs, Point Defiance–Tahlequah, Coupeville–Port Townsend, the San
- * Juans, Anderson Island, Guemes, Lummi, the Coho, the Wahkiakum ferry and the
- * BC Ferries mainline — and its durations for those include the sailing time.
+ * Not missing data. All four are in OpenStreetMap, connected to primary roads
+ * at both docks, tagged for cars with a `duration`. The router refuses them
+ * for two reasons, both verified on 12 September 2026 against the public OSRM
+ * instance (routing.openstreetmap.de, profile "routability"):
  *
- * It does NOT sail the four below. For each it drives around the Sound
- * instead, which is not an approximation but a different trip: Seattle to
- * Bainbridge comes out at 127 minutes and 92 miles for a 35-minute crossing.
- * The planner stitches these in itself as drive → sail → drive.
+ * 1. OSRM weighs a ferry by its length at the profile's nominal 5 km/h, while
+ *    the time it *reports* comes from the `duration` tag. Fauntleroy–Southworth
+ *    is 7.7 km: a 30-minute sailing with a weight of 92, against a 91-minute
+ *    road route with a weight of 91. The road wins by one point; the reverse
+ *    direction, a few seconds longer by road, sails. Seattle–Bainbridge is
+ *    13.4 km (weight 161 vs 127 by road), Seattle–Bremerton 25 km (301 vs 90).
+ *    Every crossing the router does sail is one with no road alternative — an
+ *    island — or a road alternative longer than that inflated weight.
  *
- * Only crossings the router lacks belong here. Adding one it already sails
- * would not break anything — the stitched option simply loses to the direct
- * one — but it costs a table request per plan for no answer.
+ * 2. Edmonds–Kingston would win on weight (108 vs 144) but the dock road at
+ *    Edmonds is tagged `oneway=reversible`, which the car profile lists under
+ *    `avoid` and treats as impassable, so the terminal cannot be reached.
+ *
+ * Neither can be fixed by editing OpenStreetMap; the first is the router's
+ * profile and the second is a correct tag the profile chooses not to handle.
+ * `exclude=ferry` is rejected by this instance and `alternatives=3` returns
+ * the ferry only sometimes (Fauntleroy–Southworth yes, Seattle–Bainbridge no),
+ * so the planner stitches these in itself as drive → sail → drive.
+ *
+ * Of nineteen crossings in the region the router sails fifteen — Mukilteo–
+ * Clinton, the three Vashon runs, Point Defiance–Tahlequah, Coupeville–Port
+ * Townsend, the San Juans, Anderson Island, Guemes, Lummi, the Coho, the
+ * Wahkiakum ferry and the BC Ferries mainline — and its durations for those
+ * include the sailing time. Only crossings it refuses belong here. Adding one
+ * it already sails would not break anything — the stitched option simply
+ * loses to the direct one — but it costs a table request per plan for no
+ * answer.
  *
  * Sailing minutes are the scheduled crossing per WSF. Waits at the terminal
  * are not modelled anywhere; the UI says so. A WSDOT Traveler API key would
