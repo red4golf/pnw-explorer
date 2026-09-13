@@ -206,37 +206,50 @@ content systems cannot do it at all.
   Tacoma, north through south Seattle, downtown, then east on I-90 to Bellevue and Snoqualmie.
   Geometric progress survives only as the fallback for when no driving times are available.
 
-  **Ferries are a known, measured gap — and the biggest remaining limitation.** Not a modelling
-  subtlety: three crossings are simply absent from this OSRM instance's graph. Measured terminal to
-  terminal against the WSF timetable:
+  **Ferries: the router knows most crossings, and the planner stitches in the four it does not.**
+  Measured terminal to terminal against the WSF timetable (12 September 2026), this OSRM instance
+  sails fifteen of the region's nineteen car crossings and its durations for those include the
+  sailing time:
 
   | Crossing | OSRM | Real sailing |
   | --- | --- | --- |
-  | Mukilteo–Clinton | ferry, 24 min | 20 min |
-  | Fauntleroy–Vashon | ferry, 20 min | 20 min |
-  | Coupeville–Port Townsend | ferry, 38 min | 35 min |
-  | Anacortes–Friday Harbor | ferry, 67 min | 65 min |
-  | **Seattle–Bainbridge** | **drives around, 129 min** | **35 min** |
-  | **Edmonds–Kingston** | **drives around, 145 min** | **30 min** |
-  | **Seattle–Bremerton** | **drives around, 92 min** | **60 min** |
+  | Mukilteo–Clinton | ferry, 25 min | 20 min |
+  | Fauntleroy–Vashon / Southworth–Vashon / Pt Defiance–Tahlequah | ferry | ✓ |
+  | Coupeville–Port Townsend | ferry, 36 min | 35 min |
+  | Anacortes–Friday Harbor / Orcas / Lopez | ferry | ✓ |
+  | Steilacoom–Anderson, Guemes, Lummi, Coho, Wahkiakum, BC Ferries | ferry | ✓ |
+  | **Seattle–Bainbridge** | **drives around, 127 min, 92 mi** | **35 min** |
+  | **Edmonds–Kingston** | **drives around, 144 min** | **30 min** |
+  | **Seattle–Bremerton** | **drives around, 90 min** | **60 min** |
+  | **Fauntleroy–Southworth** | **drives around, 90 min** | **35 min** |
 
   Where the ferry is in the graph the timing is good. Where it is not, forcing waypoints at both
-  terminals does not help — Winslow to Colman Dock still routes 93 miles overland. This matters
-  more here than anywhere else it could: the corpus is densest on Bainbridge and Kitsap, so the
-  routes most likely to be asked for are exactly the ones that come back wrong. On a
-  Bainbridge-to-Moses-Lake run every downtown Seattle stop is reported as roughly half an hour out
-  of the way when the ferry would carry the driver past the door.
+  terminals does not help — Winslow to Colman Dock still routes 93 miles overland — and
+  `exclude=ferry` is rejected outright by this instance, so nothing can be coaxed out of the router.
+  The four missing crossings matter more here than anywhere else they could: the corpus is densest
+  on Bainbridge and Kitsap, so the routes most likely to be asked for were exactly the ones coming
+  back wrong.
 
-  `exclude=ferry` is also rejected outright by this instance ("Exclude flag combination is not
-  supported"), for motorways too, so an avoid-ferries toggle is impossible. One was built, found to
-  fail on every request, and removed rather than shipped as a control that silently does nothing.
+  `src/lib/ferries.ts` is a table of those four: two terminals, the scheduled crossing time, and the
+  WSDOT route id as a hook for live sailings if a Traveler API key is ever wired in (the API is
+  schedules, not routing, so it is an add-on to this table rather than a replacement). Only
+  crossings the router lacks belong in it. `planRoutes` in `src/lib/routing.ts` asks the router for
+  its own answer, then — only when a crossing is plausibly on the way by crow-flies — one table
+  request from the start to every terminal and every terminal to the end, and stitches the best
+  drive → sail → drive. The result is offered **alongside** the road route, not instead of it,
+  when it is competitive (within a quarter longer plus fifteen minutes): Bainbridge to Tacoma is 83
+  minutes over the Narrows or 86 via the Seattle ferry, and they pass entirely different places, so
+  the traveller gets both as a toggle with the faster one selected. Seattle to Portland via
+  Bremerton is not a real choice and is not offered.
 
-  What ships is honesty. The route says when it sails. When it does not sail but runs 2.5× further
-  than the direct line — Seattle to Bainbridge scores about 9× — it says so, names the three
-  crossings the router does not know, and warns that detours on that side of the water are
-  overstated. The real fixes are either a small table of the missing crossings, stitching
-  drive→sail→drive and comparing, or a routing provider that knows the ferry network; both were
-  weighed and deferred.
+  Detour times on a stitched route are measured **per driving leg**: each stop is inserted into
+  whichever leg it is cheapest to leave, so a downtown Seattle stop on the ferry option reads as
+  "on the way" instead of the router being asked to drive around the Sound to reach it. Ordering
+  by time-from-start counts every leg before that one, sailing included. Crossing time is counted;
+  the wait at the dock is not, and the UI says so.
+
+  The 2.5×-longer-than-the-crow-flies warning stays as a tripwire for the router's data changing
+  under us, but with these four stitched in it should not fire in Puget Sound.
 
   If routing is unavailable the planner falls back to the straight line, draws it dashed rather
   than solid, and says in words that it is an estimate — degraded, and visibly so, rather than a

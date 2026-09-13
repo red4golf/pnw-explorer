@@ -55,15 +55,15 @@ const counts = Object.fromEntries(
           Detour is measured in driving time via each place, not map distance — across water those
           are wildly different things, and only one of them tells you whether to stop.
           <br /><br />
-          <strong>Ferries are a known gap.</strong> The router handles Mukilteo–Clinton,
-          Fauntleroy–Vashon, Coupeville–Port Townsend and the San Juans, and flags the route when it
-          sails. It does not know the <strong>Seattle–Bainbridge</strong>,
-          <strong>Edmonds–Kingston</strong> or <strong>Seattle–Bremerton</strong> crossings at all,
-          so for those it drives the long way round — 129 minutes for a 35-minute sailing — and
-          every detour on that side of the water is overstated as a result. Sailing times and
-          terminal waits are never counted either. Check the WSF schedule. Routing and place lookup
-          by OpenStreetMap.
+          <strong>Ferries.</strong> The router sails most crossings itself — Mukilteo–Clinton, Vashon,
+          Point Defiance–Tahlequah, Coupeville–Port Townsend, the San Juans — and the planner adds the
+          four it does not know: <strong>Seattle–Bainbridge</strong>, <strong>Seattle–Bremerton</strong>,
+          <strong>Edmonds–Kingston</strong> and <strong>Fauntleroy–Southworth</strong>. When sailing and
+          driving around are both reasonable you get both to choose from. Crossing times are counted;
+          waits at the dock are not, so check the WSF schedule. Routing and place lookup by
+          OpenStreetMap.
         </p>
+        <div id="route-options" class="filters" role="group" aria-label="Route options" hidden style="margin-top:0.75rem"></div>
         <p id="route-status" class="status-line" role="status" aria-live="polite"></p>
       </form>
 
@@ -111,6 +111,13 @@ const counts = Object.fromEntries(
     import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
     import markerShadow from 'leaflet/dist/images/marker-shadow.png';
     import { nearest, formatDistance, nearestOnPath, distanceMiles } from '../lib/geo';
+    import {
+      planRoutes,
+      fetchDetourTimes,
+      TABLE_LIMIT,
+      type RouteOption,
+      type DetourTime,
+    } from '../lib/routing';
 
     /**
      * An explicit icon, NOT L.Icon.Default.mergeOptions.
@@ -139,6 +146,31 @@ const counts = Object.fromEntries(
 
     const el = document.getElementById('map')!;
     const map = L.map(el, { scrollWheelZoom: true }).setView([46.8, -121.5], 6);
+    // Debug handle: the map instance is otherwise unreachable from a console.
+    (window as any).pnwMap = map;
+
+    /**
+     * fitBounds that survives being called mid-animation.
+     *
+     * Leaflet drops a setView issued while a zoom animation is in flight:
+     * `_tryAnimatedZoom` returns early when `_animatingZoom` is set, and
+     * nothing is queued. Clearing a route fits the map to every marker
+     * (animated), and a search answered from the session cache lands its own
+     * fit a few milliseconds later, so a fast re-run would draw the route and
+     * leave the map zoomed out. Waiting for `zoomend` costs nothing when the
+     * map is idle.
+     *
+     * Not to be confused with a tab in the background: there the browser
+     * pauses requestAnimationFrame, the animation never starts, and no helper
+     * can fit anything until the tab is visible again. That one cost an hour.
+     */
+    function fitWhenIdle(bounds: L.LatLngBounds) {
+      if ((map as any)._animatingZoom) {
+        map.once('zoomend', () => fitWhenIdle(bounds));
+        return;
+      }
+      map.fitBounds(bounds);
+    }
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
@@ -202,7 +234,7 @@ const counts = Object.fromEntries(
         markers[l.slug] = m;
         cluster.addLayer(m);
       }
-      if (fit && subset.length) map.fitBounds(cluster.getBounds().pad(0.15));
+      if (fit && subset.length) fitWhenIdle(cluster.getBounds().pad(0.15));
     }
 
     const byCategory = (cat: string) =>
@@ -325,7 +357,8 @@ const counts = Object.fromEntries(
     const routeForm = document.getElementById('route-form') as HTMLFormElement;
     const routeStatus = document.getElementById('route-status')!;
     const routeClear = document.getElementById('route-clear') as HTMLButtonElement;
-    let routeLine: L.Polyline | null = null;
+    const routeOptions = document.getElementById('route-options')!;
+    let routeLine: L.FeatureGroup | null = null;
     let routeEnds: L.LayerGroup | null = null;
 
     function openRoute() {
@@ -353,167 +386,6 @@ const counts = Object.fromEntries(
       return { lat: parseFloat(json[0].lat), lng: parseFloat(json[0].lon) };
     }
 
-    interface DrivingRoute {
-      path: Array<{ lat: number; lng: number }>;
-      miles: number;
-      minutes: number;
-      /** Whether the chosen route crosses on a ferry. */
-      usesFerry: boolean;
-    }
-
-    /**
-     * Real driving geometry from OSRM, on the public instance FOSSGIS runs for
-     * openstreetmap.org.
-     *
-     * A straight line is not an approximation of a drive in this region, it is a
-     * different shape. Seattle to Port Townsend is about 40 miles across the
-     * water and roughly twice that by road, so a straight corridor invents stops
-     * on the far shore and hides the ones actually passed. OSRM's car profile
-     * routes over ferries, which is correct here — in Puget Sound the ferries
-     * ARE the road.
-     *
-     * Cached per session so re-running a search does not re-hit a service
-     * somebody else pays for.
-     */
-    const OSRM = 'https://routing.openstreetmap.de/routed-car';
-
-    async function fetchDrivingRoute(
-      from: { lat: number; lng: number },
-      to: { lat: number; lng: number }
-    ): Promise<DrivingRoute | null> {
-      const key = `pnw-route:${from.lat.toFixed(4)},${from.lng.toFixed(4)}>${to.lat.toFixed(4)},${to.lng.toFixed(4)}`;
-      try {
-        const hit = sessionStorage.getItem(key);
-        if (hit) return JSON.parse(hit) as DrivingRoute;
-      } catch {
-        /* private browsing — just fetch */
-      }
-
-      // steps=true so ferry legs can be detected: OSRM marks them mode:"ferry",
-      // and in Puget Sound whether the route sails matters more to a traveller
-      // than almost anything else about it.
-      //
-      // No `exclude=ferry` here: this instance rejects the exclude parameter
-      // outright ("Exclude flag combination is not supported"), for ferries and
-      // motorways alike. An avoid-ferries toggle would have failed every time,
-      // and silently — so it is not offered rather than offered and broken.
-      const params = new URLSearchParams({
-        overview: 'simplified',
-        geometries: 'geojson',
-        steps: 'true',
-      });
-
-      const url = `${OSRM}/route/v1/driving/${from.lng},${from.lat};${to.lng},${to.lat}?${params}`;
-      const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
-      if (!res.ok) return null;
-
-      const json = await res.json();
-      if (json.code !== 'Ok' || !json.routes?.length) return null;
-
-      const r = json.routes[0];
-      const usesFerry = (r.legs ?? []).some((leg: any) =>
-        (leg.steps ?? []).some((step: any) => step.mode === 'ferry')
-      );
-
-      const route: DrivingRoute = {
-        path: (r.geometry.coordinates as Array<[number, number]>).map(([lng, lat]) => ({ lat, lng })),
-        miles: r.distance / 1609.344,
-        minutes: r.duration / 60,
-        usesFerry,
-      };
-      try {
-        sessionStorage.setItem(key, JSON.stringify(route));
-      } catch {
-        /* quota or private mode — the cache is an optimisation, not a requirement */
-      }
-      return route;
-    }
-
-    /**
-     * How much longer the whole trip takes if you go via each place, in minutes.
-     *
-     *     detour = time(start -> place -> end) - time(start -> end)
-     *
-     * This is the question a traveller is actually asking, and it is not the
-     * same as the round trip from the nearest point on the road. An earlier
-     * version measured "leave the route here, drive there, drive back to the
-     * same spot", which invents a return leg that does not exist when the place
-     * sits at your destination: Fort Nisqually, inside the destination city on a
-     * Bainbridge-to-Tacoma run, was reported as 39 minutes out of the way when
-     * going via it costs 25. Across water the overstatement was far worse —
-     * Pike Place came out at 248 minutes against a true 87.
-     *
-     * Still one table request. The matrix is asked for with the start and every
-     * candidate as sources, and every candidate plus the end as destinations, so
-     * row 0 gives start->place and the last column gives place->end.
-     *
-     * Row 0 doubles as the ordering key. Sorting by geometric progress along the
-     * line puts a place where the road passes CLOSEST to it, which for anything
-     * across water is nowhere near where you actually reach it: on a Bainbridge
-     * to Moses Lake run the whole of downtown Seattle scored a progress of zero,
-     * because the nearest approach is back at the start across Elliott Bay, and
-     * the list claimed you would pass Pike Place before leaving the island.
-     */
-    const TABLE_LIMIT = 45; // public OSRM instances cap total coordinates
-
-    interface DetourTime {
-      /** Extra minutes the whole trip costs if you go via this place. */
-      detour: number;
-      /** Driving minutes from the start to this place — i.e. when you reach it. */
-      fromStart: number;
-    }
-
-    async function fetchDetourTimes(
-      start: { lat: number; lng: number },
-      targets: Array<{ lat: number; lng: number }>,
-      end: { lat: number; lng: number },
-      baselineMinutes: number
-    ): Promise<DetourTime[] | null> {
-      const n = targets.length;
-      if (!n || n > TABLE_LIMIT) return null;
-
-      const coords = [start, ...targets, end].map((p) => `${p.lng},${p.lat}`).join(';');
-      // sources: the start (0) and every candidate (1..n)
-      const sources = [0, ...Array.from({ length: n }, (_, i) => i + 1)].join(';');
-      // destinations: every candidate (1..n) then the end (n+1)
-      const destinations = [...Array.from({ length: n }, (_, i) => i + 1), n + 1].join(';');
-
-      const url = `${OSRM}/table/v1/driving/${coords}?sources=${sources}&destinations=${destinations}&annotations=duration`;
-      const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
-      if (!res.ok) return null;
-
-      const json = await res.json();
-      if (json.code !== 'Ok' || !Array.isArray(json.durations)) return null;
-
-      const startToPlace: Array<number | null> = json.durations[0] ?? [];
-      return targets.map((_, i) => {
-        const out = startToPlace[i];
-        const back = json.durations[i + 1]?.[n];
-        if (typeof out !== 'number' || typeof back !== 'number') {
-          return { detour: NaN, fromStart: NaN };
-        }
-        return {
-          // Never negative: a place genuinely on the route can measure a few
-          // seconds "faster" than the baseline through routing noise.
-          detour: Math.max(0, (out + back) / 60 - baselineMinutes),
-          fromStart: out / 60,
-        };
-      });
-    }
-
-    /** The route currently drawn, so a category change can re-filter against it. */
-    let activeRoute:
-      | {
-          path: Array<{ lat: number; lng: number }>;
-          label: string;
-          budget: number;
-          start: { lat: number; lng: number };
-          end: { lat: number; lng: number };
-          /** Trip time without any stop; null when routing fell back to a straight line. */
-          baselineMinutes: number | null;
-        }
-      | null = null;
-
     /**
      * How far out of your way a stop is.
      *
@@ -529,6 +401,109 @@ const counts = Object.fromEntries(
       return miles < 0.5 ? 'on the way' : `${formatDistance(miles)} off route`;
     }
 
+    const clock = (minutes: number): string =>
+      minutes >= 90
+        ? `${Math.floor(minutes / 60)} h ${Math.round(minutes % 60)} min`
+        : `${Math.round(minutes)} min`;
+
+    /**
+     * The trip currently drawn: both endpoints, every route option found for
+     * them, and which one is showing — so a category change or an option
+     * switch can re-filter without geocoding or routing again.
+     */
+    let activeRoute:
+      | {
+          label: string;
+          budget: number;
+          start: { lat: number; lng: number };
+          end: { lat: number; lng: number };
+          options: RouteOption[];
+          /** Index into `options`; -1 when routing failed and a straight line is drawn. */
+          chosen: number;
+        }
+      | null = null;
+
+    const chosenOption = (): RouteOption | null =>
+      activeRoute && activeRoute.chosen >= 0 ? activeRoute.options[activeRoute.chosen] : null;
+
+    /** Geometry to measure against: the chosen option, or the straight line. */
+    const activePath = (): Array<{ lat: number; lng: number }> =>
+      chosenOption()?.path ?? (activeRoute ? [activeRoute.start, activeRoute.end] : []);
+
+    /**
+     * Draw the chosen option. Driving legs are solid; a sailing the planner
+     * stitched in is a dashed blue line dock to dock, with both docks marked,
+     * because "the road" across that stretch is a boat and the map should say
+     * so. A straight-line fallback is dashed in the route colour instead.
+     */
+    function drawRoute() {
+      if (!activeRoute) return;
+      if (routeLine) map.removeLayer(routeLine);
+      const option = chosenOption();
+      const legs = option
+        ? option.legs
+        : [{ kind: 'fallback', path: [activeRoute.start, activeRoute.end] }];
+      routeLine = L.featureGroup(
+        legs.flatMap((leg: any) => {
+          const latlngs = leg.path.map((pt: any) => [pt.lat, pt.lng] as [number, number]);
+          if (leg.kind === 'drive') {
+            return [L.polyline(latlngs, { color: '#a14e2c', weight: 5, opacity: 0.8 })];
+          }
+          if (leg.kind === 'sail') {
+            return [
+              L.polyline(latlngs, { color: '#2a6f97', weight: 4, opacity: 0.9, dashArray: '10 8' }),
+              ...[leg.start, leg.end].map((t: any) =>
+                L.circleMarker([t.lat, t.lng], {
+                  radius: 5,
+                  color: '#fff',
+                  weight: 2,
+                  fillColor: '#2a6f97',
+                  fillOpacity: 1,
+                }).bindPopup(`⛴ ${t.name}`)
+              ),
+            ];
+          }
+          return [L.polyline(latlngs, { color: '#a14e2c', weight: 4, opacity: 0.6, dashArray: '8 6' })];
+        })
+      ).addTo(map);
+    }
+
+    /**
+     * When there is more than one way to make the trip, say so and let the
+     * traveller pick. Both are real: over the Narrows or via the Seattle
+     * ferry are different drives past different places, and the faster one is
+     * only the default.
+     */
+    function renderOptions() {
+      routeOptions.innerHTML = '';
+      if (!activeRoute || activeRoute.options.length < 2) {
+        routeOptions.hidden = true;
+        return;
+      }
+      activeRoute.options.forEach((o, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'pill';
+        b.textContent = `${o.crossing ? '⛴' : '🚗'} ${o.label} · ${clock(o.minutes)}`;
+        const on = i === activeRoute!.chosen;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', String(on));
+        b.addEventListener('click', () => void chooseOption(i));
+        routeOptions.appendChild(b);
+      });
+      routeOptions.hidden = false;
+    }
+
+    async function chooseOption(i: number) {
+      if (!activeRoute || i === activeRoute.chosen) return;
+      activeRoute.chosen = i;
+      renderOptions();
+      drawRoute();
+      routeStatus.textContent = 'Measuring detour times…';
+      const { count, timed } = await applyRoute();
+      if (count) routeStatus.textContent = summarise(count, timed);
+    }
+
     /**
      * Straight-line miles a place can sit from the road and still fit a time
      * budget. A detour cannot beat the crow flies, so at a generous 60 mph each
@@ -540,7 +515,9 @@ const counts = Object.fromEntries(
 
     async function applyRoute(): Promise<{ count: number; timed: boolean }> {
       if (!activeRoute) return { count: 0, timed: false };
-      const { path, label, budget, start, end, baselineMinutes } = activeRoute;
+      const { label, budget } = activeRoute;
+      const option = chosenOption();
+      const path = activePath();
 
       // One traversal yields distance, the point where you would leave the road,
       // and progress along the drive.
@@ -549,7 +526,7 @@ const counts = Object.fromEntries(
         .map((l) => ({ l, near: nearestOnPath(l, path) }))
         .filter((x) => x.near.distance <= reach)
         .sort((a, b) => a.near.distance - b.near.distance)
-        .slice(0, TABLE_LIMIT);
+        .slice(0, TABLE_LIMIT - 2);
 
       const title = `Along the way: ${label}`;
 
@@ -585,26 +562,26 @@ const counts = Object.fromEntries(
       };
 
       if (!shortlist.length) {
+        render([], false);
         results.hidden = true;
         routeStatus.textContent = `Nothing within ${budget} minutes of that route. Try a longer detour.`;
         return { count: 0, timed: true };
       }
 
       let times: DetourTime[] | null = null;
-      if (baselineMinutes !== null) {
+      if (option) {
         try {
           times = await fetchDetourTimes(
-            start,
-            shortlist.map((x) => x.l),
-            end,
-            baselineMinutes
+            option,
+            shortlist.map((x) => x.l)
           );
         } catch {
           times = null;
         }
       }
 
-      if (!activeRoute) return { count: 0, timed: false };
+      // The trip may have been cleared or switched while we waited.
+      if (!activeRoute || chosenOption() !== option) return { count: 0, timed: false };
 
       if (!times) {
         // No driving times available, so the time budget cannot be honoured.
@@ -630,6 +607,38 @@ const counts = Object.fromEntries(
       return finish(withinBudget, true);
     }
 
+    /** The status line for a finished search. */
+    function summarise(found: number, timed: boolean): string {
+      if (!activeRoute) return '';
+      const { budget, start, end } = activeRoute;
+      const option = chosenOption();
+
+      const drive = option
+        ? `${Math.round(option.miles)} mi, about ${clock(option.minutes)}`
+        : 'straight-line estimate — the driving route was unavailable';
+
+      let note = '';
+      if (option?.crossing) {
+        note = ` ⛴ Sails ${option.crossing.name}: the ${option.crossing.sailMinutes}-minute crossing is counted, the wait at the dock is not. Check the WSF schedule.`;
+      } else if (option?.usesFerry) {
+        note = ' ⛴ This route sails. The crossing is counted in the time; the wait at the dock is not. Check the WSF schedule.';
+      } else if (option) {
+        // A route that runs far longer than the crow flies, without sailing, has
+        // almost certainly driven around water. With the four missing crossings
+        // now stitched in this should be rare, but the router's data can change
+        // under us, so the warning stays.
+        const crow = distanceMiles(start, end);
+        if (crow > 3 && option.miles / crow >= 2.5) {
+          note = ` ⚠ This drives ${Math.round(option.miles / crow)}× further than the direct line without a ferry. If a crossing exists here, check the WSF schedule — detours on the far side are overstated.`;
+        }
+      }
+
+      const budgetNote = timed
+        ? `within ${budget} minutes of the route`
+        : `near the route (detour times unavailable, so these are by map distance)`;
+      return `${found} place${found === 1 ? '' : 's'} ${budgetNote} (${drive}).` + note;
+    }
+
     function clearRoute() {
       activeRoute = null;
       if (routeLine) {
@@ -643,6 +652,8 @@ const counts = Object.fromEntries(
       results.hidden = true;
       resultsList.innerHTML = '';
       routeStatus.textContent = '';
+      routeOptions.hidden = true;
+      routeOptions.innerHTML = '';
       routeClear.hidden = true;
       render(byCategory(activeCategory));
     }
@@ -672,26 +683,26 @@ const counts = Object.fromEntries(
 
         routeStatus.textContent = 'Finding the driving route…';
 
-        let route: DrivingRoute | null = null;
+        let options: RouteOption[] = [];
         try {
-          route = await fetchDrivingRoute(from, to);
+          options = await planRoutes(from, to);
         } catch {
-          route = null;
+          options = [];
         }
 
         // Falling back to a straight line beats failing outright, but it is a
         // materially different answer, so the UI says so rather than quietly
         // presenting a guess as a route.
-        const path = route ? route.path : [from, to];
-        const label = `${fromQ} → ${toQ}`;
-
-        if (routeLine) map.removeLayer(routeLine);
-        routeLine = L.polyline(
-          path.map((pt) => [pt.lat, pt.lng] as [number, number]),
-          route
-            ? { color: '#a14e2c', weight: 5, opacity: 0.8 }
-            : { color: '#a14e2c', weight: 4, opacity: 0.6, dashArray: '8 6' }
-        ).addTo(map);
+        activeRoute = {
+          label: `${fromQ} → ${toQ}`,
+          budget,
+          start: from,
+          end: to,
+          options,
+          chosen: options.length ? 0 : -1,
+        };
+        drawRoute();
+        renderOptions();
 
         if (routeEnds) map.removeLayer(routeEnds);
         routeEnds = L.layerGroup(
@@ -706,49 +717,11 @@ const counts = Object.fromEntries(
           )
         ).addTo(map);
 
-        activeRoute = {
-          path,
-          label,
-          budget,
-          start: from,
-          end: to,
-          // Without a real route there is no trip time to subtract, so detour
-          // minutes are not computable and the list falls back to distance.
-          baselineMinutes: route ? route.minutes : null,
-        };
-        map.fitBounds(routeLine.getBounds().pad(0.15));
+        fitWhenIdle(routeLine!.getBounds().pad(0.15));
         routeClear.hidden = false;
         routeStatus.textContent = 'Measuring detour times…';
         const { count: found, timed } = await applyRoute();
-
-        if (found) {
-          const drive = route
-            ? `${Math.round(route.miles)} mi drive, about ${
-                route.minutes >= 90
-                  ? `${Math.floor(route.minutes / 60)} h ${Math.round(route.minutes % 60)} min`
-                  : `${Math.round(route.minutes)} min`
-              }`
-            : 'straight-line estimate — the driving route was unavailable';
-
-          // A route that runs far longer than the crow flies, without sailing, has
-          // almost certainly driven around water in a region where a ferry
-          // exists. 2.5x is well past anything a mountain detour produces here,
-          // and Seattle to Bainbridge scores about 11.
-          const crow = distanceMiles(from, to);
-          const drivesAround =
-            route && !route.usesFerry && crow > 3 && route.miles / crow >= 2.5;
-
-          const ferryNote = route?.usesFerry
-            ? ' ⛴ This route sails — the drive time excludes the crossing and any wait at the terminal.'
-            : drivesAround
-              ? ` ⚠ This route drives ${Math.round(route!.miles / crow)}× further than the direct line without using a ferry. A crossing is probably quicker — the router does not know Seattle–Bainbridge, Edmonds–Kingston or Seattle–Bremerton. Check the WSF schedule; detours here are overstated.`
-              : '';
-          const budgetNote = timed
-            ? `within ${budget} minutes of the route`
-            : `near the route (detour times unavailable, so these are by map distance)`;
-          routeStatus.textContent =
-            `${found} place${found === 1 ? '' : 's'} ${budgetNote} (${drive}).` + ferryNote;
-        }
+        if (found) routeStatus.textContent = summarise(found, timed);
       } catch {
         routeStatus.textContent = 'Routing is unavailable right now. Try again shortly.';
       }
