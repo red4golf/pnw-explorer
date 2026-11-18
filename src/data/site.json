@@ -2,6 +2,7 @@
   "siteName": "PNW Historical Explorer",
   "tagline": "Find a place worth stopping for, hear its story, and go.",
   "amazonAssociatesTag": "",
+  "supportUrl": "https://ko-fi.com/pnwexplorer",
   "concierge": {
     "enabled": true,
     "name": "Bainbridge Concierge",

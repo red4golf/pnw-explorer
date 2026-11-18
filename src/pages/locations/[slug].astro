@@ -206,6 +206,17 @@ const jsonLd = {
           <p class="muted" style="font-size:0.88rem;margin:0">{statusText}</p>
         </div>
 
+        {site.supportUrl && (
+          <div class="sidebar-card">
+            <h3>☕ Keep it free</h3>
+            <p class="muted" style="font-size:0.88rem;margin:0 0 0.5rem">
+              Every guide here is free. If this one helped your visit, you can support the research
+              behind it.
+            </p>
+            <a class="sidebar-link" href={site.supportUrl} target="_blank" rel="noopener" data-support>Support on Ko-fi →</a>
+          </div>
+        )}
+
         {d.books.length > 0 && (
           <div class="sidebar-card">
             <h3>📚 Continue the story</h3>

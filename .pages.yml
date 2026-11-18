@@ -211,6 +211,10 @@ settings:
         label: Amazon Associates tag
         type: string
         description: Prefer the PUBLIC_AMAZON_TAG environment variable, which overrides this.
+      - name: supportUrl
+        label: Support link (Ko-fi)
+        type: string
+        description: Shown in the footer and on every location page. Leave blank to hide it.
       - name: concierge
         label: Bainbridge Concierge
         type: object

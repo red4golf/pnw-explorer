@@ -111,6 +111,12 @@ const nav = [
           /* analytics must never break the page */
         }
       };
+      // Support-link clicks, delegated so the footer and the location sidebar
+      // share one handler.
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[data-support]') : null;
+        if (a) window.pnwTrack('support-click');
+      });
     </script>
   </head>
 
@@ -146,6 +152,12 @@ const nav = [
           <a href="/map">Map</a> · <a href="/categories">Categories</a> ·
           <a href="/about">About</a> · <a href="/offline">Offline</a>
         </div>
+        {site.supportUrl && (
+          <div>
+            Free to use. If a story here made a trip better, you can
+            <a href={site.supportUrl} target="_blank" rel="noopener" data-support>support the research on Ko-fi</a>.
+          </div>
+        )}
       </div>
     </footer>
 
