@@ -149,7 +149,7 @@ const locations = defineCollection({
      * absent section: they read as padding and they undercut the guide voice
      * every other part of the page is trying to establish. Absent means absent.
      */
-    notice: z.array(z.string().min(20)).min(2).max(5).nullable().default(null),
+    notice: z.array(z.string().min(20)).min(1).max(5).nullable().default(null),
 
     hero: hero.nullable().default(null),
     audio: z.string().startsWith('/').nullable().default(null),

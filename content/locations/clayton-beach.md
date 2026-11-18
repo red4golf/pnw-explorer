@@ -9,7 +9,8 @@ coordinates:
   lng: -122.4894
 summary: "A golden-sand beach on Samish Bay reached by a 2023 footbridge over live tracks, with trestle pilings offshore and sandstone holding a 7-foot bird's footprint."
 lead: null
-notice: null
+notice:
+  - "At low tide, look for the weathered stumps of cedar pilings out in the bay — what's left of a trestle railroad that once crossed this water. The trail in ends with a fenced bridge arching directly over the active BNSF tracks, then stairs down to sand that's noticeably golden rather than gray, eroded from the sandstone bluffs above. Tide pools along the rocks hold anemones and sea stars; seals sometimes haul out on the offshore rocks."
 hero: null
 audio: "/audio/clayton-beach.mp3"
 draft: false

@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import { href } from '../lib/url';
+import { site } from '../config';
+
+const { concierge } = site;
+const phoneDisplay = concierge.phone;
+const phoneHref = `tel:+1${concierge.phone.replace(/\D/g, '')}`;
+---
+
+<Base
+  title="Explore Bainbridge Island — Isla & PNW Historical Explorer"
+  description="Call Isla, the AI guide to Bainbridge Island, or explore Pacific Northwest history on the interactive PNW Historical Explorer."
+>
+  <div class="isla-landing" data-pagefind-ignore>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="kicker">PNW Historical Explorer</p>
+        <h1>Discover the stories around you</h1>
+        <p class="intro">Explore places, hear local history, and plan your next Bainbridge Island adventure.</p>
+
+        <div class="choices">
+          {concierge.enabled && (
+          <article class="choice">
+            <div class="icon" aria-hidden="true">☎</div>
+            <p class="eyebrow">Bainbridge Island</p>
+            <h2>Talk to Isla</h2>
+            <p class="subhead">Your AI guide to Bainbridge Island</p>
+            <ul>
+              <li>Local places & history</li>
+              <li>Ferry schedule help</li>
+              <li>Personalized suggestions</li>
+              <li>Helpful links by text</li>
+            </ul>
+            <a class="cta" href={phoneHref} aria-label={`Call Isla at ${phoneDisplay}`}>
+              <span aria-hidden="true">☎</span> Call {phoneDisplay}
+            </a>
+            <small>Tap to call from your phone</small>
+          </article>
+          )}
+
+          <article class="choice explorer">
+            <div class="icon" aria-hidden="true">⌖</div>
+            <p class="eyebrow">Explore independently</p>
+            <h2>PNW Historical Explorer</h2>
+            <p class="subhead">An interactive guide to historical places across the region.</p>
+            <ul>
+              <li>Explore historical sites</li>
+              <li>Read the stories</li>
+              <li>Plan your own adventure</li>
+              <li>Built for mobile exploration</li>
+            </ul>
+            <a class="cta" href={href('/map')}>
+              <span aria-hidden="true">⌖</span> Open the Explorer
+            </a>
+            <small>Browse the interactive map</small>
+          </article>
+        </div>
+
+        <div class="trust">
+          <span>◉ Hidden gems</span>
+          <span>▤ Real stories</span>
+          <span>⌖ Plan your visit</span>
+          <span>▲ Local history</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .isla-landing { margin: 0; }
+  .hero {
+    min-height: calc(100vh - 5rem);
+    background:
+      linear-gradient(180deg, rgba(7,54,78,.14), rgba(5,45,63,.74)),
+      radial-gradient(circle at 72% 16%, rgba(255,255,255,.58), transparent 22%),
+      linear-gradient(145deg, #8ec9e8 0%, #6da8c8 38%, #2d708b 64%, #174f65 100%);
+    position: relative;
+    overflow: hidden;
+    padding: clamp(2.5rem, 7vw, 6rem) 1rem 2.5rem;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    left: -5%; right: -5%; bottom: 0;
+    height: 34%;
+    background:
+      linear-gradient(165deg, transparent 0 48%, rgba(8,55,52,.95) 49% 58%, transparent 59%),
+      linear-gradient(195deg, transparent 0 49%, rgba(12,74,63,.9) 50% 60%, transparent 61%);
+    opacity: .7;
+    pointer-events: none;
+  }
+  .hero-inner { width: min(1080px, 100%); margin: 0 auto; position: relative; z-index: 1; }
+  .kicker {
+    text-align: center; text-transform: uppercase; letter-spacing: .18em;
+    font-weight: 800; color: #073b4c; margin: 0 0 .65rem;
+  }
+  h1 {
+    color: white; text-align: center; font-size: clamp(2.35rem, 7vw, 4.9rem);
+    line-height: .98; max-width: 900px; margin: 0 auto; text-shadow: 0 3px 16px rgba(0,0,0,.25);
+  }
+  .intro {
+    color: white; text-align: center; font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+    max-width: 720px; margin: 1.25rem auto 2rem; text-shadow: 0 2px 8px rgba(0,0,0,.35);
+  }
+  .choices { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+  .choice {
+    background: rgba(247,252,255,.95); border: 1px solid rgba(255,255,255,.7);
+    border-radius: 24px; padding: clamp(1.35rem, 4vw, 2.25rem);
+    box-shadow: 0 18px 55px rgba(5,40,56,.25); backdrop-filter: blur(8px);
+    display: flex; flex-direction: column;
+  }
+  .choice.explorer { background: rgba(247,255,246,.95); }
+  .icon {
+    width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center;
+    background: #d8effa; color: #064c6b; font-size: 1.65rem; margin-bottom: .8rem;
+  }
+  .explorer .icon { background: #ddf3dd; color: #0b6844; }
+  .eyebrow {
+    text-transform: uppercase; letter-spacing: .11em; font-size: .76rem;
+    font-weight: 800; color: #39718a; margin: 0 0 .25rem;
+  }
+  .choice h2 { color: #073b63; font-size: clamp(1.65rem, 4vw, 2.35rem); margin: 0; line-height: 1.05; }
+  .subhead { color: #294b63; font-size: 1.05rem; margin: .55rem 0 1rem; }
+  .choice ul { list-style: none; padding: 0; margin: 0 0 1.35rem; flex: 1; }
+  .choice li { padding: .3rem 0 .3rem 1.75rem; position: relative; color: #16394d; }
+  .choice li::before {
+    content: "✓"; position: absolute; left: 0; top: .28rem; width: 1.25rem; height: 1.25rem;
+    display: grid; place-items: center; border-radius: 50%; background: #168847; color: white;
+    font-size: .75rem; font-weight: 900;
+  }
+  .cta {
+    min-height: 58px; display: flex; align-items: center; justify-content: center; gap: .6rem;
+    border-radius: 999px; background: #087c4f; color: white !important; text-decoration: none;
+    font-size: clamp(1.05rem, 3.5vw, 1.35rem); font-weight: 850; padding: .85rem 1rem;
+    box-shadow: 0 7px 18px rgba(4,89,56,.22);
+  }
+  .cta:hover, .cta:focus-visible { background: #05663f; transform: translateY(-1px); }
+  .choice small { display: block; text-align: center; color: #516a78; margin-top: .65rem; }
+  .trust {
+    margin: 1.35rem auto 0; display: flex; flex-wrap: wrap; justify-content: center;
+    gap: .75rem 1.6rem; color: white; font-weight: 700; text-shadow: 0 1px 5px rgba(0,0,0,.35);
+  }
+  @media (max-width: 700px) {
+    .hero { padding: 2.1rem .8rem 5rem; }
+    .choices { grid-template-columns: 1fr; }
+    .choice { border-radius: 20px; }
+    .trust { font-size: .85rem; gap: .6rem 1rem; }
+  }
+</style>

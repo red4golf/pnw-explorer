@@ -130,7 +130,9 @@ const jsonLd = {
         <article class="experience-card">
           <p class="eyebrow">When you arrive</p>
           <h2>What to notice</h2>
-          <ol class="look-list">{d.notice.map((prompt) => <li>{prompt}</li>)}</ol>
+          {d.notice.length === 1
+            ? <p>{d.notice[0]}</p>
+            : <ol class="look-list">{d.notice.map((prompt) => <li>{prompt}</li>)}</ol>}
         </article>
       )}
       <article class="experience-card">

@@ -9,7 +9,8 @@ coordinates:
   lng: -122.492355
 summary: "Brick ruins and a restored 1850s courthouse mark the gold camp California State Parks calls the 'Queen City of the Northern Mines,' six miles west of Redding."
 lead: null
-notice: null
+notice:
+  - "Walk Main Street today and you're walking past brick shells with no roofs — the fire-proofed rebuild after two fires wiped out the original wooden town. The restored 1855 courthouse now holds a museum with an 1860s-era courtroom, jail, and gallows, and the Litsch General Store next door is set up as it would have looked in business. Most of the site is free to walk; the courthouse museum has its own hours."
 hero: null
 audio: null
 draft: false

@@ -9,7 +9,8 @@ coordinates:
   lng: -122.533052
 summary: "A reconstructed Hudson's Bay Company fur-trading post in Point Defiance Park, built around two original 1830s-40s buildings moved here by WPA crews in the…"
 lead: "A reconstructed Hudson's Bay Company fur-trading post in Point Defiance Park, built around two original 1830s-40s buildings moved here by WPA crews in the 1930s."
-notice: null
+notice:
+  - "Walk through the reconstructed palisade and parade ground to find two buildings that actually date to the fort's Hudson's Bay Company days: the Factor's House and the Granary, moved here among the WPA-era reconstruction. Costumed interpreters work the grounds demonstrating blacksmithing, candle making, and woodworking as they would have been done at the fort in 1855."
 hero: null
 audio: null
 draft: false

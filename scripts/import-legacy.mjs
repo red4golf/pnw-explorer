@@ -189,7 +189,7 @@ for (const file of files) {
     coordinates: { lat: fm.coordinates?.lat, lng: fm.coordinates?.lng },
     summary,
     lead,
-    notice: Array.isArray(fm.notice) && fm.notice.length >= 2 ? fm.notice : null,
+    notice: Array.isArray(fm.notice) && fm.notice.length >= 1 ? fm.notice : null,
     hero: buildHero(fm.heroImage, fm.title, fm.category, slug),
     audio: fm.audio ?? null,
     draft: fm.draft ?? false,

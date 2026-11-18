@@ -9,7 +9,8 @@ coordinates:
   lng: -122.3376578
 summary: "Boeing bought this Georgetown shipyard building in 1910; it became his company's WWI-era factory, then moved two miles upriver to the Museum of Flight in 1975."
 lead: null
-notice: null
+notice:
+  - "You're standing at the address, not the building — nothing from the Boeing years is still here to look at. The Duwamish River runs alongside this spot; Boeing bought a former shipyard building on this river in 1910, and it became his young company's WWI-era manufacturing plant. The actual barn now sits two miles upriver, preserved and open to visitors at the Museum of Flight."
 hero: null
 audio: "/audio/boeing-red-barn-historic-site-former-location.mp3"
 draft: false

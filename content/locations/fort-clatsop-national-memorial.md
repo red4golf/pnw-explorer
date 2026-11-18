@@ -9,7 +9,8 @@ coordinates:
   lng: -123.88054
 summary: "A reconstructed log fort where the Lewis and Clark Corps of Discovery spent a wet, difficult winter before heading home in 1806."
 lead: null
-notice: null
+notice:
+  - "The fort standing here today is a 2006 reconstruction, said to be based on William Clark's original floor-plan sketch, built after fire destroyed the previous 1955 replica in October 2005. Walk the parade ground between the two rows of rooms and you're standing inside a footprint the National Park Service records as fifty feet square. The surrounding rain forest and coastal drizzle are the same conditions the Corps endured for 106 days."
 hero: null
 audio: "/audio/fort-clatsop-national-memorial.mp3"
 draft: false
