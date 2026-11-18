@@ -511,7 +511,12 @@ img { max-width: 100%; height: auto; display: block; }
   padding-top: 0.5rem;
   border-top: 1px solid var(--border);
 }
+.prose > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 .prose h3 { margin-top: 1.5rem; }
+.prose h2[id] { scroll-margin-top: 5rem; }
+/* "On this page" only earns its place beside the text; stacked under it on a
+   phone it would just repeat what you scrolled past. */
+@media (max-width: 59.99rem) { .toc { display: none; } }
 .prose ul, .prose ol { padding-left: 1.25rem; }
 .prose li { margin-bottom: 0.4rem; }
 .prose blockquote {
@@ -591,7 +596,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- map ---------- */
 
 #map {
-  height: clamp(24rem, 62vh, 40rem);
+  /* Fills what is left of the first screen once the header and controls are
+     counted, so the map is the page, not something under it. */
+  height: clamp(22rem, 100svh - 17rem, 46rem);
   border-radius: var(--radius);
   border: 1px solid var(--border);
   z-index: 1;
@@ -623,7 +630,35 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nearby-list .dist { color: var(--ink-soft); font-size: 0.85rem; white-space: nowrap; }
 
-.status-line { font-size: 0.9rem; color: var(--ink-soft); margin: 0.5rem 0 0; min-height: 1.4em; }
+.status-line { font-size: 0.9rem; color: var(--ink-soft); margin: 0.5rem 0 0; }
+/* Live region stays in the tree, but takes no room while empty. */
+.status-line:empty { margin: 0; }
+
+/* ---------- map controls ---------- */
+
+.map-title { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem); margin-bottom: 0.75rem; }
+.map-toolbar { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 0.75rem; }
+.cat-filter { margin-left: auto; min-width: 0; }
+.cat-filter select {
+  font: inherit;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+}
+.route-note { margin-top: 0.75rem; font-size: 0.85rem; }
+.route-note summary { cursor: pointer; color: var(--accent); min-height: 24px; }
+.lbl-short { display: none; }
+@media (max-width: 44rem) {
+  .map-toolbar > .btn { flex: 1 1 0; justify-content: center; padding-inline: 0.6rem; }
+  .cat-filter { margin-left: 0; flex: 1 0 100%; }
+  .cat-filter select { width: 100%; }
+  .lbl-long { display: none; }
+  .lbl-short { display: inline; }
+}
 
 .privacy-note { font-size: 0.8rem; color: #cfc4ad; margin: 0.5rem 0 0; }
 
@@ -649,6 +684,20 @@ img { max-width: 100%; height: auto; display: block; }
 .cat-card h2 { font-size: 1.1rem; margin: 0.5rem 0 0.3rem; }
 .cat-card p { font-size: 0.86rem; color: var(--ink-soft); margin: 0 0 0.5rem; }
 .cat-card .count { font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+
+/* On a phone the icon sits beside the text, not above it: nine stacked cards
+   were 175px each, nearly 2000px of scrolling to see a list of names. */
+@media (max-width: 36rem) {
+  .cat-card {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    column-gap: 0.85rem;
+    padding: 0.9rem 1rem;
+  }
+  .cat-card .icon { grid-row: 1 / span 3; font-size: 1.7rem; align-self: start; line-height: 1.2; }
+  .cat-card h2 { margin: 0 0 0.2rem; }
+  .cat-card p { margin: 0 0 0.3rem; }
+}
 
 /* ---------- search ---------- */
 

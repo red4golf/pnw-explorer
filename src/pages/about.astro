@@ -16,7 +16,7 @@ const verified = locations.filter(
   title="About — PNW Historical Explorer"
   description="How this guide is researched, how sources are graded, what the verification badge means, and how the site pays for itself."
 >
-  <section class="hero" style="padding-block:clamp(2rem,1rem+3vw,3.25rem)">
+  <section class="hero" style="padding-block:clamp(1.5rem,1rem+2vw,2.25rem)">
     <div class="container">
       <p class="eyebrow light">About</p>
       <h1>How this guide works</h1>
@@ -25,9 +25,9 @@ const verified = locations.filter(
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container detail-layout">
       <div class="prose">
-        <h2>What this is</h2>
+        <h2 id="what">What this is</h2>
         <p>
           A field guide to {total} places across the Pacific Northwest that are worth pulling off
           the road for: mill towns that vanished, airfields that made a first, forts that never
@@ -36,7 +36,7 @@ const verified = locations.filter(
           signal.
         </p>
 
-        <h2>How the history is sourced</h2>
+        <h2 id="sourcing">How the history is sourced</h2>
         <p>
           Every factual claim is meant to trace to a graded source. Sources are ranked in four
           tiers: primary and official records first (agency documents, National Register
@@ -54,7 +54,7 @@ const verified = locations.filter(
           confidence that turns out to be borrowed.
         </p>
 
-        <h2>What the verification badge means</h2>
+        <h2 id="badge">What the verification badge means</h2>
         <p>
           {verified} of {total} guides currently carry the “researched and sourced” badge. It means
           a specific thing: someone worked through the entry claim by claim against graded sources,
@@ -68,7 +68,7 @@ const verified = locations.filter(
           words it verified is worse than no claim at all.
         </p>
 
-        <h2>Working offline</h2>
+        <h2 id="offline">Working offline</h2>
         <p>
           Pages, images, and map tiles are stored on your device as you browse, so a guide you
           looked at with signal is still there when you arrive without any. Audio narrations are
@@ -76,7 +76,7 @@ const verified = locations.filter(
           doing before you leave the last bar of coverage.
         </p>
 
-        <h2>Privacy</h2>
+        <h2 id="privacy">Privacy</h2>
         <p>
           There is no login, no account, and no advertising network. If you use “find places near
           me”, the coordinates stay on your device and are used to sort a list; they are never
@@ -86,7 +86,7 @@ const verified = locations.filter(
 
         {AMAZON_TAG && (
           <>
-            <h2>Affiliate disclosure</h2>
+            <h2 id="affiliate">Affiliate disclosure</h2>
             <p>
               Book recommendations link to Amazon with an Associates tag, and a qualifying purchase
               earns a small commission at no extra cost to you. Books are chosen because they are
@@ -96,13 +96,26 @@ const verified = locations.filter(
           </>
         )}
 
-        <h2>Corrections</h2>
+        <h2 id="corrections">Corrections</h2>
         <p>
           If something here is wrong, it should be fixed. Local knowledge and family records catch
           things that published sources miss, and a correction with a source behind it is always
           welcome.
         </p>
       </div>
+
+      <aside class="toc" aria-label="On this page">
+        <div class="sidebar-card">
+          <h3>On this page</h3>
+          <a class="sidebar-link" href="#what">What this is</a>
+          <a class="sidebar-link" href="#sourcing">How the history is sourced</a>
+          <a class="sidebar-link" href="#badge">What the badge means</a>
+          <a class="sidebar-link" href="#offline">Working offline</a>
+          <a class="sidebar-link" href="#privacy">Privacy</a>
+          {AMAZON_TAG && <a class="sidebar-link" href="#affiliate">Affiliate disclosure</a>}
+          <a class="sidebar-link" href="#corrections">Corrections</a>
+        </div>
+      </aside>
     </div>
   </section>
 </Base>

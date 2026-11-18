@@ -15,14 +15,26 @@ const counts = Object.fromEntries(
 >
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Explore</p>
-      <h1>Where everything is</h1>
+      <h1 class="map-title">Where everything is</h1>
 
-      <div class="actions" style="margin-top:1rem">
-        <button class="btn" id="locate" type="button">📍 Find places near me</button>
-        <button class="btn secondary" id="route-toggle" type="button" aria-expanded="false">
-          🛣️ Plan stops along a drive
+      <div class="map-toolbar">
+        <button class="btn" id="locate" type="button">
+          <span aria-hidden="true">📍</span>
+          <span class="lbl-long">Find places near me</span><span class="lbl-short">Near me</span>
         </button>
+        <button class="btn secondary" id="route-toggle" type="button" aria-expanded="false">
+          <span aria-hidden="true">🛣️</span>
+          <span class="lbl-long">Plan stops along a drive</span><span class="lbl-short">Plan a drive</span>
+        </button>
+        <label class="cat-filter">
+          <span class="visually-hidden">Filter by category</span>
+          <select id="category-select">
+            <option value="all" data-label="All places" selected>All places · {locations.length}</option>
+            {CATEGORIES.map((c) => (
+              <option value={c.slug} data-label={c.name}>{c.icon} {c.name} · {counts[c.slug]}</option>
+            ))}
+          </select>
+        </label>
       </div>
       <p id="locate-status" class="status-line" role="status" aria-live="polite"></p>
 
@@ -51,7 +63,9 @@ const counts = Object.fromEntries(
             <button class="btn secondary" type="button" id="route-clear" hidden>Clear results</button>
           </div>
         </div>
-        <p class="muted" style="font-size:0.8rem;margin:0.75rem 0 0">
+        <details class="route-note">
+        <summary>How detours and ferries are measured</summary>
+        <p class="muted" style="font-size:0.8rem;margin:0.5rem 0 0">
           Detour is measured in driving time via each place, not map distance — across water those
           are wildly different things, and only one of them tells you whether to stop.
           <br /><br />
@@ -63,20 +77,10 @@ const counts = Object.fromEntries(
           waits at the dock are not, so check the WSF schedule. Routing and place lookup by
           OpenStreetMap.
         </p>
+        </details>
         <div id="route-options" class="filters" role="group" aria-label="Route options" hidden style="margin-top:0.75rem"></div>
         <p id="route-status" class="status-line" role="status" aria-live="polite"></p>
       </form>
-
-      <div class="filters" id="filters" role="group" aria-label="Filter by category">
-        <button class="pill active" data-cat="all" data-label="All places" aria-pressed="true">
-          All {locations.length}
-        </button>
-        {CATEGORIES.map((c) => (
-          <button class="pill" data-cat={c.slug} data-label={c.name} aria-pressed="false">
-            {c.icon} {c.name} {counts[c.slug]}
-          </button>
-        ))}
-      </div>
 
       <p class="visually-hidden" id="filter-current" role="status" aria-live="polite">All places</p>
 
@@ -262,15 +266,13 @@ const counts = Object.fromEntries(
       });
 
     // --- category filter ---------------------------------------------------
-    document.getElementById('filters')!.addEventListener('click', (e) => {
-      const btn = (e.target as HTMLElement).closest('button.pill') as HTMLButtonElement | null;
-      if (!btn) return;
-      document.querySelectorAll('#filters .pill').forEach((p) => {
-        p.classList.toggle('active', p === btn);
-        p.setAttribute('aria-pressed', String(p === btn));
-      });
-      activeCategory = btn.dataset.cat!;
-      document.getElementById('filter-current')!.textContent = btn.dataset.label!;
+    // A <select>, not a row of buttons: ten pills wrapped to three rows on a
+    // laptop and five on a phone, pushing the map below the fold.
+    const categorySelect = document.getElementById('category-select') as HTMLSelectElement;
+    categorySelect.addEventListener('change', () => {
+      activeCategory = categorySelect.value;
+      document.getElementById('filter-current')!.textContent =
+        categorySelect.selectedOptions[0].dataset.label!;
       // With a route on screen, filtering narrows the stops ALONG that route
       // rather than silently dropping back to the whole corpus.
       if (activeRoute) void applyRoute();
