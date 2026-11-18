@@ -7,84 +7,70 @@ address: "750 NW Lighthouse Dr, Newport, OR 97365"
 coordinates:
   lat: 44.6761
   lng: -124.0767
-summary: "Standing 93 feet tall on Oregon's central coast, this is Oregon's tallest lighthouse."
-lead: "Standing 93 feet tall on Oregon's central coast, this is Oregon's tallest lighthouse. Built 1871-1872 with 370,000 bricks and first lit August 20, 1873, it remains operational and features an outstanding seabird nesting area. The lighthouse provides dramatic coastal views and maritime heritage interpretation."
-notice: null
+summary: "Oregon's tallest lighthouse, first lit August 20, 1873, above cliffs where more than 50,000 murres may nest in a season."
+lead: null
+notice:
+  - "Find the lantern room at the top of the tower first: a first-order Fresnel lens built in Paris in 1868 arrived there in October 1872."
+  - "Look up at the tower itself and picture it in brick: more than 370,000 bricks went into it, shipped in from a brickmaker in San Rafael, California, not made on site."
+  - "Walk to the cliff edge and scan the rocks and islands below in nesting season, where more than 50,000 common murres can crowd in some years, along with cormorants and black oystercatchers."
 hero: null
 audio: null
 draft: false
 publishDate: null
-books:
-  - title: "The Keepers of the Light: A History of American Lighthouses"
-    author: "Dennis L. Noble"
-    url: "https://www.amazon.com/Keepers-Light-History-American-Lighthouses/dp/1597974420"
-    isbn: null
-  - title: "Oregon Coast: Lighthouses, Headlands and Highways"
-    author: "Ray Atkeson & Dennis Stovall"
-    url: "https://www.amazon.com/Oregon-Coast-Lighthouses-Headlands-Highways/dp/0882403095"
-    isbn: null
+books: []
 sourceId: 128
 mergedFrom: null
+factcheck:
+  status: "unverified"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify)"
+  sourceTier: "primary"
+  claimsTotal: 20
+  claimsCited: 20
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline. First research attempt returned an empty placeholder pack (recurring mechanical StructuredOutput bug); the writer correctly refused to invent substantive facts but smuggled unsourced metadata (address, source ID, category, period) into the placeholder as if factual, which verify correctly rejected. Relaunched fresh with explicit warnings against both failure modes, which succeeded with strong primary BLM/OSU sourcing plus attributed Oregon Encyclopedia detail. Verdict after repair + re-verify: needs-edit, 2 unsupported claims (a misattributed candlepower figure folded into the wrong source's sentence, an invented '88 years' interpretive gloss) + 1 style violation (abstract-noun sentence subject) — all hand-fixed directly rather than spending a third paid agent round. Both originally-listed books were fabricated/mismatched and did not survive verification; books list is intentionally empty."
 ---
 
-Rising majestically 93 feet above the turbulent waters of the Pacific Ocean, Yaquina Head Lighthouse stands as Oregon's tallest beacon and one of the most prominent landmarks on the state's dramatic coastline. Built between 1871 and 1872 with over 370,000 handmade bricks and first lit on August 20, 1873, this engineering marvel has guided mariners safely along one of America's most treacherous coasts for more than 150 years while serving as a symbol of human determination to master the challenges of maritime navigation.
+The white tower stands at the end of the headland, with waves working the rocks below it. Ninety-three feet tall, the Bureau of Land Management calls it Oregon's tallest lighthouse, and two dates back that up: construction started in 1871, and Head Keeper Fayette Crosby lit the lamp for the first time on August 20, 1873.
 
-## Strategic Coastal Defense
+## A Headland Cook Logged in 1778
 
-The selection of Yaquina Head for lighthouse construction reflected the U.S. Lighthouse Board's comprehensive strategy for protecting navigation along the Pacific Coast. This prominent basalt headland, jutting dramatically into the Pacific Ocean, provided an ideal location for a lighthouse that could be seen for many miles in both directions along the coast. The 162-foot elevation of the headland, combined with the lighthouse's 93-foot tower, created a beacon visible for 19 nautical miles at sea.
+People used this headland long before that lamp was ever lit. Roughly 4,000 years, per the Bureau of Land Management. Captain James Cook sighted and logged it on March 7, 1778. President Andrew Johnson signed an executive order on June 8, 1866, withdrawing 19 acres of the point for lighthouse purposes.
 
-The Oregon coast's reputation as one of the world's most dangerous stretches of water made reliable navigation aids essential for the growing maritime traffic serving Pacific Northwest ports. Frequent storms, dense fog, strong currents, and rocky shorelines created conditions that had already claimed dozens of vessels by the time Yaquina Head Lighthouse construction began.
+The headland's name was briefly muddled on paper. The Oregon Encyclopedia's Cameron La Follette notes that early General Land Office records and survey plats sometimes mislabeled the headland "Cape Foulweather," and that research confirms the Lighthouse Board always meant Yaquina Head. That was a paperwork error, not a shipping one — nothing was sent to the wrong site.
 
-The lighthouse's location north of Newport placed it at a critical point along the coast where northbound and southbound shipping lanes converged. Vessels traveling between San Francisco and the Columbia River mouth depended on coastal lighthouses to maintain safe distances from shore while navigating the treacherous waters that mariners called the "Graveyard of the Pacific."
+## Bricks From San Rafael, Not the Ground Here
 
-## Construction Challenges and Innovation
+Congress approved $90,000 for the project in 1871, per the Oregon Encyclopedia. The tower took more than 370,000 bricks to build. They did not come from a pit dug near the site. The Patent Brick Company of San Rafael, California, manufactured every one of them and shipped them in. Two boats were lost delivering building materials during construction.
 
-Building Yaquina Head Lighthouse required overcoming extraordinary logistical and engineering challenges that tested the skills of 19th-century contractors and workers. The remote location, accessible only by rough coastal trails, necessitated transporting all materials by ship to nearby Yaquina Bay and then overland to the construction site.
+The tower's metalwork came from Oregon Iron Works of Clackamas, manufactured in Philadelphia and finished in June 1872. The keeper's house, a two-and-a-half-story wooden building, was done by September 1872. The tower itself was not finished and lit until August 20, 1873, eleven months after the house.
 
-The lighthouse's construction began in 1871 under the direction of contractor Hermann Stockton, who faced the daunting task of manufacturing over 370,000 bricks on-site using local clay deposits. A temporary brickyard was established near the construction site, where skilled craftsmen molded, fired, and shaped the bricks that would form the lighthouse's distinctive conical tower.
+## A Paris Lens, Delayed by a Lost Crate
 
-The tower's construction required innovative masonry techniques to ensure structural stability in the face of powerful Pacific storms and potential seismic activity. The walls were built with a double-shell design, featuring an outer shell of finished brick and an inner shell of rougher masonry, with the space between filled with rubble and mortar to create maximum strength.
+The lighthouse got a first-order Fresnel lens. The firm Barbier & Fenestre made it in Paris in 1868. It reached the site in October 1872, but the light did not go into service right away. Pieces of the lantern's shipping crate went missing, and the whole start-up waited on them turning up.
 
-## First-Order Fresnel Lens Technology
+The lighthouse's fuel changed twice over the years that followed. The Oregon Encyclopedia records the switch to mineral, or kerosene, oil in 1888, then to electricity in the early 1930s. By BLM's account, a 1,000-watt theatrical lamp pushed the beam past 130,000 candlepower. The flash pattern seen today — two seconds on, two off, twice, then fourteen seconds dark — dates to 1939. No fog signal was ever built here. The Oregon Encyclopedia attributes that to how rarely fog settles on this stretch of coast.
 
-Yaquina Head Lighthouse was equipped with a first-order Fresnel lens, the largest and most powerful type available when the lighthouse was constructed. This sophisticated optical system, manufactured in Paris by the renowned firm of Barbier & Fenestre, represented the pinnacle of 19th-century lighthouse technology.
+The headland itself rises 162 feet above the beach. Add the tower on top, and the light can be seen about 19 nautical miles out to sea.
 
-The massive lens assembly stood over 12 feet tall and consisted of hundreds of precisely cut glass prisms arranged in a beehive pattern that captured light from a central lamp and focused it into a powerful beam. The lens rotated on a clockwork mechanism powered by descending weights, creating the distinctive flashing pattern that allowed mariners to identify Yaquina Head from other coastal lighthouses.
+## Seventeen Men Watching the Water
 
-The Fresnel lens system required daily maintenance by skilled lighthouse keepers who cleaned the glass elements, trimmed wicks, replenished lamp oil, and wound the clockwork mechanism. This demanding routine continued for over a century until the lighthouse was automated in 1966 and the original lens was replaced with an electric beacon.
+During World War II, the Coast Guard stationed seventeen servicemen at Yaquina Head to watch for enemy ships and submarines, according to the Oregon Encyclopedia. The lighthouse kept working through that watch. It kept working for two more decades after it. The lighthouse was automated in 1966, and the last Coast Guard keepers left the headland that same year.
 
-## Lighthouse Keeper Families
+## 50,000 Murres, Monitored Since 1998
 
-For over 90 years, lighthouse keeper families lived in the substantial dwelling constructed adjacent to the tower, creating a unique community isolated on the dramatic headland. The keeper's house provided comfortable accommodations for families while including workspace for maintaining the lighthouse's complex mechanical systems.
+Congress designated Yaquina Head an Outstanding Natural Area in 1980. Oregon State University's Seabird Oceanography Lab has monitored the cliffs and offshore rocks since 1998. Its researchers report that more than 50,000 common murres may breed there in some years, alongside pigeon guillemots, Western gulls, pelagic and Brandt's cormorants, and black oystercatchers.
 
-Head keepers and their assistants faced demanding responsibilities that required both technical skills and physical endurance. Daily duties included climbing the tower's 114 steps multiple times to tend the light, maintaining detailed weather and shipping logs, and providing assistance to vessels in distress. During winter storms, keepers remained on constant duty to ensure the light remained operational when mariners most desperately needed guidance.
+Harbor seals live year-round around Quarry Cove and Seal Island. Gray whales pass twice a year: southbound toward Baja California in late December and January, northbound toward the Bering Sea in March and April. A few stay near the headland the rest of the time.
 
-The isolation of lighthouse life created close-knit families who developed remarkable self-sufficiency while maintaining connections to the broader community through mail delivery, supply visits, and occasional trips to Newport. Children grew up with the ocean as their playground while learning the responsibility and dedication that lighthouse keeping demanded.
+The Bureau of Land Management built artificial tide pools into an old quarry here in 1996. Beach sand had covered them over by 2000.
 
-## Maritime Rescue Operations
+The tower that opened on August 20, 1873, still stands 93 feet above the same headland. It is still, by the Bureau of Land Management's own account, the tallest lighthouse Oregon has.
 
-Throughout its operational history, Yaquina Head Lighthouse served not only as a navigation aid but also as a base for maritime rescue operations that saved countless lives along the treacherous Oregon coast. Lighthouse keepers often served as the first responders when vessels foundered near the headland, using their intimate knowledge of local conditions to coordinate rescue efforts.
+## Sources
 
-The lighthouse's powerful beam and prominent location made it a crucial landmark for vessels seeking safe harbor during storms. Ships in distress could use the lighthouse as a reference point for navigating toward Yaquina Bay's protected waters, though the bay's entrance remained challenging even for experienced mariners.
-
-During World War II, the lighthouse took on additional strategic importance as part of the coastal defense network that watched for enemy submarines and aircraft. Lighthouse keepers served as volunteer coastal observers, reporting suspicious activity and maintaining communications with military authorities while continuing their traditional duties of guiding maritime traffic.
-
-## Automation and Preservation
-
-The automation of Yaquina Head Lighthouse in 1966 marked the end of an era when lighthouse keeping represented one of the most demanding and specialized occupations on the Pacific Coast. Modern electronic navigation aids and automated beacon systems made resident keepers unnecessary, but the lighthouse's historical and architectural significance ensured its preservation for future generations.
-
-The Bureau of Land Management assumed responsibility for the lighthouse and surrounding headland, developing interpretive programs that help visitors understand both the technical achievements and human stories associated with lighthouse operations. The restoration of the lighthouse to its historical appearance required extensive research and skilled craftsmanship to recreate authentic period details.
-
-## Outstanding Natural Area
-
-Yaquina Head's designation as an Outstanding Natural Area recognizes not only the lighthouse's historical significance but also the remarkable ecological diversity of the surrounding marine and terrestrial environments. The headland provides nesting sites for thousands of seabirds, including common murres, cormorants, and various gull species that create one of Oregon's most spectacular wildlife viewing opportunities.
-
-Tide pools at the base of the headland contain diverse marine communities that illustrate the complex ecological relationships of the rocky intertidal zone. Educational programs combine lighthouse history with environmental education, helping visitors understand both cultural and natural heritage preserved at this remarkable location.
-
-The integration of historical preservation with environmental protection demonstrates how cultural and natural resources can be managed together to provide comprehensive interpretive experiences that enrich public understanding of both human and natural history.
-
-## Modern Lighthouse Operations
-
-Today, Yaquina Head Lighthouse continues its original mission of guiding maritime traffic while serving thousands of visitors annually who come to experience one of the Pacific Coast's most dramatic lighthouses. The automated beacon operates continuously, maintaining the tradition of service that has protected mariners for over 150 years.
-
-Visitor programs include guided tours of the lighthouse tower that provide spectacular views of the Oregon coast while explaining the technical and social history of lighthouse operations. The restored lighthouse serves as a tangible connection to the maritime heritage that shaped Pacific Northwest development while demonstrating the engineering achievements that enabled safe navigation along one of the world's most challenging coastlines.
+- **Bureau of Land Management, 'History of Yaquina Head Lighthouse,' blm.gov/programs/national-conservation-lands/oregon-washington/yaquina-head-ona/lighthouse** — *primary/official* — 93-foot tower height, Oregon's tallest lighthouse framing, first lit August 20 1873, candlepower and flash-pattern detail
+- **Bureau of Land Management, 'A beacon through time: The history of Yaquina Head, Oregon's tallest lighthouse,' blm.gov/blog/2025-08-22** — *primary/official* — First-lit date and Head Keeper Fayette Crosby's name
+- **Bureau of Land Management, Yaquina Head Outstanding Natural Area visitor brochure, blm.gov/sites/blm.gov/files/yaquina-brochure.pdf** — *primary/official* — 4,000 years of Native American use, Cook 1778 sighting, 1866 executive order and 19 acres, 1980 Outstanding Natural Area designation, harbor seals, gray whale migration timing, 1996/2000 tide pool detail
+- **Cameron La Follette, 'Yaquina Head Lighthouse,' The Oregon Encyclopedia, updated November 9, 2022, oregonencyclopedia.org/articles/yaquina-head-lighthouse** — *editorial/secondary* — Brick sourcing from Patent Brick Company, two lost delivery boats, $90,000 congressional approval, metalwork and keeper's house construction dates, Fresnel lens origin and delayed start-up, fuel and electrification history, no fog signal, headland elevation and light visibility, WWII Coast Guard watch of 17 servicemen, automation in 1966, Cape Foulweather naming confusion
+- **Oregon State University, Seabird Oceanography Lab, 'Long-term Monitoring of Yaquina Head Seabirds,' fwcs.oregonstate.edu/seabird-oceanography/reproductive-ecology-monitoring/long-term-monitoring-yaquina-head-seabirds** — *peer/reviewed* — Common murre colony size (50,000+) and monitoring since 1998, other nesting seabird species

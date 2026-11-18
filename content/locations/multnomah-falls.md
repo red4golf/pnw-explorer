@@ -7,9 +7,13 @@ address: "Columbia River Gorge, OR"
 coordinates:
   lat: 45.5759
   lng: -122.1154
-summary: "Oregon's most visited natural recreation site, this 620-foot waterfall has been a sacred place for indigenous peoples for thousands of years."
-lead: "Oregon's most visited natural recreation site, this 620-foot waterfall has been a sacred place for indigenous peoples for thousands of years. The falls cascade in two major steps down the basalt cliffs of the Columbia River Gorge."
-notice: null
+summary: "Oregon's tallest waterfall falls 620 feet in two tiers, a footbridge strung between them and a 1925 lodge at the base. Stop, look up, cross the bridge."
+lead: null
+notice:
+  - "From the plaza you see both tiers at once: 542 feet up top, a short cascade in the middle, and 69 feet below."
+  - "A footbridge crosses the gap between the tiers; walk out onto it and look straight down the lower falls."
+  - "The Multnomah Falls Lodge at the base dates to 1925; Portland architect A.E. Doyle designed it, and it is on the National Register."
+  - "Look at the cliff face and you can count six basalt flows stacked in the rock."
 hero:
   src: "/images/locations/multnomah-falls-hero.jpg"
   alt: "Multnomah Falls — natural wonders site in the Pacific Northwest"
@@ -25,55 +29,61 @@ books:
     url: "https://www.amazon.com/Columbia-River-Gorge-Natural-Treasure/dp/0738524328"
     isbn: null
   - title: "Wild Beauty: Photography of the Columbia River Gorge, 1867-1957"
-    author: "Terry Toedtemeier"
+    author: "Terry Toedtemeier and John Laursen"
     url: "https://www.amazon.com/Wild-Beauty-Photography-1867-1957-Northwest/dp/087071418X"
     isbn: null
 sourceId: 28
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-08-23"
+  reviewer: "Cowork research pipeline"
+  sourceTier: "primary"
+  claimsTotal: 9
+  claimsCited: 9
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Re-researched and rewritten 2026-08-23. Verifier verdict: publishable."
 ---
 
-Plunging 620 feet in two dramatic tiers through the Columbia River Gorge, Multnomah Falls stands as Oregon's tallest waterfall and one of the most visited natural attractions in the Pacific Northwest. Fed by underground springs from Larch Mountain, this magnificent cascade carries not only the waters of the high country but also the sacred stories of the Chinookan peoples who first called this place home.
+The falls come down in two tiers. A footbridge crosses the gap between them. The Multnomah Falls Lodge sits at the base.
 
-## The Legend of Ultimate Sacrifice
+## 620 feet, in three drops
 
-The most profound story of Multnomah Falls comes from the Multnomah people, a Chinookan tribe whose villages dotted the Columbia River region for thousands of years. Their legend speaks of love, sacrifice, and the power of selfless devotion to community, themes that resonate across cultures and generations.
+The water falls 620 feet in all. The upper falls accounts for 542 feet. A nine-foot cascade links the two tiers, and the lower falls drops 69 feet. The Forest Service and the Northwest Waterfall Survey call it Oregon's tallest waterfall. Travel Oregon and the Forest Service also call it the most-visited natural recreation site in the Pacific Northwest, with more than 2 million visitors a year. Those are their measures. The water falls 620 feet either way.
 
-Long ago, the chief of the Multnomah people had a beloved daughter who brought joy to his heart, especially after losing his sons in battle. When a terrible plague struck the village, threatening to destroy everyone, an old medicine man revealed a devastating prophecy: to save the people, a young maiden, specifically the daughter of a chief, would need to sacrifice her life to the Great Spirit.
+## Water from Larch Mountain, year-round
 
-The chief initially refused to consider such a terrible loss. However, as the disease spread through the village and eventually struck the princess's beloved husband-to-be, she knew what had to be done. Climbing to the highest cliff above the river, she asked the Great Spirit for a sign that her sacrifice would be accepted. When she saw the moon rising over the trees, she took it as confirmation and jumped from the cliff.
+Underground springs on Larch Mountain feed the falls every month of the year. Rain and spring snowmelt add to them. The water runs highest in winter and spring. Larch Mountain rises 4,061 feet. No western larch grow on it. Early lumbermen sold noble fir as "larch," and the name stuck to the peak.
 
-The next morning, all the sick people in the village had recovered completely. When the grieving chief prayed to the Great Spirit for a sign that his daughter had been welcomed in the afterlife, water began to flow from the cliff where she had jumped, creating Multnomah Falls as an eternal reminder of her sacrifice and love.
+## Six basalt flows, then the floods
 
-## Sacred Geography
+The cliff exposes six volcanic flows of Grande Ronde Basalt. They erupted roughly 16.7 to 15.6 million years ago, part of the Columbia River Basalt Group. Most of that group erupted within about a million years. Count the bands in the rock face and you are counting eruptions. The Ice Age Missoula floods came much later. They scoured the Gorge and steepened its walls. Multnomah Falls drops from one of those cuts.
 
-For the Chinook, Klickitat, and Wasco tribes, Multnomah Falls represented far more than a scenic wonder. The waterfall served as an important gathering place for fishing, hunting, and spiritual ceremonies. Tribes believed the falls were a source of spiritual power and healing, where the mists carried prayers skyward and connected the earthly realm with the divine.
+## The 1925 Lodge
 
-The area's spiritual significance extended throughout the Columbia River Gorge, where indigenous peoples had lived for over 13,000 years. The falls provided a focal point for understanding the relationship between natural forces and human responsibility, a place where the landscape itself told stories about sacrifice, community, and the interconnectedness of all life.
+Portland architect Albert E. Doyle designed the Lodge, built in 1925. The National Register of Historic Places added it in 1981, listed as "Multnomah Falls Lodge and Footpath." It stands where the plaza meets the base of the falls.
 
-## The Mountain's Gift
+## People here for 13,000 years
 
-Multnomah Falls draws its year-round flow from Larch Mountain, an extinct volcano rising 4,061 feet above the Columbia River Gorge. The underground springs that feed the falls ensure consistent water flow throughout the seasons, creating the reliable cascade that has inspired visitors for millennia.
+People have come to the Columbia River Gorge for more than 13,000 years. Chinookan and Sahaptin-speaking peoples lived along the river. The Multnomah were a Chinookan people. Their name has been read as "those toward water." This is documented, and it stands apart from the legend below.
 
-The 13.3-mile Larch Mountain Trail follows Multnomah Creek from the falls to the mountain summit, passing multiple waterfalls including Weisendanger Falls and Ecola Falls. Interestingly, Larch Mountain's name reflects early confusion, there are no larch trees on the mountain. Early lumbermen mistakenly sold noble fir wood from the mountain as larch, and the erroneous name persisted.
+## The legend, and how to read it
 
-This connection between the sacred falls and their mountain source creates a powerful spiritual geography that Native American tribes recognized and honored through their legends and ceremonies. The water's journey from high alpine meadows to the dramatic plunge represents the cycle of life, death, and renewal central to indigenous worldviews.
+A legend is often told at the falls: a young woman gives her life to end a sickness, and water appears where she falls. It reads well. It is also a popular story, widely republished in tourist brochures, whose written form traces to late-19th-century Euro-American "Indian romance" writing, chiefly Frederic Homer Balch's 1890 novel "The Bridge of the Gods." Versions vary. The tale circulates under Multnomah, Wasco, and Klickitat labels, with different details in each, which points to retelling rather than a fixed oral text. The Oregon Encyclopedia cautions that Balch's work "is not to be taken as reliable history." No Forest Service, Park Service, or tribal source documents it as Chinookan tradition. Enjoy it as a legend. Do not mistake it for the record.
 
-## Geological Wonder
+## What stands
 
-The falls' dramatic two-tier structure results from the Columbia River Gorge's complex geological history. The upper falls drop 542 feet, while the lower falls add another 69 feet, with a brief pool between them where visitors can stand behind the falling water. The basalt cliffs that frame the falls were formed by massive lava flows 17-12 million years ago, later carved by catastrophic floods and centuries of erosion.
+The record is thin on the legend and clear on the rest. The falls drop 620 feet in two tiers. The footbridge crosses between them, and the 1925 Lodge waits below.
 
-The consistent flow from Larch Mountain's springs, combined with the Gorge's unique climate conditions, creates the mists that made the falls sacred to indigenous peoples. These mists, visible year-round, carry the moisture that sustains the lush temperate rainforest ecosystem surrounding the falls.
+## Sources
 
-## Modern Legacy
-
-Today, Multnomah Falls attracts over 2 million visitors annually, making it one of Oregon's most photographed landmarks. The historic Multnomah Falls Lodge, built in 1925, provides visitor services while maintaining the rustic character that honors the site's natural beauty.
-
-A paved trail leads to a bridge spanning the falls between the upper and lower tiers, offering spectacular views while allowing visitors to experience the power and mist of the cascading water. For those seeking greater adventure, the trail continues up the mountain, providing access to multiple viewpoints and the broader trail system of the Columbia River Gorge.
-
-## Honoring Sacred Stories
-
-The legend of Multnomah Falls reminds us that landscapes hold stories far deeper than their geological formation. The princess's sacrifice represents universal themes of love, community responsibility, and the power of individual action to serve the greater good.
-
-As visitors stand before these thundering waters, they witness not just a natural wonder but a sacred site where indigenous peoples found meaning, healing, and connection to forces greater than themselves. The falls continue to inspire reverence and reflection, carrying forward the wisdom of those who first understood that some places on Earth deserve our deepest respect and protection.
-
-Multnomah Falls shows the enduring power of sacrifice and love, a place where water, stone, and story combine to create one of the Pacific Northwest's most profound spiritual experiences.
+- **USDA Forest Service, Columbia River Gorge NSA - Multnomah Falls** — *primary/official* — 620-ft height and tier figures; hydrology; superlatives
+- **National Park Service, 'Multnomah Falls'** — *primary/official* — hydrology (Larch Mountain springs, seasonal flow); six basalt flows; Missoula floods
+- **USDA Forest Service, Columbia River Gorge NSA - 'Discover History'** — *primary/official* — 13,000+ years of human presence; Chinookan and Sahaptin peoples
+- **National Register of Historic Places, 'Multnomah Falls Lodge and Footpath,' ref. #81000512 (listed 1981)** — *primary/official* — Lodge NRHP listing and 1981 date
+- **USGS Cascades Volcano Observatory, 'Columbia River Basalt Group'** — *primary/official* — Grande Ronde Basalt flows; Columbia River Basalt Group
+- **Kasbohm, J. & Schoene, B. (2018), Science Advances 4(9):eaat8223** — *peer/reviewed* — ~16.7-15.6 Ma eruption window; bulk within ~1 million years
+- **The Oregon Encyclopedia, 'Albert E. Doyle,' 'Multnomah,' and 'Frederic Homer Balch'** — *editorial/secondary* — Doyle as Lodge architect; Multnomah as a Chinookan people; Balch/legend provenance and 'not reliable history' caution
+- **Friends of the Columbia Gorge; Travel Oregon; Northwest Waterfall Survey** — *editorial/secondary* — tier math, 'Oregon's tallest,' 'most-visited' / 2M+ visitors attributions
+- **USGS GNIS; regional accounts citing Eugene Register-Guard (1971)** — *editorial/secondary* — Larch Mountain 4,061 ft and the 'larch' naming

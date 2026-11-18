@@ -7,9 +7,12 @@ address: "Astoria, OR"
 coordinates:
   lat: 46.1818
   lng: -123.8169
-summary: "Historic monument commemorating the cultural convergence of European exploration, Native American heritage, and American expansion in the Pacific Northwest"
+summary: "Climb 164 steps inside a 125-foot column wrapped in a hand-cut plaster frieze of Columbia River history, dedicated in 1926."
 lead: null
-notice: null
+notice:
+  - "Look for the spiral band cut into the column's plaster before you start climbing. It's carved, not painted — a technique called sgraffito."
+  - "Find the ship partway up the frieze. That's Astor's ship Tonquin, shown arriving in 1810 and exploding the following year."
+  - "Count the steps as you climb the interior staircase. The Oregon Encyclopedia says 164, but the 1974 National Register nomination recorded 166 — see which count you get."
 hero:
   src: "/images/locations/astoria-column-hero.jpg"
   alt: "Astoria Column — landmarks and memorials site in the Pacific Northwest"
@@ -24,78 +27,60 @@ books:
     author: "Karen L. Leedom"
     url: "https://www.amazon.com/Astoria-History-Karen-L-Leedom/dp/0870711660"
     isbn: null
-  - title: "Astoria: John Jacob Astor and Thomas Jeffersons Lost Pacific Empire"
+  - title: "Astoria: John Jacob Astor and Thomas Jefferson's Lost Pacific Empire: A Story of Wealth, Ambition, and Survival"
     author: "Peter Stark"
     url: "https://www.amazon.com/Astoria-Jeffersons-Pacific-Ambition-Survival/dp/0062218298"
     isbn: null
 sourceId: 60
 mergedFrom: null
+factcheck:
+  status: "unverified"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify)"
+  sourceTier: "primary"
+  claimsTotal: 15
+  claimsCited: 15
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline. Repair round left one unsupported claim (sgraffito description drifted past the pack's exact wording) and three style violations (a 75-word colon-list sentence, a double comma-aside, a colon-stack noun list); all four hand-fixed directly against the pack rather than spending a third paid agent round."
 ---
 
-Standing atop Coxcomb Hill, the Astoria Column rises 125 feet above the Columbia River, serving as both monument and storyteller for one of the most historically significant locations in the Pacific Northwest. Built in 1926, this concrete tower chronicles the complex history of cultural convergence, exploration, and settlement that made Astoria "the first permanent American settlement west of the Rocky Mountains."
+On Coxcomb Hill above Astoria, Oregon, stands a column 125 feet tall. Astorians dedicated it on July 22, 1926. The base runs 19 feet 6 inches square and 13 feet 6 inches tall, the shaft climbs 94 feet 6 inches to 11 feet 4 inches wide at the top, and a spiral frieze 7 feet wide and 525 feet long winds around the outside.
 
-## Indigenous Foundation
+## Ralph Budd's Idea and Its Cost
 
-Long before European explorers arrived, the Columbia River mouth was home to the Clatsop people, whose sophisticated society thrived on the abundant salmon runs, marine resources, and strategic location for trade with inland tribes. The Clatsop developed complex seasonal patterns that took advantage of both river and ocean resources, creating one of the Pacific Northwest's most prosperous indigenous communities.
+Ralph Budd, president of the Great Northern Railway, proposed the column in 1925. Electus D. Litchfield served as architect and modeled the shape on Trajan's Column in Rome, raised around 114 A.D. under the emperor Trajan. Construction cost $27,133.96. Vincent Astor, John Jacob Astor's great-grandson, gave $20,000 of it, and Litchfield put in $200 of his own fee. The Great Northern Railway covered what was left and managed the job. Astorians dedicated the column on July 22, 1926, during a three-day Founders Celebration.
 
-The Clatsop's knowledge of local geography, weather patterns, and resources would prove crucial to the survival of later European and American expeditions. Their trading networks extended hundreds of miles inland, making them key intermediaries in the complex economy of the pre-contact Pacific Northwest.
+Astoria historian John Goodenberger later drew the contrast in blunt terms: "while the Trajan column was about war, the Astoria column was about peace."
 
-## European Exploration
+## Ten Scenes in Sgraffito
 
-The first documented European contact occurred in 1792 when American sea captain Robert Gray sailed his ship Columbia Rediviva across the treacherous Columbia River bar, becoming the first non-Native to enter the great river. Gray's discovery gave the United States a strong claim to the Oregon Territory and opened the Columbia River to international trade.
+Italian-born artist Attilio Pusterla did not paint the spiral band that wraps the column. He cut it instead, in a technique called sgraffito — cutting outlines through a wet plaster top layer to expose a dark base coat beneath. The Oregon Encyclopedia calls it the world's only large-scale pictorial frieze in sgraffito.
 
-Spanish explorers had approached the Columbia River mouth earlier but were unable to cross the dangerous bar. Gray's successful entry and naming of the river after his ship established American presence in the Pacific Northwest and contributed to the eventual U.S. claim to the Oregon Territory.
+Ten scenes run bottom to top. The sequence opens with the primeval forest, then Robert Gray's 1792 discovery of the river, the Lewis and Clark Expedition of 1805, and the building of Fort Clatsop in 1805-06. It continues with Astor's ship Tonquin arriving in 1810, the founding of Fort Astoria in 1811, and the Pacific Fur Company's overland party reaching the post in 1812. The frieze then shows the Tonquin's explosion of 1811, the restoration of Fort Astoria to the United States in 1818, and finally the arrival of settlers.
 
-## Lewis and Clark Expedition
+## Fort Astoria Was Sold, Not Captured
 
-The Lewis and Clark Expedition reached the Columbia River mouth in November 1805, completing their transcontinental journey and establishing the first documented American overland route to the Pacific. The expedition spent a miserable winter at nearby Fort Clatsop, where they interacted extensively with local Native American tribes.
+The frieze shows Fort Astoria's founding but skips how the fort changed hands. John Jacob Astor's Pacific Fur Company built it in 1811. By 1813 the Pacific Fur Company was financially exposed, and the North West Company, a British firm, bought the post outright. A British warship, HMS Racoon under Capt. William Black, reached the river on November 30, 1813. Black raised the flag and renamed the post Fort George on December 12, 1813 — a formal ceremony over a fort Britain had already purchased, not a battlefield capture. The American flag went back up in October 1818, when U.S. agent John B. Prevost arrived.
 
-The expedition's journals provided detailed descriptions of Clatsop culture, Columbia River geography, and the region's economic potential. Their reports encouraged American interest in the Pacific Northwest and contributed to the expansion of the American fur trade in the region.
+## A Winter at Fort Clatsop
 
-## Fur Trade Empire
+Meriwether Lewis and William Clark reached the river's mouth in November 1805, finishing their overland route to the Pacific. Their party built a 50-foot-square log fort and moved in on Christmas Day, December 25, 1805. The group numbered 32 men, Sacagawea, her infant, and a dog. They stayed until March 23, 1806, with rain falling on all but about 12 days of that four-month winter.
 
-John Jacob Astor's Pacific Fur Company established Fort Astoria in 1811, creating the first permanent American settlement on the Pacific Coast. The fort was strategically located to control Columbia River trade and compete with British fur companies operating in the Pacific Northwest.
+## Salmon Canneries Multiply Downriver
 
-The War of 1812 disrupted Astor's plans when British forces captured Fort Astoria, but the settlement's establishment had already demonstrated American determination to control Pacific Northwest trade. The fort became a symbol of American expansionist ambitions and the beginning of permanent Euro-American settlement in the region.
+Downriver from the column, salmon canneries multiplied quickly. Eight operated on the Columbia by 1873. By 1883 there were 39, and that year alone they packed 629,400 cases of canned Chinook salmon worth $3,147,000.
 
-## Salmon Capital
+## The 1995 Restoration
 
-By the 1880s, Astoria had become the "Salmon Capital of the World," with dozens of canneries processing millions of pounds of Columbia River salmon for shipment to markets throughout the United States and around the world. The salmon industry attracted diverse immigrant populations, including Finnish, Chinese, and Scandinavian workers who created Astoria's multicultural character.
+Repairs to the sgraffito plaster were already needed by 1936. A 1995 restoration led by Frank Preusser of the J. Paul Getty Museum cost more than $1 million and found that only about 20 percent of Pusterla's original surface had survived. The restored column was unveiled on November 19, 1995. A further restoration focused on the sgraffito followed in 2015. Visitors today climb a steel staircase inside the shaft. The Oregon Encyclopedia counts 164 steps. The 1974 National Register nomination recorded 166 — a gap that may trace to a 2008 staircase replacement.
 
-The salmon industry's prosperity built Astoria's Victorian neighborhoods, ornate commercial buildings, and cultural institutions. However, the industry's intensive harvesting practices, combined with habitat destruction from logging and dam construction, eventually led to the collapse of Columbia River salmon runs.
+The column was added to the National Register of Historic Places on May 2, 1974. It still stands 125 feet tall atop Coxcomb Hill, tapering from 13 feet 6 inches at its base to 11 feet 4 inches at its top.
 
-## Maritime Heritage
+## Sources
 
-Astoria's location at the Columbia River mouth made it a crucial maritime center for Pacific Northwest shipping. The treacherous Columbia River bar claimed hundreds of ships and thousands of lives, earning it the nickname "Graveyard of the Pacific." Astoria became home to skilled bar pilots who guided vessels safely across the dangerous entrance.
-
-The city's maritime heritage includes shipbuilding, fishing, and Coast Guard operations that continue today. Astoria's deep-water port served as a crucial link between Pacific Northwest resources and global markets, making it an important center for international trade.
-
-## The Column's Construction
-
-The Astoria Column was built in 1926, funded by the Great Northern Railway and Vincent Astor (great-grandson of John Jacob Astor), to commemorate the region's history and attract tourists. Designed by architect Electus Litchfield, the column was inspired by Roman victory columns and decorated with a continuous spiral frieze depicting key events in Pacific Northwest history.
-
-The column's construction required innovative engineering techniques to build a stable structure on the hilltop site. Italian-born artist Attilio Pusterla painted the detailed spiral frieze that tells the story of Native American life, European exploration, and American settlement in scenes that spiral up the column's exterior.
-
-## Historical Narrative
-
-The column's friezes present a complex historical narrative that includes both Native American and European perspectives on Pacific Northwest history. The artwork depicts Clatsop life, Gray's discovery of the Columbia River, Lewis and Clark's arrival, fur trading activities, and the development of modern transportation and communication.
-
-While the column's interpretation reflects the historical perspectives of the 1920s, it represents an early attempt to acknowledge Native American contributions to regional history alongside European and American achievements. The artwork provides a visual timeline of cultural interaction and change in the Pacific Northwest.
-
-## Tourism and Recreation
-
-Since its completion, the Astoria Column has attracted millions of visitors who climb its 164 steps to enjoy panoramic views of the Columbia River mouth, Pacific Ocean, and surrounding mountains. The column serves as both historical monument and recreational destination that connects visitors with the region's complex past.
-
-The column's observation deck provides spectacular views that help visitors understand the strategic importance of Astoria's location and the geographic factors that made it a crucial center for exploration, trade, and settlement. The vista encompasses the entire Columbia River estuary and Pacific coastline.
-
-## Preservation and Interpretation
-
-The Astoria Column has undergone several restoration projects to preserve both its structural integrity and artistic details. Modern interpretive programs help visitors understand the complex history depicted in the friezes while acknowledging perspectives that were overlooked in the original 1920s narrative.
-
-The column continues to serve as a focal point for discussions about Pacific Northwest history, cultural interaction, and the ongoing relationships between Native American tribes and other communities in the region. It stands as a reminder of how historical monuments can both commemorate the past and inspire contemporary dialogue about cultural understanding.
-
-## Contemporary Significance
-
-Today, the Astoria Column represents both historical achievement and ongoing cultural dialogue in the Pacific Northwest. As you climb to its observation deck, you're participating in a tradition that connects millions of visitors with the complex history of cultural convergence, exploration, and settlement that shaped the American West.
-
-The column's enduring popularity demonstrates the power of historical monuments to inspire curiosity about the past while providing opportunities for reflection on how different cultures have interacted and influenced each other in the Pacific Northwest.
+- **Filips, Janet. 'Astoria Column.' The Oregon Encyclopedia, orig. pub. April 30, 2014, last updated September 6, 2022.** — *editorial/secondary* — Height, dedication date, funding parties, sgraffito technique/attribution, frieze description, restoration history, step count.
+- **National Register of Historic Places Registration/Nomination Form, 'Astoria Column,' NRHP reference #74001681, listed May 2, 1974.** — *primary/official* — Precise base/shaft/frieze dimensions, the ten frieze scenes in order, Trajan's Column comparison, 166-step figure, NRHP listing date.
+- **'Fort George (Fort Astoria).' The Oregon Encyclopedia.** — *editorial/secondary* — Correcting the Fort Astoria 'capture' narrative: North West Company purchase, HMS Racoon, Capt. Black, Fort George renaming, 1818 flag restoration.
+- **National Park Service, Lewis and Clark National Historical Park, 'Fort Clatsop.'** — *primary/official* — Fort Clatsop dimensions, party composition, move-in and departure dates, rainfall record.
+- **'Commercial Salmon Fishing in the Columbia Region and NW Coast.' The Oregon Encyclopedia.** — *editorial/secondary* — Cannery counts (1873, 1883) and 1883 production figures.
+- **'How the Astoria Column shapes up.' The Astorian, May 21, 2026 (quoting historian John Goodenberger).** — *editorial/secondary* — Attributed Goodenberger quote contrasting Trajan's Column and the Astoria Column.

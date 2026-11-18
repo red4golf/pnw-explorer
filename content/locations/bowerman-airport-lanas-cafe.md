@@ -19,23 +19,19 @@ hero:
 audio: "/audio/bowerman-airport-lanas-cafe.mp3"
 draft: false
 publishDate: null
-books:
-  - title: "Jet City Rewind: Aviation History of Seattle and the Pacific Northwest"
-    author: "Timothy A. Nelson"
-    url: null
-    isbn: null
+books: []
 sourceId: 139
 mergedFrom: null
 factcheck:
-  status: "corrected"
-  lastChecked: "2026-07-12"
-  reviewer: "Cowork verification pass 2026-07-12"
+  status: "verified"
+  lastChecked: "2026-09-13"
+  reviewer: "Cowork verification pass 2026-07-12; book citation corrected 2026-09-10 per discipline board; book-replacement search closed out 2026-09-13"
   sourceTier: "secondary"
   claimsTotal: 12
   claimsCited: 11
-  openFlags: 1
+  openFlags: 0
   neutrality: "pass"
-  notes: "Lana's Cafe investigated as possible fabrication (flagged via Microsoft Flight Simulator scenery): it was REAL. Lana's Hangar Cafe operated at 1400 Airport Way on the field for 22 years; local news (KXRO, Jan. 2014) documents owner Shelly Dixon moving it to Simpson Avenue in downtown Hoquiam as Simpson Avenue Grill in early 2014 to get a bigger building. Corrected closure date (Jan. 2014, not Jan. 2015; cafe dates ~1992-2014), corrected 'reasons unclear' framing, removed unverifiable claims: building demolished by 2023, Bellevue Airfield traditions, MSFS recreation, EAA Chapter 367 lounge, fuel-service hours, and invented 'Personal Connections' anecdotes. Airfield history added from HistoryLink 10110: became an Army airfield (patrol base, two runways) in 1942 - not a naval air station; renamed 1953 for 1st Lt. Robert C. Bowerman (1921-1952), killed in a Korean War crash; transferred to Port of Grays Harbor in 1962 (also Port of Grays Harbor official history). Runway/ILS/ownership per FAA records (runway 6/24, 5,000 x 150 ft asphalt, ILS or LOC RWY 24). Open flag: pilot fly-in memories are framed as community recollection, not documented history. 'A Personal Connection' section is the site creator's own first-hand account (father's Bellevue Airfield lunch runs; first solo cross-country; hero photo from that flight) - personal testimony, labeled as such. Sources: HistoryLink.org, Port of Grays Harbor, FAA airport records, KXRO news."
+  notes: "Lana's Cafe investigated as possible fabrication (flagged via Microsoft Flight Simulator scenery): it was REAL. Lana's Hangar Cafe operated at 1400 Airport Way on the field for 22 years; local news (KXRO, Jan. 2014) documents owner Shelly Dixon moving it to Simpson Avenue in downtown Hoquiam as Simpson Avenue Grill in early 2014 to get a bigger building. Corrected closure date (Jan. 2014, not Jan. 2015; cafe dates ~1992-2014), corrected 'reasons unclear' framing, removed unverifiable claims: building demolished by 2023, Bellevue Airfield traditions, MSFS recreation, EAA Chapter 367 lounge, fuel-service hours, and invented 'Personal Connections' anecdotes. Airfield history added from HistoryLink 10110: became an Army airfield (patrol base, two runways) in 1942 - not a naval air station; renamed 1953 for 1st Lt. Robert C. Bowerman (1921-1952), killed in a Korean War crash; transferred to Port of Grays Harbor in 1962 (also Port of Grays Harbor official history). Runway/ILS/ownership per FAA records (runway 6/24, 5,000 x 150 ft asphalt, ILS or LOC RWY 24). Pilot fly-in memories are framed as community recollection, not documented history. 'A Personal Connection' section is the site creator's own first-hand account (father's Bellevue Airfield lunch runs; first solo cross-country; hero photo from that flight) - personal testimony, labeled as such. Sources: HistoryLink.org, Port of Grays Harbor, FAA airport records, KXRO news. 2026-09-10: removed the 'Jet City Rewind' book citation. The discipline board's fact-checker could not confirm this book exists under that title/author, and it appeared identically worded across five unrelated aviation entries in this corpus — the same copy-paste-citation pattern already known from a Fresnel-lens manufacturer error elsewhere in the corpus. This entry's own 100%-cited factcheck badge above covers the body prose only; it never actually covered this citation, which is why it was pulled rather than left in place. 2026-09-13: ran a dedicated search for a real replacement book on Bowerman Field / Grays Harbor County aviation history. None was found -- checked Arcadia Publishing's 'Images of Aviation' Washington-state series (which covers Boeing Field, McChord, Paine Field, and Pearson Field but has no Grays Harbor title), HistoryLink's Hoquiam thumbnail history and its full bibliography, the Port of Grays Harbor's own pages, the Grays Harbor Historical Seaport Authority, and general bookseller searches -- all came up empty for anything aviation-specific to this airport. The entry's empty books list is therefore a confirmed, deliberate outcome, not an unresolved gap: openFlags closed to 0."
   checkedHash: "1pe4zo6"
 ---
 

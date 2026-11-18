@@ -2,75 +2,57 @@
 title: "Columbia River Maritime Museum"
 slug: "columbia-river-maritime-museum"
 category: "Maritime"
-period: "1962-Present (Maritime Heritage)"
+period: "1962-present"
 address: "1792 Marine Dr, Astoria, OR 97103"
 coordinates:
   lat: 46.19
   lng: -123.8239
-summary: "Located in Astoria, this museum preserves the maritime heritage of the Columbia River and Pacific Northwest coast."
-lead: "Located in Astoria, this museum preserves the maritime heritage of the Columbia River and Pacific Northwest coast. Featuring the historic Lightship Columbia and extensive exhibits on the treacherous Columbia River Bar, known as the \"Graveyard of the Pacific.\""
-notice: null
+summary: "Step aboard the Lightship Columbia, once anchored five miles off the Columbia River Bar, now a National Historic Landmark at dock."
+lead: null
+notice:
+  - "Walk the deck of the Lightship Columbia, moored alongside the museum, open 11am-3pm."
+  - "Look for the crew quarters below deck — 17 men rotated in shifts of 10 on duty."
+  - "Look across the river toward Cape Disappointment; the lighthouse there marks the same bar this museum is built to explain."
+  - "Ask staff what's open right now — a 24,500-square-foot expansion is underway through 2026 and some galleries may be closed for remodeling."
 hero: null
 audio: null
 draft: false
 publishDate: null
-books:
-  - title: "Graveyard of the Pacific: Shipwrecks of the Columbia River Bar"
-    author: "Bert Webber"
-    url: "https://www.amazon.com/Graveyard-Pacific-Shipwrecks-Columbia-River/dp/0936738669"
-    isbn: null
-  - title: "Lightships of the United States Government"
-    author: "Dennis L. Noble"
-    url: "https://www.amazon.com/Lightships-United-States-Government-Noble/dp/0870715062"
-    isbn: null
+books: []
 sourceId: 119
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-13"
+  reviewer: "Cowork research pipeline (research -> write -> verify -> hand-fix)"
+  sourceTier: "primary"
+  claimsTotal: 20
+  claimsCited: 20
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite 2026-09-13, replacing a previous version written almost entirely in booster prose ('Guardians of the Graveyard of the Pacific,' 'internationally recognized,' a closing paragraph claiming the museum 'demonstrates the power of preserving maritime heritage to illuminate broader themes') and carrying an unsupported claim that the Columbia River Bar's ~2,000-vessel toll came from 'systematic record-keeping' beginning in 1792. Research found that figure actually belongs to the Columbia River Bar Pilots' own website, not a government record-keeping system -- the rewrite states the figure and attributes it explicitly to the Bar Pilots, and corrects 1792 to the year of the first documented bar crossing (Robert Gray's Columbia Rediviva), not the start of any record system. Both previously-cited books were found to have real problems: the Bert Webber 'Graveyard of the Pacific' title does not exist anywhere in his real bibliography, and the exact title cited for Dennis L. Noble ('Lightships of the United States Government') actually belongs to a different, real author, Willard Flint -- with no verified general-reader replacement found, the entry ships with an empty books list rather than a guessed citation. Replaced vague 'internationally recognized' framing with specific, sourced content: the Lightship Columbia's real vital statistics (128 ft, 617 tons, crew of 17, the last lightship decommissioned anywhere on the U.S. West Coast), the ironic story of Cape Disappointment Lighthouse's own construction being delayed two years by a shipwreck on the same bar it was built to warn against, the National Motor Lifeboat School's real training role, and the museum's current, in-progress 2024-2026 capital expansion. Verify returned 4 fixable objections, hand-fixed without a repair round: softened an unattributed 'centerpiece exhibit' superlative on the lightship, removed an invented 'self-guided' qualifier on lightship tours not found in the pack, cut an unsourced claim about the lightship's specific navigational function, and softened an overstated causal claim about Cape Disappointment Lighthouse being 'a direct product' of the bar's danger. Sources: Columbia River Maritime Museum's own official site (history, Lightship Columbia, campus transformation pages), the Columbia River Bar Pilots' safety-record page, HistoryLink.org, lighthousefriends.com, and the Oregon Encyclopedia (used to confirm Bert Webber's real bibliography)."
 ---
 
-Standing watch over the Columbia River's entrance to the Pacific Ocean, the Columbia River Maritime Museum in Astoria preserves the dramatic stories of maritime adventure, tragedy, and heroism that have unfolded along one of the world's most dangerous river mouths. Founded in 1962 and opened to the public in 1963 (its current building dates to 1982), this internationally recognized museum has safeguarded the maritime heritage of the Pacific Northwest while honoring the courage of those who challenged the treacherous waters known as the "Graveyard of the Pacific."
+## A museum built from one collector's cases
 
-## The Columbia River Bar Challenge
+Rolf Klep, a commercial artist and collector of marine artifacts, founded the Columbia River Maritime Museum in 1962. He worked with naval veterans and fishing industry executives to get it open. The museum opened to the public in 1963, in Astoria's former city hall at 1618 Exchange Street — a converted government building, not a purpose-built museum.
 
-The Columbia River Bar, where the mighty river meets the Pacific Ocean, has claimed over 2,000 vessels since systematic record-keeping began in 1792. This deadly combination of powerful river currents, ocean swells, shifting sandbars, and unpredictable weather creates navigation conditions that challenge even modern vessels equipped with sophisticated technology. For 19th and early 20th-century ships relying on wind power and basic navigation instruments, crossing the bar represented one of maritime transportation's greatest hazards.
+It outgrew that space. Construction on the current waterfront building began in May 1975. The museum opened at its present site, 1792 Marine Dr, in May 1982. The building cost $2.75 million and holds about 37,000 square feet.
 
-The bar's danger stems from its complex geography and hydraulics. The Columbia River carries enormous volumes of water and sediment from its massive drainage basin, creating constantly shifting underwater topography. When river currents meet ocean swells, they create standing waves, breaking surf, and chaotic seas that can overwhelm vessels caught in the wrong place at the wrong time.
+## The bar the museum exists to explain
 
-Despite these hazards, the Columbia River provided the only practical access to the Pacific Northwest's vast interior regions. Ships carrying everything from grain and lumber to passengers and mail had no choice but to risk the crossing, making the bar both gateway and graveyard for Pacific Northwest maritime commerce.
+The Columbia River mouth is nicknamed the "Graveyard of the Pacific." Shifting sandbars, ocean swell, and river current collide there. The Columbia River Bar Pilots — the professional association that guides ships across it — estimate roughly 2,000 vessels lost and about 700 lives lost since 1792, the year Robert Gray's ship *Columbia Rediviva* became the first documented vessel to cross the bar, giving the river its name. That figure comes from the Bar Pilots' own records, not an independent government count.
 
-## Lighthouse and Lifesaving Heritage
+Cape Disappointment Lighthouse, across the river near Ilwaco, Washington, was built to warn against that same danger. Construction started in 1855, but the supply ship *Oriole* wrecked on the bar in 1853 carrying the lighthouse's own building materials. The light wasn't lit until October 15, 1856 — the eighth active light on the West Coast, delayed two years by the very hazard it was built to warn against.
 
-The museum's crown jewel, the Lightship Columbia, represents a crucial chapter in maritime safety innovation. From 1951 to 1979, this 128-foot vessel served as a floating lighthouse stationed about five miles offshore from the Columbia River mouth, warning approaching ships of the bar's dangers and providing navigation assistance during good weather and rescue services during storms.
+The bar's conditions are still used deliberately today. The Coast Guard's National Motor Lifeboat School opened in 1980 at Cape Disappointment, roughly 15 to 20 miles by road from the museum via the Astoria-Megler Bridge. It trains Coast Guard crews from around the country in heavy-weather rescue work, using the bar's documented 10- to 20-foot breaking waves as a live training ground. Crews there started with 44-foot motor lifeboats; by 2003 the school ran five 47-foot boats.
 
-Lightships like the Columbia were floating symbols of federal commitment to maritime safety. The United States Lighthouse Service, and later the Coast Guard, positioned these vessels at locations too dangerous or impractical for traditional lighthouse construction. Crews lived aboard for months at a time, enduring isolation, severe weather, and constant danger to maintain their life-saving mission.
+## The Lightship Columbia
 
-The museum's exhibits detail the evolution of Columbia River safety systems, from early lighthouse construction at Cape Disappointment to modern electronic navigation aids. Visitors can explore the heroic work of the U.S. Life-Saving Service and Coast Guard crews who performed countless rescues in conditions that claimed many vessels. These brave men developed specialized boats, rescue techniques, and communication systems that saved thousands of lives over the decades.
+The lightship moored at the museum dock, WLV-604, is the museum's outdoor centerpiece. Rice Brothers Corporation of Boothbay, Maine, built it; the Coast Guard commissioned it in 1951. At 128 feet long and 617 long tons, it held a rotating crew of 17, with 10 on duty at a time, anchored about 5 miles offshore from the Columbia River's mouth.
 
-## Pacific Northwest Maritime Economy
+It was decommissioned in 1979 — the fourth and last lightship stationed at the Columbia River, and the final lightship decommissioned anywhere on the U.S. West Coast. It's now a National Historic Landmark, open for tours from 11am to 3pm, included with museum admission.
 
-Beyond shipwrecks and rescues, the museum interprets the broader maritime economy that made the Columbia River one of America's most important commercial waterways. Exhibits explain how sailing ships, steam vessels, and modern cargo ships transported the region's natural resources, timber, grain, salmon, and minerals, to world markets while bringing manufactured goods, passengers, and news from distant ports.
+## What's changing on site now
 
-The museum's collection includes fishing boats, tugboats, and work vessels that supported the Columbia River's diverse maritime industries. Commercial salmon fishing, once one of the Pacific Northwest's largest industries, employed thousands of fishermen using specialized boats and techniques developed for the river's unique conditions. The museum preserves these fishing traditions while explaining how overfishing, dam construction, and habitat loss transformed the industry.
-
-Logging and lumber transportation created another major component of Columbia River maritime activity. Log rafts containing millions of board feet of timber floated down the river to sawmills and shipping points, while lumber schooners carried finished products to California and international markets. The museum's exhibits demonstrate how maritime transportation enabled the Pacific Northwest's transformation from wilderness to major timber-producing region.
-
-## Modern Coast Guard Operations
-
-The museum maintains close relationships with active Coast Guard units that continue the life-saving mission along the Columbia River Bar. Modern Coast Guard crews operate high-speed rescue boats specifically designed for bar conditions, using GPS navigation, satellite communications, and weather forecasting systems that previous generations could never have imagined.
-
-Despite modern technology, the Columbia River Bar remains dangerous, requiring specialized training and equipment for safe navigation. The museum's exhibits explain how contemporary mariners use sophisticated tools to avoid the hazards that claimed so many historical vessels, while acknowledging that nature's power still demands respect and caution from even the most experienced seafarers.
-
-The Coast Guard's National Motor Lifeboat School, located nearby, trains rescue crews from throughout the United States in techniques for operating in extreme conditions. This continuing mission connects historical maritime heritage with modern life-saving work, demonstrating how lessons learned from past tragedies inform current safety practices.
-
-## Preserving Maritime Heritage
-
-The Columbia River Maritime Museum serves as both repository and interpreter of Pacific Northwest maritime heritage. Its collections include ship models, navigational instruments, historical photographs, and personal artifacts that tell individual stories of maritime life while illustrating broader themes of technological change, economic development, and environmental adaptation.
-
-The museum's research library and archives preserve documents, oral histories, and technical records that provide essential resources for maritime historians, genealogists, and researchers studying Pacific Northwest development. These materials ensure that maritime heritage knowledge remains available for future generations while supporting contemporary scholarship and education.
-
-Educational programs connect maritime history to modern environmental and economic issues, helping visitors understand how historical maritime activities shaped current conditions in the Columbia River system. The museum's work supports broader efforts to balance economic use of river resources with environmental protection and cultural preservation.
-
-## Gateway to Understanding
-
-Today, the Columbia River Maritime Museum welcomes visitors from around the world who come to understand the maritime forces that shaped Pacific Northwest development. The museum's dramatic location, overlooking the very waters that its exhibits interpret, provides authentic connections between historical narratives and continuing maritime activity.
-
-The museum's success demonstrates the power of preserving maritime heritage to illuminate broader themes of human adaptation to challenging environments, technological innovation in response to natural hazards, and the complex relationships between economic development and environmental stewardship that continue to shape the Pacific Northwest.
+The museum is partway through a capital expansion, adding more than 24,500 square feet of new exhibition and education space and remodeling 11,000 square feet of existing galleries, including two new galleries built around Indigenous maritime history. The project runs through 2026. Visitors should expect some areas closed or under construction depending on when they visit.

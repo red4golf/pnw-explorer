@@ -2,14 +2,17 @@
 title: "Winslow Ferry Terminal"
 slug: "winslow-ferry-terminal"
 category: "Aviation and Transportation"
-period: "Established 1951"
+period: "Steamer service 1887; car ferries 1937"
 address: "Winslow Way NE, Bainbridge Island, WA"
 coordinates:
   lat: 47.622339
   lng: -122.509617
-summary: "The historic gateway to Bainbridge Island, serving as the primary connection to Seattle since 1951."
-lead: "The historic gateway to Bainbridge Island, serving as the primary connection to Seattle since 1951. This terminal has witnessed countless arrivals and departures, connecting island residents to the mainland for over 70 years."
-notice: null
+summary: "The steamer Tolo began Seattle service here in 1887, decades before the first car ever drove aboard a ferry at this dock."
+lead: null
+notice:
+  - "Find the passenger walkway overhead before anything else — it's the new one: four concrete-and-steel spans barged in and installed over six days one September, open since February 5, 2024, replacing a wood walkway that had stood for more than 50 years."
+  - "Watch which boat is docking — Tacoma or Wenatchee, both 460 feet 2 inches long and rated for up to 202 vehicles and 1,791 passengers."
+  - "Look out at Eagle Harbor — steamer service to Seattle began here in 1887 aboard the Tolo, half a century before the first car ever drove aboard a ferry at this dock."
 hero:
   src: "/images/locations/winslow-ferry-terminal-hero.jpg"
   alt: "Winslow Ferry Terminal — aviation and transportation site in the Pacific Northwest"
@@ -30,84 +33,60 @@ books:
     isbn: null
 sourceId: 20
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-24"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify); post-repair hand-fixes signed off by Charles Einarson 2026-09-24"
+  sourceTier: "primary"
+  claimsTotal: 8
+  claimsCited: 8
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline. Repair round left 3 unsupported claims (an invented 'Winslow Way' street-name detail used twice, and an unsourced 'two seasons' gloss on the Eagle's brief service) plus 1 style violation (a leftover editorial flourish about incorporation timing) — hand-fixed directly rather than spending a third paid agent round. Also hand-corrected the frontmatter `period` field, which the repair round flagged as contradicting the corrected history (1887 steamer origin, 1937 car-ferry origin) but which the assembler doesn't auto-apply."
 ---
 
-Every 35 minutes, a massive ferry pulls into Winslow's harbor, disgorging hundreds of passengers and dozens of cars onto Bainbridge Island while loading up island residents bound for Seattle. The Winslow Ferry Terminal serves as the vital link between island and city, carrying 4.9 million passengers annually on what has become the busiest route in the Washington State Ferry system. Yet this modern transportation hub represents far more than efficient transit, it embodies the unique character of island life and the daily rhythm that has shaped Bainbridge Island's identity for over a century.
+The ferry dock at Winslow sits on Eagle Harbor, on Bainbridge Island. Boats have loaded here in one form or another since the 1880s. Before there was a dock at all, James Ryan's family moved into a vacant cabin just east of the site in 1877, and the following year a neighbor named Riley Hoskinson started keeping the weather.
 
-## Connecting Two Worlds
+Hoskinson worked as a U.S. government "voluntary observer," recording some of the first weather data ever taken in Washington Territory. He reported his readings to Washington, D.C., from 1878 to 1889.
 
-The ferry connection between Bainbridge Island and Seattle represents one of the most scenic and functionally important transportation links in the Pacific Northwest. The 35-minute journey across Elliott Bay and Puget Sound provides not just transportation but a daily transition between the urban energy of Seattle and the quieter pace of island life.
+## 1887: The Steamer Tolo
 
-For thousands of daily commuters, the ferry ride serves as a moving meditation, a forced pause between the demands of city work and the refuge of island home. Passengers use the time to read, work, socialize, or simply watch the water, creating a unique commuter experience that transforms the necessity of travel into an opportunity for reflection and connection.
+Regular passenger service to the harbor began in 1887, when Charles Williams put the steamer Tolo on the run between Eagle Harbor and Seattle. A second boat, the Eagle, joined the route in 1901. Two years later the Eagle burned at the dock. Local lore blamed the fire on the ship having been christened with flowers instead of champagne — a story worth repeating, not a documented cause.
 
-The route's popularity extends far beyond practical transportation. Tourists consider the ferry ride one of Seattle's premier attractions, offering unparalleled views of the Seattle skyline, Mount Rainier, the Olympic Mountains, and occasional wildlife sightings including orcas, seals, and diverse seabirds that make Puget Sound their home.
+## 1937: Cars Come to Winslow
 
-## Engineering Marvel
+Car ferries reached Winslow in 1937, when the Seattle route was moved here from Port Blakely. Passenger-steamer service to the island ended that same year. Voters approved incorporation 122 to 110 in an election on August 23, 1947, and the new fourth-class city, population 905, took office on September 18, 1947, under its first mayor, Herbert Allen.
 
-The ferries serving the Seattle-Bainbridge Island route represent impressive examples of maritime engineering adapted to the specific challenges of Puget Sound navigation. The current vessels, Tacoma and Wenatchee, are Jumbo Mark-II class ferries stretching over 400 feet in length and capable of carrying up to 200 cars and 2,500 passengers.
+## 1950-1951: A Bridge, a New Dock, a New State Agency
 
-These floating bridges must navigate complex tidal currents, changing weather conditions, and heavy maritime traffic while maintaining precise schedules essential to the thousands of people who depend on reliable ferry service. The engineering challenges include designing vessels that can handle both calm summer conditions and winter storms while providing safe, comfortable passage for passengers and secure transport for vehicles.
+In October 1950 the Agate Pass Bridge opened, connecting Bainbridge Island to the Kitsap Peninsula. That same year a new car-ferry dock went up at Winslow, on the east end of town. The ferries themselves changed hands the following June. At 3:00 a.m. on June 1, 1951, the newly formed Washington State Ferries took over Puget Sound's routes from the private Puget Sound Navigation Company, known as the Black Ball Line. The system's first state-run sailing left Lofall at 5:20 a.m. that morning aboard the ferry Vashon, with Governor Arthur Langlie and Highway Director William Bugge on hand for the changeover.
 
-The terminal infrastructure represents equally sophisticated engineering, with loading systems designed for rapid vehicle boarding and passenger flow while accommodating the extreme tidal variations that can change water levels by up to 14 feet between high and low tides.
+## 1990-1991: Winslow Becomes Bainbridge Island
 
-## Economic Lifeline
+Voters folded the rest of the island into the city in November 1990, 3,193 to 3,057, on 71.5 percent turnout. A year later, on November 7, 1991, residents voted to rename the city Bainbridge Island. It has carried that name since.
 
-The ferry service functions as Bainbridge Island's economic lifeline, enabling residents to maintain jobs in Seattle while living in a smaller, more rural community. This connection has fundamentally shaped the island's development, creating a bedroom community that retains much of its small-town character while benefiting from proximity to major metropolitan employment centers.
+## Today's Boats and a New Walkway
 
-The commuter base supports local businesses from coffee shops that serve early morning ferry riders to restaurants and retail stores that depend on both residents and day-trip visitors from Seattle. The ferry schedule shapes business hours, event planning, and daily life patterns throughout the island.
+Two Jumbo Mark II-class ferries work the route now: the Tacoma, built in 1997, and the Wenatchee, built in 1998 and rebuilt in 2025. Each measures 460 feet 2 inches long and is rated to carry up to 202 vehicles and 1,791 passengers, according to state ferry records — well short of the 200 cars and 2,500 passengers sometimes claimed for this run. WSDOT has reported the Seattle-Bainbridge route carrying the heaviest passenger loads of any route in the system in recent quarters: 980,910 riders in the third quarter of fiscal year 2024, and 1,298,400 in the fourth quarter that followed.
 
-Beyond individual commuters, the ferry enables commercial connections that support island businesses. Everything from construction materials to grocery supplies arrives via ferry, while island businesses depend on ferry access to reach Seattle markets and customers.
+The walkway passengers use to board is new as well. The old one was wood, built more than 50 years ago, with piles the state judged vulnerable in an earthquake. Crews barged in four prefabricated concrete-and-steel spans and installed them over six days one September; the replacement opened February 5, 2024. Combined with a rehab of the terminal's loading cab, the project cost $33 million.
 
-## Island Rhythm
+Charles Williams ran a single steamer on this crossing in 1887. The dock he served has since passed through a fire, a move from Port Blakely, a new state agency, and a vote to rename the whole city. The boat waiting there now carries close to two hundred cars at a time.
 
-Ferry schedules create the fundamental rhythm of island life, influencing everything from work schedules to social events to emergency services. Islanders learn to plan around ferry times, arriving early for important appointments and building extra time into travel plans to accommodate potential delays or missed sailings.
+## Notice
 
-This transportation constraint, while sometimes frustrating, also contributes to the island's distinct character. The necessity of planning ahead, the forced pause of ferry travel, and the shared experience of ferry commuting create community bonds and life patterns that distinguish island living from typical suburban experiences.
+- Find the passenger walkway overhead before anything else — it's the new one: four concrete-and-steel spans barged in and installed over six days one September, open since February 5, 2024, replacing a wood walkway that had stood for more than 50 years.
+- Watch which boat is docking — Tacoma or Wenatchee, both 460 feet 2 inches long and rated for up to 202 vehicles and 1,791 passengers.
+- Look out at Eagle Harbor — steamer service to Seattle began here in 1887 aboard the Tolo, half a century before the first car ever drove aboard a ferry at this dock.
 
-Late evening ferries bring home commuters and social travelers, while early morning sailings carry workers, students, and people with business in the city. Each sailing represents a micro-community of regular passengers who often recognize each other and share the daily experience of water commuting.
+## Sources
 
-## Gateway Experience
-
-The Winslow Ferry Terminal serves as more than transportation infrastructure, it functions as the gateway experience that shapes visitors' first impressions of Bainbridge Island. The approach by water reveals the island's forested hills, waterfront homes, and small-town harbor in a dramatic way that arriving by bridge or highway could never match.
-
-Walking off the ferry into downtown Winslow, visitors immediately experience the island's pedestrian-friendly character. The terminal's location just a few blocks from the main commercial district encourages exploration on foot and creates easy connections between ferry travel and local businesses, restaurants, and attractions.
-
-This proximity between transportation and town center reflects careful community planning that prioritizes walkability and local business support over automobile convenience. The design encourages visitors to explore beyond their cars and experience the island's character through walking, shopping, and dining in the downtown core.
-
-## Community Hub
-
-Beyond its transportation function, the ferry terminal area serves as an informal community hub where islanders encounter neighbors, visitors meet locals, and the diverse population of island residents converges. The terminal's waiting areas, parking lots, and nearby businesses create spaces for casual social interaction that strengthen community bonds.
-
-The terminal also serves as the island's primary connection point for emergency services, medical evacuations, and essential services that require mainland connections. This critical infrastructure role gives the ferry system importance far beyond routine transportation, making it essential for the island's safety and wellbeing.
-
-During emergencies or weather disruptions that interrupt ferry service, the terminal becomes a focal point for community information sharing and mutual support, demonstrating how transportation infrastructure functions as social infrastructure as well.
-
-## Environmental Considerations
-
-Ferry service presents both environmental challenges and benefits compared to alternative transportation options. While the large diesel-powered vessels produce significant emissions, they also enable car-free living for some residents and reduce the traffic impacts that additional bridges or increased vehicle ferry capacity would create.
-
-The ferry route provides opportunities for marine wildlife observation and education, helping passengers develop connections to Puget Sound's marine environment. These connections often inspire environmental awareness and advocacy that benefits regional conservation efforts.
-
-Washington State Ferries continues upgrading its fleet with more fuel-efficient vessels and exploring alternative fuel technologies that could reduce the environmental impact of ferry operations while maintaining the essential transportation links that island communities require.
-
-## Cultural Symbol
-
-The Winslow Ferry Terminal has become a cultural symbol of Pacific Northwest life, representing the region's unique geography, the integration of maritime transportation into daily life, and the possibility of maintaining small-town community within a major metropolitan area.
-
-The ferry ride appears frequently in popular culture as a symbol of escape, transition, and the Pacific Northwest lifestyle. From romantic movie scenes to tourism advertisements, the Seattle-Bainbridge Island ferry represents the region's distinctive character and quality of life.
-
-For many residents, the daily ferry commute becomes a cherished part of their lifestyle rather than simply a transportation necessity. The forced slower pace, the water views, and the transition time between work and home create experiences that enrich daily life in ways that typical suburban commuting cannot match.
-
-## Future Challenges
-
-The ferry terminal faces ongoing challenges as both Bainbridge Island and Seattle continue growing, creating increased demand for ferry service while straining terminal capacity and parking availability. Balancing increased ridership with terminal limitations requires creative solutions and ongoing infrastructure investment.
-
-Climate change presents long-term challenges for ferry operations, with sea level rise, increased storm intensity, and changing weather patterns potentially affecting service reliability and terminal infrastructure. Adaptation planning must address these environmental challenges while maintaining essential transportation services.
-
-The terminal's role will continue evolving as transportation technology advances and community needs change. Future developments must balance efficiency improvements with preservation of the ferry experience's unique character and its role in maintaining Bainbridge Island's distinct island identity.
-
-## Gateway to Community
-
-The Winslow Ferry Terminal represents far more than a transportation facility, it embodies the connections between place and community, urban and rural, work and home that define life in the Pacific Northwest. As both gateway and gathering place, the terminal facilitates not just movement between locations but transitions between different ways of living and being.
-
-Every day, thousands of people pass through this portal between city and island, each carrying their own purposes and stories while participating in a shared experience that has defined Bainbridge Island life for generations. The terminal shows the power of transportation infrastructure to shape community character and enable ways of life that honor both economic necessity and quality of life aspirations.
+- **HistoryLink.org, "Bainbridge Island (Winslow) -- Thumbnail History," File #8274** — *editorial/secondary* — 1887 Tolo/Charles Williams steamer service, 1901 Eagle joins and 1903 burns (with flowers/champagne lore), 1937 car-ferry move from Port Blakely and end of steamer service, 1950 Agate Pass Bridge and new Winslow dock, 1877 Ryan cabin, 1878-1889 Hoskinson weather observations
+- **HistoryLink.org, "Winslow (Bainbridge Island) incorporates on September 18, 1947," File #9131** — *editorial/secondary* — 1947 incorporation vote (122-110, Aug 23 1947), population 905, first mayor Herbert Allen, Sept 18 1947 incorporation date
+- **HistoryLink.org, "Winslow changes its name to Bainbridge Island on November 7, 1991," File #8278** — *editorial/secondary* — 1990 annexation vote (3,193-3,057, 71.5% turnout) and Nov 7 1991 renaming vote
+- **HistoryLink.org, "Washington State Ferries begins operations on June 1, 1951," File #5081** — *editorial/secondary* — June 1 1951 WSF statewide changeover, ferry Vashon's first sailing from Lofall, Governor Langlie and Highway Director Bugge
+- **WSDOT, Ferries Vessel Watch, M/V Tacoma detail page (wsdot.com/ferries/vesselwatch/vesseldetail.aspx?vessel_id=32)** — *primary/official* — Tacoma build year, dimensions, capacity
+- **WSDOT, Ferries Vessel Watch, M/V Wenatchee detail page (wsdot.com/ferries/vesselwatch/vesseldetail.aspx?vessel_id=37)** — *primary/official* — Wenatchee build/rebuild years, dimensions, capacity
+- **WSDOT, "Bainbridge Ferry Terminal Overhead Loading Fixed Walkway Replacement" project page** — *primary/official* — Walkway age and seismic risk, four-span barge installation over six days in September, Feb 5 2024 opening, $33 million combined project cost
+- **WSDOT Gray Notebook, "Washington State Ferries - Ridership & Revenue"** — *primary/official* — Attributed quarterly passenger figures (980,910 in FY2024 Q3; 1,298,400 in FY2024 Q4) used to narrow the 'busiest route' claim
+- **Arcadia Publishing, product page for "Ferries of Puget Sound" by Steven J. Pickens, ISBN 9780738530871** — *editorial/secondary* — Verifying the book recommendation

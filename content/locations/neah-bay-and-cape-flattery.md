@@ -7,9 +7,12 @@ address: "Neah Bay, WA"
 coordinates:
   lat: 48.3667
   lng: -124.6167
-summary: "Northwestern-most point of the contiguous United States and homeland of the Makah Tribe, representing thousands of years of maritime culture and whaling…"
-lead: "Northwestern-most point of the contiguous United States and homeland of the Makah Tribe, representing thousands of years of maritime culture and whaling tradition"
-notice: null
+summary: "Cape Flattery marks the contiguous US's northwest corner; Neah Bay holds the Makah Museum's Ozette artifacts and the 1855 treaty on Makah whaling rights."
+lead: null
+notice:
+  - "Find the Cape Flattery Trailhead sign on Makah Reservation land before you start down the boardwalk — it runs three-quarters of a mile, one way, to the viewing platform at the point."
+  - "From the platform, look northwest to Tatoosh Island. The lighthouse tower there stands 65 feet tall, beside a Cape Cod-style sandstone keeper's dwelling, and has marked the point since its light first came on, December 28, 1857."
+  - "At the Makah Museum in Neah Bay, look for the whaling gear and full-size canoe replicas built around artifacts pulled from the Ozette site — an 11-year dig, 1970 to 1981, that recovered tens of thousands of pieces from a village buried by a mudslide."
 hero: null
 audio: null
 draft: false
@@ -25,96 +28,48 @@ books:
     isbn: null
 sourceId: 72
 mergedFrom: null
+factcheck:
+  status: "unverified"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify)"
+  sourceTier: "primary"
+  claimsTotal: 30
+  claimsCited: 30
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline (research/write/verify/repair/re-verify). Re-verify returned needs-edit on one mechanical objection (a notice prompt moved the source's 'sandstone' material descriptor from the keeper's dwelling to the lighthouse tower); hand-corrected rather than spending a third paid agent round. Neutrality: pass."
 ---
 
-Standing at Cape Flattery, the northwestern-most point of the contiguous United States, you're on land that has been home to the Makah people for over 2,000 years. This dramatic meeting place of the Pacific Ocean and Strait of Juan de Fuca represents one of the most significant centers of maritime culture in North America, where the Makah developed sophisticated whaling traditions that sustained their society for millennia.
+You stand on a boardwalk above Cape Flattery, the Pacific breaking against rock below. Behind the platform runs the Cape Flattery Trail, three-quarters of a mile each way across Makah Reservation land. It ends at the northwesternmost point of the contiguous United States, per the National Park Service.
 
-## Ancient Maritime Culture
+## The 1855 Treaty
 
-The Makah people have inhabited the rugged coastline around Neah Bay since time immemorial, developing one of the most sophisticated maritime cultures in North America. Archaeological evidence from the Ozette village site reveals continuous occupation for over 2,000 years, with artifacts demonstrating advanced technologies for ocean hunting, fishing, and navigation.
+On January 31, 1855, Governor Isaac Stevens met Makah leaders from the villages of Neah, Waatch, Tsoo-yess, and Ozette at Neah Bay and signed the Treaty of Neah Bay. The Makah ceded most of their territory. In exchange, the government promised $30,000 in annuity payments over 15 years on a declining schedule, plus money for settlement improvements, per HistoryLink.org. Article 4 kept for the Makah "the right of taking fish and of whaling or sealing at usual and accustomed grounds and stations." The treaty first set aside a small tract near Cape Flattery; a later enlargement brought the reservation to roughly 27,000 acres.
 
-The Makah's location at the entrance to the Strait of Juan de Fuca placed them at the crossroads of Pacific maritime traffic, both human and animal. Gray whales, humpback whales, seals, salmon, and halibut provided abundant resources, while the tribe's strategic position enabled extensive trade networks with tribes throughout the Pacific Northwest.
+## Ozette: A Village Under a Mudslide
 
-## Whaling Tradition
+Winter storms in 1969 and 1970 tore open a slump at the Ozette site and exposed a village. The Makah Museum dates the slide that buried it to about 500 years before the discovery. Washington State University archaeologist Richard "Doc" Daugherty led the dig that followed. It ran roughly 11 years, into 1981, and pulled somewhere between 40,000 and 55,000 artifacts from the mud. Everything recovered stayed on the reservation. The Makah Cultural and Research Center, now called the Makah Museum, opened in 1979 to hold it and displays full-size replica canoes and a longhouse.
 
-The Makah are the only Native American tribe with treaty-protected whaling rights, reflecting a cultural tradition that spans thousands of years. Makah whalers developed sophisticated techniques for hunting gray whales using cedar canoes, harpoons, and spiritual practices that treated whaling as both practical necessity and sacred ceremony.
+## The Light on Tatoosh Island, 1857
 
-Whaling required extraordinary skill, courage, and spiritual preparation. Whaling crews underwent extensive purification rituals and training that could last for years. The successful hunting of a whale provided not only meat and oil for the entire community but also reinforced social structures and spiritual beliefs that defined Makah culture.
+Builders reached Tatoosh Island, just offshore of the Cape, in 1856 to raise a lighthouse. HistoryLink reports the construction crew armed themselves and put up a blockhouse against the island's Makah residents before the tower went up. Cape Flattery Light began operating December 28, 1857. The tower stands 65 feet tall, with its light 97 feet above the water. It carried a first-order Fresnel lens made in Paris in 1854 by Louis Sautter and Company, visible 20 miles out.
 
-## European Contact
+A bell rang the first fog signal. A steam foghorn costing $10,000 replaced it in 1872. Keeper John Merrill Cowan tended the light for 32 years, from 1900 to 1932. Relations with the island's Makah residents had reportedly improved by 1885, per HistoryLink.
 
-Spanish explorer Juan Pérez first documented contact with the Makah in 1774, followed by Captain James Cook in 1778. These early encounters established the Strait of Juan de Fuca as a crucial navigation route while introducing European trade goods that would gradually transform Makah society.
+## A Hunt Resumes, 1999
 
-The Makah's sophisticated trading networks and diplomatic skills enabled them to maintain their autonomy longer than many Pacific Northwest tribes. They controlled access to the strait and developed profitable relationships with both Spanish and British traders while preserving their cultural independence.
+Whale bone and harpoon barbs pulled from the Ozette mud put whaling there back roughly 2,000 years, into the first centuries C.E. The 1855 treaty kept the right explicit in writing. The hunts themselves stopped in the 1920s. They resumed on May 17, 1999, when a crew in the cedar canoe Hummingbird struck and killed a gray whale off Cape Alava.
 
-## Treaty of Neah Bay
+Harpooner Theron Parker worked the bow; crewman Donnie Swan secured the lines; a rifleman in a support boat backed them up. More than 350 organizations, across 27 countries, had opposed the hunt beforehand. Opponents held a candlelight vigil in Seattle. The whale was processed with a traditional potlatch and feast.
 
-In 1855, the Makah signed the Treaty of Neah Bay, ceding most of their territory while retaining a 27,000-acre reservation that included their traditional whaling grounds. Crucially, the treaty explicitly protected the Makah's right to whale, fish, and seal hunt in their traditional waters, rights that would prove essential to cultural survival.
+The hunt drew on a 1997 agreement between the United States and Russia that granted the Makah four gray whales a year from a shared North Pacific indigenous quota of 124 whales under the International Whaling Commission. The Makah Tribe's own account describes traditional gear including a harpoon 12 to 18 feet long, a yew wood shaft, an elk-antler barb, mussel-shell components, sealskin floats, and sinew rope up to 40 fathoms long bound in cherry bark. Crews of eight paddled the canoe.
 
-The treaty negotiations reflected the Makah's strategic importance in controlling access to the Strait of Juan de Fuca. U.S. officials recognized that Makah cooperation was essential for safe navigation and commerce, leading to more favorable treaty terms than many tribes received.
+## Sources
 
-## Lighthouse and Navigation
-
-Cape Flattery's strategic location made it essential for maritime navigation safety. The Cape Flattery Lighthouse, built in 1857, guided ships entering the Strait of Juan de Fuca toward Puget Sound ports. The lighthouse's operation required Makah cooperation and provided employment opportunities for tribal members.
-
-The lighthouse represented the intersection of traditional Makah maritime knowledge with modern navigation technology. Makah pilots, drawing on generations of local navigational expertise, guided ships through dangerous waters while the lighthouse provided a visible beacon for approaching vessels.
-
-## Cultural Suppression and Resistance
-
-Like other Native American communities, the Makah faced intense pressure to abandon traditional practices and adopt Euro-American lifestyles. Government agents and missionaries worked to suppress whaling, potlatch ceremonies, and traditional languages while forcing children into boarding schools that separated them from their culture.
-
-Despite these pressures, the Makah maintained core cultural practices and knowledge through discrete ceremonies, storytelling, and the passing of traditional skills between generations. The community's isolation at the continent's edge provided some protection from the most intensive assimilation efforts.
-
-## Economic Adaptation
-
-The decline of traditional whaling due to commercial overhunting forced the Makah to adapt their economy while maintaining their maritime orientation. The tribe developed commercial fishing operations, logging enterprises, and tourism businesses that utilized their geographic location and cultural heritage.
-
-The Makah became leaders in Pacific Northwest commercial fishing, applying traditional knowledge of ocean conditions and fish behavior to modern fishing techniques. Their success demonstrated how indigenous communities could adapt to economic changes while maintaining cultural identity.
-
-## Archaeological Discoveries
-
-The 1970 archaeological excavation at Ozette village revolutionized understanding of Pacific Northwest indigenous culture. A mudslide had preserved Makah artifacts for 500 years in pristine condition, revealing sophisticated technologies, art forms, and daily life practices that challenged assumptions about pre-contact Native American societies.
-
-The Ozette discoveries included carved whaling harpoons, intricate basketry, wooden sculptures, and household items that demonstrated the complexity and sophistication of Makah civilization. The artifacts provided unprecedented insights into how maritime cultures adapted to challenging coastal environments.
-
-## Cultural Revival
-
-The Ozette archaeological project sparked a broader Makah cultural revival that included language preservation programs, traditional arts instruction, and the restoration of ceremonial practices. The Makah Cultural and Research Center, opened in 1979, became a model for tribal museums and cultural preservation efforts.
-
-The cultural revival culminated in 1999 when the Makah resumed traditional whaling after a 70-year hiatus. The successful hunt, conducted using traditional canoes and harpoons, demonstrated the continuity of cultural knowledge and the tribe's determination to maintain their maritime heritage.
-
-## Modern Challenges
-
-The Makah continue to face challenges in balancing cultural preservation with contemporary economic needs and environmental concerns. Climate change affects marine ecosystems that have sustained Makah culture for millennia, while outside pressure to abandon whaling conflicts with treaty rights and cultural identity.
-
-The tribe works to address these challenges through sustainable resource management, cultural education programs, and legal advocacy that protects treaty rights while demonstrating environmental stewardship. Their approach serves as a model for how indigenous communities can adapt to contemporary challenges while maintaining cultural integrity.
-
-## Environmental Stewardship
-
-The Makah have become leaders in marine conservation, applying traditional ecological knowledge to contemporary environmental challenges. Their management of tribal waters demonstrates how indigenous knowledge systems can inform modern conservation efforts while protecting both cultural and natural resources.
-
-Tribal research programs study marine ecosystems, monitor fish populations, and assess climate change impacts while training new generations of Makah scientists and resource managers. This work demonstrates the value of combining traditional knowledge with modern scientific methods.
-
-## Tourism and Education
-
-The Makah Cultural and Research Center attracts visitors from around the world who come to learn about indigenous maritime culture and view artifacts from the Ozette excavation. Educational programs help visitors understand Makah history and contemporary life while generating revenue that supports cultural preservation efforts.
-
-Cultural tourism provides economic opportunities while enabling the Makah to share their story and educate the public about indigenous rights and environmental stewardship. The center demonstrates how tribes can use tourism to support cultural preservation while maintaining control over their narrative.
-
-## Cape Flattery Trail
-
-The Cape Flattery Trail, managed jointly by the Makah Tribe and Olympic National Park, provides public access to the northwestern-most point of the contiguous United States. The trail offers spectacular views of the Pacific Ocean while passing through ecosystems that have sustained Makah culture for millennia.
-
-Interpretive programs along the trail help visitors understand the relationship between Makah culture and the marine environment while demonstrating ongoing tribal stewardship of ancestral lands. The trail represents successful collaboration between tribal and federal land management.
-
-## Contemporary Significance
-
-Today, Neah Bay and Cape Flattery represent both the resilience of indigenous culture and the ongoing challenges faced by tribal communities in the modern world. The Makah's success in maintaining their maritime heritage while adapting to contemporary challenges provides inspiration for indigenous communities worldwide.
-
-The location reminds us that indigenous peoples are not historical artifacts but living communities with continuing relationships to ancestral lands and resources. The Makah experience demonstrates how traditional knowledge and cultural practices remain relevant to contemporary environmental and social challenges.
-
-## Living Heritage
-
-As you stand at Cape Flattery, where the Pacific Ocean meets the North American continent, you're experiencing a landscape that continues to sustain the Makah people as it has for thousands of years. The dramatic coastline, abundant marine life, and powerful natural forces that shaped Makah culture continue to influence contemporary tribal life.
-
-The site represents the enduring connection between indigenous peoples and their ancestral homelands, demonstrating how cultural traditions can survive colonization and continue to provide meaning and identity in the modern world. Cape Flattery stands as testimony to the resilience of indigenous culture and the ongoing vitality of tribal communities.
+- **National Park Service, 'Cape Flattery Trailhead,' nps.gov/places/000/cape-flattery-trailhead.htm** — *primary/official* — Trail length, Reservation land, northwesternmost-point claim
+- **HistoryLink.org, 'Treaty of Neah Bay, 1855' (File 2632)** — *editorial/secondary* — Treaty terms, annuity payments, Article 4 quote, reservation acreage
+- **HistoryLink.org, 'Makah leaders and Territorial Gov. Stevens sign treaty at Neah Bay on January 31, 1855' (File 5364)** — *editorial/secondary* — Signing date, participants, villages named
+- **Makah Museum (Makah Cultural and Research Center), makahmuseum.com/about/ozette-archaeological-site/** — *primary/official* — Ozette slide date, discovery, museum opening year
+- **Washington State Magazine (WSU), 'The Home of My Family: Ozette, the Makahs, and Doc Daugherty' (May 2009)** — *editorial/secondary* — Excavation duration and lead archaeologist, artifact count
+- **HistoryLink.org, 'Cape Flattery Light on Tatoosh Island begins operating on December 28, 1857' (File 5703)** — *editorial/secondary* — Lighthouse construction, dimensions, lens, foghorn, keepers, construction-era tension
+- **HistoryLink.org, 'Makah whale hunt succeeds on May 17, 1999' (File 5310) and 'Makah Whaling' (File 5301)** — *editorial/secondary* — 1999 hunt details, opposition scale, 1997 US-Russia quota agreement
+- **Makah Tribe official site, makah.com/makah-tribal-info/whaling/** — *primary/official* — Traditional whaling gear description

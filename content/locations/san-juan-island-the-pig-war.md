@@ -7,56 +7,75 @@ address: "San Juan Island, WA 98250"
 coordinates:
   lat: 48.45583
   lng: -122.98556
-summary: "In 1859, an American farmer shot a British-owned pig on San Juan Island and nearly ignited a war between two nations."
-lead: "In 1859, an American farmer shot a British-owned pig on San Juan Island and nearly ignited a war between two nations. For the next 13 years, American soldiers and British Royal Marines maintained armed camps at opposite ends of the island while diplomats worked to resolve a border dispute that had simmered since the Oregon Treaty of 1846. The peaceful resolution set a precedent for international arbitration still cited today."
-notice: null
+summary: "In 1859 a shot pig nearly set the U.S. and Britain to war on San Juan Island. The only casualty was the pig."
+lead: null
+notice:
+  - "At American Camp, walk the open prairie out to the bluff above the Strait of Juan de Fuca."
+  - "At English Camp on the northwest shore, you can see the blockhouse, the formal garden, and the cemetery."
+  - "The two camps sit at opposite ends of the island, south and north, so plan the drive between them."
 hero: null
 audio: "/audio/san-juan-island---the-pig-war.mp3"
 draft: false
 publishDate: null
 books:
-  - title: "The Pig War: The Last Irish-English War on American Soil"
+  - title: "The Pig War: Standoff at Griffin Bay"
     author: "Mike Vouri"
-    url: "https://www.amazon.com/Pig-War-Last-Irish-English-American/dp/0870043498"
+    url: "https://www.amazon.com/Pig-War-Standoff-Griffin-Bay/dp/0963456253"
     isbn: null
-  - title: "San Juan Islands: Geology, History, and Natural Beauty"
-    author: "David Richardson"
-    url: "https://www.amazon.com/San-Juan-Islands-Geology-Natural/dp/1560373083"
+  - title: "Pig War Islands: The Story of the San Juan Islands"
+    author: "David Blair Richardson"
+    url: "https://openlibrary.org/works/OL6336349W"
     isbn: null
 sourceId: 55
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-08-23"
+  reviewer: "Cowork research pipeline"
+  sourceTier: "primary"
+  claimsTotal: 16
+  claimsCited: 16
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Re-researched and rewritten 2026-08-23. Verifier verdict: publishable."
 ---
 
-  On a June morning in 1859, an American farmer named Lyman Cutlar stepped out to find a large black pig rooting through his potato garden on San Juan Island. He had warned the pig's owner before. This time, he shot it. The pig belonged to the Hudson's Bay Company. And with that single shot, Cutlar set in motion an international crisis that would bring the United States and Britain to the edge of war.
+The prairie at American Camp runs to a bluff above the Strait of Juan de Fuca. Coast Salish people fished these waters long before any boundary line. They invented reef-net fishing in the Salish Sea, and they have lived here since time immemorial. The National Park Service consults seven Coast Salish tribes today: Lummi Nation, Swinomish, Samish Indian Nation, Jamestown S'Klallam, Tulalip, Port Gamble S'Klallam, and Lower Elwha Klallam. On this ground, two nations nearly fought over a pig.
 
-  ## The Real Dispute
+## Cutlar shot the pig on June 15, 1859
 
-  The pig was the spark, but the powder had been laid years earlier. The Oregon Treaty of 1846 had established the 49th parallel as the boundary between American and British territory, but the treaty language was ambiguous when it came to the San Juan Islands. Both nations believed the archipelago was rightfully theirs, and both had established a presence there, American farmers and British Hudson's Bay Company operations living in uneasy proximity.
+Charles Griffin managed the Hudson's Bay Company's Belle Vue Sheep Farm. The company had run sheep on the island since 1853, about 5,000 of them. One pig rooted in Lyman Cutlar's garden. A Hawaiian herdsman named Jacob saw it there. He worked for the company. It was not the pig's first raid. On June 15, 1859, Cutlar shot and killed it. He offered Griffin about $10. Griffin demanded $100, roughly six times the animal's value.
 
-  When Cutlar shot the pig, British authorities threatened to arrest him. American settlers appealed to Brigadier General William Harney, who responded by dispatching Captain George Pickett, the same officer who would later lead the disastrous Confederate charge at Gettysburg, with 64 soldiers to establish an American military presence.
+## The 1846 Oregon Treaty left the islands to both nations
 
-  ## The Standoff
+British and American negotiators drew the boundary along the 49th parallel in the Oregon Treaty of June 1846. They wrote "channel" but named no channel. Two ran through the islands: Haro Strait and Rosario Strait. Both nations claimed the San Juans.
 
-  Britain responded swiftly. Rear Admiral Robert Lambert Baynes arrived with five warships carrying 2,140 men and 70 guns, vastly outnumbering the American force. For a tense period, war seemed genuinely possible.
+## Pickett landed at Griffin Bay with 64 men
 
-  But Baynes refused to attack. In one of history's more quotable acts of restraint, he reportedly stated he would not embroil two great nations in a war over a squabble about a pig. The crisis was referred to Washington and London, where cooler heads prevailed.
+Brigadier General William S. Harney ordered Company D, 9th U.S. Infantry, to the island. Captain George E. Pickett landed near Griffin Bay on July 27, 1859, with 64 men. This is the same Pickett who led "Pickett's Charge" at Gettysburg on July 3, 1863. Governor James Douglas pressed to land marines and drive Pickett off. Rear Admiral Robert Lambert Baynes refused to escalate.
 
-  ## Thirteen Years of Peaceful Occupation
+## The standoff peaked in August 1859
 
-  In August 1859, both nations agreed to a joint military occupation while diplomats sorted out the boundary question. American soldiers established American Camp on the island's southern prairie. British Royal Marines set up English Camp in a sheltered cove to the north. And there they stayed, for thirteen years.
+By August 31, 1859, 461 U.S. soldiers held the ground with 14 field cannon and 8 naval guns. The British side peaked at roughly five warships and nearly 2,000 Royal Marines. HMS Tribune alone carried 31 guns. Douglas wanted the marines ashore. Baynes held them back. By tradition, Baynes said he would not embroil two great nations in a squabble over a pig. He put it more bluntly on the record: "tut, tut, no, no, the damn fools."
 
-  What followed was one of the stranger episodes in military history. Officially in a state of armed standoff, the two garrisons quickly became neighbors. They shared resources during harsh winters, held joint athletic competitions, and gathered at each other's camps for holidays. Officers dined together. Enlisted men played cricket and baseball on the same field. The British maintained their tradition of formal gardens and afternoon tea; the Americans brought their frontier informality.
+## Scott negotiated de-escalation in the fall of 1859
 
-  It was, by most accounts, an entirely pleasant military occupation, the kind that only becomes possible when both sides recognize that the actual dispute is absurd.
+General Winfield Scott negotiated de-escalation in the fall of 1859. Both governments approved a joint military occupation in November 1859. The Royal Marines formally established English Camp on March 21, 1860. American Camp held the south end. English Camp held the north. The two-nation occupation ran until 1872. No shots passed between the forces. The only casualty of the Pig War was the pig.
 
-  ## Resolution
+## Kaiser Wilhelm I settled the border on October 21, 1872
 
-  In 1871, Britain and the United States agreed to submit the boundary question to international arbitration, naming Kaiser Wilhelm I of Germany as arbitrator. In October 1872, he ruled in favor of the United States, placing the San Juan Islands firmly on the American side of the line. The British withdrew their garrison in November 1872, leaving behind their tidy camp, a formal garden, and a cemetery.
+Britain and the United States referred the boundary to arbitration in the 1871 Treaty of Washington. Kaiser Wilhelm I of Germany took the question. His commission ruled on October 21, 1872, for the United States, and set the line through Haro Strait. The Royal Marines withdrew on November 25, 1872.
 
-  The only casualty of the Pig War was the pig.
+## Two camps stand above the Strait today
 
-  ## What You Can See Today
+The National Park Service preserves both camps today. English Camp sits on the northwest shore: a blockhouse, barracks, a formal garden, and a cemetery. American Camp holds the open prairie at the south end. Its bluff looks out over the Strait of Juan de Fuca. The pig is gone. The prairie remains.
 
-  San Juan Island National Historical Park preserves both camps. English Camp, at the north end of the island, retains its formal character, a restored blockhouse, barracks, a cemetery, and a garden that is still maintained today. American Camp on the southern prairie offers sweeping views across the Strait of Juan de Fuca and remnants of the American fortifications.
+## Sources
 
-  Together, the two sites stand as a monument to a principle: that international disputes can be resolved through negotiation rather than violence. The Pig War set an early precedent for international arbitration and is frequently cited as a model of peaceful conflict resolution, an outcome far more lasting than any war could have produced.
+- **National Park Service, 'The Pig War,' San Juan Island National Historical Park (nps.gov/sajh)** — *primary/official* — Oregon Treaty ambiguity, joint occupation, arbitration by Kaiser Wilhelm I, Oct 21 1872 ruling, Nov 25 1872 withdrawal, 'only casualty was the pig,' troop/warship scale
+- **National Park Service, 'Lyman Cutlar Homestead' (nps.gov/places)** — *primary/official* — June 15 1859 shooting, Griffin and Belle Vue Sheep Farm, $10/$100 dispute, 5,000 sheep since 1853, the Hawaiian herdsman Jacob and prior raids
+- **National Park Service, 'Griffin Bay' (nps.gov/places)** — *primary/official* — Pickett's July 27 1859 landing with 64 men, American strength figures
+- **National Park Service, 'Lambert Baynes' (nps.gov/places)** — *primary/official* — Baynes's refusal to escalate, the attributed 'two great nations' line and his documented blunter reaction
+- **National Park Service, 'Harney Re-Examined Part III: Harney and the Pig War'** — *primary/official* — Scott's fall 1859 de-escalation and the November 1859 approval of joint occupation
+- **National Park Service, 'American Camp' and 'English Camp' visitor pages** — *primary/official* — Present-day camp features, March 21 1860 establishment of English Camp, geography above the Strait
+- **National Park Service, 'The Salish Sea' and 'Working with Tribes,' San Juan Island NHP** — *primary/official* — Coast Salish homeland, reef-net fishing, the seven consulted tribes

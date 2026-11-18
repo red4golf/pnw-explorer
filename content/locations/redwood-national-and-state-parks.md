@@ -7,132 +7,78 @@ address: "Crescent City, CA"
 coordinates:
   lat: 41.3
   lng: -124
-summary: "Ancient coastal redwood forests representing the tallest trees on Earth and thousands of years of indigenous stewardship by the Yurok and other tribes"
+summary: "Home to the tallest trees on Earth, protected as a park since 1968, where the tallest known tree is now closed to protect it."
 lead: null
-notice: null
+notice:
+  - "Look straight up before you do anything else -- NPS's own visitor brochure says these redwoods can top 379 feet, and trailside signs at Lady Bird Johnson Grove put most of the trees around you at 600 to 800 years old."
+  - "Watch the fog drifting through the canopy: a 1998 study found that fog drip like this supplies roughly a third of this forest's yearly water input, compared to 17 percent in areas without redwood canopy to catch it."
+  - "If you pass a taped-off or signed trail closure, don't duck under it -- NPS closed the ground around Hyperion, the tallest tree it has recorded, after visitor foot traffic killed the vegetation growing at its base."
 hero: null
 audio: null
 draft: false
 publishDate: null
 books:
-  - title: "Redwood Giants: The Story of Californias Coast Redwoods"
+  - title: "Monarchs of the Mist: The Story of Redwood National Park and the Coast Redwoods"
     author: "Joseph E. Brown"
-    url: "https://www.amazon.com/Redwood-Giants-Story-Californias-Coast/dp/0912627441"
+    url: "https://www.amazon.com/Monarchs-Mist-Redwood-National-Redwoods/dp/0911235000"
     isbn: null
-  - title: "The Enduring Giants: The Epic Story of Giant Sequoias and Coast Redwoods"
+  - title: "The Enduring Giants: The Epic Story of Giant Sequoia and the Big Trees of Calaveras"
     author: "Joseph H. Engbeck Jr."
-    url: "https://www.amazon.com/Enduring-Giants-Sequoias-Coast-Redwoods/dp/0895951444"
+    url: "https://www.amazon.com/Enduring-Giants-Story-Sequoia-Calaveras/dp/094192503X"
     isbn: null
 sourceId: 79
 mergedFrom: null
+factcheck:
+  status: "unverified"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify)"
+  sourceTier: "primary"
+  claimsTotal: 20
+  claimsCited: 20
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline. Repair round left 2 unsupported claims (an unsourced 'famous' descriptor on Hyperion, and a flat-fact derived acreage total the writer computed by adding two sourced figures) plus 2 style violations — hand-fixed directly rather than spending a third paid agent round. One of the style flags was a real proportionality issue: the H1 title ('Land Returning to the Yurok') elevated a two-sentence closing item (the O Rew transfer) into the framing device for a six-section entry that's overwhelmingly about tree biology, logging history, and park creation — retitled to 'Among the Tallest Trees on Earth' to match what the entry actually covers."
 ---
 
-Along the fog-shrouded coast of Northern California, where the Pacific Ocean meets towering forests that have stood for over 2,000 years, Redwood National and State Parks preserve the last remaining stands of old-growth coast redwoods, the tallest trees on Earth. These ancient groves represent not only remarkable biological achievement but also thousands of years of indigenous stewardship and the ongoing struggle to balance conservation with economic development along the Northern California coast.
+You are standing among coast redwoods, the tallest trees on Earth, inside Redwood National and State Parks. The unit combines one national park with three California state parks -- Jedediah Smith, Del Norte Coast, and Prairie Creek Redwoods -- managed jointly since 1994 under a single agreement covering more than 105,000 acres of old- and second-growth forest.
 
-## Ancient Forest Ecosystem
+## From Clear-Cut to National Park
 
-Coast redwoods (Sequoia sempervirens) are among the oldest living organisms on Earth, with some trees exceeding 2,000 years in age and reaching heights over 380 feet. These giants create unique forest ecosystems that support hundreds of plant and animal species found nowhere else, from tiny salamanders living in tree canopies to Roosevelt elk grazing in forest meadows.
+By 1853, nine sawmills were already running in Eureka, cutting into old-growth forest that once covered roughly two million acres of this coast. By the 1960s, the National Park Service says, loggers had removed "almost ninety percent" of that original forest. About five percent, roughly 100,000 acres, remains today.
 
-The redwood ecosystem depends on the coastal fog that rolls inland from the Pacific Ocean, providing up to 40% of the trees' water needs through foliar absorption. This delicate balance between ocean, atmosphere, and forest creates conditions that have allowed redwoods to thrive for millions of years while making them vulnerable to climate change and human disturbance.
+President Lyndon B. Johnson signed Redwood National Park into law on October 2, 1968, protecting 58,000 acres that included Lady Bird Johnson Grove and Tall Trees Grove. President Jimmy Carter approved an expansion in March 1978 that added roughly 48,000 acres. About 39,000 of those acres had already been clear-cut and needed restoration. NPS says restoration work in the parks' watersheds -- removing old logging roads, replanting native vegetation, rebuilding stream hydrology -- continues today.
 
-## Indigenous Stewardship
+## The League That Started in 1918
 
-The Yurok, Hoopa, Chilula, and other indigenous peoples have lived among the redwoods for thousands of years, developing sophisticated relationships with the forest that combined sustainable resource use with spiritual reverence for the ancient trees. Traditional practices included selective harvesting of redwood bark for shelter and boats, controlled burning to maintain forest health, and ceremonial uses that recognized the sacred nature of these giants.
+Three paleontologists -- Henry Fairfield Osborn, Madison Grant, and John C. Merriam -- founded Save-the-Redwoods League in 1918. Between 1920 and 1960 the League bought more than 100,000 acres of redwood forest. That land became the basis of Jedediah Smith, Del Norte Coast, and Prairie Creek Redwoods State Parks. Del Norte Coast itself started small, at about 125 acres, set aside in 1925.
 
-Indigenous management practices helped maintain the diversity and resilience of redwood ecosystems while providing for human needs. Traditional burning reduced understory competition and disease while creating meadows and prairies that supported game animals and useful plants. This management approach demonstrated how humans could live sustainably within old-growth forest ecosystems.
+## How Big, How Old, How Wet
 
-## European Contact and Early Exploitation
+Trail signage at Lady Bird Johnson Grove tells visitors that most of the redwoods around them are 600 to 800 years old. A handful of individual trees, the same signs say, have survived for two millennia. NPS's visitor brochure adds the height figure -- coast redwoods can reach 379 feet or more.
 
-Spanish explorers first documented the coast redwoods in 1769, but systematic exploitation began during the California Gold Rush when lumber demand skyrocketed. The discovery that redwood lumber was exceptionally durable, fire-resistant, and easy to work made these forests extremely valuable for construction throughout the growing West.
+A 1998 study in the journal Oecologia found that fog-derived water made up 13 to 45 percent of a redwood's annual transpiration. Fog drip off the canopy supplied about 34 percent of the whole forest's yearly water input, the same study found, against 17 percent in areas with no trees to catch it. A follow-up study in the journal Plant, Cell & Environment, published in 2004, examined how redwood needles absorb fog moisture directly through their foliage, a pathway the researchers linked to preventing dehydration in the trees.
 
-Early logging operations were small-scale and selective, but technological advances including steam-powered equipment and railroad transportation enabled increasingly intensive harvesting. By the 1870s, large-scale logging operations were removing entire forest stands with little regard for regeneration or ecosystem protection.
+## World Heritage Since 1980
 
-## Logging Boom Era
+UNESCO listed the parks as a World Heritage Site in 1980, inscribed under criteria (vii) and (ix) of the World Heritage Convention. The listing covers 41,571 hectares, of which 16,442 hectares is old-growth forest. California State Parks records a second designation in 1983, when the site also became an International Biosphere Reserve.
 
-The period from 1850 to 1950 witnessed the most intensive redwood logging in history, with over 95% of old-growth redwood forests harvested for lumber. Massive logging operations employed thousands of workers while generating enormous profits for timber companies and supporting dozens of mill towns throughout the redwood region.
+## Yurok, Tolowa, Hupa, and Karuk Land
 
-The scale and efficiency of redwood logging represented both remarkable industrial achievement and ecological catastrophe. Steam donkeys, logging railroads, and eventually trucks and chainsaws enabled complete forest removal at unprecedented rates. Entire valleys were clearcut, leaving stumps and erosion where ancient forests had stood for millennia.
+The Yurok, Tolowa, Hupa, and Karuk peoples lived in this region for thousands of years before European contact, according to NPS's own area history. Treaties negotiated with North Coast tribes were never ratified by the U.S. Senate. That left many local tribes without the federal protections a ratified treaty would have carried.
 
-## Conservation Awakening
+## Hyperion's Closure and O Rew's Return
 
-By the early 20th century, concerned citizens and scientists began advocating for redwood conservation as the remaining old-growth stands dwindled rapidly. The Save-the-Redwoods League, founded in 1918, spearheaded efforts to purchase and protect the most significant remaining groves through private fundraising and government cooperation.
+Researchers found Hyperion in 2006. NPS identifies it as the tallest tree on Earth, but the agency does not publish its height or its coordinates. It stands inside an area now closed to the public. NPS warns that hiking into the closure "could result in a fine or jail." Visitor foot traffic degraded the tree's base and killed the surrounding vegetation, and left trash and human waste behind.
 
-Early conservation efforts focused on preserving the most spectacular groves as parks and monuments while allowing continued logging in surrounding areas. This approach saved important forest remnants but created isolated parks surrounded by heavily logged landscapes, demonstrating the challenges of ecosystem conservation in fragmented landscapes.
+On March 19, 2024, the Yurok Tribe, Save the Redwoods League, NPS, and California State Parks agreed to transfer O Rew, a 125-acre property on Prairie Creek near Orick, to the Tribe. The transfer is due to finish in 2026, after restoration work. The site is meant to become a co-stewarded gateway to the parks, with a visitor center and a traditional village on Yurok ancestral land.
 
-## State Park System
+## Sources
 
-California's redwood state parks, established beginning in the 1920s, preserved many of the most outstanding redwood groves while providing public access to these natural wonders. Parks like Prairie Creek, Del Norte Coast, and Jedediah Smith protected diverse redwood ecosystems from ancient groves to coastal prairies.
-
-The state park system demonstrated public support for redwood conservation while providing recreational and educational opportunities that built broader constituencies for forest protection. These parks served as outdoor classrooms where visitors could experience old-growth forests and understand their ecological and cultural significance.
-
-## National Park Designation
-
-Redwood National Park, established in 1968, represented federal recognition of the redwoods' national significance and the need for expanded protection of remaining old-growth forests. The park's creation required congressional action to halt logging in critical watersheds while compensating timber companies for lost opportunities.
-
-The national park designation reflected growing environmental awareness and political mobilization around old-growth forest conservation. Environmental organizations, scientists, and concerned citizens successfully argued that some natural areas were too valuable to lose to commercial exploitation, establishing precedents for ecosystem protection.
-
-## Watershed Protection
-
-The expansion of Redwood National Park in 1978 recognized that protecting ancient trees required protecting entire watersheds from logging, road building, and other disturbances that could affect forest ecosystems. The expanded park included cutover lands that would be restored to old-growth conditions over time.
-
-Watershed protection represented a more sophisticated understanding of forest ecology that recognized the interconnections between streams, soil, climate, and tree health. This ecosystem approach to conservation became a model for protecting other old-growth forests throughout the Pacific Northwest.
-
-## Restoration Efforts
-
-Redwood National and State Parks have undertaken massive restoration efforts to heal damaged landscapes and restore natural processes in areas previously logged or developed. These projects include removing obsolete roads, replanting native vegetation, and restoring natural hydrology in degraded watersheds.
-
-Restoration work demonstrates both the possibility of ecological recovery and the long timescales required for old-growth forest development. Young redwoods planted in restoration areas will require centuries to approach the size and ecological complexity of ancient forests, highlighting the irreplaceable value of remaining old-growth stands.
-
-## Scientific Research
-
-The redwood parks serve as living laboratories for research into forest ecology, climate change, and conservation biology. Scientists study everything from redwood genetics and growth patterns to the complex communities of plants and animals that depend on old-growth forest conditions.
-
-Research findings have revealed the extraordinary complexity of redwood ecosystems and their importance for carbon storage, biodiversity conservation, and climate regulation. This scientific knowledge supports conservation efforts while contributing to broader understanding of forest ecology and environmental change.
-
-## Cultural Significance
-
-The redwoods hold deep cultural significance for indigenous peoples who maintain traditional relationships with these forests through cultural practices, land management partnerships, and educational programs. Tribal involvement in park management helps preserve traditional knowledge while ensuring that indigenous perspectives inform conservation decisions.
-
-For broader American culture, the redwoods represent wilderness, permanence, and the sublime power of nature. These forests have inspired artists, writers, and millions of visitors while serving as symbols of environmental conservation and the importance of preserving natural heritage for future generations.
-
-## Economic Transitions
-
-The establishment of redwood parks contributed to economic transitions in Northern California as communities shifted from timber-dependent economies to tourism and service industries. While some workers lost logging jobs, others found employment in park management, tourism, and related services.
-
-Economic transitions highlighted both the costs and benefits of conservation decisions while demonstrating how communities can adapt to changing economic conditions. The parks now generate substantial economic activity through tourism while preserving forest resources that provide ongoing ecological services.
-
-## Climate Change Impacts
-
-Climate change poses new challenges for redwood conservation as changing precipitation patterns, increased wildfire risk, and rising temperatures affect forest health and regeneration. Scientists monitor these changes while developing adaptive management strategies to help redwood ecosystems respond to environmental change.
-
-The redwoods' ability to store massive amounts of carbon makes their conservation important for climate change mitigation as well as biodiversity protection. Old-growth redwood forests store more carbon per acre than any other forest type, demonstrating how conservation can contribute to climate solutions.
-
-## Visitor Experience
-
-Redwood National and State Parks provide opportunities for millions of visitors to experience old-growth forests through hiking trails, scenic drives, and interpretive programs. These experiences help build public support for conservation while providing recreational and educational benefits.
-
-Managing visitor impacts while preserving forest integrity requires careful planning and education to ensure that public access doesn't compromise the ecosystems people come to see. The parks demonstrate how conservation areas can serve both protection and education goals through thoughtful management.
-
-## Global Significance
-
-As the only remaining extensive old-growth coast redwood forests on Earth, these parks represent irreplaceable global heritage that transcends national boundaries. International visitors and scientists recognize the redwoods' worldwide significance for understanding forest ecology and conservation.
-
-The parks' designation as both a World Heritage Site and International Biosphere Reserve acknowledges their global importance while supporting international cooperation in conservation research and management. This recognition helps secure support for ongoing protection efforts.
-
-## Future Challenges
-
-Redwood conservation faces ongoing challenges including climate change, invasive species, air pollution, and development pressure on surrounding lands. Addressing these challenges requires adaptive management approaches that can respond to changing conditions while maintaining forest integrity.
-
-Long-term conservation success depends on maintaining public support, securing adequate funding, and developing cooperative relationships with neighboring landowners and communities. The parks' future requires balancing protection goals with human needs and changing environmental conditions.
-
-## Conservation Legacy
-
-Redwood National and State Parks represent one of conservation's greatest success stories, the rescue of an irreplaceable ecosystem from complete destruction through public action and scientific understanding. The parks demonstrate that determined conservation efforts can preserve natural heritage even in the face of powerful economic pressures.
-
-The redwood conservation story provides lessons for protecting other threatened ecosystems while inspiring continued efforts to preserve natural areas for future generations. These parks show how conservation can succeed when communities mobilize to protect what they value most.
-
-## Walking Among Giants
-
-As you walk among the ancient redwoods, surrounded by trees that were ancient when European explorers first reached California, you're experiencing one of the most remarkable ecosystems on Earth. These giants connect us to deep time and natural processes that dwarf human experience while reminding us of our responsibility to preserve natural heritage.
-
-The redwoods stand as living monuments to the power of conservation and the importance of protecting irreplaceable natural areas. They remind us that some things, once lost, can never be replaced, and that our choices today will determine what future generations inherit from the natural world.
+- **NPS, 'Redwood Area History,' Redwood National and State Parks, https://www.nps.gov/redw/learn/historyculture/area-history.htm** — *primary/official* — Logging history (nine sawmills, 1853; ~90% removed by 1960s; ~5%/100,000 acres remaining), 1968 and 1978 park establishment/expansion figures, restoration work, joint management, and named tribes (Yurok, Tolowa, Hupa, Karuk) plus unratified treaties
+- **NPS, 'Hyperion,' Redwood National and State Parks, https://www.nps.gov/redw/planyourvisit/hyperion.htm (last updated Nov. 29, 2022)** — *primary/official* — Hyperion discovery (2006), closure, fine/jail warning, undisclosed height and coordinates, and site degradation from visitor traffic
+- **NPS, ThreeTrees brochure, Redwood National and State Parks, https://www.nps.gov/redw/planyourvisit/upload/ThreeTrees-2014-508.pdf** — *primary/official* — Redwood height (379 feet or more)
+- **NPS, Lady Bird Johnson Nature Trail Stop 2, https://www.nps.gov/places/lady-bird-johnson-nature-trail-stop-2.htm** — *primary/official* — Redwood ages (600-800 years typical, some over two millennia)
+- **NPS, 'Historic Agreement to Return Tribal Land,' March 20, 2024, https://www.nps.gov/redw/learn/news/2024-03-20-historic-agreement-to-return-tribal-land.htm** — *primary/official* — O Rew land transfer agreement (March 19, 2024), acreage, and planned gateway/visitor center/village use
+- **UNESCO World Heritage Centre, 'Redwood National and State Parks,' official listing, https://whc.unesco.org/en/list/134/** — *primary/official* — World Heritage inscription (1980), hectare figures, and inscription criteria
+- **California State Parks, Redwood National and State Parks page, https://www.parks.ca.gov/?page_id=28116** — *primary/official* — Biosphere Reserve designation (1983) and joint NPS/state management of over 105,000 acres
+- **Dawson, T.E. (1998), 'Fog in the California redwood forest: ecosystem inputs and use by plants,' Oecologia, 117: 476-485** — *peer/reviewed* — Fog contribution to redwood transpiration (13-45%) and forest hydrologic input (34% vs. 17%)
+- **Burgess, S.S.O. & Dawson, T.E. (2004), 'The contribution of fog to the water relations of Sequoia sempervirens (D. Don): foliar uptake and prevention of dehydration,' Plant, Cell & Environment, 27** — *peer/reviewed* — Foliar (direct-through-needle) fog uptake mechanism

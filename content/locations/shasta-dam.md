@@ -7,15 +7,18 @@ address: "Redding, CA"
 coordinates:
   lat: 40.7181
   lng: -122.4194
-summary: "Massive concrete dam on the Sacramento River that transformed California water policy and created the largest reservoir in the state"
+summary: "A 602-foot concrete dam on the Sacramento River, built 1938-1945, that created California's largest reservoir and flooded a Winnemem Wintu homeland."
 lead: null
-notice: null
+notice:
+  - "Look up at the dam's face — 602 feet of concrete poured between 1938 and 1945, ranked the second-highest concrete dam in the world at completion, behind only Hoover Dam."
+  - "Look for the spillway face below the crest — during construction, engineers vacuum-processed that surface to pull out excess water and pack the concrete tight, part of the effort to keep it from cracking as it cured."
+  - "Look out across the water behind the dam — Shasta Lake holds more than 4.5 million acre-feet, the largest reservoir in California. Its upper arm along the McCloud River covers Winnemem Wintu homeland, submerged just after World War II."
 hero: null
 audio: null
 draft: false
 publishDate: null
 books:
-  - title: "Shasta Dam and the Central Valley Project"
+  - title: "The Great Thirst: Californians and Water, 1770s-1990s"
     author: "Norris Hundley Jr."
     url: "https://www.amazon.com/Great-Thirst-Californians-1770s-1990s-Water/dp/0520204085"
     isbn: null
@@ -25,120 +28,57 @@ books:
     isbn: null
 sourceId: 80
 mergedFrom: null
+factcheck:
+  status: "in-review"
+  lastChecked: "2026-08-18"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify)"
+  sourceTier: "primary"
+  claimsTotal: 20
+  claimsCited: 20
+  openFlags: 1
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline 2026-08-18. First verifier round returned needs-edit with 5 unsupported claims (mostly invented narrative detail -- an unattributed 'north of Redding' locator, an invented groundbreaking beat, a geography conflation between the Kennett rail stop and the dam site) plus 6 style violations; neutrality passed both rounds. Repair round resolved all but one item (an invented visitor-center-overlook detail in a notice prompt) plus two overlong notice sentences, hand-corrected against the pack rather than spending a third paid agent round. Also corrected a fabricated book citation in frontmatter: the listed ISBN belongs to Norris Hundley Jr.'s 'The Great Thirst,' not a nonexistent title 'Shasta Dam and the Central Valley Project.'"
 ---
 
-Rising 602 feet above the Sacramento River in Northern California, Shasta Dam represents one of the most ambitious water projects in American history and a defining moment in the transformation of the American West. Built during the Great Depression and World War II, this massive concrete structure reshaped California's relationship with water while demonstrating both the possibilities and consequences of large-scale environmental engineering.
+Shasta Dam crosses the Sacramento River. It rises 602 feet above the streambed. Pacific Constructors Inc., a joint venture of sixteen companies, built it between 1938 and 1945. It became the key structure of the federal Central Valley Project. Behind it sits Shasta Lake, the largest reservoir in California.
 
-## Water and the California Dream
+## Named for a Mountain, September 12, 1937
 
-California's development has always been constrained by the uneven distribution of water resources, with most precipitation falling in the northern mountains while the majority of agricultural and urban demand exists in the central and southern valleys. This geographic mismatch between water supply and demand created the need for massive water transfer projects that would define California's 20th-century development.
+The site had been called Kennett, after a Southern Pacific Railroad way station in Sacramento Canyon just above the dam. Reclamation moved about thirty miles of that rail line to clear the reservoir site. On September 12, 1937, Bureau of Reclamation Commissioner John C. Page held a ceremony and gave the project its official name: Shasta, after Mount Shasta. The Central Valley Project itself had already been approved. President Franklin D. Roosevelt signed off on it December 2, 1935, one piece of the Depression-era push toward large federal works. Pacific Constructors received its notice to proceed on September 8, 1938.
 
-The Sacramento River, draining the northern Sierra Nevada and Cascade ranges, carries about 30% of California's total water supply but historically flooded destructively in wet years while running low during droughts. Controlling this variability through storage and flood control became essential for California's agricultural and urban expansion.
+## Pouring Six and a Half Million Cubic Yards
 
-## Depression-Era Vision
+Crews poured the first concrete on July 8, 1940. The cableway that carried it to the forms hung from a 460-foot head tower, moving eight-cubic-yard buckets and placing the concrete in separate fifty-foot blocks. In May 1942 a smaller, stationary-tower cableway with four-cubic-yard buckets took over. Reclamation tracked the job in cubic-yard milestones: one million by May 3, 1941, two million that October, four million by August 31, 1942, six million by December 23, 1943.
 
-The concept for Shasta Dam emerged during the Great Depression as part of a broader federal commitment to large-scale infrastructure projects that would provide employment while creating lasting economic benefits. The project embodied New Deal philosophy that government investment in major infrastructure could stimulate economic recovery while building foundations for future prosperity.
+To stop the mass from cracking as it cured, engineers ran river water, and later chilled water, through pipes buried in the concrete. They also vacuum-processed the spillway face to pull out excess water and pack the surface tight. Reclamation accepted the finished dam and powerplant from Pacific Constructors on June 20, 1945. At completion, the National Park Service ranked Shasta as the second-highest concrete dam in the world, behind only Hoover Dam's 726.4 feet.
 
-President Franklin D. Roosevelt's administration saw water projects as particularly valuable because they addressed multiple goals: flood control, hydroelectric generation, irrigation development, and massive job creation. Shasta Dam represented the largest and most complex of these multipurpose water projects in the West.
+## A Turbine Sent Somewhere Else First
 
-## Engineering Challenges
+In 1943, Grand Coulee Dam in Washington was ready to start generating power that spring. Shasta's powerhouse was not ready until 1944. So the federal government ordered two generators and a turbine built for Shasta diverted north to Grand Coulee instead. They came back to California in 1946, installed at Shasta as Units Two and Five. Secretary of the Interior Harold Ickes toured the site on October 31, 1941 — Halloween. Reclamation formally dedicated Shasta Dam as the key structure of the Central Valley Project on June 17, 1950.
 
-Building Shasta Dam required overcoming extraordinary engineering challenges related to the site's geology, the scale of construction, and the remote location in Northern California's mountains. The dam would be the second-highest concrete dam in the world, requiring innovations in concrete mixing, placement, and cooling to prevent cracking during construction.
+## Boomtown on Shasta Dam Boulevard
 
-The project demanded transport of millions of tons of materials to a remote canyon site accessible only by winding mountain roads. Engineers had to design and build concrete mixing plants, aggregate processing facilities, and construction railways while housing thousands of workers in temporary communities built specifically for the project.
+A workforce and a set of instant towns moved into the canyon starting in 1938. William and Gene Hammans developed Project City. Summit City grew up where Shasta Dam Boulevard meets Kennett-Buckeye Road. A third settlement, first nicknamed Boomtown, became Central Valley. The Bureau of Reclamation donated the land and Pacific Constructors donated the materials for the Toyon School, and off-duty dam workers built it. One former principal remembered classes running past seventy students.
 
-## Wartime Construction
+By 1980 the three towns held a combined 6,222 people: 1,139 in Summit City, 1,659 in Project City, 3,424 in Central Valley. On July 2, 1993, with 60 percent of registered voters turning out, the area incorporated as the City of Shasta Lake.
 
-World War II profoundly affected Shasta Dam construction, both accelerating the timeline due to wartime power needs and complicating construction through material shortages and labor disruptions. The war effort required massive amounts of electricity for aluminum production and other war industries, making completion of the dam's powerhouse a national priority.
+## What the Reservoir Took
 
-Labor shortages caused by military enlistment and war production led to recruitment of workers from throughout the country, while material rationing required careful management of cement, steel, and other critical supplies. Despite these challenges, the project continued throughout the war, demonstrating the commitment to completing this vital infrastructure.
+Reclamation cleared what lay beneath the reservoir before filling it, including the dead. Its revised count found 308 sets of remains needing relocation from the flood zone. Of those, 173 were Native American and 135 were white. Crews moved them into two new cemeteries built for the purpose: Central Valley Cemetery and the United States Shasta Reservoir Indian Cemetery.
 
-## Technological Innovation
+Further upstream, along the McCloud River, the rising water submerged ancestral ground belonging to the Winnemem Wintu. Geographer Bradley L. Garrett interviewed Winnemem Wintu spiritual leader Caleen Sisk-Franco and Tribal Headman Mark Franco for his peer-reviewed study of the flooding, which he found came just after World War II. Garrett's research describes the flooding as constraining the tribe's ability to practice traditional ceremonies and threatening remaining traditional cultural properties.
 
-Shasta Dam incorporated numerous technological innovations that advanced the science of concrete dam construction. The project pioneered techniques for mass concrete placement, including the use of cable-way systems for transporting concrete to any point in the structure and sophisticated cooling systems that prevented thermal cracking in the massive concrete structure.
+The dam also closed the river to fish. Shasta and Keswick Dams block Chinook salmon and steelhead trout from spawning streams that feed the Sacramento River. They also cut off the cold water those fish need to spawn. NOAA Fisheries reports that winter-run Chinook lost access to nearly all their historical spawning habitat in the Little Sacramento, McCloud, and Pit rivers. Ninety-eight percent of the riparian floodplain once available for young salmon to grow up in is no longer reachable. Since 1992, Reclamation has bypassed Shasta Powerplant's turbines at times, sending cooler water straight into the river to help the endangered winter run.
 
-The dam's curved design, which transfers the tremendous water pressure to the canyon walls through compression, required precise surveying and construction techniques. The powerhouse incorporated the latest in hydroelectric technology, with generators capable of producing enough electricity to power major cities.
+## Shasta Lake's 4.5 Million Acre-Feet
 
-## Environmental Transformation
+Shasta Lake stores more than 4.5 million acre-feet of water. That is more than any other reservoir in California, according to the Bureau of Reclamation. The dam that holds it back stands at the site once called Kennett, after the Southern Pacific way station upstream in Sacramento Canyon. It rises 602 feet of concrete above the streambed, named for Mount Shasta at a commissioner's ceremony in September 1937.
 
-Construction of Shasta Dam fundamentally altered the Sacramento River ecosystem, creating California's largest reservoir while blocking salmon migration routes that had sustained indigenous peoples and commercial fisheries for thousands of years. The project eliminated spawning habitat for multiple salmon runs while changing water temperature and flow patterns throughout the Sacramento River system.
+## Sources
 
-The reservoir flooded thousands of acres of riparian forest and agricultural land while displacing both wildlife and human communities. The environmental trade-offs represented the kind of irreversible ecosystem changes that characterized large-scale water development throughout the American West.
-
-## Indigenous Impacts
-
-The flooding of Shasta Lake inundated sacred sites and traditional territories of the Winnemem Wintu, whose McCloud River homeland lay at the heart of the flooded area, along with other indigenous peoples who had lived in the area for thousands of years. Tribal communities lost access to traditional fishing sites, gathering areas, and cultural landscapes that had sustained their societies since time immemorial.
-
-The project displaced indigenous families and communities while destroying archaeological sites and cultural resources that held deep spiritual and historical significance. These impacts reflected broader patterns of water development that prioritized economic development over indigenous rights and cultural preservation.
-
-## Agricultural Revolution
-
-Shasta Dam enabled the expansion of irrigated agriculture throughout the Central Valley by providing reliable water supplies and flood protection that made large-scale farming viable in areas previously considered too risky for major investment. The project supported California's transformation into the nation's leading agricultural producer.
-
-The reliable water supply allowed farmers to invest in permanent crops like orchards and vineyards while enabling multiple cropping seasons that dramatically increased agricultural productivity. The dam's flood control protected valley farmlands from destructive flooding while the irrigation water supported crops that fed the nation.
-
-## Urban Growth
-
-The reliable water supply and flood protection provided by Shasta Dam supported population growth throughout Northern California while enabling industrial development that required large amounts of water and electricity. Cities throughout the Sacramento Valley could expand with confidence in their water supplies.
-
-The dam's hydroelectric generation provided clean, renewable energy that powered economic development while reducing dependence on fossil fuels. This cheap electricity attracted energy-intensive industries while supporting the residential and commercial development that accompanied California's post-war population boom.
-
-## Central Valley Project
-
-Shasta Dam became the cornerstone of the Central Valley Project, a massive federal water system that includes dams, reservoirs, canals, and pumping stations throughout California. This integrated system moves water from areas of surplus to areas of demand while providing flood control and hydroelectric generation throughout the state.
-
-The project demonstrated the potential for large-scale water engineering to reshape regional economies while creating new dependencies on complex technological systems. The Central Valley Project became a model for water development throughout the American West while generating ongoing debates about costs, benefits, and environmental impacts.
-
-## Wartime Industry
-
-During World War II, Shasta Dam's electricity powered aluminum production for aircraft manufacturing while supporting other war industries throughout California. The reliable power supply enabled California to become a major center of wartime production while establishing industrial capacity that would continue to drive economic growth after the war.
-
-The dam's contribution to the war effort demonstrated how infrastructure investments could serve both civilian and military needs while building foundations for long-term economic development. This dual-purpose value strengthened political support for large-scale federal water projects.
-
-## Post-War Recreation
-
-Shasta Lake became one of California's premier recreational destinations, attracting millions of visitors annually for boating, fishing, swimming, and camping. The recreational economy supported local communities while demonstrating how water projects could provide multiple benefits beyond their primary purposes.
-
-The lake's recreational value helped justify continued investment in the Central Valley Project while building public constituencies that supported water development. Recreation became an increasingly important consideration in water project planning throughout the West.
-
-## Environmental Awakening
-
-By the 1960s and 1970s, growing environmental awareness led to increased scrutiny of large dams and their ecological impacts. Shasta Dam became a focal point for debates about the environmental costs of water development while serving as a cautionary example for future projects.
-
-Environmental concerns included impacts on salmon populations, river ecosystems, and the long-term sustainability of large-scale water transfers. These debates contributed to more rigorous environmental review of water projects while highlighting conflicts between development and conservation goals.
-
-## Climate Challenges
-
-Climate change poses new challenges for Shasta Dam operations as changing precipitation patterns, earlier snowmelt, and more frequent droughts affect reservoir levels and water supply reliability. Operators must balance competing demands for flood control, water supply, hydroelectric generation, and environmental protection under increasingly variable conditions.
-
-The dam's role in California's water system becomes more critical as climate change increases water supply uncertainty while demand continues to grow. Adaptive management strategies must account for both short-term operational needs and long-term sustainability concerns.
-
-## Seismic Concerns
-
-Shasta Dam's location in seismically active Northern California requires ongoing monitoring and potential retrofitting to ensure structural integrity during major earthquakes. Seismic safety has become an increasingly important consideration as understanding of earthquake risks has improved.
-
-Ensuring dam safety requires balancing engineering solutions with operational constraints while maintaining the structure's ability to serve its multiple purposes. Seismic upgrades represent major investments that must be weighed against other infrastructure needs and priorities.
-
-## Water Rights and Allocation
-
-Shasta Dam sits at the center of complex water rights disputes and allocation decisions that affect millions of Californians. Balancing competing demands from agriculture, cities, environmental protection, and indigenous rights requires ongoing negotiation and legal resolution.
-
-Water allocation decisions reflect competing values and priorities while determining who benefits from this public investment in water infrastructure. These debates highlight fundamental questions about how water resources should be managed and allocated in democratic societies.
-
-## Modern Operations
-
-Today, Shasta Dam operations must balance multiple objectives including flood control, water supply, hydroelectric generation, and environmental protection under increasingly complex regulatory and operational constraints. Computer modeling and real-time monitoring help optimize operations while ensuring safety and compliance.
-
-Modern dam operations require coordination with dozens of other facilities throughout the Central Valley Project while responding to weather forecasts, water demand projections, and environmental requirements. This complexity demonstrates how infrastructure systems have evolved to serve multiple purposes simultaneously.
-
-## Legacy and Lessons
-
-Shasta Dam represents both the achievements and limitations of large-scale environmental engineering, demonstrating how major infrastructure projects can transform regional economies while creating new environmental and social challenges. The project's history provides lessons about the trade-offs involved in water development.
-
-The dam's legacy includes both the economic benefits that supported California's growth and the environmental costs that continue to affect ecosystems and communities. Understanding this complex legacy helps inform contemporary debates about infrastructure investment and environmental protection.
-
-## Engineering Marvel
-
-As you stand before Shasta Dam, you're witnessing one of the great engineering achievements of the 20th century, a massive concrete structure that harnesses the power of the Sacramento River to serve millions of people throughout California. The dam represents both human ingenuity and the enormous environmental consequences of large-scale infrastructure development.
-
-Shasta Dam embodies the ambitions and contradictions of American water development, demonstrating how engineering can reshape landscapes and economies while creating new dependencies and environmental challenges. The structure stands as a monument to the power of human engineering and a reminder of the responsibility that comes with such power over natural systems.
+- **Eric A. Stene, 'Shasta Division: Central Valley Project' (Denver: Bureau of Reclamation, 1996)** — *primary/official* — Construction dates and milestones, naming ceremony, Kennett site and rail relocation, cableway and cooling systems, WWII generator diversion to Grand Coulee, Ickes visit, 1950 dedication
+- **U.S. Bureau of Reclamation Newsroom, news release marking the 80th anniversary of Shasta Dam and Shasta Powerplant, usbr.gov/newsroom/news-release/5187** — *primary/official* — Dam height, reservoir capacity and California ranking, remains-relocation figures
+- **National Park Service, 'California: Shasta Dam,' nps.gov/articles/california-shasta-dam.htm** — *primary/official* — Second-highest concrete dam at completion, behind Hoover Dam
+- **NOAA Fisheries, 'Chinook Salmon (Protected): Spotlight,' fisheries.noaa.gov/species/chinook-salmon-protected/spotlight** — *primary/official* — Winter-run Chinook habitat loss figures and blocked spawning streams
+- **Al Rocca, Ph.D., 'From Boomtown to Incorporated Community: A Short History of the City of Shasta Lake,' City of Shasta Lake official history, cityofshastalake.gov/DocumentCenter/View/40/City-History** — *primary/official* — Boomtown founders and names, Toyon School, 1980 populations, 1993 incorporation
+- **Bradley L. Garrett, 'Drowned Memories: The Submerged Places of the Winnemem Wintu,' Archaeologies 6, no. 2 (2010): 346-371** — *peer-reviewed* — Flooding of Winnemem Wintu ancestral ground along the McCloud River and its effect on tribal ceremonies, attributed to Garrett's interviews with Caleen Sisk-Franco and Mark Franco

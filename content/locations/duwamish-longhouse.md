@@ -7,9 +7,13 @@ address: "4705 W Marginal Way SW, Seattle, WA"
 coordinates:
   lat: 47.5609
   lng: -122.352
-summary: "Cultural center representing the resilience and continuing presence of Seattle's original inhabitants, the Duwamish people, in their ancestral homeland"
+summary: "The tribe calls this its first Duwamish longhouse in a century, built on the river, where it still fights in federal court for recognition."
 lead: null
-notice: null
+notice:
+  - "Look up at the four vertical posts holding the two-story roof — the main room under them seats roughly 200 people."
+  - "The tiered benches around the edge of the room are built for a longhouse gathering, not rows facing a stage."
+  - "The building sits near the historic village site of həʔapus, on the bank of the Duwamish River."
+  - "Across the parking lot, the Lower Duwamish Waterway is still an active federal Superfund cleanup site."
 hero: null
 audio: null
 draft: false
@@ -26,102 +30,47 @@ books:
 sourceId: 67
 mergedFrom: null
 factcheck:
-  status: "corrected"
-  lastChecked: "2026-07-12"
-  reviewer: "Cowork verification pass 2026-07-12"
+  status: "verified"
+  lastChecked: "2026-09-11"
+  reviewer: "Cowork research pipeline (research -> write -> verify -> hand-fix)"
   sourceTier: "primary"
-  claimsTotal: 15
-  claimsCited: 15
+  claimsTotal: 30
+  claimsCited: 30
   openFlags: 0
   neutrality: "pass"
-  notes: "Corrected federal recognition section: replaced flat claim that the tribe 'met the criteria' with the documented sequence (Jan 2001 recognition in the Clinton administration's final days; suspended within days; Sept 2001 BIA final determination against, finding not all seven criteria met; 2013 court remand; 2015 final decision on remand upheld denial; litigation ongoing), with the tribe's disagreement stated as its position. Replaced 'Treaty and Betrayal' header and advocacy framing with plain statements of documented fact. Longhouse opening (Jan 2009), Cecile Hansen, Chief Seattle verified via HistoryLink and duwamishtribe.org; Superfund superlative removed."
-  checkedHash: "13g24v4"
+  notes: "Full rewrite 2026-09-11, replacing a previous version that was almost entirely advocacy prose (section headers like 'Symbol of Resilience' and 'Living Heritage,' language like 'powerful symbol,' 'testament,' 'inspiration for other indigenous communities' with no checkable factual content). Verify returned 4 objections, hand-fixed without a repair round: corrected an overclaim about the tribe's own site giving the $64 figure on both its 1964 and 1971 pages (the 1964 page in fact gives no dollar figure at all -- only the 1971 page does); cut an unsourced inference ('the treaty promised reservations to its signers') and an unsourced editorial gloss ('a status that has never been resolved'); hedged the frontmatter description's 'first longhouse in a century' claim to match the body text's correct attribution of that claim to the tribe rather than stating it as independently verified fact. Replaced all advocacy language with precise, sourced material: the federal acknowledgment case stated plainly (Interior found the tribe met 4 of 7 criteria including ~99% documented descent, and did not meet 3 -- continuity of community, political authority, identification), the full recognition-history date chain through the February 7, 2025 court remand, named tribal council quotes, and Cecile Hansen's documented biography. Disclosed two genuine inconsistencies in the tribe's own sourcing (the 1964/1971 settlement-payout dates; 'great-great-' vs. 'great-great-great-grandniece' lineage description) rather than silently picking one. Preserved the correct hedge on the 1854 Chief Seattle speech (survives only in later transcriptions). Both previously-cited books (Coll Thrush's 'Native Seattle,' BJ Cummings' 'The River That Made Seattle') were independently reconfirmed as real with matching titles/authors/ISBNs at their cited URLs. Sources: duwamishtribe.org, HistoryLink.org, the Federal Register (2015 final decision on remand), a 1996 BIA press release, KUOW news coverage, Washington State Dept. of Ecology, Port of Seattle."
 ---
 
-Standing beside the Duwamish River that bears their name, the Duwamish Longhouse serves as both cultural center and powerful statement of survival. This modern interpretation of traditional architecture represents the Duwamish people's determination to maintain their identity and presence in their ancestral homeland, despite not having federal recognition and facing over 150 years of displacement and cultural suppression.
+You stand at 4705 West Marginal Way SW, on the bank of the Duwamish River, in front of the Duwamish Longhouse. The tribe opened it on January 3, 2009. Four vertical posts hold up a two-story ceiling. Tiered benches ring 6,044 square feet of gathering space, seating around 200 people, and the building went up near the historic village site of həʔapus after more than three decades of fundraising and a budget of roughly $4 million.
 
-## The Original People of Seattle
+## Chief Seattle and the Treaty
 
-The Duwamish people have lived in the region that became Seattle for thousands of years, developing a sophisticated culture centered on the rivers, forests, and saltwater resources of Puget Sound. Their territory extended from the Black River to the Sammamish River, encompassing what is now the greater Seattle metropolitan area.
+Si'ahl, the leader for whom the city is named, had a Duwamish mother and a Suquamish father, and he led both peoples. On January 22, 1855, at Point Elliott near present-day Mukilteo, he was the first Indigenous signer of the Treaty of Point Elliott. About 84 signatories from the Duwamish, Suquamish, Snoqualmie, Snohomish, Skagit, Lummi and other Puget Sound peoples signed alongside him. The treaty set compensation at $150,000 paid over 20 years, plus $15,000 for removal costs and a school. It was ratified March 8, 1859, and proclaimed April 11, 1859. A speech attributed to Si'ahl from 1854 is widely quoted today. No text from that year survives — every version now in circulation was written down years after he is said to have spoken it.
 
-Chief Seattle (Si'ahl), for whom the city was named, was a leader of both the Duwamish and Suquamish peoples — his mother was Duwamish and his father Suquamish — and he was the first signer of the 1855 Treaty of Point Elliott. He navigated the difficult relationship between his people and the incoming settlers; a speech attributed to him from 1854 is widely quoted, though its wording survives only in versions written down years later.
+No reservation was ever established for the Duwamish. Some moved to the Suquamish or Muckleshoot reservations created for other signatories. Others stayed in the Seattle area without a land base.
 
-## The Treaty of Point Elliott and Its Aftermath
+## Ninety-Four Longhouses, and a Century Without One
 
-In 1855, the Duwamish signed the Treaty of Point Elliott along with other Puget Sound tribes, ceding their traditional territory in exchange for reservations, fishing rights, and other guarantees. No separate reservation was ever established for the Duwamish. Some Duwamish people moved to reservations established for other treaty signatories, such as Suquamish and Muckleshoot; others remained, without a land base, in their ancestral territory around Seattle.
+Seattle grew up around the people who stayed. According to HistoryLink, citing tribal historian Thomas R. Speer, 94 traditional Duwamish longhouses were burned to the ground between 1855 and 1904. The river changed shape too: dredging and straightening cut a 9-mile natural estuary to today's 5-mile channelized waterway, a job finished by the 1940s. The tribe calls the 2009 building the first Duwamish longhouse raised in Seattle in more than a century. That claim follows from Speer's count, but it has not been independently verified beyond it.
 
-That outcome shaped everything that followed. Duwamish people who stayed in the Seattle area lived for generations without the reservation land and federal trust relationship that many other treaty signatories received — a status that remains unresolved today.
+The Duwamish Tribal Organization traces its founding to late 1925, when eight men announced their intent to organize it. It later won a land-claims case. The tribe's own website is not consistent about when the payout followed: one page of duwamishtribe.org says members received payment in 1964, with no dollar figure given; another page on the same site gives a figure of $64 per enrolled member in 1971. Either way, decades passed between the claim and the check.
 
-## Urban Development and Displacement
+## Cecile Hansen's Case
 
-As Seattle grew from frontier settlement to major city, Duwamish people were systematically displaced from their traditional villages and fishing sites. The industrialization of the Duwamish River, including straightening, deepening, and pollution, destroyed traditional salmon runs and gathering places that had sustained the community for millennia.
+Cecile Hansen was born on the Tulalip Reservation and graduated from Highline High School in 1955. Most sources, including HistoryLink and the tribe's own site, describe her as a great-great-grandniece of Chief Seattle; one news account, KUOW, places her a generation further removed, as a great-great-great-grandniece. She began attending Duwamish council meetings in 1973 at her brother Manny's request. She was elected tribal chairwoman in 1975 and has held the position since. In 1977 she filed a federal appeal seeking recognition for the tribe — the tribe's own account puts the start of that effort in 1978. She later worked as protocol officer for the Burke Museum, helped develop its 1991 exhibit "A Time of Gathering," and testified before the U.S. Senate Committee on Indian Affairs.
 
-Urban development eliminated most physical traces of Duwamish presence, while discriminatory laws and social pressure forced many tribal members to hide their identity. The combination of legal invisibility and physical displacement threatened the survival of Duwamish culture and community.
+## Four Criteria Met, Three Denied
 
-## Persistence and Revival
+Federal acknowledgment turns on seven criteria. The Bureau of Indian Affairs proposed denying the Duwamish petition on September 6, 1996, against a field of 554 already-recognized tribes nationwide. On January 19, 2001, the last full day of the Clinton administration, the BIA granted recognition. Within about 48 hours, the incoming Bush administration suspended it along with a batch of other last-minute actions. A final determination against the tribe followed on September 25, 2001.
 
-Despite these challenges, the Duwamish people never disappeared. Families maintained cultural traditions, oral histories, and connections to ancestral places even when it was dangerous or difficult to identify as Native American. The civil rights movement of the 1960s encouraged renewed pride in indigenous identity and activism for tribal rights.
+The Department of the Interior reviewed that determination and published its finding in the Federal Register on July 8, 2015. The Duwamish met the criteria for governing documents, non-termination, and descent — roughly 99 percent of members' documented ancestry traces to the historical Duwamish tribe. They did not meet the criteria for continuous community, political authority, or identification as a distinct entity. A federal court had already ordered Interior to reconsider once, in *Hansen v. Salazar* on March 22, 2013; the 2015 decision was Interior's answer, and it upheld the denial.
 
-The Duwamish Tribal Organization was formed in 1925, and it successfully pursued a land-claims settlement that was finally paid out in 1971 — $64 per enrolled member. Cecile Hansen, a great-great-grandniece of Chief Seattle, was elected tribal chairwoman in 1975 and led the tribe's modern push for federal recognition, which began in the late 1970s. This activism reflected broader Native American rights movements while addressing the specific challenges faced by urban indigenous communities.
+The tribe sued again on May 11, 2022, naming Interior Secretary Deb Haaland and arguing the acknowledgment process discriminates against the Duwamish because tribal membership descends through the maternal line. Council member Desiree Fagan told KUOW, "As an unrecognized tribe we have limitations, we cannot fully practice our culture." On February 7, 2025, the U.S. District Court for the Western District of Washington vacated Interior's denial and sent the case back again, ordering the department to reconsider the petition with new evidence. Recognition itself has not been granted.
 
-## Building the Longhouse
+## The River Outside
 
-The opening of the Duwamish Longhouse and Cultural Center in January 2009, following years of planning and fundraising, represented a crucial step in reasserting Duwamish presence in their ancestral homeland. According to HistoryLink, 94 traditional Duwamish longhouses were burned between 1855 and 1904 — making this roughly $4 million building, designed by Byron Barnes of Potlatch Architects in a form reminiscent of a traditional longhouse, the first Duwamish longhouse in Seattle in more than a century. It stands near the site of the historic Duwamish village of hah-AH-poos.
+The Lower Duwamish Waterway, which runs past the Longhouse, has been a federal Superfund site since 2001. The contaminated stretch runs about 5 miles and 450 acres, draining more than 20,000 acres of upstream land. At least 41 hazardous chemicals have turned up in testing, including PCBs, dioxins, and arsenic; the EPA issued its cleanup plan in 2014. Membership has grown alongside the fight: about 570 people belonged to the tribe when the Longhouse opened in 2009, roughly 600 by 2022, and close to 700 today.
 
-The longhouse's location on the Duwamish River was carefully chosen to reconnect the community with their ancestral waterway, despite the river's industrial transformation. The building serves as a visible reminder that the Duwamish people remain in their traditional territory despite efforts to erase their presence.
+## What Stands Here Now
 
-## Cultural Center and Community Hub
-
-The Duwamish Longhouse functions as a multipurpose cultural center offering traditional arts classes, language preservation programs, and community gatherings. The facility hosts powwows, cultural celebrations, and educational programs that maintain Duwamish traditions while building bridges with the broader Seattle community.
-
-The center's programs serve both enrolled tribal members and urban Native Americans from other tribes who have made Seattle their home. This inclusive approach reflects traditional values of hospitality while acknowledging the complex reality of contemporary urban indigenous life.
-
-## The Federal Recognition Question
-
-The Duwamish Tribe has pursued federal recognition since the late 1970s, submitting extensive documentation of its history and membership. The story of that effort took a dramatic turn in January 2001, when, in the final days of the Clinton administration, the Bureau of Indian Affairs extended recognition to the tribe. Within days, the incoming Bush administration suspended that decision along with other last-minute actions. In September 2001, the BIA issued a final determination against acknowledgment, concluding that the Duwamish organization had not met all seven of the mandatory federal criteria — specifically the requirements for continuous identification as an Indian entity, a distinct community, and ongoing political authority.
-
-The tribe disputes those findings and has continued to press its case. A federal court ordered the government to reconsider in 2013, but the Department of the Interior's 2015 final decision on remand upheld the denial. The tribe filed a new lawsuit against the Interior Department in 2022, and litigation over its status has continued since.
-
-The stakes go beyond symbolism: federal recognition affects access to federal funding for healthcare, education, and social services, as well as legal standing to protect ancestral sites and natural resources. The Duwamish case has become a frequently cited example in debates over how the federal government determines which indigenous communities receive official acknowledgment.
-
-## Environmental Justice
-
-The Duwamish Longhouse sits near the Lower Duwamish Waterway, which the Environmental Protection Agency listed as a federal Superfund cleanup site in 2001 after decades of industrial pollution. The river's contamination is a stark example of how industrial development transformed waterways that indigenous communities had depended on for generations.
-
-The tribe's involvement in river cleanup efforts demonstrates how indigenous communities can lead environmental restoration while advocating for environmental justice. Their traditional ecological knowledge provides valuable insights for restoration efforts while asserting their continuing connection to ancestral waters.
-
-## Education and Outreach
-
-The longhouse serves as an educational center where school groups, community organizations, and visitors learn about Duwamish history and contemporary life. These programs challenge common misconceptions about Native Americans while demonstrating the vitality of indigenous cultures in urban settings.
-
-Educational programs emphasize the Duwamish people's continuing presence rather than treating them as historical artifacts. This approach helps visitors understand that indigenous communities are not relics of the past but living peoples with contemporary concerns and contributions.
-
-## Cultural Preservation
-
-The longhouse houses important cultural artifacts, historical documents, and traditional artworks that preserve Duwamish heritage for future generations. Language preservation programs work to revitalize Lushootseed, the traditional language that was nearly lost due to forced assimilation policies.
-
-These preservation efforts demonstrate how indigenous communities can maintain cultural identity despite overwhelming pressures to assimilate. The work represents both resistance to cultural destruction and affirmation of indigenous values and worldviews.
-
-## Contemporary Challenges
-
-The Duwamish community faces ongoing challenges including poverty, lack of federal recognition, and the gentrification that threatens to displace them from their remaining footholds in Seattle. The longhouse provides stability and community support while advocating for tribal rights and social justice.
-
-These contemporary struggles reflect broader issues affecting urban indigenous communities throughout the United States. The Duwamish experience illustrates how historical injustices continue to impact indigenous peoples while demonstrating strategies for survival and resistance.
-
-## Symbol of Resilience
-
-The Duwamish Longhouse stands as a powerful symbol of indigenous persistence and cultural survival. Its existence challenges narratives of indigenous disappearance while asserting the continuing presence of Seattle's original inhabitants in their ancestral homeland.
-
-The building represents more than architecture, it embodies the determination of a people to maintain their identity, culture, and connection to place despite centuries of oppression and displacement. The longhouse serves as inspiration for other indigenous communities facing similar challenges.
-
-## Reconciliation and Relationship
-
-The longhouse provides a space for building relationships between the Duwamish people and the broader Seattle community. These connections offer opportunities for non-Native residents to learn about the land's original inhabitants while supporting efforts toward reconciliation and justice.
-
-These relationships demonstrate how urban communities can acknowledge indigenous presence and rights while working toward more equitable and inclusive societies. The longhouse serves as a bridge between different communities sharing the same geographic space.
-
-## Living Heritage
-
-As you visit the Duwamish Longhouse, you're engaging with living heritage rather than historical artifacts. The building represents the ongoing story of a people who have survived colonization, displacement, and cultural suppression while maintaining their identity and connection to their ancestral homeland.
-
-The longhouse stands as testimony to the power of cultural persistence and the importance of indigenous perspectives in contemporary society. It reminds visitors that Seattle's history begins with the Duwamish people and that their story continues today in their struggle for recognition, justice, and cultural survival.
+Funders of the building included the Bill & Melinda Gates Foundation, the Boeing Company, the City of Seattle's Department of Neighborhoods, the Administration for Native Americans, the Annenberg Foundation, and the Paul Allen Family Foundation. Byron Barnes of Potlatch Architects designed it. You are standing where they built it: on West Marginal Way, on the Duwamish River, in the longhouse the tribe opened on January 3, 2009 — still without the federal recognition its case has sought since the 1970s.

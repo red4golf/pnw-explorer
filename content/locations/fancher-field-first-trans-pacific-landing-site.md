@@ -15,23 +15,23 @@ audio: "/audio/fancher-field---first-trans-pacific-landing-site.mp3"
 draft: false
 publishDate: null
 books:
-  - title: "Jet City Rewind: Aviation History of Seattle and the Pacific Northwest"
-    author: "Timothy A. Nelson"
+  - title: "\"Upside-Down\" Pangborn: King of the Barnstormers"
+    author: "Carl M. Cleveland"
     url: null
     isbn: null
 sourceId: 141
 mergedFrom: null
 factcheck:
-  status: "corrected"
-  lastChecked: "2026-07-12"
-  reviewer: "Cowork verification pass 2026-07-12"
+  status: "verified"
+  lastChecked: "2026-09-13"
+  reviewer: "Cowork verification pass 2026-07-12; book citation corrected 2026-09-10 per discipline board; real replacement book confirmed 2026-09-13"
   sourceTier: "primary"
   claimsTotal: 22
   claimsCited: 22
   openFlags: 0
   neutrality: "pass"
   checkedHash: "qvbfbq"
-  notes: "Corrected 'first Pacific crossing in history' to first NONSTOP trans-Pacific flight (Kingsford Smith crossed with stops in 1928, National Museum of Australia). Distance corrected 5,500 to ~4,500 mi (NPS: 4,558). Pangborn birth year 1894 (HistoryLink). Removed false Herndon 1937 plane-crash death and cattle-fortune claim (HistoryNet: Standard Oil money via Alice Boardman). Harmon Trophy attributed to Pangborn alone (HistoryNet). Prize $25,000 per NPS (HistoryNet says $50,000 - used NPS as primary). Field established 1926; monument basalt, dedicated 1969 (NPS). Sources: NPS Pangborn-Herndon Memorial Site; HistoryLink Files 5400, 9553, 9555; HistoryNet."
+  notes: "Corrected 'first Pacific crossing in history' to first NONSTOP trans-Pacific flight (Kingsford Smith crossed with stops in 1928, National Museum of Australia). Distance corrected 5,500 to ~4,500 mi (NPS: 4,558). Pangborn birth year 1894 (HistoryLink). Removed false Herndon 1937 plane-crash death and cattle-fortune claim (HistoryNet: Standard Oil money via Alice Boardman). Harmon Trophy attributed to Pangborn alone (HistoryNet). Prize $25,000 per NPS (HistoryNet says $50,000 - used NPS as primary). Field established 1926; monument basalt, dedicated 1969 (NPS). Sources: NPS Pangborn-Herndon Memorial Site; HistoryLink Files 5400, 9553, 9555; HistoryNet. 2026-09-10: removed the 'Jet City Rewind' book citation. The discipline board's fact-checker could not confirm this book exists under that title/author, and it appeared identically worded across five unrelated aviation entries in this corpus — the same copy-paste-citation pattern already known from a Fresnel-lens manufacturer error elsewhere in the corpus. This entry's 100%-cited factcheck badge above covers the body prose only; it never actually covered this citation, which is why it's being pulled now rather than left in place. 2026-09-13: replaced the empty book list with 'Upside-Down Pangborn: King of the Barnstormers' by Carl M. Cleveland (Aviation Book Company, 1978, ISBN 0911721045) — confirmed real via multiple independent bookseller listings and cited as the standard Pangborn biography in the American Aviation Historical Society's own bibliography. It is a full-length biography of Clyde Pangborn with the 1931 nonstop trans-Pacific flight as its capstone chapter, a direct topical match for this entry. openFlags closed to 0."
 ---
 
 ## The Tragic Beginning (1928)

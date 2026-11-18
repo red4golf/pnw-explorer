@@ -7,9 +7,13 @@ address: "Sun Valley, ID"
 coordinates:
   lat: 43.6955502
   lng: -114.3550525
-summary: "Americas first destination ski resort that pioneered the modern ski industry and became a playground for Hollywood celebrities"
+summary: "Averell Harriman's railroad resort of 1936: birthplace of the chairlift, and where Hemingway worked on a novel in Suite 206."
 lead: null
-notice: null
+notice:
+  - "Stand at the base of Bald Mountain above Ketchum, the Smoky Mountains peak locals call Baldy."
+  - "Look up at Dollar Mountain, where one of the first chairlifts ran in December 1936."
+  - "Walk through the Sun Valley Lodge, opened on the winter solstice, December 21, 1936."
+  - "Ask about Suite 206, where Hemingway worked on 'For Whom the Bell Tolls' in the fall of 1939."
 hero: null
 audio: null
 draft: false
@@ -17,122 +21,58 @@ publishDate: null
 books:
   - title: "Sun Valley: An Extraordinary History"
     author: "Wendolyn Spence Holland"
-    url: "https://www.amazon.com/Sun-Valley-Extraordinary-History-Holland/dp/0971584915"
+    url: "https://www.amazon.com/Sun-Valley-Extraordinary-Wendolyn-Holland/dp/1560445874"
     isbn: null
-  - title: "Skiing in Idaho: A History"
-    author: "Rick Just"
-    url: "https://www.amazon.com/Skiing-Idaho-History-Rick-Just/dp/1467136514"
+  - title: "Skiing Sun Valley: A History from Union Pacific to the Holdings"
+    author: "John W. Lundin"
+    url: "https://www.amazon.com/Skiing-Sun-Valley-History-Holdings/dp/1467143936"
     isbn: null
 sourceId: 81
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-08-23"
+  reviewer: "Cowork research pipeline"
+  sourceTier: "primary"
+  claimsTotal: 13
+  claimsCited: 13
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Re-researched and rewritten 2026-08-23. Verifier verdict: publishable."
 ---
 
-Nestled in the Wood River Valley of central Idaho, where the ski slopes rise into the Smoky Mountains, Sun Valley Resort represents a revolutionary moment in American recreation history, the transformation of skiing from European Alpine tradition to American leisure industry. Created in 1936 by railroad magnate Averell Harriman, Sun Valley became the world's first destination ski resort and established the template for mountain recreation that would reshape the American West.
+Bald Mountain rises above Ketchum, Idaho, in the Wood River Valley of central Idaho. Locals call it Baldy. It belongs to the Smoky Mountains. Averell Harriman built a resort at its foot in 1936. Harriman chaired the board of the Union Pacific Railroad. He wanted to boost the railroad's passenger traffic during the Great Depression. A winter destination in the West could bring travelers to Idaho. The resort's own history and SAH Archipedia call it America's first destination ski resort.
 
-## Vision of a Railroad Baron
+## Schaffgotsch Rode West, January 1936
 
-Averell Harriman, chairman of the Union Pacific Railroad, conceived Sun Valley as a way to generate passenger traffic for his struggling railroad during the Great Depression. Inspired by European ski resorts like St. Moritz and St. Anton, Harriman envisioned an American Alpine resort that would attract wealthy travelers from the East and West coasts to the remote mountains of Idaho.
+Union Pacific hired an Austrian, Count Felix Schaffgotsch, to find the site. The railroad sent him across the western United States to scout. Schaffgotsch arrived in January 1936. He crossed several states before he chose the Wood River Valley near Ketchum, Idaho. He finalized the selection in February 1936.
 
-Harriman commissioned Austrian count Felix Schaffgotsch to scout locations throughout the American West for the perfect combination of reliable snow, varied terrain, accessible transportation, and scenic beauty. After evaluating sites from California to Colorado, Schaffgotsch selected the Wood River Valley for its exceptional skiing conditions and proximity to the Union Pacific line.
+## The Lodge Opened on the Solstice, December 21, 1936
 
-## Creating an Alpine Paradise
+Gilbert Stanley Underwood designed the Sun Valley Lodge. He had designed lodges for the national parks. The Lodge opened on December 21, 1936. That was the winter solstice.
 
-The development of Sun Valley required transforming a working ranch landscape into a sophisticated resort that could compete with European destinations. Harriman spared no expense in creating facilities that would attract discriminating travelers, importing Austrian ski instructors and Swiss architects to ensure authentic Alpine atmosphere and expertise.
+## Curran's Lift Came Off a Banana Dock
 
-The Sun Valley Lodge, completed in 1936, featured luxurious accommodations and amenities that set new standards for American resort hospitality. The resort's design emphasized both comfort and accessibility, making skiing attractive to Americans who had never experienced mountain sports while maintaining the sophistication expected by international travelers.
+James Curran built the machine that carried skiers uphill. Curran was a Union Pacific engineer. He adapted a conveyor system he had used to load bananas and produce onto ships. He engineered and tested it at Union Pacific's Omaha shops in the summer of 1936. The first lifts went up on Dollar Mountain and Proctor Mountain. They ran in December 1936. Union Pacific and a University of Houston engineering history credit Curran's design as the world's first chairlift. The resort calls itself the birthplace of the chairlift.
 
-## Ski Lift Innovation
+## Baldy Opened for Alpine Skiing, December 1939
 
-Sun Valley pioneered the use of chairlifts for ski transportation, adapting technology that Harriman's engineers had developed for loading bananas onto ships. The resort's first chairlifts, installed on Proctor and Dollar mountains in 1936, revolutionized skiing by making slopes accessible to recreational skiers rather than just experts capable of climbing mountains.
+Bald Mountain opened for alpine skiing in December 1939, before the war. The resort expanded Baldy after it reopened in 1946. The resort drew Hollywood regulars. Clark Gable came. So did Gary Cooper and Ingrid Bergman. Ernest Hemingway came too.
 
-The chairlift innovation transformed skiing from an endurance sport requiring significant athletic ability to a recreational activity accessible to much broader populations. This technological breakthrough enabled the development of the modern ski industry while making mountain recreation available to middle-class Americans for the first time.
+## A Navy Hospital Ran Here, 1943 to 1946
 
-## Hollywood Glamour
+The U.S. Navy took the resort during the Second World War. The Navy ran a convalescent hospital here from 1942 or 1943 until 1946. Its staff treated several thousand servicemen. The record is thin on the exact start date; the sources give 1942 or 1943. The resort reopened to guests in 1946.
 
-Sun Valley quickly became a favorite destination for Hollywood celebrities, politicians, and business leaders who appreciated both the excellent skiing and the discretion afforded by the remote Idaho location. Stars like Clark Gable, Gary Cooper, Ingrid Bergman, and Ernest Hemingway became regular visitors, establishing Sun Valley's reputation as a sophisticated and exclusive destination.
+## Suite 206, Fall 1939
 
-The celebrity presence generated publicity that enhanced Sun Valley's prestige while demonstrating how outdoor recreation could serve as both entertainment and social networking for America's elite. This glamorous image helped establish skiing as a fashionable pursuit rather than just athletic activity.
+Hemingway stayed at the Sun Valley Lodge in the fall of 1939. He worked on "For Whom the Bell Tolls" in Suite 206. He read the galley proofs there in 1940. He died at his home in Ketchum on July 2, 1961.
 
-## Wartime Interruption
+## Sources
 
-World War II temporarily disrupted Sun Valley's development as the resort was converted to a naval convalescent hospital for wounded servicemen. The transformation demonstrated the adaptability of resort infrastructure while providing healing environments for veterans recovering from combat injuries.
-
-The wartime experience connected Sun Valley to national service while maintaining the resort's facilities for eventual return to civilian use. Veterans who recovered at Sun Valley often returned as guests, creating lasting connections between the resort and military communities.
-
-## Post-War Expansion
-
-The 1950s and 1960s witnessed massive expansion of Sun Valley as improved transportation and rising prosperity made ski vacations accessible to growing numbers of Americans. The development of Baldy Mountain (now Bald Mountain) provided challenging terrain for expert skiers while multiple chairlifts increased the resort's capacity.
-
-Television coverage of skiing events and the growing popularity of winter sports created national audiences for mountain recreation while inspiring tourism to Idaho's mountains. Sun Valley became synonymous with American skiing excellence and western hospitality.
-
-## Hemingway Connection
-
-Ernest Hemingway's long association with Sun Valley, including writing portions of "For Whom the Bell Tolls" there and eventually choosing to end his life in nearby Ketchum, added literary gravitas to the resort's cultural significance. Hemingway's presence attracted other writers and intellectuals while cementing Sun Valley's reputation as a place where creativity and outdoor recreation intersected.
-
-The Hemingway connection provided Sun Valley with literary credentials that enhanced its appeal to educated and culturally sophisticated visitors. Memorial sites and literary events continue to celebrate this connection while attracting visitors interested in both literature and recreation.
-
-## Economic Development
-
-Sun Valley's success demonstrated how recreation-based development could transform rural western economies by attracting outside investment and creating year-round employment opportunities. The resort's impact extended throughout the Wood River Valley as supporting businesses developed to serve visitors and permanent residents drawn by recreational amenities.
-
-The economic model pioneered at Sun Valley influenced development throughout the mountain West as communities recognized tourism's potential to diversify economies beyond traditional extractive industries. This transition represented a fundamental shift in how western communities approached economic development.
-
-## Real Estate and Growth
-
-Sun Valley's desirability as a recreation destination drove real estate development that transformed the surrounding valley from ranching landscape to resort community. Wealthy visitors purchased second homes and vacation properties, creating a dual economy based on both tourism and high-end residential development.
-
-The real estate boom brought both economic benefits and challenges as property values increased beyond the means of many longtime residents. This pattern of recreation-driven gentrification became common throughout the mountain West as resort communities struggled to balance tourism benefits with housing affordability.
-
-## Environmental Considerations
-
-Ski resort development required significant environmental modifications including tree removal, slope preparation, and infrastructure construction that altered mountain ecosystems. Sun Valley's environmental management evolved over time as understanding of ecological impacts improved and regulatory requirements increased.
-
-Modern resort operations must balance recreational access with wildlife protection, watershed management, and habitat conservation. These challenges demonstrate the complexity of sustainable tourism development in sensitive mountain environments.
-
-## Skiing Technology
-
-Sun Valley continued to pioneer skiing technology through innovations in snowmaking, grooming equipment, and lift systems that improved both the skiing experience and operational efficiency. These technological advances enabled longer seasons and more consistent skiing conditions while reducing dependence on natural snowfall.
-
-The resort's investment in technology helped establish standards for the ski industry while demonstrating how innovation could enhance recreational experiences. Sun Valley's technological leadership influenced resort development throughout North America and internationally.
-
-## Cultural Impact
-
-Sun Valley's influence extended beyond skiing to shape American attitudes toward outdoor recreation, mountain living, and leisure travel. The resort demonstrated how wilderness areas could be developed for recreation while maintaining their scenic and recreational values.
-
-The Sun Valley model influenced cultural expectations about vacation experiences while establishing Idaho as a premier recreation destination. This cultural impact helped transform American relationships with wilderness and outdoor recreation.
-
-## Olympic Connections
-
-Sun Valley's role in developing American skiing excellence contributed to U.S. Olympic success while providing training facilities for competitive skiers. The resort's high-quality terrain and facilities attracted national team training camps while inspiring local ski racers who competed at international levels.
-
-Olympic connections enhanced Sun Valley's prestige while demonstrating how resort development could contribute to athletic excellence. The resort's support for competitive skiing helped establish American credibility in international winter sports.
-
-## Seasonal Economy
-
-Sun Valley's development of summer recreation programs including golf, hiking, and cultural events demonstrated how mountain resorts could extend their economic impact beyond winter sports. Year-round operation provided more stable employment while maximizing utilization of resort infrastructure.
-
-The seasonal diversification model pioneered at Sun Valley influenced resort development throughout the mountain West as communities recognized the importance of year-round economic activity. This approach helped stabilize resort communities while providing diverse recreational opportunities.
-
-## Contemporary Challenges
-
-Modern Sun Valley faces challenges including climate change impacts on snowfall, affordable housing shortages for workers, and balancing growth with environmental protection. These issues reflect broader challenges facing resort communities throughout the mountain West.
-
-Addressing contemporary challenges requires balancing preservation of Sun Valley's character and environment with continued economic vitality and community sustainability. These efforts demonstrate the ongoing evolution of resort development and management.
-
-## Legacy Industries
-
-Sun Valley's success inspired resort development throughout the American West while establishing Idaho as a major recreation destination. The resort's influence on American skiing and mountain recreation extends far beyond its immediate economic impact to include cultural and social transformations.
-
-The Sun Valley model continues to influence resort development while providing lessons about sustainable tourism, community development, and environmental stewardship in mountain environments. This legacy demonstrates the enduring significance of Harriman's vision and its implementation.
-
-## Cultural Heritage
-
-Today, Sun Valley represents both the achievements and challenges of American resort development, demonstrating how recreation can drive economic development while creating new social and environmental responsibilities. The resort's history provides insights into changing American attitudes toward leisure, nature, and community development.
-
-Sun Valley's preservation of its historical character while adapting to contemporary needs shows how iconic destinations can maintain their identity while evolving to serve new generations. This balance between preservation and adaptation remains essential for sustainable resort development.
-
-## Alpine Innovation
-
-As you experience Sun Valley's slopes and facilities, you're participating in a recreation revolution that began with Averell Harriman's vision of bringing Alpine skiing to American mountains. The resort represents the successful transformation of European traditions into distinctly American recreational experiences.
-
-Sun Valley stands as a monument to innovation, entrepreneurship, and the American ability to adapt foreign traditions to domestic conditions and values. The resort demonstrates how visionary development can create lasting institutions that serve both economic and cultural purposes while providing recreational opportunities that enrich countless lives.
+- **Sun Valley Resort, official history, 'Discover the Legacy: About Sun Valley' (sunvalley.com/about)** — *primary/official* — 1936 founding by Harriman; America's first destination ski resort; birthplace of the chairlift; celebrity regulars; Baldy opened for alpine skiing December 1939 and expanded after 1946 reopening.
+- **Union Pacific Railroad Museum, 'The Railroad and Sun Valley' (uprrmuseum.org)** — *primary/official* — Union Pacific's purpose of filling Depression-era passenger trains; first chairlifts on Dollar and Proctor mountains, December 1936; WWII Navy convalescent hospital.
+- **Union Pacific Railroad, press release, 'Union Pacific Railroad Invention Still Takes Skiers to the Top' (uprr.com)** — *primary/official* — James Curran's chairlift design adapted from a banana/produce ship conveyor, engineered and tested at UP's Omaha shops, summer 1936.
+- **John F. Kennedy Presidential Library & Museum, Ernest Hemingway Collection, 'Idaho' (jfklibrary.org/hemingway/idaho)** — *primary/official* — Hemingway working on 'For Whom the Bell Tolls' in Suite 206, fall 1939; galley proofs in 1940; death in Ketchum, July 2, 1961.
+- **SAH Archipedia (Society of Architectural Historians), 'Sun Valley Resort,' entry ID-01-013-0060 (sah-archipedia.org)** — *peer/reviewed* — Schaffgotsch's scouting and site selection (January-February 1936); Gilbert Stanley Underwood and the Lodge opening December 21, 1936; WWII hospital; geography; America's-first framing.
+- **University of Houston, 'The Engines of Our Ingenuity,' Episode No. 2953: Chairlift (uh.edu/engines)** — *editorial/secondary* — Corroborating the Curran chairlift design as the world's first chairlift.
+- **Visit Sun Valley, 'The History of Sun Valley, Idaho' and 'Do You Know Your Mountains?' (visitsunvalley.com)** — *editorial/secondary* — Wood River Valley / Ketchum geography; Baldy in the Smoky Mountains; celebrity regulars.

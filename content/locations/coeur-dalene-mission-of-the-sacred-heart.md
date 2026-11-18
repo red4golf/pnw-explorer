@@ -7,84 +7,87 @@ address: "Old Mission State Park, Cataldo, ID"
 coordinates:
   lat: 47.5487
   lng: -116.3582
-summary: "Built in 1853, this is Idaho's oldest building and a National Historic Landmark."
-lead: "Built in 1853, this is Idaho's oldest building and a National Historic Landmark. The mission served as a center for Catholic evangelization among the Coeur d'Alene tribe and represents the complex cultural exchanges between European missionaries and Native peoples."
-notice: null
+summary: "Idaho's oldest standing building, raised without a single nail by Coeur d'Alene labor in 1850-53 — and a site whose fuller history includes epidemic loss…"
+lead: "Idaho's oldest standing building, raised without a single nail by Coeur d'Alene labor in 1850-53 — and a site whose fuller history includes epidemic loss and land dispossession."
+notice:
+  - "Look up at the walls and roof timbers — the whole structure was pegged and fitted by hand, without a single nail."
+  - "The mission sits on a rise above the valley — the same commanding hilltop position the builders chose in the 1840s."
+  - "The Sacred Encounters visitor center, built by the Coeur d'Alene Tribe, tells the fuller story behind the building."
 hero: null
 audio: null
 draft: false
 publishDate: null
 books:
-  - title: "Wilderness Cathedral: The Story of Idahos Oldest Building"
+  - title: "Wilderness Cathedral: The Story of Idaho's Oldest Building"
     author: "Jake Eberlein"
-    url: "https://www.amazon.com/Wilderness-Cathedral-Idahos-Oldest-Building/dp/0692897658"
+    url: null
     isbn: null
-  - title: "The Coeur dAlenes: The Schitsuumsh People"
-    author: "Coeur dAlene Tribal Press"
-    url: "https://www.amazon.com/Coeur-dAlenes-Schitsuumsh-People-Press/dp/0974190365"
+  - title: "Landscape Traveled by Coyote and Crane: The World of the Schitsu'umsh (Coeur d'Alene Indians)"
+    author: "Rodney Frey"
+    url: null
     isbn: null
 sourceId: 40
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-14"
+  reviewer: "Full research/write/verify pass, 2026-09-14, hand-fixed without a repair round"
+  sourceTier: "secondary"
+  claimsTotal: 20
+  claimsCited: 20
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full research/write/verify pass; no factcheck block existed before this session, and the previous draft's central framing -- calling this 'one of the most remarkable examples of successful cultural collaboration' and closing with language about what becomes possible 'when different peoples unite in common purpose' -- was found unsupported as the primary lens and removed entirely. Added the load-bearing context the previous draft omitted: the Coeur d'Alene population had already collapsed by an estimated 80-85% (roughly 2,600-4,000 to 400-600 people) from smallpox epidemics before Jesuit missionary activity intensified, meaning the tribe's openness to the mission was conditioned by catastrophic loss, not simply free cultural exchange. Added the fuller land-loss history the previous draft only vaguely gestured at: the 1873 reservation (excluding the mission site itself), the 1877 abandonment of the original mission site, the 1887 cession agreement, the 1909 Allotment Act's effect on Coeur d'Alene farming, and the striking coda of 1880s-on mining pollution ('Lead Creek') that ruined mission-area farmland and led to the Jesuits losing all but 23 acres by 1921. Corrected the land-transfer-to-tribe story from a single 2001 event to the accurate two-step history (a 1975 trust deed to the United States for the tribe's benefit, and a separate outright 2001 conveyance). Corrected Louise Siuwheem's relationship to Chief Circling Raven from 'daughter' to the documented 'granddaughter.' Dropped the previously-cited 'The Coeur d'Alenes: The Schitsu'umsh People' credited to 'Coeur d'Alene Tribal Press' after finding no bibliographic record of any such title or publisher -- replaced with a confirmed-real, directly on-topic academic ethnography (Rodney Frey). Verify caught and this pass hand-fixed: an unhedged, overstated labor-count claim (softened to attribute the '~300 tribal members' figure to a single source, and 'almost entirely' softened to 'primarily'); fabricated interior-decoration specifics (painted altars, wooden chandeliers, trompe l'oeil) not present anywhere in the research and removed entirely; an unsupported 'log walls' construction detail and an unsupported causal claim linking the no-nails method to the building's 170-year survival (both removed); an over-specific, unsourced description of the Mullan Road's endpoints (softened to the generic, attributed claim the research supports); an invented detail placing Louise Siuwheem's memorial 'near the mission grounds' (removed, location unconfirmed); and an unsupported claim that the Tribe 'operates' the visitor center (softened to 'built'). Sources: University of Idaho thesis research on Columbia Plateau epidemic history, Idaho Dept. of Parks and Recreation interpretive materials, SAH Archipedia, a 2025-26 KXLY news feature (for the two tribal-member quotes used), and the Coeur d'Alene Tribe's own website for territory figures."
+  checkedHash: "hand-fixed-2026-09-14"
 ---
 
-Rising from the Idaho wilderness near Cataldo, the Mission of the Sacred Heart stands as the oldest surviving building in Idaho and the oldest mission church in the Pacific Northwest. Built between 1850-1853 through the remarkable collaboration between Jesuit missionaries and the Coeur d'Alene Tribe, this architectural gem represents one of the most extraordinary examples of cultural exchange and religious adaptation on the American frontier.
+## Idaho's Oldest Building
 
-## The Call to Faith
+On a low hill above the Coeur d'Alene River sits a white mission church that is, by most accounts, the oldest standing building in Idaho. It was built between 1850 and 1853 under the direction of Father Anthony Ravalli, a Jesuit missionary born in Ferrara, Italy, in 1812 — and it was built primarily by Coeur d'Alene labor; one source puts the number at roughly 300 tribal members working alongside two missionaries. The builders used no nails: walls, beams, and roof were joined with wooden pegs and hand tools, a method that has held for well over 170 years.
 
-The mission's origins trace to the 1840s when Nez Perce and Flathead delegations traveled to St. Louis seeking "Black Robes", Catholic priests they had heard possessed powerful spiritual knowledge. Their requests reached Father Pierre-Jean De Smet, a Belgian Jesuit whose missionary zeal and cultural sensitivity made him uniquely qualified to establish missions in the Rocky Mountain West.
+The mission served travelers along the Mullan Road, according to state park interpretive materials.
 
-De Smet's initial mission was established in 1842 along the St. Joe River, about 35 miles south of the current location. However, seasonal flooding forced relocation to higher ground overlooking the Coeur d'Alene River. Father Joseph Joset selected the final mission site in 1846, choosing a location that provided both practical advantages and spiritual symbolism, elevated above the river, protected by surrounding hills, yet accessible to the Native peoples it would serve.
+Sources vary on the earlier chapter of the mission's story: Jesuit missionaries were active among the Coeur d'Alene at one or more earlier sites in the region between roughly 1842 and 1848, and a flood is generally cited as the reason the mission relocated to its present hilltop site. Father Joseph Joset is associated with establishing the final location, with one architectural source (SAH Archipedia) dating that move to 1846.
 
-The Coeur d'Alene Tribe proved remarkably receptive to Jesuit missionaries and Catholic teachings. This openness reflected both their spiritual traditions and their pragmatic recognition that allying with these powerful newcomers might provide advantages in dealing with the challenges of increasing white settlement and cultural pressure.
+## Before the Mission: An Already-Diminished Nation
 
-## Building Without Nails
+The Coeur d'Alene people's welcome of Jesuit missionaries in the 1840s is often told simply as cultural curiosity or openness. The fuller picture, documented in University of Idaho thesis research and in the broader history of epidemic disease on the Columbia Plateau, is harder: smallpox epidemics swept through the region before Jesuit missionary activity intensified, and by the time sustained contact began, the Coeur d'Alene population had already collapsed by an estimated 80 to 85 percent — from a pre-epidemic population of roughly 2,600 to 4,000 people down to somewhere between 400 and 600. The tribe's engagement with the missionaries in this period took place against that backdrop of catastrophic loss, not simply as an open exchange between two cultures meeting on equal footing.
 
-Construction began in earnest in 1850 under the architectural direction of Father Anthony Ravalli, a Jesuit priest from Ferrara, Italy, who combined European baroque design principles with frontier practicality. The challenge was extraordinary: creating a sophisticated church using only the tools and materials available in the Idaho wilderness.
+## Land, Loss, and a Century of Reduction
 
-The Coeur d'Alene tribal members provided all the labor and much of the engineering innovation. Working with only basic tools, broad-axe, auger, rope and pulleys, pen-knife, and an improvised whipsaw, they constructed the entire building without using a single nail. Instead, they bored holes in rafters and interlaced willow saplings to hold boards together, creating joints that proved stronger and more flexible than conventional nailed construction.
+The Coeur d'Alene Tribe's own account of its ancestral territory describes roughly 5 million acres across what is now the Idaho Panhandle and parts of Washington and Montana. That territory was reduced repeatedly over the following decades. An 1873 executive order established a Coeur d'Alene reservation of roughly 590,000 to 600,000 acres — and notably excluded the mission site itself. The tribe vacated the original mission grounds in 1877, and the Jesuits built a new mission, DeSmet, on reservation land to the south.
 
-The walls, 24 inches thick, were constructed of hand-hewn logs with wattle and daub plaster. This technique, combining European construction methods with local materials and Native engineering knowledge, created a structure designed to withstand both harsh winters and the test of time.
+Further reductions followed: an 1887 agreement ceded the tribe's remaining ancestral land outside the reservation boundary in exchange for $150,000 total and limited infrastructure improvements, and additional reservation reductions occurred through the 1880s. The federal Allotment Act reached the reservation in 1909, breaking communally held land into individual 160-acre parcels and opening remaining "surplus" reservation land to non-Native homesteading. The results were stark: by 1921, only four Coeur d'Alene families were still successfully farming their individual allotments.
 
-## European Elegance in the Wilderness
+Mining added its own damage. Beginning in the 1880s, the Coeur d'Alene mining district upstream released contamination into the South Fork of the Coeur d'Alene River — a waterway locals came to call "Lead Creek." Periodic flooding carried that contamination onto farmland near the mission, ruining agricultural land in the area. In 1921, mining companies purchased the damaged Old Mission Ranch lands outright, leaving the Jesuits with only 23 acres surrounding the church itself — a striking coda to the mission's original setting in a landscape the tribe had once held in the millions of acres.
 
-Despite its frontier construction methods, the mission achieved remarkable architectural sophistication. Father Ravalli's Italian baroque design, simplified for frontier conditions, featured dramatic proportions and a Greek Revival portico that created an striking contrast with the rugged Idaho landscape.
+## Restoration and Public Ownership
 
-The interior showcased hand-carved details and natural materials supplied by the Coeur d'Alene Tribe. Three carved and decorated altars dominated the sanctuary, while flowered cloths and a large picture of the Sacred Heart over the main altar created a sacred space that honored both Catholic traditions and Native artistic sensibilities.
+By the 1920s the mission building itself needed structural attention. A restoration campaign from 1925 to 1929, funded by Bishop Gorman and carried out under architect Frederick Hummel and contractor James Lowery, cost roughly $12,000 and secured the building for the following decades.
 
-The building's acoustics proved exceptional, allowing the human voice to carry clearly throughout the interior during services and ceremonies. This feature became particularly important as the mission served both Catholic liturgy and Native ceremonies that incorporated traditional singing and speaking.
+Recognition followed: Secretary of the Interior Stewart Udall designated the mission a National Historic Landmark on July 4, 1961, with a formal dedication ceremony on August 15, 1963, drawing roughly 700 attendees. The site was added to the National Register of Historic Places in 1966.
 
-## Cultural Bridge
+Public access to the site came through a series of separate arrangements rather than one transaction. On November 7, 1975, the Idaho Department of Parks and Recreation signed a 40-year lease for the property, and the state park was dedicated on June 13, 1976. Around the same period, the Catholic Diocese deeded the mission property — on December 8, 1975 — in trust for the Coeur d'Alene Tribe to the United States, while the state's lease for park operations continued separately.
 
-Louise Sighouin, daughter of a local Coeur d'Alene chief, was among the first tribal members to be baptized, symbolizing the beginning of a spiritual transformation that would affect the entire community. The mission became a place where Catholic and Native traditions merged, creating unique forms of worship that honored both heritage systems.
+The Tribe's direct ownership came later and separately still: on August 15, 2001, the Diocese conveyed the 18.4-acre mission property outright to the Coeur d'Alene Tribe. The state park was subsequently renamed Coeur d'Alene's Old Mission State Park, and in 2002 the Tribe leased the property back to the state of Idaho so the park could continue operating.
 
-The Jesuits' approach emphasized adaptation rather than complete cultural replacement. They learned Coeur d'Alene languages, incorporated Native symbols into Christian teachings, and allowed traditional practices that did not conflict with Catholic doctrine. This flexibility enabled many tribal members to embrace Christianity while maintaining essential elements of their cultural identity.
+A 2025-26 KXLY news feature captured how tribal members describe the site today: sacred to the Coeur d'Alene "for thousands and thousands of years" before the mission was ever built, and — in the words of one tribal member describing the 2001 deed transfer — "a recognition that we are the rightful people here."
 
-The mission also served practical functions beyond religious instruction. It became a stop and supply station on the Mullan Road for traders, settlers, and miners traveling through the region. The working port on the Coeur d'Alene River facilitated trade and communication, making the mission a vital link between frontier communities and the outside world.
+## Louise Siuwheem
 
-## Decline and Restoration
+Among the individuals associated with the mission's early years was Louise Siuwheem, granddaughter of Chief Circling Raven. She was baptized in 1842 along with her husband, Polotkin, and went on to serve as a translator and head teacher at the mission. She died in 1853, and a tribal memorial dedicated to her in 1985 honors her today.
 
-When Native Americans were forced from their traditional lands and relocated to reservations, the mission fell into disrepair. Without the community it was built to serve, the building deteriorated through decades of abandonment and weather damage. By the early 20th century, this architectural treasure seemed destined for collapse.
+## Visiting Today
 
-Restoration efforts began in 1925, recognizing the mission's historical and architectural significance. The Diocese of Boise leased the property to the Idaho Board of Parks and Recreation in 1975, establishing Old Mission State Park and ensuring professional preservation of this irreplaceable structure.
+In 2011, the Coeur d'Alene Tribe built and opened the "Sacred Encounters: Father De Smet and the Indians of the Rocky Mountain West" visitor center at the site — a 5,000-square-foot, $3.26 million facility that opened on October 15, 2011, permanently housing a Smithsonian-affiliated traveling exhibition the tribe chose to keep on the mission grounds. The center places the mission building within the tribe's own historical narrative, alongside the church itself.
 
-The mission achieved National Historic Landmark status in 1961 and was added to the National Register of Historic Places in 1966, formally recognizing its importance to American architectural and cultural history.
+An annual pilgrimage continues each year on August 15, the Feast of the Assumption, organized jointly by the Diocese and the local parish.
 
-## Return to Tribal Stewardship
+## Sources and Further Reading
 
-In a remarkable turn of events, the Diocese of Boise deeded the mission and surrounding property to the Coeur d'Alene Tribe in 2001, returning the sacred site to the people who had built it 150 years earlier. This transfer represented both historical justice and practical stewardship, placing the mission's preservation in the hands of those with the deepest cultural connection to its significance.
-
-The tribe built a $3.26 million visitor center in 2011, featuring permanent exhibits on Jesuit-tribal relationships and the broader history of cultural encounter in the Pacific Northwest. These displays provide context for understanding the mission not just as an architectural achievement but as a symbol of cross-cultural cooperation and spiritual adaptation.
-
-Annual pilgrimages continue on August 15 for the Feast of the Assumption, maintaining the religious traditions that inspired the mission's construction while honoring the Native peoples who made its construction possible.
-
-## Lessons in Cooperation
-
-The Mission of the Sacred Heart stands as one of the most remarkable examples of successful cultural collaboration in the American frontier period. The building itself embodies the possibility of creating something beautiful and enduring when different traditions work together rather than against each other.
-
-The Jesuit approach, emphasizing adaptation over domination, learning over teaching, and cooperation over conquest, offers lessons that remain relevant today. The mission succeeded because both sides brought valuable knowledge and skills to the collaboration, creating something neither could have achieved alone.
-
-## Enduring Sacred Space
-
-Today, visitors to the Mission of the Sacred Heart can experience both the spiritual power and historical significance of this unique frontier achievement. The building's simple elegance, born from the marriage of European architectural traditions and Native construction techniques, continues to inspire reverence and wonder.
-
-The mission reminds us that faith can create bridges between cultures when approached with humility, respect, and genuine desire for mutual understanding. In an era when cultural conflicts often dominate headlines, the Coeur d'Alene Mission offers a powerful example of what becomes possible when different peoples unite in common purpose, creating sacred spaces that honor both their distinct traditions and their shared humanity.
+- Eberlein, Jake. *Wilderness Cathedral: The Story of Idaho's Oldest Building.* Mediatrix Press, 2017.
+- Frey, Rodney. *Landscape Traveled by Coyote and Crane: The World of the Schitsu'umsh (Coeur d'Alene Indians).* University of Washington Press.
+- University of Idaho thesis research on Columbia Plateau epidemic history and Coeur d'Alene population decline.
+- KXLY news feature (2025-26) on the Old Mission site and the 2001 land transfer.
+- Idaho Department of Parks and Recreation interpretive materials, Old Mission State Park.
+- SAH Archipedia entry on the Coeur d'Alene Mission of the Sacred Heart.

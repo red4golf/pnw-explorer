@@ -7,9 +7,12 @@ address: "368 38th Street, Astoria, OR"
 coordinates:
   lat: 46.19286
   lng: -123.79965
-summary: "Iconic Victorian home featured in the beloved 1985 adventure film The Goonies, representing Astoria's role in American pop culture and film history"
+summary: "Richard Donner filmed this house as the Walsh family home in The Goonies; it is private, sold for $1.65 million in 2023, and fans still find it."
 lead: null
-notice: null
+notice:
+  - "You're standing on 38th Street facing the private house Richard Donner filmed as the Walsh family home for 24 days in October and November 1984."
+  - "Notice there's no plaque and no gift shop, just a porch and a sidewalk. The owner in 2015 counted an estimated 1,500 visitors a day here and wrapped the house in tarp to get relief."
+  - "The current owner bought this house on January 11, 2023, for $1,650,777. It's a private home, not a museum, so keep to the street."
 hero:
   src: "/images/locations/the-goonies-house-hero.jpg"
   alt: "The Goonies House — culture and community site in the Pacific Northwest"
@@ -20,82 +23,52 @@ audio: "/audio/the-goonies-house.mp3"
 draft: false
 publishDate: null
 books:
-  - title: "The Goonies"
+  - title: "Goonies"
     author: "James Kahn"
     url: "https://www.amazon.com/Goonies-James-Kahn-ebook/dp/B00AFGZHCA"
     isbn: null
   - title: "Astoria: An Oregon History"
     author: "Karen L. Leedom"
-    url: "https://www.amazon.com/Title-Astoria-An-Oregon-History/dp/0977042960"
+    url: null
     isbn: null
 sourceId: 62
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-10"
+  reviewer: "Cowork research pipeline (research -> write -> verify -> repair -> reverify -> hand-fix)"
+  sourceTier: "secondary"
+  claimsTotal: 21
+  claimsCited: 21
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite 2026-09-10 after the 2026-09-10 discipline board flagged two unattributed superlatives and a fabricated-looking Amazon URL for the Leedom book. Repair round fixed 7 of the verifier's objections. Reverify returned 4 remaining objections, hand-fixed here without a third paid agent round: fixed an arithmetic/logic error that attached the jail's correct 63-year operational span (1913-1976) to the wrong claim, as if the building sat unused for 63 years before filming, when the actual gap to the 1984 shoot was about 8 years; removed an uncited derived box-office ratio ('better than three times what the studio put in'); removed an unsourced psychological-interpretive line about owner Sandi Preston; replaced an overstated 'covered nationally' framing of the 2023 sale with the two outlets the source pack actually names (Fox Business, KWCH). Books: kept James Kahn's novelization (confirmed, real ASIN); kept Karen L. Leedom's 'Astoria: An Oregon History' (a real book) but dropped its fabricated Amazon URL (the original contained a literal 'Title-' placeholder in the slug) rather than invent a replacement -- no url is cited for it. Sources: The Oregon Encyclopedia, Library of Congress National Film Registry press release, Clatsop County Historical Society/Oregon Film Museum, NBC News, Fox Business, KWCH."
 ---
 
-Standing before this charming Victorian home on 38th Street, you're at one of the most beloved filming locations in American cinema history. This unassuming house served as the Walsh family home in the 1985 adventure film "The Goonies," launching countless childhood dreams and establishing Astoria as a destination for movie fans from around the world.
+You're on 38th Street in Astoria, outside the house Richard Donner filmed as the home of brothers Mikey and Brand Walsh. It is still a private residence. Donner shot here during a 24-day production window, October 22 to November 14, 1984, working from a screenplay by Chris Columbus and a story credited to executive producer Steven Spielberg, with Sean Astin and Josh Brolin playing the two Walsh brothers on screen.
 
-## The Film That Changed Everything
+## Oct. 22 to Nov. 14, 1984
 
-In 1984, director Richard Donner and producer Steven Spielberg chose Astoria as the primary filming location for "The Goonies," a story about a group of kids searching for pirate treasure to save their neighborhood from demolition. The film's themes of friendship, adventure, and small-town community resonated perfectly with Astoria's character and history.
+Donner based the production in Astoria's Uppertown neighborhood for those 24 days. This house stood in as the Walsh family home, inside and out. Donner filled out the cast with Ke Huy Quan, Corey Feldman, Jeff Cohen, Kerri Green, and Martha Plimpton, alongside Astin and Brolin. The film opened June 7, 1985, eight months after the cameras left 38th Street.
 
-The movie required an authentic small coastal town that could believably house both adventure and everyday life. Astoria's Victorian architecture, dramatic coastline, and maritime heritage provided the perfect backdrop for a story that celebrated the magic of childhood imagination and the importance of community.
+## $19 Million In, $64 Million Back
 
-## Choosing the Walsh House
+The Goonies cost about $19 million to make. According to the Oregon Encyclopedia, it had grossed more than $64 million worldwide as of 2021. Astoria still marks June 7 every year as Goonies Day, the date of that original release. Donner needed to house a film crew in a small coastal town for a month, and the production solved it by booking the entire Thunderbird Motel, the building known today as the Astoria Riverwalk Inn.
 
-This particular Victorian home was selected to serve as the residence of brothers Mikey and Brand Walsh, the film's central characters. Built in the early 1900s, the house embodied the working-class neighborhood atmosphere that was crucial to the story's emotional core, kids whose families faced losing their homes to development.
+## Dec. 13, 2017: The Library of Congress Calls
 
-The house's location on a hillside overlooking the Columbia River provided dramatic views that emphasized Astoria's maritime setting, while its modest size and traditional architecture represented the kind of established neighborhood worth fighting to preserve. The front porch and distinctive roofline became instantly recognizable to millions of viewers.
+On December 13, 2017, the Library of Congress added The Goonies to the National Film Registry, in a press release titled "The 2017 National Film Registry Is More Than a Field of Dreams." That came thirty-three years after Donner wrapped filming here. Donner responded with a statement naming two films: "I thank the National Film Registry for choosing...'The Goonies' as films to be treasured. They are both special films in my life, as was the cast and crew." The other title was his own. The one filmed on this street was The Goonies.
 
-## Filming in Astoria
+## 1,500 Visitors a Day
 
-The production brought Hollywood magic to this small Oregon coastal town, employing local residents as extras and using dozens of Astoria locations throughout the film. The house served as both exterior location and the setting for key indoor scenes, including the famous attic sequence where the kids discover the treasure map.
+Sandi Preston owned the house in 2015. By that summer she was counting an estimated 1,500 visitors a day gathering below her porch. Preston wrapped the house in blue tarp, top to bottom, and closed it to the public rather than keep hosting that much daily traffic. A disappointed visitor named Ashley Jones told NBC News what the closure cost her. "It's a bummer as someone who just wanted to come see a piece of (my) childhood," she said.
 
-Local residents embraced the production, with many participating as background actors or simply watching the filming process. The experience of hosting a major Hollywood production created lasting memories for Astoria residents and established the town's reputation as a film-friendly community.
+## $1,650,777, Jan. 11, 2023
 
-## Cultural Phenomenon
+The house on 38th Street changed owners again on January 11, 2023. Behman Zakeri, a 46-year-old entrepreneur from Overland Park, Kansas, closed the sale for $1,650,777. He financed the purchase with roughly 20 percent down and three separate loans. He called the deal "a testament to the power of friendship and the belief that our dreams can become a reality." Fox Business and Wichita, Kansas station KWCH both covered the sale.
 
-"The Goonies" became a cultural phenomenon that transcended its initial release, gaining new fans through home video, television broadcasts, and streaming platforms. The film's celebration of friendship, adventure, and the power of believing in yourself resonated with audiences across generations, creating a devoted fan base that continues to grow.
+## The Jail Down the Hill
 
-The movie's quotable dialogue, memorable characters, and thrilling adventure sequences made it a beloved classic that defined 1980s childhood for many viewers. Lines like "Goonies never say die!" and "Hey you guys!" became part of popular culture, while the film's treasure hunt adventure inspired countless playground games and backyard explorations.
+Other scenes from The Goonies were shot elsewhere in Astoria. The Fratelli family's prison break, the sequence that opens the film, was filmed inside the old Clatsop County Jail. Clatsop County built the jail in 1913 and ran it as a working jail for sixty-three years, until 1976, eight years before the film crew arrived in 1984. The building reopened in 2010 as the Oregon Film Museum. The same cell block, once holding real prisoners, was later used again as a filming location for Short Circuit and Come See the Paradise.
 
-## Pilgrimage Destination
-
-The house became an unexpected tourist destination as fans began making pilgrimages to see the filming locations in person. Visitors from around the world travel to Astoria specifically to photograph the house, recreate scenes from the movie, and experience the town that provided the backdrop for their favorite childhood adventure.
-
-Fan visits intensified with the rise of social media, as visitors shared photos and videos of their Goonies House experiences online. The house became one of the most photographed private residences in Oregon, with fans often gathering on the sidewalk to recreate iconic scenes or simply pay homage to the film.
-
-## Community Impact
-
-The ongoing popularity of "The Goonies" transformed Astoria's tourism industry, bringing thousands of visitors annually who contribute to the local economy while exploring the film's locations. Local businesses embraced the connection, offering Goonies-themed tours, merchandise, and experiences that celebrate the film's legacy.
-
-The house's fame also highlighted the importance of film tourism as an economic development strategy for small communities. Astoria's experience demonstrated how a successful film could create lasting economic benefits while celebrating local character and heritage.
-
-## Resident Experience
-
-Living in the Goonies House has presented unique challenges and opportunities for its residents over the decades. While the constant attention from fans can be overwhelming, many owners have embraced their role as stewards of a beloved piece of movie history, often interacting with visitors and sharing stories about the filming.
-
-The house's fame has also created preservation concerns, as the need to maintain its iconic appearance sometimes conflicts with normal home maintenance and modernization. The balance between private residence and public landmark requires ongoing sensitivity from both residents and visitors.
-
-## Preservation and Legacy
-
-The house's status as a cultural landmark has sparked discussions about preserving filming locations as important pieces of American cultural heritage. While not officially designated as a historic site, the house represents the growing recognition that popular culture locations can be as significant as traditional historical landmarks.
-
-The Goonies House demonstrates how film and television can create new forms of cultural geography, transforming ordinary places into destinations that hold special meaning for millions of people. The house serves as a tangible connection to shared cultural experiences and childhood memories.
-
-## Astoria's Film Heritage
-
-The success of "The Goonies" established Astoria as a desirable filming location, attracting subsequent productions that have used the town's distinctive character and scenery. The film industry's presence has become part of Astoria's identity, complementing its maritime heritage and historical significance.
-
-The house anchors a broader network of Goonies filming locations throughout Astoria, including the Oregon Film Museum (housed in the old jail where the film's opening sequence was shot), local beaches, and downtown locations. Together, these sites create a comprehensive Goonies experience for visitors.
-
-## Generational Connection
-
-Perhaps most remarkably, the Goonies House has become a place where multiple generations connect over shared love for the film. Parents who grew up with the movie bring their children to see the house, creating new memories while honoring old ones. The house serves as a bridge between past and present, demonstrating how popular culture can create lasting family traditions.
-
-The ongoing popularity of "The Goonies" and the pilgrimage to its filming locations shows how certain stories become part of our collective cultural memory, with specific places serving as shrines to the experiences that shaped our imagination and values.
-
-## Adventure Lives On
-
-As you stand before the Goonies House, you're not just looking at a film location, you're experiencing a place where the spirit of adventure and the power of imagination continue to inspire new generations. The house represents the enduring appeal of stories that celebrate friendship, courage, and the belief that ordinary kids can accomplish extraordinary things.
-
-The Walsh family home reminds us that adventure doesn't require exotic locations or expensive equipment, sometimes it begins right in our own neighborhood, with friends who believe in each other and the courage to explore the unknown. In that spirit, the Goonies never say die, and their house in Astoria continues to welcome new adventurers every day.
+Twenty-four days of filming in the fall of 1984, October 22 to November 14, turned a private house on 38th Street into a stop on a map that strangers still follow today, jail and motel and all.

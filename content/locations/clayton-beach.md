@@ -7,82 +7,65 @@ address: "Clayton Beach Trail, Larrabee State Park, Chuckanut Drive, Bellingham,
 coordinates:
   lat: 48.6447
   lng: -122.4894
-summary: "A hidden gem within Washington's first state park, Clayton Beach preserves the remnants of the \"Trolley That Went to Sea\" - an audacious 1912 interurban…"
-lead: "A hidden gem within Washington's first state park, Clayton Beach preserves the remnants of the \"Trolley That Went to Sea\" - an audacious 1912 interurban railway built on over 5,000 pilings across Samish Bay. Today, visitors walk among ancient Chuckanut sandstone formations and weathered trolley pilings that tell the story of early 20th-century engineering ambition."
+summary: "A golden-sand beach on Samish Bay reached by a 2023 footbridge over live tracks, with trestle pilings offshore and sandstone holding a 7-foot bird's footprint."
+lead: null
 notice: null
 hero: null
 audio: "/audio/clayton-beach.mp3"
 draft: false
 publishDate: null
 books:
-  - title: "Red Paint: The Ancestral Autobiography of a Coast Salish Punk"
-    author: "Sasha taqʷšəblu LaPointe"
-    url: null
-    isbn: null
   - title: "The Salish Sea: Jewel of the Pacific Northwest"
     author: "Audrey DeLella Benedict & Joseph K. Gaydos"
     url: null
     isbn: null
 sourceId: 153
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-22"
+  reviewer: "Cowork pnw-explorer-board pipeline"
+  sourceTier: "secondary"
+  claimsTotal: 20
+  claimsCited: 20
+  openFlags: 0
+  neutrality: "pass"
+  notes: "No prior factcheck field existed. Corrected the Samish population figures (an estimated 2,000 people in 1847, reduced to about 150 by 1855 — not '1854' and not 'over a thousand' as previously stated) and removed an unsupported claim of Lummi-Samish intermarriage. Corrected the trestle-abandonment sequence with exact HistoryLink-sourced dates and clarified that a 1931 Highway 99 bypass, not Chuckanut Drive itself (which opened in 1915), marks the real 'automobile age' milestone. Corrected the giant bird footprint's height (7 feet, not 6.5) and added its updated taxonomic classification (Gastornis, not the older Diatryma). Corrected the 2023 trail's length to three-quarters of a mile total, removed an unconfirmed wheelchair-accessibility claim, an unconfirmed $3 million/RCO funding figure, an unattributed 'most beautiful hidden beaches' superlative, an unconfirmed 'Lost Lake Trailhead' name, and an unsourced claim that rangers began ticketing nude sunbathers in the 1990s. Deleted a book citation ('Red Paint' by Sasha taqʷšəblu LaPointe) after finding no evidence it discusses this location or the Samish/Lummi peoples specifically — the author has no documented affiliation with either nation. Hand-fixed after verify: removed invented specific causes (named diseases, raids) for the Samish population collapse not present in the sourced figures, removed a derived '92 percent' calculation not in the research pack, softened 'the only practical shoreline right-of-way' back to the sourced 'shoreline right-of-way,' removed an unsupported taxonomic-priority justification for the Gastornis reclassification, removed an invented 'blind curve' detail from the pre-2023 access description, and converted a nonstandard 'isbn' frontmatter field to this corpus's standard book-citation format (author/title only, url omitted since the original citation's link could not be confirmed)."
+  checkedHash: "12clb70"
 ---
 
-## Coast Salish Homeland
+## Coast Salish History
 
-Long before engineers dreamed of building a trolley across the sea, the beaches and waters of Samish Bay sustained the Samish and Lummi peoples for thousands of years. These Northern Straits Coast Salish communities built their lives around the rhythm of the tides, harvesting clams from beaches like this one, netting salmon in the bay, and gathering shellfish from the rocky shores.
+The Samish and Lummi peoples, both Northern Straits Coast Salish groups, lived around Samish Bay for thousands of years, drawing on clams, salmon, and shellfish from these waters. Samish villages stood on Samish Island, Guemes Island, and the surrounding mainland shores.
 
-The Samish people called these waters home, their villages scattered across Samish Island, Guemes Island, and the mainland shores where the Chuckanut Mountains meet the sea. The Lummi maintained close ties to the region as well, sharing territory and kinship with the Samish through intermarriage and trade. Both peoples knew these sandstone cliffs and protected coves intimately, they were not just resources but sacred places woven into stories passed down through generations.
+The Samish population is estimated at around 2,000 people in 1847. By 1855, the year the Treaty of Point Elliott was signed, epidemic disease and conflict had reduced that number to an estimated 150. The treaty directed many Samish survivors toward the Lummi Reservation; the Samish received no reservation of their own. Today, both the Samish Indian Nation and the Lummi Nation maintain their connection to these waters through cultural preservation, salmon restoration, and environmental stewardship work.
 
-When European diseases swept through Coast Salish communities in the 1790s and again in the 1850s, the population that had thrived here for millennia was devastated. By 1854, the Samish numbered only about 150 people, down from over a thousand. The Treaty of Point Elliott in 1855 assigned many survivors to the Lummi Reservation, forever changing their relationship with ancestral places like Clayton Beach. Today, both the Samish Indian Nation and Lummi Nation continue their connection to these waters through cultural preservation, salmon restoration, and environmental stewardship.
+## The State Park's Founding
 
-## Washington's First State Park
+Larrabee State Park, established in 1915, was Washington's first state park. Governor Ernest Lister worked with Charles Larrabee on the donation of land for the park, but Larrabee died in 1914 before the deed was finalized. His wife, Frances Larrabee, saw the donation through. On October 23, 1915, Governor Lister formally accepted the park — a planned dedication ceremony had been cancelled two days earlier because of mudslides. The original donation covered 20 to 25 acres. The park was initially named Chuckanut State Park and renamed Larrabee State Park in February 1923. In 1937, Frances Larrabee and her son Charles donated an additional 1,500 acres. By 1965 the park had grown to nearly 2,000 acres; today it covers 2,683 acres with 8,100 feet of saltwater shoreline.
 
-The story of Clayton Beach is inseparable from Larrabee State Park, Washington's very first state park, established in 1915. The park owes its existence to a conversation between Governor Ernest Lister and Charles Larrabee, one of Bellingham's wealthiest citizens, who agreed to donate his waterfront property along the scenic Chuckanut Drive corridor.
+## The Trolley
 
-Charles Larrabee died in 1914 before the deed was finalized, but his wife Frances ensured the donation went through. On October 23, 1915, Governor Lister formally accepted the park, though a planned dedication ceremony was cancelled two days before due to mudslides, an early hint of the geological drama that would characterize this stretch of coastline.
+In 1912, the Bellingham and Skagit Interurban Railway began carrying passengers along Chuckanut Drive's shoreline — construction had started on November 10, 1910, and the inaugural run came on August 31, 1912. The Great Northern Railroad already held the shoreline right-of-way through this stretch, which is why the interurban's builders instead carried their line out across the water on a four-mile trestle, driven on more than 5,000 cedar pilings and built with three million board feet of lumber.
 
-The original park was modest, just 20 to 25 acres of waterfront. But in 1937, Frances Larrabee and her son Charles donated an additional 1,500 acres, transforming the small picnic spot into a true wilderness park. This expansion brought Clayton Beach into the state park system, where it would preserve both natural wonders and industrial archaeology for future generations.
+The wood didn't hold. Teredo worms — saltwater shipworms — began attacking the pilings, with damage showing within about two years of construction. The line's decline was already visible by 1928: a derailment near Bellingham's Inspiration Point on July 3, 1928, injured 18 people, just months before passenger service ended on October 10, 1928. The line was completely abandoned on June 1, 1930. The following year, a new Highway 99 bypass opened between Burlington and Bellingham, routing automobile traffic away from Chuckanut Drive via Alger and Lake Samish — the clearer marker of the automobile age's arrival, since Chuckanut Drive itself had already opened in 1915 and was paved by 1921.
 
-## The Trolley That Went to Sea
+## Its Remnants Today
 
-The most audacious chapter in Clayton Beach's history began in 1912, when the Bellingham and Skagit Interurban Railway completed one of the most remarkable engineering feats in Pacific Northwest transportation history. Faced with an impossible challenge, the Great Northern Railroad already owned the only viable right-of-way along the steep, rocky shoreline, the interurban builders did something extraordinary: they built their tracks across the sea itself.
+A restoration effort, carried out under the Northwest Straits Foundation (now operating as the Salish Sea Alliance), has removed more than 1,300 linear feet of rock armor, pilings, and debris left from the trestle era, and has been filling a 13-acre dredge hole — originally excavated around 1912 during the trestle's construction — back up to roughly -18 feet MLLW.
 
-The four-mile trestle from Clayton Bay to Blanchard required over 5,000 cedar pilings driven into the floor of Samish Bay. Workers used three million board feet of lumber to create a structure that carried electric trolley cars just above the waves. Passengers marveled at the experience of riding what locals nicknamed "The Trolley That Went to Sea," watching seabirds wheel overhead and the tide surge beneath their feet.
+## The Geology
 
-The engineering was impressive but ultimately doomed. The saltwater teredo worm, a shipworm that burrows into submerged wood, relentlessly attacked the pilings. Meanwhile, automobiles were transforming American transportation. The trolley ran its last passenger service on October 10, 1928, and was completely abandoned by June 1, 1930. When Highway 99 opened the following year, the automobile age had definitively arrived.
+The sandstone bluffs above the beach belong to the Chuckanut Formation, laid down between 54 and 34 million years ago when this region was a subtropical lowland of meandering rivers, swamps, and palm forests. The rock holds fossils of palm fronds, ferns, sycamore leaves, and animal tracks, including crocodile prints.
 
-## Ghosts of the Railway
+Among the formation's fossils is the footprint of a giant flightless bird, 7 feet tall and roughly 380 pounds. It was historically classified as Diatryma, but current taxonomy — following Mustoe's 2012 reassessment in *Palaeontology* and a 2024 study of Gastornithidae tracks from the Chuckanut Formation — places it in the genus Gastornis. The broad, triangular toenail impressions rather than talons, the absence of a hooked-beak imprint, and isotopic evidence together point to a plant-based diet, overturning the bird's older reputation as a predator.
 
-Today, Clayton Beach preserves the physical remnants of this ambitious but short-lived railway. At low tide, visitors can see the weathered stumps of cedar pilings marching into the bay, each one a reminder of the thousands of workers who drove them into the seafloor over a century ago. Scattered riprap and fragments of the massive trestle structure lie among the driftwood and sandstone boulders.
+The beach's sand is a distinct blonde-gold color, eroded from the Chuckanut sandstone — unusual for a Pacific Northwest beach, most of which run gray or dark. Tide pools along the rocks hold anemones, sea stars, and crabs, and seals haul out on rocks offshore.
 
-The pilings have become part of the beach's character, their barnacle-encrusted forms providing habitat for marine life even as they slowly decay. They stand as monuments to an era when Americans believed they could conquer any landscape with enough lumber and determination, and as reminders that nature eventually reclaims what humans build.
+## Access History
 
-The Northwest Straits Foundation is now working to restore Clayton Beach's natural shoreline, removing over 1,300 linear feet of rock armor and debris while filling a 13-acre dredge hole created during the trestle's construction. This restoration honors both the beach's ecological importance and its historical significance, preserving select remnants while allowing the shoreline to heal.
-
-## Ancient Stone, Ancient Stories
-
-Beyond its industrial heritage, Clayton Beach offers a window into deep geological time. The distinctive sandstone formations that line the beach are part of the Chuckanut Formation, laid down 54 to 34 million years ago when this region was a subtropical lowland with meandering rivers, swamps, and palm forests.
-
-The fine-grained sandstone preserves fossils of ancient plants, palm fronds, ferns, and sycamore leaves, along with animal tracks from birds, mammals, and even crocodiles. One remarkable find in the formation was the footprint of a roughly 6.5-foot-tall flightless bird called Diatryma, whose diet is now widely thought to have been plant-based, that roamed this landscape when Washington looked more like modern-day Louisiana than the evergreen forests we know today.
-
-The beach's rare blonde sand comes from eroded Chuckanut sandstone, giving Clayton Beach a distinctive golden color unusual in the Pacific Northwest. Tide pools among the sandstone ledges support colorful communities of anemones, sea stars, and crabs, while seals often haul out on offshore rocks.
-
-## A Dangerous Crossing
-
-For decades, reaching Clayton Beach required an act of faith, and sometimes foolishness. The Burlington Northern Santa Fe Railroad tracks run between the park's upland areas and the beach, and for years visitors scrambled across the active tracks at a dangerous blind curve. The informal crossing was eventually closed entirely, leaving Clayton Beach accessible only to those willing to trespass.
-
-The isolation gave the beach an outlaw reputation. By the 1960s, the north end of Clayton Beach had become an informal clothing-optional beach, a tradition that continued for decades until park rangers began issuing tickets in the 1990s. An effort to formally establish a nude beach in 1998 was rejected by Washington State Parks.
+For years, the only way to Clayton Beach was informal: BNSF's mainline tracks run between the park's upland trails and the shore, and an unofficial crossing served as the de facto entrance until it was closed, leaving trespass as the only route in. By 1965, the north end of the beach had become an informal clothing-optional beach. In 1998, a formal proposal to establish a legal nude beach there was rejected by Washington State Parks.
 
 ## The New Trail
 
-In August 2023, Clayton Beach finally received safe, legal access with the opening of a new pedestrian bridge and trail system. The one-mile Clayton Beach Trail starts from the Lost Lake Trailhead on Chuckanut Drive and features a fenced bridge arching over the active railroad tracks, eliminating the danger that had defined beach access for generations.
-
-The first three-quarters of the trail follows a crushed-stone path suitable for all-terrain wheelchairs and strollers, making the beach accessible to visitors who could never have reached it before. The final quarter-mile descends a narrower singletrack to the beach itself. The $3 million project, funded by a state Recreation and Conservation Office grant, finally connected one of Washington's most beautiful hidden beaches to the trail system of its oldest state park.
-
-## Historical Context
-
-Clayton Beach sits at the intersection of multiple historical currents that shaped the Pacific Northwest. The displacement of Coast Salish peoples, the creation of the state park system, the brief electric railway era, and the century-long evolution of recreation and conservation all left their marks on this small stretch of shoreline.
-
-The beach's inaccessibility paradoxically preserved it. While other shorelines were developed, paved, or altered, Clayton Beach retained its wild character, complete with the ruins of industrial ambition slowly being absorbed by the natural world. The new trail opens this remarkable place to a wider audience while honoring its complex layers of history.
-
-For visitors today, Clayton Beach offers a rare opportunity to walk among the remnants of a transportation experiment that captured the optimism of early 20th-century America, while standing on rocks that preserve the fossils of an unimaginably ancient world. The trolley pilings, the sandstone formations, the tide pools, and the golden sand all tell parts of a story spanning millions of years and continuing to unfold with each incoming tide.
+In August 2023, a new pedestrian bridge and trail opened, giving Clayton Beach its first legal access route. The renovated path runs three-quarters of a mile, rerouted and repaved with a graded gravel surface, and ends at a fenced bridge that arches over the active BNSF tracks before a set of stairs leads down to the beach.

@@ -7,68 +7,71 @@ address: "328 Whitman Mission Rd, Walla Walla, WA 99362"
 coordinates:
   lat: 46.0413
   lng: -118.4639
-summary: "In 1836, Marcus and Narcissa Whitman established a Protestant mission among the Cayuse people near present-day Walla Walla, making Narcissa one of the first…"
-lead: "In 1836, Marcus and Narcissa Whitman established a Protestant mission among the Cayuse people near present-day Walla Walla, making Narcissa one of the first white American women to cross the Rocky Mountains. Eleven years later, a measles epidemic and deepening cultural conflict ended in tragedy, the Whitman Massacre of 1847, which killed thirteen people and transformed the political future of the entire Oregon Country."
-notice: null
+summary: "The quiet grounds at Waiilatpu mark where the Whitmans built an 1836 mission and where the 1847 killings set off the Cayuse War and Oregon Territory."
+lead: null
+notice:
+  - "Climb to the obelisk on the hill for the long view over the mission flat."
+  - "Stand at the Great Grave, where those killed in 1847 are buried together."
+  - "Trace the earthen ridge that outlines the footprint of the mission house."
+  - "Look for the millpond below the rise."
 hero: null
 audio: "/audio/whitman-mission-national-historic-site.mp3"
 draft: false
 publishDate: null
 books:
   - title: "Marcus and Narcissa Whitman and the Opening of Old Oregon"
-    author: "Clifford Drury"
+    author: "Clifford Merrill Drury"
     url: "https://www.amazon.com/Marcus-Narcissa-Whitman-Opening-Oregon/dp/0870040391"
     isbn: null
-  - title: "Narcissa & Marcus Whitman: Martyrs on the Oregon Trail"
-    author: "Ann West Williams"
-    url: "https://www.amazon.com/Narcissa-Marcus-Whitman-American-missionaries/dp/B0007ESHNQ"
+  - title: "Unsettled Ground: The Whitman Massacre and Its Shifting Legacy in the American West"
+    author: "Cassandra Tate"
+    url: "https://www.amazon.com/Unsettled-Ground-Massacre-Shifting-American/dp/163217250X"
     isbn: null
 sourceId: 54
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-08-23"
+  reviewer: "Cowork research pipeline"
+  sourceTier: "primary"
+  claimsTotal: 14
+  claimsCited: 14
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Re-researched and rewritten 2026-08-23. Verifier verdict: publishable."
 ---
 
-  The land here is quiet now: rolling hills of bunchgrass and sage, a reconstructed millpond, a long earthen ridge marking where a building once stood. But in 1847, this place called Waiilatpu, "place of the rye grass" in the Cayuse language, became the site of one of the most consequential events in Pacific Northwest history.
+Rye grass grows across the flat at Waiilatpu. An obelisk stands on the hill above it. West-southwest of Walla Walla, this is the ground where Marcus and Narcissa Whitman built a mission, and where Cayuse people killed them in the autumn of 1847. Waiilatpu is a Cayuse place-name. People commonly translate it "place of the rye grass." The National Park Service keeps the site today.
 
-  ## Arrival at Waiilatpu
+## Waiilatpu, 1836
 
-  Marcus Whitman was a physician and Protestant missionary who believed, with complete conviction, that the Cayuse people needed both the Christian faith and American-style agriculture. In 1835, he traveled west with a survey party and returned east persuaded that the overland journey was practical for settlers. In 1836, he came back with his new wife, Narcissa, along with fellow missionaries Henry and Eliza Spalding.
+Marcus Whitman was a physician and a missionary. Narcissa Whitman came west with him in 1836. They traveled with Henry and Eliza Spalding and W.H. Gray, a party the ABCFM had sent. Narcissa Whitman and Eliza Spalding crossed South Pass in July 1836. They were among the first white American women to cross the Continental Divide. The Whitmans settled at Waiilatpu and built their mission among the Cayuse.
 
-  Narcissa Whitman and Eliza Spalding were the first white American women to cross the Continental Divide, an achievement that received considerable attention in the eastern press and helped demonstrate that the overland route was passable for families, not just mountain men and soldiers.
+## The ride of 1842-43
 
-  At the confluence of the Walla Walla and Columbia rivers, Marcus established his mission on land the Cayuse considered their own. He named it Waiilatpu, adopting the Cayuse word for the place. He built a grist mill, a blacksmith shop, a house, and planted crops. Narcissa taught school and kept a diary that became one of the most vivid accounts of early Oregon settlement.
+Marcus Whitman made a midwinter ride east in 1842-43. He went to lobby the ABCFM against closing the mission and to promote wagon settlement. He returned west in 1843 with the Great Migration, roughly 800 to 1,000 emigrants. He served as guide and physician on that road. Boosters later claimed Whitman "saved Oregon" by this ride. Historians have discredited that story. He traveled with the migration; he did not lead it alone.
 
-  ## The Oregon Trail Years
+## The 1847 measles
 
-  Through the early 1840s, the Whitman Mission became an important way station on the Oregon Trail. Wagon trains arriving exhausted and depleted from the journey across the Great Plains found food, medical care, and rest at Waiilatpu. Marcus treated injuries, disease, and the effects of starvation. The mission saw hundreds of emigrants pass through each season.
+Measles spread through the region along the emigrant corridor in 1847. Each year more emigrants brought disease and settlers onto Cayuse land. Near the mission, roughly half the Cayuse died. Nearly all the sickened emigrants recovered. Marcus Whitman was the physician. His Cayuse patients died as his white patients lived.
 
-  In 1842, Marcus received word that the American Board of Commissioners for Foreign Missions planned to close the mission. He made a dramatic midwinter ride east to lobby against the decision, traveling through blizzards and mountain passes in January, and succeeded in keeping it open. On his return in 1843, he guided the first large wagon train of approximately 1,000 settlers west along what would become the Oregon Trail.
+The Cayuse had a way to read this. In their tradition the Cayuse could hold a te-wat, a healer, responsible for a patient's death. From a Cayuse standpoint, Whitman looked like a failed or malevolent healer. Scholars caution that this was no automatic rule. Plateau peoples usually did not kill a healer merely for failing to cure. Cayuse leaders had already asked the Whitmans to leave. The CTUIR states that Cayuse people suspected Whitman of coveting their land and spreading the disease.
 
-  ## Growing Tensions
+## November 29, 1847
 
-  Relations between the mission and the Cayuse were never simple, and by the mid-1840s they had become genuinely dangerous. The Cayuse watched as thousands of emigrants passed through their territory each year, bringing diseases against which the Cayuse had no immunity, competing for game and grazing land, and establishing a permanent American presence that showed no signs of stopping.
+On and shortly after November 29, 1847, Cayuse men, with some Umatilla, killed Marcus and Narcissa Whitman and about eleven others. Most accounts give the toll as 13. Some sources give 14. The Cayuse took captive roughly 47 to 53 survivors, about fifty people. Peter Skene Ogden of the Hudson's Bay Company ransomed them about a month later.
 
-  The Cayuse also observed that Marcus treated emigrants and Cayuse alike, but that the emigrants usually recovered while the Cayuse often died. Within Cayuse tradition, a medicine man whose patients died too frequently could be held responsible for those deaths, or even be killed for them. Marcus Whitman, physician and missionary, was functioning as a medicine man in the eyes of the Cayuse, whether he knew it or not.
+People long called this the "Whitman Massacre." Historians now contest that name. The National Park Service and the Oregon Encyclopedia have moved off it; the Oregon Encyclopedia titles its article "Whitman Murders." The neutral terms are the Whitman killings, or the 1847 attack on the mission.
 
-  ## The Measles Epidemic
+## The Cayuse Five, 1850
 
-  In the autumn of 1847, measles arrived at Waiilatpu with a wagon train. The disease swept through the Cayuse community with devastating speed. The Cayuse had no previous exposure to measles and no immunity. At the mission, most of the emigrant patients recovered. Among the Cayuse, perhaps half of those infected died.
+Settlers and the territorial government used the killings to justify what came next. Congress formally established Oregon Territory in 1848. The Cayuse War ran roughly from 1847-48 to 1850. A court at Oregon City tried five Cayuse men and hanged them in 1850: Tiloukaikt, Iceyeeye Sileqis, Koyoma Samqiin, Tamahas, and Klokomooc. Historians contest their guilt. The CTUIR holds that the men were wrongfully arrested and executed after volunteering to speak about the killings, and honors them as men who sacrificed for their people. The Cayuse lost their land. The United States consolidated them onto the Umatilla Reservation, where the CTUIR lives today. In Oregon City the CTUIR has raised monuments to the five men.
 
-  Marcus worked himself to exhaustion treating patients from both communities. But to the Cayuse, the pattern was unmistakable: the white doctor could save the whites, but the Cayuse died.
+## Sources
 
-  ## November 29, 1847
-
-  On a November morning, a group of Cayuse men came to the mission under the pretense of asking for medicine. What followed was a planned attack. Marcus Whitman, Narcissa Whitman, and eleven others were killed. Forty-seven survivors were taken hostage and held for weeks before being ransomed through the intervention of Peter Skene Ogden of the Hudson's Bay Company.
-
-  The attack shocked the American settlements in the Willamette Valley and sent reverberations all the way to Washington. Congress, which had been slow to organize the Oregon Country as an official U.S. territory, acted within months. The Oregon Territory was formally established in 1848, and U.S. Army forces were sent west.
-
-  ## The Cayuse War and Its Aftermath
-
-  The Cayuse War lasted from 1848 to 1850. After years of conflict, five Cayuse men were surrendered by their own people and hanged in Oregon City in 1850. Whether they were truly responsible for the attack at Waiilatpu remains a question historians continue to examine.
-
-  The Cayuse people, already diminished by epidemic disease, faced further losses through the war and its aftermath. They were eventually consolidated onto the Umatilla Indian Reservation, where their descendants live today as part of the Confederated Tribes of the Umatilla Indian Reservation.
-
-  ## What Remains
-
-  The mission buildings are long gone. What the National Park Service preserves here is the landscape and the memory. A trail leads past the site of the mission house, the millpond, and the mass grave where the victims of the massacre were buried. An obelisk marks the spot.
-
-  The story of Waiilatpu does not resolve cleanly into heroes and villains. Marcus and Narcissa Whitman came with genuine conviction and genuine compassion, and they died for it. The Cayuse acted from fear, grief, and a desperate attempt to protect a way of life they could see slipping away. Both things are true, and the ground here holds all of it.
+- **National Park Service, Whitman Mission National Historic Site - History & Culture, and 'Cayuse Teacher Guide' (2022) (nps.gov/whmi)** — *primary/official* — the te-wat healer framework; the killings, hostage-taking, and Ogden ransom; the site's reinterpretation and move off 'massacre' framing
+- **Confederated Tribes of the Umatilla Indian Reservation (CTUIR), 'Historic Cayuse 5 Honored in Oregon City with Monuments' (ctuir.org)** — *tribal/institution* — the five named men, contested guilt and wrongful-execution position, suspicion that Whitman coveted land and spread disease, dispossession onto the Umatilla Reservation, and the Oregon City monuments
+- **Cassandra Tate, 'Unsettled Ground: The Whitman Massacre and Its Shifting Legacy in the American West' (Sasquatch Books, 2020)** — *peer/reviewed* — debunking the 'saved Oregon' legend and the shifting-legacy/naming account
+- **The Oregon Encyclopedia (Oregon Historical Society), 'Whitman Murders,' 'Whitman Murders Trial,' 'Marcus Whitman'** — *editorial/secondary* — the 'Whitman Murders' title and naming shift, measles spreading along the emigrant corridor, the 1842-43 ride and 1843 migration, hostage upper bound (53), scholarly caution on healers
+- **HistoryLink.org, File 5192 (Cayuse attack, Nov 29 1847) and File 9700 (Whitman-Spalding party, 1836)** — *editorial/secondary* — the 1836 ABCFM party and South Pass crossing, epidemic asymmetry (about half the nearby Cayuse dead vs. emigrants recovering), and the death-toll variant of 14
+- **Whitman College, 'Waiilatpu' (Whitman Traditions)** — *editorial/secondary* — the 'place of the rye grass' gloss of Waiilatpu

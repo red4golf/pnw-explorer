@@ -15,23 +15,23 @@ audio: null
 draft: false
 publishDate: null
 books:
-  - title: "Jet City Rewind: Aviation History of Seattle and the Pacific Northwest"
-    author: "Timothy A. Nelson"
+  - title: "NAS Seattle - Lake Washington's Air Base"
+    author: "Chris Banyai-Riepl"
     url: null
     isbn: null
 sourceId: 140
 mergedFrom: null
 factcheck:
-  status: "corrected"
-  lastChecked: "2026-07-12"
-  reviewer: "Cowork verification pass 2026-07-12"
+  status: "verified"
+  lastChecked: "2026-09-13"
+  reviewer: "Cowork verification pass 2026-07-12; book citation corrected 2026-09-10 per discipline board; real replacement book confirmed 2026-09-13"
   sourceTier: "secondary"
   claimsTotal: 22
   claimsCited: 22
   openFlags: 0
   neutrality: "pass"
   checkedHash: "vsajay"
-  notes: "Fixed 'patrol boats' to patrol planes in description and Legacy (the 1936 Lake Washington patrol-boat demand is genuinely boats per HistoryLink 2249 and was kept). Removed unsupported '13th Naval District headquarters / Pacific Theater headquarters' framing. World flight crowd corrected to HistoryLink's 'at least 40,000'; named Chicago and New Orleans per NPS. Lindbergh crowd corrected to 3,000; unverified 21-gun salute removed. Berlin/Cuban crisis years corrected to 1961/1962. Unverified P-3 Orion/admiral anecdote, runway-count detail, and Sleepless in Seattle claim removed. Sources: HistoryLink 2249, 364, 877, 2287; NPS; seattle.gov; Friends of Magnuson Park."
+  notes: "Fixed 'patrol boats' to patrol planes in description and Legacy (the 1936 Lake Washington patrol-boat demand is genuinely boats per HistoryLink 2249 and was kept). Removed unsupported '13th Naval District headquarters / Pacific Theater headquarters' framing. World flight crowd corrected to HistoryLink's 'at least 40,000'; named Chicago and New Orleans per NPS. Lindbergh crowd corrected to 3,000; unverified 21-gun salute removed. Berlin/Cuban crisis years corrected to 1961/1962. Unverified P-3 Orion/admiral anecdote, runway-count detail, and Sleepless in Seattle claim removed. Sources: HistoryLink 2249, 364, 877, 2287; NPS; seattle.gov; Friends of Magnuson Park. 2026-09-10: removed the 'Jet City Rewind' book citation. The discipline board's fact-checker could not confirm this book exists under that title/author, and it appeared identically worded across five unrelated aviation entries in this corpus — the same copy-paste-citation pattern already known from a Fresnel-lens manufacturer error elsewhere in the corpus. This entry's 100%-cited factcheck badge above covers the body prose only; it never actually covered this citation, which is why it's being pulled now rather than left in place. Also confirmed for the record: bellevue-airfield's claim that this base's runways were 'demolished in the 1970s' is not supported anywhere in this entry's own sourcing and has been removed from bellevue-airfield's entry as an unconfirmed cross-entry claim. 2026-09-13: replaced the empty book list with 'NAS Seattle - Lake Washington's Air Base' by Chris Banyai-Riepl (WARchive Photo Series #1, self-published, 2025, ISBN 979-8-307460-66-5) — confirmed real via consistent listings across Amazon, Aviation Bookshop, and a hobbyist review site. It is a photographic history specifically and solely about this base, though its narrow focus is the late-1950s-mid-1960s aircraft operations (Skyraiders, Trackers, Neptunes) rather than the full 1920-1970 span covered by this entry's own text; flagged here as a self-published niche title, not a mainstream press book, but genuinely on-topic and not a fabrication. openFlags closed to 0."
 ---
 
 ## The Dream Takes Flight (1920-1926)

@@ -7,88 +7,66 @@ address: "Port Blakely area, Bainbridge Island, WA"
 coordinates:
   lat: 47.5963696
   lng: -122.5180413
-summary: "Once the world's largest lumber mill, this site was the economic engine of early Bainbridge Island."
-lead: "Once the world's largest lumber mill, this site was the economic engine of early Bainbridge Island. The mill employed hundreds of workers and produced lumber that helped build cities across the Pacific Northwest and beyond."
-notice: null
+summary: "Concrete foundations and a generator building mark a sawmill once called the world's largest, and the National Register site of a Japanese mill village."
+lead: null
+notice:
+  - "The concrete pads scattered through the trees near the water are foundation remnants of the sawmill itself."
+  - "The squat brick generator building by the shore is one of the only structures still standing from the mill operation."
+  - "Blakely Harbor Park's shoreline trail covers roughly 51 acres of the old millyard, added to the park in two purchases, 1999 and 2001."
+  - "The wooded slope south of the harbor once held Yama, a Japanese village of about 300 people — nothing is marked on site, but you are standing near where it stood."
 hero: null
 audio: null
 draft: false
 publishDate: null
 books:
-  - title: "Mill Town: A Memoir of Port Blakely and Puget Sound Logging"
-    author: "Edwin Van Syckle"
-    url: "https://www.amazon.com/Mill-Town-Memoir-Blakely-Logging/dp/0870041452"
+  - title: "Port Blakely: The Community Captain Renton Built"
+    author: "Andrew Price"
+    url: null
     isbn: null
   - title: "Logging Railroads of the West"
     author: "Kramer Adams"
-    url: "https://www.amazon.com/Logging-Railroads-West-Kramer-Adams/dp/0870043218"
+    url: null
     isbn: null
 sourceId: 24
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-11"
+  reviewer: "Cowork research pipeline (research -> write -> verify -> hand-fix)"
+  sourceTier: "primary"
+  claimsTotal: 27
+  claimsCited: 27
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite 2026-09-11, replacing a previous version that stated 'the world's largest sawmill under one roof' and 'one of the most successful lumber operations in American history' as flat, repeated fact, used boosterish section framing ('Captain Renton's Vision,' 'Industrial Colossus,' 'Empire of Wood'), and handled the mill's labor history with a vague, unsourced gesture ('faced discrimination that reflected the era's racial tensions'). Verify returned 3 objections, hand-fixed without a repair round: cut an unsourced 'ran night and day' operational claim; softened an unattributed 'most intact structure' superlative in a notice bullet to a sourced claim about the surviving structure; softened 'Skinner and Eddy closed the mill' (not directly sourced as their personal act) to the plain, sourced fact that the mill closed in 1922. Also split one over-length sentence and renamed two overly generic section headings. The 'world's largest' claim is now presented as an attributed period description (World Forestry Center biography, circa 1902-03) with the real source conflict disclosed -- DAHP's primary documented output curve (35,000 board feet/day in 1866, rising to 275,000 by 1899) and 515-worker 1904 peak workforce sit alongside, but are not merged with, a separate secondary source's higher 400,000 board feet/1,200-worker figures. The Chinese-labor history is now a specific, dated, primary-sourced fact (workers pushed out of most mill jobs in 1877 by anti-Chinese agitation, replaced by white workers paid more for the same work) rather than a vague gesture, and the Japanese Yama/Nagaya settlement history is told with named people, businesses, and dates (the Takayoshi family's businesses, named visiting priests, the 2018 National Register listing). Both previously-cited books had problems: the Van Syckle 'Mill Town' citation was confirmed fabricated (his real book is about Grays Harbor, not Port Blakely) and replaced with Andrew Price's real, on-topic 'Port Blakely: The Community Captain Renton Built'; the Kramer Adams 'Logging Railroads of the West' book is real but its cited ISBN was confirmed fabricated (this is the same fabricated ISBN pattern flagged elsewhere in this corpus) -- kept the real title/author, dropped the unverifiable URL rather than guess a replacement. Sources: WA Dept. of Archaeology & Historic Preservation, HistoryLink.org, World Forestry Center, Bainbridge Island Review, Olympic College's Yama Project, Bainbridge Island Land Trust."
 ---
 
-On the shores of Bainbridge Island's Blakely Harbor, the remnants of concrete foundations and a solitary generator building mark the site of what was once the world's largest sawmill under one roof. From 1864 to 1922, the Port Blakely Mill Company transformed this quiet inlet into a global lumber empire that shipped Pacific Northwest timber to rebuild San Francisco after the 1906 earthquake, construct the Panama Canal, and build docks from Tokyo Bay to Honolulu Harbor.
+You stand at Blakely Harbor Park on Bainbridge Island, where concrete foundations and one brick generator building sit above the water. This is what is left of Port Blakely Mill. William Renton bought the land on June 30, 1863, and finished the mill in April 1864; the Port Blakely Mill Company ran it for fifty-eight years, through two fires, a change of owners, and a company town that grew and emptied out.
 
-## Captain Renton's Vision
+## Building the Mill, 1864-1888
 
-The mill's story began with William Renton, a Nova Scotia sea captain who recognized the extraordinary potential of Puget Sound's seemingly endless forests of Douglas fir, western red cedar, and hemlock. In 1864, Renton established the Port Blakely Mill Company on Bainbridge Island's protected harbor, choosing a location that offered deep water for loading ships, abundant timber resources, and shelter from Puget Sound's worst storms.
+Renton's company incorporated as the Port Blakely Mill Company in 1876. The Washington State Department of Archaeology and Historic Preservation's survey of the site documents the mill's output climbing over the decades that followed. Daily output ran about 35,000 board feet in a 12-hour day in 1866, rose to 140,000 board feet a day by 1882, and reached 275,000 board feet a day by 1899. HistoryLink's biography of Renton gives a different 1882 figure — 200,000 board feet a day, which it calls "the largest of any sawmill on the Pacific Coast," not the world. The two sources do not agree on the number, and neither claim should be read as settled. Fire destroyed the mill on February 3 or 4, 1888. The company rebuilt within about five months, this time as a larger double mill.
 
-Within its first year, the mill was producing 50,000 board feet daily, an impressive output that would grow exponentially as Renton expanded operations and refined production techniques. By 1876, when the company incorporated in San Francisco with partner Charles S. Holmes, Port Blakely had become the foundation of a lumber empire that stretched across the Pacific Rim.
+## A Claim About Being the Largest
 
-Renton's vision extended beyond simple sawmill operations. He understood that controlling every aspect of lumber production, from forest to finished product, would provide competitive advantages in the rapidly expanding markets of California, Hawaii, and Asia. This integrated approach would make Port Blakely one of the most successful lumber operations in American history.
+By the time of the 1902-03 sale, contemporaries described Port Blakely, according to a World Forestry Center biography of later owner John Eddy, as "the largest [sawmill] under one roof in the world," with a daily capacity of 275,000 board feet. That is a period claim, not an independently verified fact, and the sources disagree on the numbers behind it. DAHP's own documented peak workforce was 515 employees, in 1904. A separate source, the Washington Trust for Historic Preservation's Revisiting Washington project, gives a much higher 400,000 board feet a day and 1,200 workers, undated. The two figures should not be merged into one number — they come from different sources describing the mill in different ways.
 
-## Industrial Colossus
+## New Owners and a Second Fire, 1902-1907
 
-At its peak, the Port Blakely Mill produced between 200,000 and 400,000 board feet per day, making it the world's largest sawmill under one roof. This extraordinary output required not only massive industrial infrastructure but also sophisticated transportation and logistics systems that connected remote Pacific Northwest forests to global markets.
+David "Ned" Skinner and John "Jack" Eddy bought the mill in 1902-03. Skinner ran the company's San Francisco sales office; Eddy ran the mill itself; Eddy's brother, James Garfield Eddy, joined Skinner in California on the sales side. A second fire destroyed the mill on April 22, 1907. According to the World Forestry Center's Eddy biography, Port Blakely supplied lumber for San Francisco's reconstruction after the 1906 earthquake — that claim rests on this one source. The Hall Brothers Shipyard, formally the Hall Brothers Marine Railway and Shipbuilding Company, built five-masted schooners at Port Blakely before relocating: the company broke ground at a new site on Eagle Harbor on July 6, 1902, and had moved there by May 1903.
 
-The company built the Blakely Line railroad to haul logs from Mason County forests across the Puget Sound region. This network enabled the mill to access timber resources far beyond Bainbridge Island while providing efficient transportation that kept production costs competitive with other lumber regions.
+## Chinese Workers, Pushed Out in 1877
 
-The Hall Brothers Shipyard operated alongside the mill from about 1881 to 1904, launching 77 vessels that carried Port Blakely lumber throughout the Pacific. These ships, many built specifically for the lumber trade, enabled the company to control shipping costs while ensuring reliable delivery to distant markets in an era when transportation challenges often determined business success or failure.
+DAHP's survey records a specific act of discrimination, not a general one. Chinese workers held mill jobs at Port Blakely until 1877, when anti-Chinese agitation drove them out of most of those jobs. White workers replaced them — and were paid more for the same work.
 
-## Global Reach
+## Nagaya and Yama
 
-Port Blakely lumber reached markets that few Americans could imagine in the late 19th century. Ships loaded with Pacific Northwest timber sailed regularly to Hawaii, where the lumber built sugar plantation infrastructure and Honolulu's growing commercial district. Australian customers relied on Port Blakely products for construction projects throughout the continent, while Japanese buyers used the lumber for docks, bridges, and commercial buildings.
+Japanese laborers appear at the mill from the 1880s; the 1889 census counted 35 Japanese men working there, according to reporting on the site's National Register nomination. Two settlements grew up south of the harbor. Nagaya, a bachelor "long house," held around 25 men on the lower slope near the mill pond. Yama — "mountain" — was the family village, built later on the steep slope above, and grew to roughly 300 residents in more than 50 cottage-style homes by the early 1900s. A Buddhist temple was dedicated at Yama in 1903, with visiting priests Rev. Gendo Nakai and Rev. Hoshin Fujii of the Seattle Buddhist Mission; it doubled as a Japanese-language school for the village's children. A Japanese Baptist church, tied to Seattle's Japanese Baptist Church, was dedicated there in the spring of 1901. The Takayoshi family ran a store, a tea garden, an ice cream parlor, and a photography studio at Yama — the ice cream parlor drew customers from across the island, not just from the mill. When the mill closed in 1922, the village emptied fast: by 1925, one resident remained at Yama. A University of Washington and Olympic College archaeological field school later recovered roughly 8,000 artifacts from the site, now held at the Burke Museum. The Yama and Nagaya sites were listed on the National Register of Historic Places on May 7, 2018.
 
-The mill's most dramatic moment came after the 1906 San Francisco earthquake, when Port Blakely lumber played a crucial role in rebuilding America's premier Pacific Coast city. The company's ability to rapidly increase production and ship massive quantities of high-quality lumber helped San Francisco recover from one of the most devastating urban disasters in American history.
+## Port Blakely's Last Year
 
-During construction of the Panama Canal, Port Blakely lumber provided essential building materials for one of the era's greatest engineering projects. The company's reputation for quality and reliability made it a preferred supplier for projects requiring materials that could withstand tropical conditions and heavy use.
+The mill closed for good in 1922. The buildings came down in 1924. The Eddy family kept the company's timberlands after the closure, and Port Blakely Companies continues today as a forestry operation — manufacturing gone, the land still in the same family's hands.
 
-## A World of Workers
+## Blakely Harbor Park Today
 
-The mill's success depended on a remarkably diverse workforce that reflected the Pacific Northwest's role as a destination for immigrants from around the world. At peak employment, 1,200 workers representing dozens of nationalities and cultures labored in the mill, lived in company housing, and built communities that bridged cultural differences through shared work and common goals.
-
-Scandinavian workers, drawn by opportunities in forest industries familiar from their homelands, established homes in what became Eagledale. These families brought woodworking traditions and cooperative values that strengthened both the workforce and the broader community.
-
-Japanese workers created two distinct settlements south of the harbor, complete with a Buddhist temple, traditional bathhouses, and gardens that maintained cultural connections while adapting to Pacific Northwest conditions. Chinese workers contributed essential skills while facing discrimination that reflected the era's racial tensions.
-
-The mill town included all the infrastructure needed for a complete community: living quarters for workers and their families, a hotel for visitors and temporary workers, a saloon for recreation, a church for worship, a movie theater for entertainment, and a baseball association that brought the community together through shared recreation.
-
-## Challenges and Decline
-
-Despite its success, Port Blakely faced ongoing challenges that eventually led to its downfall. Fire struck twice, in 1888 and 1907, destroying the mill and requiring expensive reconstruction. While each rebuilding incorporated improved technology and safety features, the costs strained company finances and disrupted production during crucial growth periods.
-
-The 1903 sale to David E. Skinner and John W. Eddy marked the beginning of the mill's decline. These new owners, more focused on short-term profits than long-term sustainability, operated the mill sporadically and failed to maintain the infrastructure and workforce loyalty that had driven Port Blakely's success under Renton's leadership.
-
-World War I temporarily restored profitability as military demand drove lumber prices higher, but the post-war economic crash proved devastating. Changing markets, increased competition, and depleted local timber resources combined to make continued operation economically unfeasible.
-
-## The End of an Era
-
-In 1922, Skinner and Eddy permanently closed the Port Blakely Mill, ending nearly six decades of continuous operation. The 1924 dismantling and equipment removal marked the final chapter of what had been one of the world's most successful lumber operations.
-
-The Eddy family bought out their partners and redirected company focus toward timber holdings rather than manufacturing, a strategic shift that enabled Port Blakely Companies to survive as a family-owned forestry operation that continues today. This transition from industrial manufacturing to sustainable forest management reflected broader changes in the Pacific Northwest economy and environmental awareness.
-
-## Modern Legacy
-
-Today, Blakely Harbor Park preserves 40 acres of the former mill site, acquired by Bainbridge Island between 1999 and 2001 to protect this historically significant location from residential development. The concrete generator building remains as the most substantial physical reminder of the mill's industrial heritage, while interpretive signs help visitors understand the site's remarkable history.
-
-Port Blakely Companies continues operating as a family-owned forestry business, maintaining connections to the original enterprise while practicing modern sustainable forestry that balances timber production with environmental protection. This evolution demonstrates how historic businesses can adapt to changing values and regulations while preserving essential elements of their founding mission.
-
-Environmental cleanup efforts, conducted in partnership with the Washington State Department of Ecology, address industrial contamination while restoring habitat for the marine life that has returned to Blakely Harbor. These projects reflect contemporary understanding of environmental responsibility while honoring the site's industrial heritage.
-
-## Remembering the Empire
-
-The Port Blakely Mill Site serves as a powerful reminder of the Pacific Northwest's industrial heritage and the global connections that shaped regional development. This modest harbor once loaded ships that carried Pacific Northwest timber to rebuild San Francisco, construct the Panama Canal, and build infrastructure throughout the Pacific Rim.
-
-The site's diverse workforce, international markets, and industrial innovation demonstrated the Pacific Northwest's early integration into global economies while revealing both the opportunities and challenges of rapid industrial development. The mill's success and eventual decline offer lessons about sustainability, community building, and economic adaptation that remain relevant today.
-
-As visitors explore Blakely Harbor Park and observe the returning marine life, they can appreciate both the site's industrial achievement and its environmental recovery. The Port Blakely Mill Site represents a complex legacy, technological innovation and environmental impact, economic success and community disruption, global reach and local consequences, that continues to inform discussions about development, sustainability, and community values in the modern Pacific Northwest.
+The Bainbridge Island Metropolitan Park & Recreation District bought the initial shoreline parcel in 1999; the Bainbridge Island Land Trust helped add an 18-acre upland parcel in 2001. Blakely Harbor Park today totals roughly 51 acres. Walk it and the mill that ran for fifty-eight years comes down to two things: a scatter of concrete foundations, and one brick generator building standing by the water.

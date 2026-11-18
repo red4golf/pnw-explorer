@@ -7,72 +7,50 @@ address: "2445 Old Idaho Pen Rd, Boise, ID 83712"
 coordinates:
   lat: 43.6027
   lng: -116.162
-summary: "This former territorial and state prison operated from 1872-1973, housing some of the American West's most notorious criminals."
-lead: "This former territorial and state prison operated from 1872-1973, housing some of the American West's most notorious criminals. The preserved cellblocks, gallows, and prison facilities offer unique insights into frontier justice and the evolution of America's penal system."
+summary: "Boise's sandstone prison held inmates for 101 years, hanged ten men, and once housed confessed assassin Harry Orchard."
+lead: null
 notice: null
 hero: null
 audio: null
 draft: false
 publishDate: null
-books:
-  - title: "Outlaws, Lawmen & Vigilantes: Stories from the Idaho Territorial Prison"
-    author: "Kim Briggeman"
-    url: "https://www.amazon.com/Outlaws-Lawmen-Vigilantes-Stories-Territorial/dp/0762780924"
-    isbn: null
-  - title: "Legends and Legacies: The Old Idaho Penitentiary"
-    author: "Idaho State Historical Society"
-    url: "https://www.amazon.com/Legends-Legacies-Idaho-Penitentiary-Historical/dp/0870043218"
-    isbn: null
+books: []
 sourceId: 120
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-10"
+  reviewer: "Cowork research pipeline (research -> write -> verify -> repair -> reverify -> hand-fix)"
+  sourceTier: "primary"
+  claimsTotal: 24
+  claimsCited: 24
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite 2026-09-10 after the 2026-09-10 discipline board flagged the entry's book citation and framing. Repair round fixed 9 of the verifier's objections (a false lethal-injection claim, an unattributed 'most notorious criminals' superlative, and others). Reverify returned 2 remaining objections, hand-fixed here without a third paid agent round: deleted the unsourced and factually backwards claim that Lyda Southard 'served longer than Orchard did' (Orchard was in custody roughly 49 years, 1905-1954; Southard served 19 years, 10 months); removed the unsourced interpretive contrast describing the Warden's House as built 'for the man running the place, not the men inside it'; softened 'she was tried in the press as' back to the source pack's plain 'dubbed' framing. Both previously-listed books (Kim Briggeman; Idaho State Historical Society 'Legends and Legacies') were confirmed fabricated by research -- no evidence either exists under the given title/author/ASIN -- and are not carried into this version. Sources: Idaho State Historical Society (history.idaho.gov), Idaho Department of Correction, SAH Archipedia, Intermountain Histories (BYU Redd Center), Idaho Press community column (attributed in text for the 1971 riot account)."
 ---
 
-Rising from the high desert east of Boise, the Old Idaho Penitentiary stands as a stark monument to frontier justice and the evolution of America's correctional system. For 101 years, from 1872 to 1973, this imposing stone fortress housed territorial and state prisoners, including some of the American West's most notorious criminals, while serving as a symbol of law and order's triumph over frontier lawlessness.
+You walk through a gate in a sandstone wall, and the men who built it are the men it was built to hold. Nobody hired outside labor. Congress approved $40,000 for the project in 1867. Construction began with a public ceremony on July 4, 1870, and the first 11 prisoners arrived in 1872, transferred over from the Boise County Jail.
 
-## Establishing Order in Territorial Idaho
+## Quarried From Table Rock, 1870-1889
 
-When Idaho Territory was established in 1863, the region faced enormous challenges in maintaining law and order across vast distances with minimal government infrastructure. Mining camps, cattle towns, and isolated settlements often resorted to vigilante justice when formal legal systems proved inadequate. The territorial government recognized that establishing a proper penitentiary was essential for demonstrating that organized justice could replace frontier mob law.
+The sandstone came from Table Rock, the outcrop in the foothills above the prison, and inmates cut and hauled every block of it themselves. By 1889 that labor had produced the first cell house: three tiers of steel cells, 42 to a tier, sealed behind a wall 17 feet high with guard turrets at the corners. James King designed the Administration Building that went up in 1894. John Tourtellotte designed the Warden's House in 1902, a modified Italianate residence. By the mid-1920s the prison had switched to concrete for new construction. Sandstone quarried by hand was already a 19th-century method by then.
 
-Commissioned in 1868, construction of the territorial prison began in 1870 on a remote site east of Boise, chosen for its isolation and security advantages. The facility's thick sandstone walls, quarried from nearby deposits, created a formidable barrier against escape attempts while providing employment for territorial residents who quarried stone, hauled materials, and constructed buildings.
+## Three Notorious Inmates
 
-The prison's early years reflected the rough frontier conditions of territorial Idaho. Guards were often poorly trained political appointees, living conditions were harsh, and discipline relied heavily on physical punishment. However, the facility's mere existence represented progress toward establishing the rule of law in a region where justice had often been arbitrary and violent.
+Harry Orchard came to the penitentiary as a confessed killer. He admitted to more than 17 murders and was convicted of assassinating former Idaho governor Frank Steunenberg in 1905, then testified against labor leader William "Big Bill" Haywood in what was called the Trial of the Century. Inside, Orchard became a trusty. He ran a shoe shop and a poultry farm on the grounds and stayed there until he died in the prison hospital in 1954, at 88 — roughly five decades behind the same sandstone wall he'd walked in through.
 
-## Evolution of Correctional Philosophy
+Convicted of second-degree murder in the death of her fourth husband, after three prior husbands and a child had died under circumstances the state found suspicious, Lyda Southard was dubbed "Lady Bluebeard." She served 19 years and 10 months, the longest sentence given to a woman at the prison, was released in October 1941, and was pardoned in April 1943.
 
-As Idaho achieved statehood in 1890 and entered the 20th century, the penitentiary evolved to reflect changing ideas about punishment, rehabilitation, and prisoner treatment. Progressive Era reformers advocated for educational programs, vocational training, and improved living conditions that would prepare inmates for productive lives after release.
+A third case ended differently again. "Diamondfield" Jack Davis was sentenced to hang in 1897 for a killing other men later confessed to committing. He was reprieved, and on December 17, 1902, fully pardoned.
 
-The prison developed workshops where inmates learned trades such as blacksmithing, carpentry, and textile production. These programs served dual purposes, providing useful labor for state projects while teaching skills that former prisoners could use to earn honest livings. The state's license plate manufacturing operation, housed at the penitentiary for decades, became one of Idaho's most visible prison industries.
+## Ten Hangings, One Gallows Room
 
-Educational programs expanded throughout the early 20th century to include basic literacy classes, library services, and even limited higher education opportunities. Prison officials recognized that many inmates had received little formal education before their incarceration, and literacy programs could significantly improve their chances for successful reintegration into society.
+The state executed ten men at the penitentiary between 1878 and 1957, all of them by hanging. Only the last, Raymond Snowden on October 18, 1957, died in the dedicated Gallows Room. The other nine were hanged elsewhere on the grounds, before that room existed. Across its 101 years, the prison recorded roughly 129 deaths in total. Inmates tried to escape more than 500 times and got out for good at least 90 of those times. The walls Orchard's generation quarried were never as absolute as they looked.
 
-## Notable Inmates and Infamous Events
+## Riot Ends 101 Years, December 1973
 
-The Idaho Penitentiary housed numerous notorious criminals whose stories reflect the broader social conflicts of the American West. Labor organizer Harry Orchard, convicted of assassinating former Idaho governor Frank Steunenberg in 1905, became one of the prison's most famous inmates. Orchard's case highlighted tensions between labor unions and mining companies that shaped Idaho politics for generations.
+On the night of August 9-10, 1971, according to the Idaho Press's local-history column, guards found two escape tunnels dug out of the "honor dormitory" and responded by locking the men inside their unventilated quarters during 102-degree heat. Inmates set fires in the bakery and the social-services building, and two men were stabbed before guards and Ada County deputies retook the prison, roughly four hours after it started. A second riot followed in March 1973, with serious fire damage. The Idaho Department of Correction's own history states plainly that the penitentiary "was closed in December 1973 after inmates rioted over living conditions." Its replacement, the Idaho State Correctional Institution, had already been open a year by then. It opened in 1972, before the old prison's last riot, not because of it.
 
-The facility's most spectacular disturbance was a riot in 1971 when several inmates took hostages and demanded improvements in poor prison conditions. The dramatic standoff, which lasted several days and attracted national media attention, exposed overcrowding and substandard conditions that had persisted despite periodic reform efforts. The incident helped accelerate plans to construct a modern replacement facility.
+## What's Left
 
-Throughout its operation, the penitentiary's death row and execution chamber carried out Idaho's capital punishment sentences. The gallows, used for executions by hanging and later supplanted by lethal injection, served as grim reminders of the ultimate penalty for the most serious crimes. These facilities reflect changing attitudes toward capital punishment and the state's role in imposing the ultimate sanction.
-
-## Daily Life Behind Bars
-
-Life at the Idaho Penitentiary varied dramatically depending on the era, prison administration, and individual circumstances. Early inmates lived in primitive conditions with minimal amenities, working long hours in quarries, workshops, or prison gardens. Discipline was often harsh, with solitary confinement, reduced rations, and physical punishment used to maintain order.
-
-As correctional philosophy evolved, daily routines became more structured and opportunities for constructive activity expanded. Inmates participated in educational programs, religious services, recreational activities, and vocational training that occupied their time while theoretically preparing them for eventual release. However, overcrowding, limited resources, and understaffing often prevented reform programs from achieving their intended goals.
-
-The prison's commissary, dining halls, and recreational facilities reflected broader social attitudes toward prisoner treatment. Improvements in these areas often followed public scandals or reform movements that brought outside attention to conditions inside the walls. The constant tension between punishment and rehabilitation philosophies shaped every aspect of prison life throughout the facility's century of operation.
-
-## Closure and Historic Preservation
-
-By the 1960s, the Old Idaho Penitentiary had become obsolete, unable to meet modern correctional standards for security, sanitation, and prisoner treatment. Overcrowding, aging infrastructure, and changing correctional practices made a new facility necessary. The Idaho State Correctional Institution opened in 1973, allowing the old penitentiary to close after 101 years of operation.
-
-Rather than demolishing the historic facility, Idaho chose to preserve it as a state historic site that would interpret the evolution of western justice and correctional practices. This preservation decision reflected growing appreciation for the site's historical significance and its potential to educate visitors about important themes in American criminal justice history.
-
-The preserved facility includes cellblocks, workshops, administrative buildings, and execution facilities that provide authentic settings for interpreting prison life across different eras. Guided tours and educational programs help visitors understand how the American correctional system evolved while exploring the human stories of those who lived and worked within the prison walls.
-
-## Modern Educational Mission
-
-Today, the Old Idaho Penitentiary serves as both tourist attraction and educational resource, welcoming thousands of visitors annually who come to explore the complex history of American criminal justice. The site's preserved buildings and exhibits provide unique opportunities to examine how society's approaches to crime and punishment have changed over time.
-
-Educational programs connect historical prison experiences to contemporary criminal justice issues, helping visitors understand the ongoing challenges of balancing punishment, rehabilitation, public safety, and human dignity. The site's interpretation emphasizes the human stories of inmates, guards, and administrators while exploring broader themes of justice, mercy, and social control.
-
-The penitentiary's preservation demonstrates how historic sites can illuminate difficult aspects of American history while promoting thoughtful discussion about complex social issues that continue to challenge communities today.
+The Idaho State Historical Society now runs the site as a state historic site. Its cellblocks, workshops, administration building, and gallows are open for visitors to walk through, on the same ground where inmates once worked the quarry, the shoe shop, and the yard. The sandstone wall they built in 1870 is still the first thing you pass through to get in.

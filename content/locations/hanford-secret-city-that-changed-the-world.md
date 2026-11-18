@@ -7,9 +7,13 @@ address: "Manhattan Project National Historical Park, Richland, WA 99354"
 coordinates:
   lat: 46.63028
   lng: -119.64722
-summary: "The birthplace of the atomic age: a 586-square-mile secret city where 51,000 workers produced plutonium for the bombs that ended World War II, most never…"
-lead: "The birthplace of the atomic age: a 586-square-mile secret city where 51,000 workers produced plutonium for the bombs that ended World War II, most never knowing what they were building. Home to the world's first full-scale nuclear reactor, a ghost airfield that never appeared on any map, and the B-17 bomber \"Day's Pay\" funded by workers' donated wages. Now a National Historical Park and the world's largest environmental cleanup project."
-notice: null
+summary: "Where the Columbia bends: the reactor that made Nagasaki's plutonium, the towns it erased, and a cleanup running past 2090."
+lead: null
+notice:
+  - "Tour B Reactor and stand at the face of the graphite pile that first went critical on September 26, 1944."
+  - "Look to the Columbia; its water once ran through the reactor tubes at about 75,000 gallons a minute."
+  - "Walk the White Bluffs and Hanford townsites, where about 1,500 residents were given roughly thirty days to leave in 1943."
+  - "Look for the Day's Pay bomber on Richland's police branding, added in 2023 - the B-17 that more than 51,000 workers bought with a day's wages in 1944."
 hero:
   src: "/images/locations/hanford-secret-city-that-changed-the-world-hero.jpg"
   alt: "Hanford: The Secret City That Changed the World — landmarks and memorials site in the Pacific Northwest"
@@ -22,102 +26,76 @@ publishDate: null
 books:
   - title: "The Apocalypse Factory: Plutonium and the Making of the Atomic Age"
     author: "Steve Olson"
-    url: null
+    url: "https://www.amazon.com/Apocalypse-Factory-Plutonium-Making-Atomic/dp/0393634973"
     isbn: null
-  - title: "Hanford: The Big Secret"
-    author: "Gary Selden"
-    url: null
-    isbn: null
-  - title: "The Girls of Atomic City: The Untold Story of the Women Who Helped Win World War II"
-    author: "Denise Kiernan"
-    url: null
+  - title: "Hanford, the Big Secret"
+    author: "Ted Van Arsdol"
+    url: "https://www.amazon.com/Hanford-big-secret-Ted-Arsdol/dp/B0007FHVC8"
     isbn: null
   - title: "Atomic Frontier Days: Hanford and the American West"
     author: "John M. Findlay & Bruce W. Hevly"
-    url: null
+    url: "https://www.amazon.com/Atomic-Frontier-Days-American-Biography/dp/029599097X"
     isbn: null
-  - title: "Plutonium: A History of the Worlds Most Dangerous Element"
-    author: "Jeremy Bernstein"
-    url: null
+  - title: "The Girls of Atomic City (Oak Ridge, TN - Manhattan Project context, not Hanford)"
+    author: "Denise Kiernan"
+    url: "https://www.amazon.com/Girls-Atomic-City-Untold-Helped/dp/1451617534"
     isbn: null
 sourceId: 39
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-08-23"
+  reviewer: "Cowork research pipeline"
+  sourceTier: "primary"
+  claimsTotal: 23
+  claimsCited: 23
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Re-researched and rewritten 2026-08-23. Verifier verdict: publishable."
 ---
 
-Along the Columbia River in southeastern Washington, the Hanford Site encompasses 586 square miles of nuclear history that shaped the 20th century and continues to influence the 21st. This remote desert location became the birthplace of the atomic age in America, producing the plutonium that ended World War II while creating the nation's most complex environmental cleanup challenge.
+B Reactor stands on the bank of the Columbia River, on the Hanford Site in southeastern Washington. Its concrete face rises above the sagebrush. Behind that face sits a graphite cylinder of about 1,200 tons, drilled through by 2,004 aluminum tubes. The Army Corps of Engineers chose this ground in early 1943 for the Manhattan Project. Engineers wanted three things here: hydroelectric power from Grand Coulee and Bonneville, water from the Columbia, and distance from other people. The site spread across roughly 580 to 586 square miles.
 
-## Secret City of the Atomic Age (1943)
+## March 6, 1943: the notices went out
 
-In early 1943, the U.S. Army Corps of Engineers selected this sparsely populated area along the Columbia River for one of the Manhattan Project's most crucial facilities. The location offered abundant electricity from Grand Coulee Dam, unlimited cooling water from the Columbia River, and the isolation necessary for America's most secret military program.
+People already lived on that ground. About 1,500 residents farmed White Bluffs, the town of Hanford, and the village of Richland. The government took their land. A notice on March 6, 1943 gave them about thirty days to leave; some farmers won extensions to bring in a harvest. Towns were razed. A cemetery was moved.
 
-Construction began immediately, transforming the quiet agricultural communities of Hanford, White Bluffs, and Richland into a massive industrial complex. Approximately 1,500 residents were given 30 days to vacate their homes, farms, and businesses as the government claimed the land through eminent domain. Many families had lived here for generations, building orchards and farms in the desert through innovative irrigation systems.
+The Wanapum people had fished this reach of the Columbia for generations. They lost access to those grounds. Three treaty tribes held ceded and usual-and-accustomed rights across the area: the Yakama Nation, the Confederated Tribes of the Umatilla Indian Reservation, and the Nez Perce.
 
-The official story: war production. The truth: the **Manhattan Project**, the secret program to build the atomic bomb. The **Hanford Engineer Works** would produce **plutonium-239**, the fissile material for the world's first nuclear weapons. About **51,000 workers** passed through the site over the course of the war, with the peak simultaneous workforce reaching roughly **45,000**, most unaware of what they were building.
+## Nearly 50,000 in the construction camp
 
-## The B Reactor: Birthplace of the Atomic Age
+Nearly 50,000 workers lived in the Hanford Construction Camp at the late-1944 peak. Few workers stayed long. Roughly 100,000 workers were recruited over 1943 to 1945 to keep the numbers up.
 
-On September 26, 1944, the world's first full-scale plutonium production reactor achieved criticality. The B Reactor, a massive graphite-moderated structure containing 2,004 aluminum tubes filled with uranium fuel slugs, represented an extraordinary leap in nuclear engineering.
+In the spring or summer of 1944, a Hanford carpenter named Max Blanchard had an idea after D-Day. He proposed that the workers buy a bomber. More than 51,000 of them each gave one day's pay, about $300,000 in all. That mid-1944 figure is the count of donors, not the war-long workforce. The B-17G was christened Day's Pay at Hanford Field on July 23, 1944. Katie Belle Harris, a Gold Star mother, broke the bottle. Colonel David Wade, base commander at Walla Walla Army Air Field, accepted the plane. It flew more than 60 combat missions. It returned to the United States in July 1945 and was scrapped at Kingman Field, Arizona, on December 4, 1947.
 
-The reactor required approximately 4,000 pounds of uranium to produce just one pound of plutonium through a complex process of neutron bombardment and radioactive decay. Cooling water from the Columbia River flowed through the reactor at 75,000 gallons per minute, carrying away the enormous heat generated by nuclear fission.
+## September 26, 1944: B Reactor went critical
 
-The plutonium produced at Hanford powered both the Trinity test in New Mexico and the "Fat Man" bomb dropped on Nagasaki, Japan, on August 9, 1945, helping to end World War II. This achievement came at tremendous cost, not just financial, but environmental and human.
+B Reactor went critical for the first time on September 26, 1944. Cooling water ran through the 2,004 tubes at about 75,000 gallons per minute, drawn from the Columbia. The reactor made plutonium. Per the National Park Service, about 3,000 kilograms of uranium yielded roughly 750 grams of plutonium, about 0.025 percent.
 
-## The Ghost Airfield That Never Existed
+That plutonium left the desert. Hanford plutonium fueled the Trinity test on July 16, 1945. Hanford plutonium fueled the "Fat Man" bomb dropped on Nagasaki on August 9, 1945. Tens of thousands of people were killed.
 
-To support this massive, secret facility, the government built infrastructure that didn't officially exist. One of these ghost installations was **Hanford Field**, an airstrip that would never appear on any civilian aeronautical chart.
+The National Park Service designates B Reactor a National Historic Landmark, "the World's First Full-Scale Nuclear Reactor." Nine production reactors operated at Hanford over the years. The last, N Reactor, shut down in 1987.
 
-Constructed between 1942-1944, several miles north of the plutonium production reactors, the airfield featured two paved runways with unpaved extensions, a parallel taxiway, a paved aircraft ramp, and a few small support buildings, all next to the depopulated town of Hanford, which gave the site its name before vanishing from maps.
+## 56 million gallons underground
 
-**Security was absolute.** From 1942 through 1946, Hanford Field did not appear on sectional aeronautical charts. Pilots flying over the area would see runways and buildings, but no official record acknowledged their existence. The airfield supported transport of personnel and materials, emergency medical evacuations, military and government VIP visits, and security patrols over the restricted area. Commercial pilots avoided the area entirely, federal regulations prohibited unauthorized flights over the Hanford Site.
+The plutonium left waste behind. About 56 million gallons of high-level radioactive and chemically hazardous waste sit in 177 underground tanks. Of those tanks, at least 67 — about a third — are assumed to have leaked over time; a few leak now. A plume of contaminated groundwater moves toward the Columbia. The reactors released radioactive material into the air during operations. It reached people living downwind, later called downwinders.
 
-At least five or six airfields were built on the Hanford Site during the Manhattan Project. Most have vanished entirely. Hanford Field's deteriorating runways endure within the restricted area, a faint scar on the landscape, a true ghost airfield, visible from the air but officially nonexistent.
+Crews will work the site for decades. Per the 2025 Hanford Lifecycle Scope, Schedule and Cost Report, the remaining baseline cost is about $364 billion, and about $589 billion with uncertainty. Active cleanup is projected through roughly fiscal year 2086. Long-term stewardship runs to about fiscal year 2100.
 
-## "Day's Pay": When 51,000 Workers Bought a Bomber
+## November 10, 2015: a park on the site
 
-In the spring of 1944, carpenter **Max Blanchard** received a letter from his son serving overseas, praising the crucial air support provided by bombers during the D-Day invasion of Normandy. Inspired, Blanchard proposed an idea: What if Hanford workers bought a warplane to send to the troops?
+Congress folded Hanford into the Manhattan Project National Historical Park, established November 10, 2015, alongside Oak Ridge, Tennessee, and Los Alamos, New Mexico. Visitors now tour B Reactor. The graphite cylinder still stands behind its concrete face, above the river that once cooled it.
 
-The idea spread like wildfire through the construction camps and production facilities. Workers agreed to donate **one full day's wages** to purchase a bomber for the war effort. Nearly 51,000 Hanford workers contributed, raising nearly **$300,000**, enough to buy a brand-new **B-17G Flying Fortress** from Boeing's Seattle plant.
+## Sources
 
-On **July 23, 1944**, the bomber was delivered to Hanford Field for a christening ceremony. Thousands of workers gathered at the secret airstrip to see the plane they had purchased with their sweat and sacrifice. The bomber's nose bore the inscription: *"Presented to the Army Air Forces as a Result of Cash Contributions by Employees of Hanford Engineer Works."*
-
-**Brigadier General James E. Parker** attended the ceremony, accepting the aircraft on behalf of the Army Air Forces. The workers named it **"Day's Pay"**, a simple, powerful tribute to collective sacrifice.
-
-The B-17 took off from Hanford Field, escorted by four fighter planes. It dipped its wing in salute three times before heading east toward the 8th Army Air Force in England. "Day's Pay" flew **approximately 67 combat missions** over France, Belgium, and Germany before returning to the United States on July 10, 1945, just weeks before the atomic bombs (using Hanford plutonium) ended the war.
-
-After the war, "Day's Pay" was declared surplus and scrapped on December 4, 1947, at Kingman Field, Arizona. But its legacy endured. In 1993, a mural was painted on Richland High School depicting the plane and the workers who funded it. In 2023, the Richland Police Department added the B-17 to their official badge design.
-
-## Cold War Expansion
-
-Following the war, Hanford continued to play a central role in America's nuclear weapons program. Eight additional reactors were constructed between 1944 and 1963, making Hanford the primary source of plutonium for the nation's nuclear arsenal. At its peak in the early 1960s, all nine reactors operated simultaneously, producing plutonium for most of the 60,000+ weapons in the U.S. nuclear stockpile.
-
-Workers processed tons of irradiated uranium fuel in massive chemical separation plants, extracting plutonium through dangerous chemical processes while generating enormous quantities of radioactive waste. Safety protocols, while advanced for the era, proved inadequate to contain the environmental consequences of this unprecedented industrial activity.
-
-## Environmental Legacy
-
-The urgency of wartime production and Cold War competition led to waste disposal practices that would be unthinkable today. Hanford generated 56 million gallons of high-level radioactive waste, stored in 177 underground tanks, about one-third of which are now leaking into groundwater.
-
-At least one million gallons of radioactive liquid have leaked into the soil and groundwater, creating a contamination plume extending over 80 square miles. Radioactive materials released into the Columbia River reached the Pacific Ocean 200 miles away, while airborne releases contaminated vast areas downwind.
-
-The human cost became apparent over time. Communities downstream from Hanford experienced higher cancer rates, while workers faced exposure to dangerous radiation levels and toxic vapors.
-
-## The World's Largest Cleanup
-
-Since the last reactor shut down in 1987, Hanford has become the world's largest environmental cleanup project. Over 10,000 workers are currently employed in cleanup activities, with a budget exceeding $3 billion annually. The cleanup involves converting liquid waste into glass for permanent storage, treating contaminated groundwater, removing millions of tons of contaminated soil and debris, and safely decommissioning nuclear facilities.
-
-Agreements between the Department of Energy, EPA, and Washington State aim to complete tank waste cleanup by 2040, with full site remediation targeted for 2091, expected to cost over $100 billion.
-
-## Visiting Today
-
-The B Reactor is now a **National Historic Landmark** and part of the **Manhattan Project National Historical Park**, established in 2015. Public tours are available seasonally, offering visitors a rare chance to stand inside the world's first plutonium production reactor.
-
-The Hanford Site represents both the promise and peril of the atomic age, technological triumph and environmental responsibility, challenging future generations to balance the benefits of nuclear technology with the imperative to protect human health and the natural world.
-
-## A Parallel Legacy
-
-The story of Hanford is a story of two legacies running in parallel:
-
-**The visible legacy**: A bomber funded by workers, flying 67 combat missions, helping defeat Nazi Germany. A community that still honors "Day's Pay" on its police badges and school murals.
-
-**The invisible legacy**: A secret city and ghost airfield supporting the production of plutonium that would end the war in the Pacific. An environmental cleanup that will continue into the 22nd century.
-
-Both represent the same truth: ordinary people, doing extraordinary work, sacrificing for a cause they believed in, even when they didn't fully understand what that cause was.
+- **National Park Service, 'B Reactor' (home.nps.gov/places/000/b-reactor.htm)** — *primary/official* — critical date Sept 26 1944; National Historic Landmark designation and quoted title
+- **National Park Service, 'Displacement at Hanford' (nps.gov/articles/000/displacement-at-hanford.htm)** — *primary/official* — ~1,500 residents displaced; March 6 1943 notice; ~30 days; towns razed; cemetery moved
+- **National Park Service, 'About Hanford' (nps.gov/mapr/about-hanford.htm)** — *primary/official* — site selection early 1943; ~580-586 sq mi; peak ~50,000 workers; ~100,000 recruited over the war
+- **National Park Service, 'Science of the B Reactor at Hanford, Washington' (teacher materials)** — *primary/official* — 3,000 kg uranium yielding ~750 g plutonium (~0.025 percent)
+- **U.S. Department of Energy, 'B Reactor' (energy.gov/management/b-reactor)** — *primary/official* — graphite moderator; 2,004 process tubes; ~75,000 gal/min cooling; plutonium for Trinity and Nagasaki
+- **U.S. Department of Energy, 'Hanford Site by Numbers,' June 2017** — *primary/official* — nine production reactors; N Reactor shut down 1987
+- **Hanford Lifecycle Scope, Schedule and Cost Report, 2025 (hanford.gov)** — *primary/official* — cleanup cost ~$364-589 billion; active cleanup to ~FY2086; stewardship to ~FY2100
+- **Washington State Department of Ecology, 'Hanford overview' (ecology.wa.gov)** — *primary/official* — 56 million gallons in 177 tanks; at least 67 (~a third) leaked over time; groundwater plume toward the Columbia
+- **U.S. Department of the Interior, press release establishing Manhattan Project NHP, Nov. 10, 2015** — *primary/official* — park establishment Nov 10 2015 across Hanford, Oak Ridge, Los Alamos
+- **HistoryLink.org, File 7491, 'B-17 Bomber Day's Pay christened at the Hanford Airport on July 23, 1944'** — *editorial/secondary* — Day's Pay details: Blanchard, ~51,000 donors, ~$300,000, christening July 23 1944, Katie Belle Harris, Col. David Wade, >60 missions, July 1945 return, scrapped Dec 4 1947
+- **Atomic Heritage Foundation / National Museum of Nuclear Science & History, 'Hanford, WA' and 'Civilian Displacement: Hanford, WA'** — *editorial/secondary* — site selection context; workforce turnover; Native dispossession and treaty-tribe rights

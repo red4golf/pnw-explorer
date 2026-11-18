@@ -7,62 +7,41 @@ address: "15312 CA-299, Shasta, CA 96087"
 coordinates:
   lat: 40.599433
   lng: -122.492355
-summary: "Once known as the \"Queen City\" of California's northern mining district, this preserved Gold Rush town was a major supply center for miners and mountain…"
-lead: "Once known as the \"Queen City\" of California's northern mining district, this preserved Gold Rush town was a major supply center for miners and mountain communities from 1849-1880s. The restored courthouse and historic buildings tell the story of California's northern gold fields."
+summary: "Brick ruins and a restored 1850s courthouse mark the gold camp California State Parks calls the 'Queen City of the Northern Mines,' six miles west of Redding."
+lead: null
 notice: null
 hero: null
 audio: null
 draft: false
 publishDate: null
-books:
-  - title: "Gold Rush Country: Shasta and the Northern Mines"
-    author: "John Boessenecker"
-    url: "https://www.amazon.com/Gold-Rush-Country-Northern-Boessenecker/dp/0806144068"
-    isbn: null
-  - title: "California Ghost Towns: Northern California"
-    author: "Philip Varney"
-    url: "https://www.amazon.com/California-Ghost-Towns-Northern-Varney/dp/0870044370"
-    isbn: null
+books: []
 sourceId: 115
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-22"
+  reviewer: "Cowork pnw-explorer-board pipeline"
+  sourceTier: "primary"
+  claimsTotal: 16
+  claimsCited: 16
+  openFlags: 0
+  neutrality: "pass"
+  notes: "No prior factcheck field existed. Added the town's actual founding story (Major Pierson B. Reading's 1848 gold discovery on Clear Creek; the settlement was first called Reading Springs, renamed Shasta in 1850), previously omitted entirely. Removed an unsupported 'largest settlement in Northern California outside of Sacramento' superlative. Corrected a false claim that the original Shasta County stretched to the San Francisco Bay Area — it actually extended south only to Red Bluff. Added a previously-missing, well-documented narrative thread: two fires (December 1852, then 1853, the second destroying all ~70 Main Street businesses) are why the town rebuilt in brick, directly explaining the ruins visitors see today. Corrected the courthouse conversion date to a hedged 'around 1861-62' (sources disagree between 1861 and January 1862) and added its builder, pioneer James Loag. Corrected the state acquisition date from an unsupported '1946' to the documented 1937 (California State Parks Commission acquisition) and added the park's June 12, 1950 formal dedication. Deleted both book citations as fabricated: no book titled 'Gold Rush Country: Shasta and the Northern Mines' exists in John Boessenecker's real bibliography, and Philip Varney's actual California title is differently named with unconfirmed Shasta-specific coverage; `books: []` is the correct, deliberate outcome. Hand-fixed after verify: removed an invented 'regional histories of the northern mines' attribution not present in the research pack, and trimmed 'pioneer builder James Loag' to the sourced 'pioneer James Loag.'"
+  checkedHash: "14ssh92"
 ---
 
-About six miles west of present-day Redding, the ruins of a once-mighty Gold Rush metropolis tell the story of California's northern mining frontier. Shasta State Historic Park preserves the remains of what was once called the "Queen City" of California's northern mining district, a booming town that served as the commercial heart of the region's gold fields from 1849 through the 1880s.
+Major Pierson B. Reading found gold along Clear Creek in 1848. The camp that grew up nearby was first called Reading Springs; it was renamed Shasta in 1850. Sitting on the main route into the northern mines, about six miles west of what is now Redding, Shasta became a supply and freighting point for the surrounding gold camps, with wagon and stagecoach traffic passing through on the road connecting California and Oregon. California State Parks describes the town in these years as a commercial center for the region's mining district, reportedly reaching several thousand residents at its peak in the mid-1850s — the "Queen City of the Northern Mines."
 
-## The Rush Begins
+Shasta County itself was created on February 18, 1850. Contrary to later claims about its size, the original county extended south only to Red Bluff on the Sacramento River — it did not reach the San Francisco Bay Area. Its territory did eventually include land later split off into Trinity County, Siskiyou County (1852, which does border Oregon), Tehama County (1856), and Lassen County (1864).
 
-When James Marshall discovered gold at Sutter's Mill in 1848, prospectors spread throughout California's Sierra Nevada foothills seeking new strikes. By 1849, miners following the Siskiyou Trail northward from Sacramento discovered rich placers in the streams around present-day Shasta. Word of the strikes spread quickly, and within months, thousands of Forty-Niners converged on the area.
+Fire nearly destroyed the town twice in less than a year. A fire in December 1852 burned through much of Shasta. About six months later, in 1853, a second fire destroyed all of the town's roughly seventy Main Street businesses. Afterward, the town rebuilt largely in brick rather than wood — which is why the ruins still standing along Main Street today are brick shells rather than timber buildings.
 
-Shasta's strategic location made it the natural supply center for the northern mines. Situated as the terminus of the wagon roads from the Sacramento Valley and at the junction of pack trails leading to gold fields throughout Northern California and southern Oregon, the town became an essential stop for miners, merchants, and freight haulers. Pack trains loaded with supplies departed daily for remote mining camps scattered throughout the rugged mountains.
+The Shasta County Courthouse was built in 1855 by pioneer James Loag as a commercial building, in the wake of the 1853 fire. It was converted for use as the county courthouse around 1861-62. The courthouse held county business, including capital trials — countywide records kept by the Shasta County Sheriff's Office show the first jury-ordered hanging in the county took place in the fall of 1850, and the last county-administered hanging was in 1879, with 15 people sentenced to death and 12 executed over that span.
 
-The discovery of gold near Shasta in 1849 brought a flood of prospectors up the Siskiyou Trail, and most used Shasta as their base of operations. The town quickly grew from a handful of tents and crude cabins into a substantial community with brick buildings, hotels, saloons, and all the businesses needed to support a thriving mining economy.
+The Central Pacific Railroad bypassed Shasta in the early 1870s, routing instead through the new town of Redding. Trade and population that had depended on wagon and stage traffic shifted to the rail line, and Shasta's commercial importance declined through the 1870s and 1880s. The town lost the county seat to Redding in 1888.
 
-## Commercial Powerhouse
+Organized preservation of the town began around 1930, when a group that had formed as the "Trails of '49" Committee incorporated as the Shasta County Historical Society on March 15, 1930. The society began erecting bronze historical plaques around the town starting in September 1931. The California State Parks Commission acquired the courthouse-area properties in 1937, and the Historical Society led restoration of the Courthouse Museum and grounds through the late 1930s. The park was formally dedicated on June 12, 1950.
 
-During its heyday in the 1850s and 1860s, Shasta was the commercial hub, the "Queen City," of the northern mines. The town's merchants supplied not only local miners but also camps throughout the northern Sierra Nevada, the Cascade Range, and even into Oregon and Idaho Territory. Freight wagons and pack trains departed Shasta loaded with tools, food, clothing, and mining equipment essential for frontier life.
+## Today
 
-The town's Litsch General Store, now restored, exemplified the comprehensive businesses that made Shasta indispensable to the mining economy. Such establishments stocked everything from pickaxes and gold pans to fine china and imported wines, catering to both hard-working miners and the merchants who grew wealthy serving them. Credit extended by Shasta merchants often meant the difference between success and failure for prospectors working distant claims.
-
-Shasta's importance as a transportation hub led to the construction of the California and Oregon Stage Road, which connected the town to Portland and San Francisco. The famous Concord stagecoaches of the California Stage Company made regular runs through Shasta, carrying passengers, mail, and gold shipments from the mines. The town's hotels and restaurants thrived on stage line business, providing comfortable accommodation for travelers facing arduous journeys through mountain wilderness.
-
-## Center of Justice and Government
-
-As the largest settlement in Northern California outside of Sacramento, Shasta became the seat of justice for a vast region. The building that became the Shasta County Courthouse, constructed in 1855 as a commercial building and converted to the county courthouse in 1861, is now the park's centerpiece and served as the administrative center for a county that originally stretched from the Oregon border to the San Francisco Bay Area. This massive jurisdiction included most of Northern California's mining districts.
-
-The courthouse witnessed countless legal proceedings related to mining claims, as disputes over gold-bearing ground generated constant litigation. The California Gold Rush created complex legal questions about mineral rights, claim boundaries, and water usage that required new laws and precedents. Shasta's courts helped establish the legal framework that would govern western mining for generations.
-
-The building also housed the county's records and offices, making it essential for land transactions, marriage licenses, and other legal documents required for establishing permanent communities. Many of California's northern counties were eventually carved from original Shasta County territory, making the courthouse historically significant far beyond its immediate region.
-
-## Decline and Preservation
-
-Shasta's prosperity depended entirely on the mining economy, and as gold deposits played out in the 1870s and 1880s, the town's fortunes declined rapidly. The completion of the Central Pacific Railroad through the Sacramento Valley bypassed Shasta entirely, routing traffic through the new railroad town of Redding instead. Without mining activity or transportation advantages, Shasta's population dwindled as businesses relocated to more promising locations.
-
-By 1900, Shasta had become a virtual ghost town, its brick buildings gradually succumbing to weather and neglect. However, the town's historical significance was recognized early, and preservation efforts began in the 1920s. The state of California acquired the site in 1946, establishing Shasta State Historic Park to preserve and interpret this important chapter of Gold Rush history.
-
-## Living History Experience
-
-Today, visitors to Shasta State Historic Park can explore the restored courthouse museum, which houses an exceptional collection of Gold Rush-era artifacts, historical documents, and artwork depicting life in the northern mines. The museum's exhibits explain the complex processes of placer and hard-rock mining, the challenges of frontier justice, and the diverse communities that made up California's mining society.
-
-The park's ruins and restored buildings provide tangible connections to the Gold Rush era. Visitors can walk through the remains of hotels, saloons, and businesses that once thrived, imagining the bustling activity that characterized the town during its boom years. Interpretive trails and exhibits help visitors understand how geography, transportation, and economic opportunity combined to create and ultimately doom this frontier metropolis.
-
-Shasta State Historic Park preserves not just buildings and artifacts but also the story of how the California Gold Rush transformed the American West. The site illustrates themes of migration, economic opportunity, environmental change, and community building that shaped the entire Pacific Coast region during the 19th century.
+Shasta State Historic Park preserves the brick ruins and building fronts along old Main Street, most of which are open to walk through at no charge. The restored 1855 courthouse building houses the Courthouse Museum, with a restored 1860s-era courtroom, jail, and gallows, along with galleries covering a century of California art; the museum keeps separate, limited hours from the rest of the site. Next to it, the Litsch General Store — restored as the Frank Litsch General Merchandise store — is set up by California State Parks as a living-history exhibit of a period general store, stocked with the kind of tools, dry goods, and provisions a mining-town store of the era would have carried.

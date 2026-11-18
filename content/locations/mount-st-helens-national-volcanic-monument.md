@@ -7,9 +7,12 @@ address: "Mount St. Helens, WA 98616"
 coordinates:
   lat: 46.1912
   lng: -122.1944
-summary: "At 8:32 a.m. on May 18, 1980, this mountain removed 1,300 feet of its own summit in the largest landslide ever recorded."
-lead: "At 8:32 a.m. on May 18, 1980, this mountain removed 1,300 feet of its own summit in the largest landslide ever recorded. Fifty-seven people died. Two hundred and thirty square miles of old-growth forest were leveled in minutes. What grew back is just as remarkable as what was destroyed."
-notice: null
+summary: "On May 18, 1980, a landslide and blast dropped this mountain's summit about 1,300 feet and killed 57 people."
+lead: null
+notice:
+  - "Find the mountain's north face before anything else — the summit you're looking at is about 8,364 feet, roughly 1,300 feet lower than it stood before May 18, 1980, when the volcano's north flank collapsed in a massive landslide."
+  - "Look toward Johnston Ridge, named for USGS volcanologist David Johnston, who was monitoring from the Coldwater II observation post 5.7 miles north-northwest of the summit when the blast killed him that same morning."
+  - "Scan the nearby slopes for patches of lupine and young trees — pocket gophers and prairie lupine were among the first life to return to this blast zone after 1980."
 hero:
   src: "/images/locations/mount-st-helens-national-volcanic-monument-hero.jpg"
   alt: "Mount St. Helens National Volcanic Monument — natural wonders site in the Pacific Northwest"
@@ -30,26 +33,57 @@ books:
     isbn: null
 sourceId: 56
 mergedFrom: null
+factcheck:
+  status: "verified"
+  lastChecked: "2026-09-24"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify); post-repair hand-fixes signed off by Charles Einarson 2026-09-24"
+  sourceTier: "primary"
+  claimsTotal: 22
+  claimsCited: 22
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline. Repair round left two objections, both about causal precision (the description tying the 1,300-foot elevation loss to the blast alone rather than the landslide, and the death toll's placement implying the blast alone was responsible) — hand-fixed directly against the pack rather than spending a third paid agent round."
 ---
 
-The mountain gave fair warning. For two months before May 18, 1980, it shook with small earthquakes and vented steam from a growing bulge on its north flank. Scientists set up observation posts. Roads were closed. Most people left.
+Mount St. Helens sits in southwest Washington, a mountain with about 1,300 feet less summit than it had in 1980. At 8:32 a.m. on May 18, 1980, a magnitude 5.1 earthquake destabilized the volcano's bulging north flank, which collapsed in a massive landslide, and the elevation fell from 9,677 feet to roughly 8,364 feet within weeks. Fifty-seven people died that day.
 
-Harry Truman did not leave. The 83-year-old innkeeper had run Mount St. Helens Lodge at the foot of the mountain for fifty years and refused every evacuation order. "The mountain's part of Truman and Truman's part of that mountain," he told reporters. On May 18, a wall of debris buried him and his lodge under 150 feet of rock and ash. His body was never recovered.
+## Two Months of Warning
 
-At 8:32 a.m., a magnitude 5.1 earthquake destabilized the north flank. What followed was not a conventional eruption. The entire bulging face of the mountain collapsed at once, releasing pressure that had been building for weeks. The result was a lateral blast, a horizontal explosion moving northward at speeds between 300 and 670 miles per hour. In the next few minutes, that blast incinerated and flattened 230 square miles of old-growth forest. Trees 60 feet tall snapped like pencils, their trunks pointing away from the mountain in concentric arcs that are still visible from the air today.
+A magnitude 4.2 earthquake shook the mountain at 3:47 p.m. on March 20, 1980. Steam and ash began venting at 12:36 p.m. on March 27. By late April, survey crews watched the north flank bulge outward at about 5 feet a day.
 
-Volcanologist David Johnston was monitoring the eruption from an observation post on Coldwater Ridge, about six miles from the summit. He had time to radio one message: "Vancouver! Vancouver! This is it!" Johnston and his post were obliterated within seconds. He was 30 years old.
+Evacuation orders went out. Harry R. Truman, 83, had lived at Spirit Lake for about 50 years, and he refused every one of them. "The mountain will never hurt me. When you live someplace for 50 years, you either know your country or you're stupid," he told reporters, according to HistoryLink. He added, "I've made up my mind more than ever not to leave." On May 18, the blast and the debris avalanche that followed buried his lodge and cabins under what HistoryLink describes as "hundreds of feet" of rock, earth, ice, and mud. His body was never found.
 
-The eruption column rose 15 miles into the stratosphere in under 15 minutes. Ash fell across eleven states and was measurable as far away as Oklahoma. The sound of the blast was heard in Montana, 1,200 miles north. The Toutle River was buried under a debris avalanche up to 600 feet deep. Lahars, rivers of volcanic mud moving at 50 miles per hour, scoured river valleys for 50 miles in every direction. Spirit Lake was choked with logs and debris and raised 200 feet in elevation. The entire north face of the mountain was gone. Where a symmetrical 9,677-foot peak had stood, there was now a horseshoe-shaped crater open to the north, the summit reduced to 8,365 feet.
+## A Blast Near the Speed of Sound
 
-Fifty-seven people died. The eruption released energy equivalent to 1,600 Hiroshima atomic bombs.
+What followed the earthquake was not a conventional eruption but a lateral blast, a horizontal explosion that moved north at a minimum of 300 miles an hour, close to the speed of sound, according to USGS. In under 15 minutes the eruption column climbed more than 15 miles, upward of 80,000 feet. The blast devastated about 600 square kilometers, roughly 230 square miles, of forest.
 
-What happened next surprised everyone.
+USGS volcanologist David A. Johnston was stationed 5.7 miles north-northwest of the summit, at an observation post named Coldwater II. He radioed Vancouver, Washington: "Vancouver, Vancouver, this is it!" He tried a second transmission; it came through garbled, and then there was nothing more. Johnston was 30 years old, born December 18, 1949, and had joined USGS in 1978. He was the first USGS scientist killed in a volcanic eruption. The ridge above his post was later renamed Johnston Ridge in his honor.
 
-Scientists expected the blast zone to remain sterile for decades. Instead, life came back almost immediately, and from unexpected directions. Pocket gophers had survived underground, and as they burrowed through the ash layer they mixed it with the older soil below, creating islands where seeds could take hold. Wind carried in spiders and insects. Prairie lupine, a nitrogen-fixing plant, established itself in the bare ash fields within two years and began the slow work of rebuilding soil chemistry.
+## The Largest Landslide on Record
 
-The recovery has become one of the most closely studied ecological events in history. Rather than managing the recovery, scientists deliberately left much of the blast zone alone, and what they observed overturned assumptions about ecological succession. Life did not return in orderly waves. It returned in patches, in random clusters wherever some scrap of surviving organic material gave it a foothold, and it spread outward from there. The result is a mosaic landscape, pockets of dense recovery next to areas that still look nearly barren, elk herds grazing on meadows that were ash fields twenty years ago, salmon pushing back up rivers that were buried under mud.
+The north flank did not just erupt. It slid. About 2.5 cubic kilometers of material broke free in the largest landslide in recorded history, racing roughly 14 miles down the North Fork Toutle River valley and filling it to an average depth of some 148 feet in about 10 minutes. In places the debris piled 640 feet deep. The slide dammed Spirit Lake's outlet, and the lake rose about 197 feet almost immediately, then another 54 feet by August 1982. Coldwater Lake and Castle Lake formed the same way, behind debris dams on other tributaries.
 
-From 2004 to 2008, the volcano erupted again in a quieter mode, extruding lava that built a new dome inside the crater. Monitoring equipment now tracks the mountain continuously. Mount St. Helens is classified as active and is considered one of the most likely volcanoes in the contiguous United States to erupt again.
+Meltwater and debris turned to lahar that moved down the Toutle River at 10 to 25 miles an hour, reaching the Columbia River about 75 miles downstream within 18 hours. The mud temporarily cut the Columbia's shipping channel there from 40 feet deep to 14. The blast's sound carried as far as Saskatchewan, Canada. In King County, Washington, people heard it roughly an hour later, like distant artillery. Ash fell in "troublesome amounts" as far east as western Montana. About 540 million tons of it spread across more than 22,000 square miles, and the cloud circled the globe in 15 days.
 
-The Johnston Ridge Observatory, built near the spot where David Johnston died, offers the most direct view into the crater. Standing there, you're looking at the raw interior of a volcano, the lava dome, the steep amphitheater walls, and the debris plain below. The ghost forest of bleached standing logs is visible on the ridgelines. And on the slopes closer to the observatory, if you look carefully, you'll see the lupine fields and the first scattered trees pushing through the ash, exactly where scientists said nothing should be growing yet.
+## A Monument Created August 26, 1982
+
+Congress created Mount St. Helens National Volcanic Monument, the nation's first, when President Reagan signed Public Law 97-243 on August 26, 1982. The House had passed the bill 393 to 8; the Senate approved it by voice vote. Representative Don Bonker of Washington sponsored it, with the state's entire congressional delegation as cosponsors. The law set aside about 110,000 acres for the Forest Service to manage under one instruction: let geologic forces and ecological succession continue substantially unimpeded.
+
+Pocket gophers that survived underground burrowed through the ash and mixed it with older soil. Prairie lupine was among the first plants to colonize the barren Pumice Plain. Between 2004 and 2008 the volcano erupted again, building a new lava dome inside the crater. USGS now calls Mount St. Helens "the volcano in the Cascades most likely to erupt again in our lifetimes." The summit today still stands about 1,300 feet lower than it did before May 18, 1980.
+
+## Sources
+
+- **USGS, "1980 Cataclysmic Eruption," usgs.gov/volcanoes/mount-st.-helens/science/1980-cataclysmic-eruption** — *primary/official* — Eruption timeline, lateral blast speed/scale, eruption column height, debris avalanche size and distance
+- **USGS/EROS, "The Eruption," eros.usgs.gov/earthshots/the-eruption** — *primary/official* — Pre- and post-eruption summit elevations
+- **USGS, "Volcano Watch: Huge eruption of Mount St. Helens recalled," usgs.gov/news** — *primary/official* — Death toll and blast-speed description
+- **USGS, "Volcano Watch: Legacy of Mount St. Helens' 1980 eruption still defies 'perfect' solution," usgs.gov/news** — *primary/official* — Debris depth in Toutle valley, Spirit Lake elevation rise
+- **USGS Professional Paper 1249, "The 1980 Eruptions of Mount St. Helens, Washington," pubs.usgs.gov/pp/1249/report.pdf** — *peer/reviewed* — David Johnston's post location, radio transmissions, Johnston Ridge naming
+- **USGS Cascades Volcano Observatory, "Legacy of David A. Johnston"** — *primary/official* — Johnston's age, birth/death dates, USGS tenure
+- **HistoryLink.org, "Truman, Harry R. (1896-1980)" (File 22801)** — *editorial/secondary* — Truman biography, quotes, and burial-depth correction
+- **HistoryLink.org, "Mount St. Helens erupts on May 18, 1980" (File 5457)** — *editorial/secondary* — Blast sound range, lahar speed and distance, Columbia River channel depth
+- **U.S. Statutes at Large, Public Law 97-243, govinfo.gov/content/pkg/STATUTE-96/pdf/STATUTE-96-Pg301.pdf** — *primary/official* — Monument's legal creation, acreage, administering agency
+- **HistoryLink.org, "Mount St. Helens National Volcanic Monument is created on August 26, 1982" (File 22951)** — *editorial/secondary* — Monument sponsor, vote counts, purpose language
+- **USGS, "Reawakening," pubs.usgs.gov/gip/msh/reawakening.html** — *primary/official* — Precursor earthquake and venting timeline, bulge growth rate
+- **USGS, "Ecology of Mount St. Helens National Monument"** — *primary/official* — Pocket gophers and prairie lupine as early ecological recovery
+- **USGS, "Future Eruptions of Mount St. Helens"** — *primary/official* — USGS statement on future eruption likelihood
+- **USGS FAQ, "How much ash was there...at Mount St. Helens?"** — *primary/official* — Total ash tonnage, area covered, global circulation time

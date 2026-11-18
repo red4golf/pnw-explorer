@@ -7,90 +7,83 @@ address: "900 Court St NE, Salem, OR"
 coordinates:
   lat: 44.938473
   lng: -123.03048
-summary: "Built in 1938 after fire destroyed the previous capitol, this Art Moderne building represents Oregon's growth during the New Deal era."
-lead: "Built in 1938 after fire destroyed the previous capitol, this Art Moderne building represents Oregon's growth during the New Deal era. The 23-karat gold-leafed Oregon Pioneer statue atop the dome has become an iconic symbol of the state's pioneering spirit."
-notice: null
+summary: "Oregon's third capitol on this site, its dome-top bronze pioneer re-gilded in 2025 after birds wore the gold from his head."
+lead: null
+notice:
+  - "Look up at the dome: the bronze pioneer stands 23 feet 6 inches tall and holds an 11-foot axe -- he was re-gilded again in 2025, and the superintendent overseeing the work noted that birds had worn all the gold off the top of his head."
+  - "Step into the rotunda and look up 106 feet to the inner dome -- count the 33 gold-leaf stars ringing it, representing Oregon as the 33rd state admitted to the union."
+  - "Look above the doors into the Senate and House chambers -- you're reading some of the 158 names inscribed there, a roster the state Senate keeps on its own website."
 hero: null
 audio: null
 draft: false
 publishDate: null
 books:
-  - title: "Oregon State Capitol: A Building for the People"
-    author: "Tom Fuller"
-    url: "https://www.amazon.com/Oregon-State-Capitol-Building-People/dp/0870713515"
-    isbn: null
-  - title: "Salem: Images of America"
-    author: "Steven J. Richardson"
-    url: "https://www.amazon.com/Salem-Images-America-Steven-Richardson/dp/0738558575"
+  - title: "Salem (Images of America)"
+    author: "Tom Fuller and Christy Van Heukelem"
+    url: "https://www.amazon.com/Salem-Images-America-Tom-Fuller/dp/0738571393"
     isbn: null
 sourceId: 38
 mergedFrom: null
+factcheck:
+  status: "unverified"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify)"
+  sourceTier: "primary"
+  claimsTotal: 17
+  claimsCited: 17
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline (re-researched from scratch 2026-08-23 after the earlier version was superseded). Repair round left two objections, both in the description field only (a derived '18 months' duration not stated in the pack, and a leftover invented causal claim that the 2025 re-gilding was meant to 'outpace' birds rather than simply follow bird-related wear) — hand-fixed directly against the pack rather than spending a third paid agent round. Also hand-added one book citation (Fuller & Van Heukelem, 'Salem') that the write stage had correctly identified in research as verified/corrected but omitted from its own books list — a write-stage miss, not a sourcing problem."
 ---
 
-Rising from the heart of Salem with its distinctive 166-foot dome and gleaming Oregon Pioneer statue, the Oregon State Capitol stands as one of the most architecturally significant government buildings of the Depression era. Completed in 1938 in striking Art Deco style, this magnificent structure represents not just the seat of Oregon's government, but evidence of the state's resilience, artistic vision, and democratic values during one of America's most challenging periods.
+The Oregon State Capitol stands in Salem, with a dome and a bronze pioneer on top. This is the third capitol building on this site. The first burned on December 29, 1855, the second burned on the night of April 25, 1935, and the current building went up between December 4, 1936 and June 18, 1938, financed partly by a Depression-era federal jobs program.
 
-## Three Capitols, Three Eras
+## Two Fires, 1855 and 1935
 
-Oregon's quest for a permanent state capitol reflects the turbulent early history of western statehood. Salem was designated as the territorial capital in 1850, confirmed permanently by a decisive 79% vote in 1864, but creating a worthy seat of government proved more challenging than selecting a location.
+Oregon's first capitol was a wood-frame building in the Greek Revival style, Doric order. Workers laid its foundation in 1853, and the legislature partially moved in during December 1854. The building burned on December 29, 1855, after less than a year of use. Investigators at the time suspected arson, but a formal inquiry found the fire was not intentionally set, according to the Willamette Heritage Center.
 
-The first Capitol building, completed in 1854 in Grecian Doric style, burned under suspicious circumstances in 1855, forcing the legislature to meet in rented commercial buildings for over twenty years. The second Capitol, built in Classical Revival style between 1876-1893, featured an impressive dome inspired by the U.S. Capitol and served Oregon well for nearly six decades before fire struck again in 1935.
+The Portland firm of Krumbein and Gilbert designed Oregon's second capitol. Lawmakers appropriated funds in 1872, construction began in 1873, and the building stood substantially complete by 1876. Its dome, modeled on the U.S. Capitol's, was added in 1893. Fire broke out in the basement of its east wing on the night of April 25, 1935, and destroyed it.
 
-These repeated losses to fire reflected both the challenges of frontier construction and the growing pains of a young state learning to balance grandeur with practicality. Each destruction brought opportunities for architectural innovation, ultimately leading to the sophisticated fire-resistant design of the current building.
+## A Competition With 123 Entries
 
-## Art Deco Ambition
+In 1935, a nine-person citizens committee opened a nationwide competition for the new capitol's design. It drew 123 entries. Francis Keally of New York won, working with the firm Trowbridge & Livingston. Historians call the resulting style "stripped Classical" or "Grecian Moderne," per Oregon Historical Quarterly (Willingham, 2013). Crews broke ground on December 4, 1936, and the state certified the building complete on June 18, 1938. The Public Works Administration covered about 45 percent of the central building's cost, which ran between $2.29 million and $2.5 million.
 
-The current Capitol, constructed between 1936-1938, represents a dramatic departure from traditional government architecture. Designed by the prestigious New York firm Trowbridge & Livingston with Francis Keally, the building emerged from an architectural competition that attracted national attention during the height of the Art Deco movement.
+## 394 Feet Long, 168 Feet to the Statue's Head
 
-The "Stripped Classical" design combines Art Deco modernism with classical proportions, creating a uniquely American interpretation of government architecture. Built with Public Works Administration funding during the Great Depression, the Capitol provided crucial employment while establishing Oregon as a leader in progressive architectural design.
+The Capitol measures 394 feet long and 162 feet wide. Its lantern rises 43 feet above the roofline. Oregon Historical Quarterly puts the building at 168 feet from the ground to the top of the Oregon Pioneer statue; other sources round the total height to 166 feet. The rotunda beneath the dome spans 55 feet across and rises 106 feet to the top of the interior dome. Thirty-three gold-leaf stars ring it, representing Oregon as the 33rd state admitted to the union.
 
-The building's white Vermont marble exterior gleams against Oregon's often gray skies, while the rose travertine lobby and rotunda, quarried in Montana, create warm, welcoming spaces that honor both the dignity of government and the accessibility of democracy.
+Walls outside are Vermont marble. The lobby and rotunda floors are rose travertine, quarried in Montana. Stairs and floors elsewhere use Phoenix Napoleon marble shipped from Missouri, bordered in Radio Black marble from Vermont.
 
-## Materials and Craftsmanship
+## Murals in the Rotunda
 
-The Capitol demonstrates exceptional materials sourced from across the nation, reflecting both the building's national significance and the era's commitment to quality craftsmanship. Phoenix Napoleon marble from Missouri creates elegant stairs and floors, while Radio Black marble from Vermont provides sophisticated border details throughout the interior.
+Painters Frank Schwarz and Barry Faulkner filled the rotunda with scenes from Oregon history. One shows Robert Gray's three-masted ship, the Columbia Rediviva, arriving at the mouth of the Columbia River in 1792. Another shows Lewis and Clark with Sacagawea. A third shows covered wagons on the Oregon Trail. In the Senate chamber, a mural depicts news of statehood reaching Oregon in 1859. In the House chamber, one mural shows the 1843 settlers' meeting at Champoeg, and another shows John McLoughlin greeting Marcus and Narcissa Whitman, according to the Oregon Encyclopedia.
 
-The Senate chambers and Governor's ceremonial suite feature black walnut paneling that demonstrates the finest woodworking traditions of the 1930s. Custom carpets throughout the building incorporate Pacific Northwest motifs including Chinook salmon and wheat, connecting the formal spaces to Oregon's natural heritage and agricultural foundation.
+Ulric Ellerhusen and Leo Friedlander were sculptors on the building. Above the doors to the Senate and House chambers, friezes carry 158 names of Oregonians, 69 of them in the Senate chamber alone. The roster comes from Philip Cogswell Jr.'s book "Capitol Names," posted by the Oregon Legislature's Secretary of the Senate.
 
-Perhaps most remarkable is the Governor's conference table, crafted from 40 different tree species found in Oregon forests. This extraordinary piece of furniture symbolizes the state's diverse ecosystems while providing a functional centerpiece for government deliberations.
+## The Pioneer on the Dome
 
-## The Oregon Pioneer
+The bronze figure on the dome stands 23 feet 6 inches tall and weighs 17,000 pounds. Ulric Ellerhusen sculpted it holding an 11-foot axe, its boots six feet long. It has a bronze core, not solid gold; the surface is gilded.
 
-The Capitol's crowning glory is the 23-foot-tall gilded bronze Oregon Pioneer statue atop the dome, created by sculptor Ulric Ellerhusen. This iconic figure, standing with ax in hand, faces west toward Oregon's agricultural valleys and the Pacific Ocean, embodying the pioneer spirit that built the state.
+Crews have re-gilded the pioneer four times, in 1958, 1984, 2000, and again starting in early July 2025, targeted to finish by late August. The 2025 job used about 11.5 ounces of 23-karat gold leaf, at a cost of $9,110 within a $234,375 total project. Superintendent Mike Sliwinski told the Bend Bulletin, on July 22, 2025, that "the top of his head has no gold left on it from all of the birds."
 
-The statue's symbolism extends beyond historical commemoration to represent Oregon's ongoing journey toward progress and prosperity. Visible from throughout Salem and the surrounding Willamette Valley, the Oregon Pioneer serves as both landmark and inspiration, reminding Oregonians of their heritage while pointing toward their future.
+The dome has taken damage before. The Scotts Mills earthquake, a magnitude-5.6 quake that struck at 5:34 a.m. on March 25, 1993, cracked the dome and shifted the statue on top of it, according to the Pacific Northwest Seismic Network.
 
-The dome itself, rising 166 feet above ground level, creates a dramatic silhouette that anchors Salem's skyline while providing a sense of permanence and stability essential for effective governance.
+## A $598 Million Repair, 2016 to 2026
 
-## Democratic Architecture
+Oregon began a seismic and accessibility overhaul of the Capitol in 2016. Crews excavated the basement 20 feet below the original foundation and hauled out 36,000 cubic yards of soil. They installed 160 base isolators. The project, led by director Jodie Jones, is budgeted at $598 million total, including a $465 million third phase approved in 2022. It is slated for completion on February 2, 2026, with the North Plaza reopening in mid-March.
 
-The Capitol's design reflects Progressive Era ideals about democratic accessibility and civic engagement. The building's layout encourages public participation in government, with spacious public areas, clear circulation patterns, and ceremonial spaces that honor citizens as well as officials.
+New public art joins the grounds on May 26, 2026: stone boulders inscribed with text chosen by Dr. Phillip Cash Cash of the Cayuse and Nez Perce, bronze paddles by artists Shirod Younker and Tony A. Johnson, and etched glass by Sara Siestreem. Representatives of seven of Oregon's nine federally recognized tribes are expected at the dedication.
 
-The rotunda features 158 names inscribed in friezes honoring prominent Oregonians from all walks of life, demonstrating that the Capitol belongs to all the state's people. Historical murals throughout the building tell Oregon's story through multiple perspectives, acknowledging both achievements and struggles in the state's development.
+## Sources
 
-Legislative chambers are designed to facilitate democratic deliberation while maintaining the dignity appropriate for serious governance. Public galleries ensure citizen access to their representatives while providing excellent acoustics and sight lines that make government proceedings accessible to all.
-
-## Seat of Government
-
-Today, the Capitol houses the Oregon Legislature during biennial sessions, providing a functional setting for democratic governance that serves Oregon's growing population. The building accommodates not only legislative sessions but also gubernatorial offices, constitutional officers, and numerous public events that strengthen civic engagement.
-
-The Governor's ceremonial office, featuring a magnificent fireplace and period furnishings, provides an appropriate setting for state functions while maintaining connections to Oregon's heritage. Working offices throughout the building balance historical preservation with modern technology, ensuring that government operations meet 21st-century needs.
-
-Constitutional officers including the Secretary of State and State Treasurer maintain offices in the Capitol, creating a concentration of democratic leadership that facilitates coordination while preserving the checks and balances essential to effective governance.
-
-## Grounds and Setting
-
-The Capitol Mall extends north from the building, creating formal gardens and ceremonial space that enhance the building's dignity while providing accessible public space. Willson Park to the west and East Park complete the Capitol campus, featuring commemorative statues and the preserved remnants of the 1876 building's columns as historical exhibits.
-
-These carefully designed grounds honor Oregon's agricultural heritage through landscaping that features native plants and seasonal displays celebrating the state's natural beauty. The Circuit Rider bronze statue in East Park commemorates the Methodist ministers who served Oregon's pioneer communities, while other memorials recognize diverse contributions to state development.
-
-## Modern Challenges and Preservation
-
-Ongoing renovation projects work to balance historical preservation with accessibility improvements and modern safety requirements. The building's significant architectural heritage requires specialized conservation techniques while lawmakers demand functional spaces that serve contemporary governance needs.
-
-Recent projects have focused on seismic retrofitting, climate control improvements, and technological upgrades that preserve the building's character while ensuring its continued viability as Oregon's seat of government. These efforts demonstrate the state's commitment to maintaining this architectural treasure for future generations.
-
-## Symbol of Oregon Democracy
-
-The Oregon State Capitol stands as more than a government building, it represents the aspirations, values, and resilience of Oregon's people. Built during the Great Depression with vision and determination, maintained through decades of social change, and continuously adapted to serve evolving democratic needs, the Capitol embodies Oregon's commitment to effective, accessible government.
-
-From its Art Deco elegance to its functional democratic spaces, from its Pacific Northwest materials to its symbolic Oregon Pioneer, the Capitol building tells Oregon's story while providing the foundation for the state's future. It remains a place where citizens gather to shape their shared destiny, where democracy thrives in settings worthy of its highest ideals.
+- **Oregon Encyclopedia, 'Oregon State Capitol,' by Elisabeth Walton Potter, last updated May 27, 2022, oregonencyclopedia.org** — *editorial/secondary* — 1935 fire location/cause, PWA funding, House chamber murals (Champoeg 1843, McLoughlin/Whitman)
+- **SAH Archipedia, 'Oregon State Capitol,' entry OR-01-047-0008, sah-archipedia.org** — *peer/reviewed* — Stripped Classical/Art Deco-Moderne style description; height figure cross-check
+- **Willingham, William F. 'The Architecture of the Oregon State Capitol.' Oregon Historical Quarterly 114, no. 1 (Spring 2013), Oregon Historical Society** — *peer/reviewed* — Competition details, architects, dimensions, rotunda measurements, statue height-to-ground figure
+- **Willamette Heritage Center, 'State Capitol,' willametteheritage.org/state-capitol/** — *editorial/secondary* — First and second capitol construction/fire history, construction dates 1936-1938
+- **Willamette Heritage Center, 'Why is Salem Oregon's Capital?', willametteheritage.org/salem-oregons-capital/** — *editorial/secondary* — Territorial capital designation history (used for correction, not retained in final text)
+- **Living New Deal, 'Oregon State Capitol Building - Salem OR,' livingnewdeal.org** — *editorial/secondary* — PWA cost share, exterior/interior marble and travertine materials
+- **Oregon State Legislature, Office of the Secretary of the Senate, 'Capitol Names,' oregonlegislature.gov** — *primary/official* — 158 names in friezes, 69 in Senate chamber, Cogswell book citation
+- **'Oregon's iconic Gold Man statue is getting re-coated in gold,' The Bulletin (Bend), July 22, 2025** — *editorial/secondary* — Statue dimensions, 2025 re-gilding details and cost, Sliwinski quote
+- **'Oregon Capitol Set to Fully Reopen in 2026 After $598M Renovation,' constructionowners.com** — *editorial/secondary* — CAMS project scope, cost, excavation figures, completion date
+- **Pacific Northwest Seismic Network, '1993 Scotts Mills Earthquake,' pnsn.org** — *primary/official* — 1993 earthquake magnitude, time, and dome/statue damage
+- **Central Oregon Daily, 'Oregon Capitol unveils tribal art installations,' centraloregondaily.com** — *editorial/secondary* — May 26, 2026 public art dedication and tribal representation
+- **Library of Congress, catalog item 2018698887, loc.gov** — *primary/official* — December 4, 1936 construction start date

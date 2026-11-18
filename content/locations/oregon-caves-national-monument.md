@@ -7,126 +7,64 @@ address: "Cave Junction, OR"
 coordinates:
   lat: 42.09556
   lng: -123.40583
-summary: "Ancient limestone cave system known as the \"Marble Halls of Oregon,\" representing millions of years of geological processes and early tourism development"
+summary: "A marble cave a hunter's dog found in 1874, with a 1934 chateau built over the same creek that runs through the cave below."
 lead: null
-notice: null
+notice:
+  - "Find the six-story chateau first — Caves Creek runs straight through its dining room, channeled there when the building was finished in May 1934."
+  - "Once you're inside the cave, look at the walls: this is marble, not limestone, one of the few marble cave systems in the country."
+  - "Watch for gates across some side passages — those protect bats, including Townsend's big-eared bat, that hibernate in the cave each winter."
 hero: null
 audio: null
 draft: false
 publishDate: null
-books:
-  - title: "Oregon Caves: In the Heart of the Siskiyou Mountains"
-    author: "R.J. Smith"
-    url: "https://www.amazon.com/Oregon-Caves-Heart-Siskiyou-Mountains/dp/0870043919"
-    isbn: null
-  - title: "Caves and Karst of Oregon"
-    author: "William R. Halliday"
-    url: "https://www.amazon.com/Caves-Karst-Oregon-William-Halliday/dp/0966712706"
-    isbn: null
+books: []
 sourceId: 73
 mergedFrom: null
+factcheck:
+  status: "unverified"
+  reviewer: "Cowork pnw-explorer-board pipeline (research/write/verify/repair/re-verify)"
+  sourceTier: "primary"
+  claimsTotal: 13
+  claimsCited: 13
+  openFlags: 0
+  neutrality: "pass"
+  notes: "Full rewrite via pnw-explorer-board pipeline. Verdict after repair + re-verify: needs-edit, 6 unsupported claims + 1 style violation, all minor wording drift (an invented 'ancient seafloor' substituted for the pack's 'seamount deposits,' an invented 'a year' delay duration, an unsupported 'near Cave Junction' geographic specific, an unsupported 'above the parking area' staging detail, an unsupported 'mountainside' descriptor, an added 'the fungal disease' characterization of white-nose syndrome) plus one comma-spliced run-on opening sentence — all hand-fixed directly rather than spending a third paid agent round. Both originally-listed books were fabricated/wrong and did not survive verification; books list is intentionally empty."
 ---
 
-Deep beneath the Siskiyou Mountains of southwestern Oregon lies a hidden world of limestone passages, flowstone formations, and underground chambers that have been slowly carved by water over millions of years. Oregon Caves National Monument, known as the "Marble Halls of Oregon," represents one of the few marble cave systems in the United States and tells the story of geological processes, early tourism development, and the evolving relationship between wilderness preservation and public access.
+Oregon Caves National Monument lies in the Siskiyou Mountains, where a cave system runs nearly three miles underground. The passages are cut from marble, not limestone. A hunter found the entrance in 1874 chasing his dog after a bear. President Taft protected 480 acres by proclamation in 1909. In 1931, a Grants Pass builder began the six-story chateau that still channels a creek through its dining room.
 
-## Geological Formation
+## From Seafloor to Cave, 210 Million Years Apart
 
-Oregon Caves began forming over 190 million years ago when the area lay beneath an ancient sea. Marine organisms deposited layers of calcium carbonate that eventually became limestone and marble through heat and pressure as tectonic forces raised the sea floor to create the Siskiyou Mountains.
+The marble began as limestone deposited on an ancient seamount about 210 million years ago, during the Late Triassic. Two events turned it to marble. The Rattlesnake Creek terrane fused onto the coast around 170 million years ago, and the Grayback pluton intruded nearby about 160 million years ago. The cave itself is much younger. Passages did not start dissolving until marble near the surface fractured, roughly 1.7 million years ago. The oldest dated formation found so far, a flowstone in a chamber called Neptune's Grotto, is about 370,000 years old.
 
-Over millions of years, slightly acidic groundwater seeped through cracks in the marble, gradually dissolving the rock to create the passages, chambers, and formations visible today. This process continues, with each drop of water carrying dissolved minerals that create new cave formations while slowly expanding the underground system.
+## Discovery and the Limestone Caves, 1874-1885
 
-## Native American Awareness
+In 1874, Elijah Davidson was hunting bear with his dog, Bruno, when he found the entrance. Bruno chased an animal into a hidden opening in the rock, and Davidson followed him in. He carried nothing but Chinese sulfur matches for light. He got lost for more than three hours. He worked his way back out on his hands and knees, following the sound of the stream to reach the entrance.
 
-While no evidence suggests Native American use of the caves' interior, local tribes including the Takelma were certainly aware of the cave entrance and the unique geological features of the area. The caves' location in the Siskiyou Mountains placed them within traditional hunting and gathering territories.
+Walter Burch heard about the cave in 1884 and put together an exploring party. With his brothers-in-law Homer and Ernest Harkness, he spent $1,500 and three years trying to secure the land, and came away with nothing more than squatter's rights. He opened the cave to the public in 1885 under the name "the Limestone Caves." He reportedly spent two days working in ice water to blast open a passage into the chamber now called Niagara Falls. He was the first person to see the formation known as the Grand Column.
 
-Native peoples likely viewed the caves with spiritual significance, as underground spaces often held special meaning in indigenous belief systems. The area's rich biodiversity and unique geology would have made it an important part of traditional ecological knowledge and territorial understanding.
+## Joaquin Miller's Name and a 1909 Proclamation
 
-## Discovery and Early Exploration
+The poet Joaquin Miller visited in 1907 and, according to the Oregon Historical Society's Oregon History Project, coined the name that stuck: the Marble Halls of Oregon. He lobbied for federal protection. Two years later, on July 12, 1909, President William Howard Taft proclaimed 480 acres a national monument under the Antiquities Act. The access road to the cave opened on June 27, 1922.
 
-The first documented exploration of Oregon Caves occurred in 1874 when hunter Elijah Davidson followed his dog into the cave entrance while tracking a bear. Davidson's account of vast underground chambers and beautiful formations attracted other explorers who began mapping the cave system and promoting its potential as a tourist attraction.
+## Gust Lium's Chateau, 1931-1934
 
-Early explorers used candles and crude torches to navigate the narrow passages and chambers, facing significant dangers from unstable rock formations, flooding, and disorientation in the maze-like underground system. Their courage and persistence revealed one of Oregon's most remarkable natural wonders.
+Construction on the Oregon Caves Chateau began in September 1931 and finished in May 1934, slowed by Depression-era financial setbacks in 1932-33. Gust Lium, a self-taught builder from Grants Pass who had already put up more than 50 houses in the region, led a crew of fewer than 20 men. The job cost about $50,000. They built with Port Orford cedar, local fir, pine, madrone, and oak, and stone gathered from the surrounding hillsides, and they ran Caves Creek straight through the dining room of the six-story building. The Chateau was designated a National Historic Landmark in October 1987.
 
-## Tourism Development
+## The Cave and Its Neighbors
 
-Joaquin Miller, the famous "Poet of the Sierra," visited Oregon Caves in 1907 and coined the nickname "Marble Halls of Oregon" in his enthusiastic promotional writings. Miller's colorful descriptions attracted national attention and helped establish the caves as a must-see destination for adventurous tourists.
+The Takelma's territory included the Illinois and Rogue River valleys, encompassing this area. The National Park Service states plainly that there is no concrete evidence they entered or used the cave itself.
 
-Early tourism required visitors to navigate rough mountain roads and primitive trails to reach the cave entrance. The challenging access became part of the appeal for tourists seeking wilderness adventures and unique experiences that couldn't be found in more developed tourist destinations.
+The cave is one continuous system, about 4.8 kilometers -- 3 miles -- of connected passages, and the Park Service calls it the longest marble solution cave in the Siskiyou Mountains. It shelters at least 8 species likely found nowhere else on earth. That's part of a wider cluster of roughly 30 endemic cave invertebrates known across the Klamath-Siskiyou region. Townsend's big-eared bats, Yuma bats, and long-eared myotis use the cave through the seasons, and a small number hibernate there each winter. Gates now guard some passages, installed partly against white-nose syndrome. Excavators in 1995 found jaguar bones dated to about 38,600 years old and grizzly bear bones older than 50,000 years.
 
-## Guided Tour Operations
+## One Million Visitors and 4,070 More Acres, 1968-2014
 
-Walter Burch began offering guided cave tours in the 1880s, establishing the foundation for modern cave tourism operations. Burch installed basic lighting systems and safety equipment while training guides who could lead visitors safely through the cave's most spectacular chambers and formations. The access road to the caves was completed in 1922, greatly improving the journey for visitors.
+Oregon Caves recorded its millionth visitor in 1968, the same year its first female tour guide started work. On December 19, 2014, President Obama signed legislation adding a 4,070-acre national preserve around the monument, bringing the protected area to roughly 4,554 acres.
 
-The guided tours made the caves accessible to a broader range of visitors while maintaining safety standards and protecting the delicate cave environment. Professional guides provided interpretation that helped visitors understand and appreciate the geological processes that created this underground wonderland.
+## Sources
 
-## National Monument Designation
-
-Oregon Caves became a National Monument in 1909, recognizing both its unique geological significance and its value as a tourist destination. The designation provided federal protection for the cave system while ensuring continued public access for educational and recreational purposes.
-
-The National Monument status attracted increased federal investment in visitor facilities, road improvements, and interpretive programs that enhanced the tourist experience while protecting the cave's natural features. The protection ensured that future generations would be able to experience this remarkable underground environment.
-
-## Chateau Construction
-
-The Oregon Caves Chateau, built in 1934 by contractor Gust Lium, provided overnight accommodations for visitors in a rustic lodge that harmonized with the surrounding forest environment. The chateau's construction used local materials and traditional craftsmanship to create a building that complemented rather than competed with the natural setting.
-
-The chateau represented the National Park Service's philosophy of providing visitor amenities that enhanced appreciation for natural areas while maintaining rustic character. The building became an attraction in its own right, demonstrating how architecture could serve tourism while respecting wilderness values.
-
-## Scientific Research
-
-Oregon Caves has provided opportunities for scientific research into cave ecosystems, geology, and hydrology that have contributed to broader understanding of underground environments. Studies of cave formations have revealed insights into past climate conditions and geological processes that shaped the region.
-
-Biological research has documented unique species adapted to cave environments, including endemic insects and other organisms found nowhere else. This research has enhanced understanding of evolution, adaptation, and the delicate ecological balance that sustains underground ecosystems.
-
-## Conservation Challenges
-
-Managing Oregon Caves requires balancing public access with protection of fragile cave formations and ecosystems. Visitor impacts including erosion, vandalism, and disruption of cave climate threaten formations that took millions of years to develop.
-
-Modern management emphasizes education, controlled access, and visitor monitoring to minimize impacts while maintaining meaningful public access. These approaches demonstrate how natural attractions can be preserved while continuing to serve their educational and inspirational purposes.
-
-## Underground Ecosystem
-
-Oregon Caves supports unique ecosystems adapted to the constant temperature, high humidity, and darkness of underground environments. Specialized bacteria, fungi, and invertebrates have evolved to thrive in conditions that would be hostile to surface-dwelling organisms.
-
-The cave environment provides critical habitat for bats and other animals that use caves for roosting, hibernation, or reproduction. Protecting these underground ecosystems requires understanding complex ecological relationships and minimizing human disturbance of sensitive areas.
-
-## Interpretive Programs
-
-Modern interpretive programs help visitors understand the geological processes, ecological relationships, and conservation challenges associated with cave environments. Educational tours emphasize the cave's scientific significance while inspiring appreciation for underground ecosystems and geological processes.
-
-These programs serve both conservation and educational goals by creating informed advocates for cave protection while providing meaningful learning experiences that connect visitors with natural processes and environmental stewardship responsibilities.
-
-## Regional Geology
-
-Oregon Caves represents just one component of the complex geological story of the Siskiyou Mountains, which contain some of the oldest and most diverse rock formations in Oregon. The cave system provides a window into deep-time geological processes that shaped the Pacific Northwest over hundreds of millions of years.
-
-Understanding the cave's geological context helps visitors appreciate the vast time scales and powerful forces involved in landscape formation while demonstrating how water, chemistry, and time can create extraordinary natural artworks through purely natural processes.
-
-## Climate Research
-
-Cave formations preserve records of past climate conditions that scientists use to understand long-term environmental changes and natural climate variability. Speleothems (cave formations) record information about temperature, precipitation, and atmospheric composition over thousands of years.
-
-This climate research provides valuable data for understanding how ecosystems responded to past climate changes and predicting how they might respond to contemporary climate change. Oregon Caves contributes to global databases used for climate research and environmental planning.
-
-## Tourism Heritage
-
-Oregon Caves represents an important chapter in American tourism history, demonstrating how natural wonders became accessible to the public through a combination of private enterprise, government support, and transportation improvements. The cave's development paralleled broader trends in outdoor recreation and nature tourism.
-
-The site's tourism heritage illustrates how Americans' relationship with wilderness evolved from viewing nature as an obstacle to overcome to appreciating it as a source of recreation, inspiration, and scientific knowledge. This transformation reflected changing cultural values and economic opportunities.
-
-## Modern Challenges
-
-Contemporary management of Oregon Caves faces challenges including aging infrastructure, increased visitation pressure, and climate change impacts on cave ecosystems. Balancing preservation with public access requires ongoing adaptation of management strategies and visitor services.
-
-Climate change affects cave ecosystems through altered precipitation patterns, temperature changes, and shifts in surface vegetation that influence underground environments. Understanding and adapting to these changes requires long-term monitoring and adaptive management strategies.
-
-## Educational Value
-
-Oregon Caves serves as an outdoor classroom where visitors can observe geological processes, ecosystem relationships, and conservation challenges firsthand. The cave experience provides tangible connections to abstract scientific concepts while inspiring curiosity about natural processes and environmental stewardship.
-
-Educational programs serve diverse audiences from school groups to adult learners, adapting content and activities to different learning styles and interests. The cave's accessibility makes complex geological and ecological concepts understandable and memorable for visitors of all backgrounds.
-
-## Underground Wonder
-
-As you descend into Oregon Caves, you're entering a world sculpted by water and time over millions of years. The "Marble Halls of Oregon" represent both the power of natural processes and the importance of preserving unique environments for future generations to study, enjoy, and find inspiration.
-
-The caves remind us that some of nature's most beautiful and scientifically valuable treasures exist in hidden places that require protection, respect, and careful stewardship. Oregon Caves shows the rewards of patience, both the geological patience that created this underground masterpiece and the human patience required to preserve it for the future.
+- **National Park Service, Oregon Caves National Monument & Preserve — History & Culture pages (Elijah Davidson's Story by Tom Siewert; Walter Burch; Gust Lium; Takelma) and timeline, nps.gov/orca/learn/historyculture/** — *primary/official* — Discovery story, Burch's exploration and cave-opening, Chateau construction details, Takelma territory statement, key dates (1874, 1885, 1909, 1922, 1931-1934, 1968, 1987, 1995, 2014)
+- **National Park Service, Oregon Caves — Nature pages (Endemics; Bats), nps.gov/orca/learn/nature/** — *primary/official* — Endemic cave-invertebrate counts and bat species/hibernation/gating claims
+- **NPS Geodiversity Atlas — Oregon Caves National Monument & Preserve, Oregon** — *primary/official* — Rock/cave-formation chronology (210mya limestone, 170mya terrane accretion, 160mya pluton, 1.7mya cave dissolution) and system length/marble-cave superlative
+- **Oregon Secretary of State, Oregon Blue Book — 'Oregon Caves National Monument and Preserve' by state geologist Jason McClaughry** — *primary/official* — Corroborating geologic chronology and fossil-dating figures (jaguar, grizzly bones)
+- **Oregon History Project (Oregon Historical Society) — 'Joaquin Miller's Chapel, Oregon Caves'** — *editorial/secondary* — Attributed claim that Joaquin Miller coined 'Marble Halls of Oregon' during his 1907 visit
