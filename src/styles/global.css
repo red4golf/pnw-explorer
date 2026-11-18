@@ -155,7 +155,18 @@ img { max-width: 100%; height: auto; display: block; }
   margin-inline: auto;
 }
 
-.section { padding: clamp(2rem, 1rem + 4vw, 4rem) 0; }
+.section { padding: clamp(1.75rem, 1rem + 2.5vw, 3rem) 0; }
+
+/* A tinted band. Sections with their own background keep their full padding. */
+.band { background: var(--surface-2); }
+
+/* Two plain sections in a row share one background, so their paddings used to
+   add up to a gap twice the size of any other. Only the first keeps its top.
+   :not([hidden]) matters on the home page, where a hidden "nearby" section
+   sits between the hero and the first visible section. */
+.section:not(.band):not(.listen-section):not([hidden]) + .section:not(.band):not(.listen-section) {
+  padding-top: 0;
+}
 
 .eyebrow {
   font-size: 0.78rem;
@@ -411,16 +422,22 @@ img { max-width: 100%; height: auto; display: block; }
 .detail-hero {
   position: relative;
   background: var(--forest);
-  min-height: clamp(14rem, 30vw, 24rem);
+  /* The image fills this box; it does not set its height. Left to its own
+     16:9 it was 670px tall on a laptop, the whole first screen, with the title
+     at the very bottom edge. */
+  min-height: clamp(16rem, 12rem + 18vw, 26rem);
   display: grid;
+  overflow: hidden;
 }
 .detail-hero > img {
-  grid-area: 1 / 1;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .detail-hero .overlay {
+  position: relative;
   grid-area: 1 / 1;
   display: flex;
   align-items: flex-end;
@@ -477,6 +494,15 @@ img { max-width: 100%; height: auto; display: block; }
 }
 @media (min-width: 60rem) {
   .detail-layout { grid-template-columns: minmax(0, 1fr) 19rem; }
+  /* The story runs thousands of pixels; the sidebar is a few hundred. Pinning
+     it fills the empty column and keeps directions in reach while reading. */
+  .detail-layout > aside {
+    position: sticky;
+    top: 4.75rem;
+    align-self: start;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+  }
 }
 
 .prose { max-width: var(--measure); }
@@ -534,7 +560,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- audio ---------- */
 
-.listen-section { background: var(--forest); color: var(--on-dark); }
+.listen-section { background: var(--forest); color: var(--on-dark); padding: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0; }
 .listen-section h2 { color: #fff; }
 .listen-section p { color: #d9cdb4; }
 .listen-grid {
